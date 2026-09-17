@@ -1,0 +1,46 @@
+services:
+  ollama:
+    image: ollama/ollama:0.5.7
+    container_name: triage-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    environment:
+      # CPU-only, as the client constraint requires. No GPU device is mapped.
+      # OLLAMA_NUM_PARALLEL and OLLAMA_MAX_LOADED_MODELS are left at Ollama's
+      # defaults for the baseline; record whatever values you observe in
+      # `docker logs triage-ollama` in your test environment description.
+      - OLLAMA_KEEP_ALIVE=30m
+    deploy:
+      resources:
+        limits:
+          # Pin CPU so results are comparable across runs and machines.
+          # Set to match the client-representative hardware you describe.
+          cpus: "${OLLAMA_CPUS:-4}"
+          memory: "${OLLAMA_MEM:-8g}"
+
+  triage:
+    build: ./service
+    container_name: triage-service
+    depends_on:
+      - ollama
+    ports:
+      - "8000:8000"
+    environment:
+      - TEAM_NUMBER=${TEAM_NUMBER:-9}
+      - OLLAMA_URL=http://ollama:11434
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3.2:1b}
+      - OLLAMA_SEED=42
+      - OLLAMA_TEMPERATURE=0
+      - RUN_ID=${RUN_ID:-adhoc}
+      - DB_PATH=/data/tickets.db
+      - LOG_PATH=/logs/requests.jsonl
+    volumes:
+      - triage-data:/data
+      # Logs land on the host so they can be committed with the .jtl files.
+      - ./results/logs:/logs
+
+volumes:
+  ollama-models:
+  triage-data:

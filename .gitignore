@@ -1,0 +1,10 @@
+# The full course CSV is redistributed data; keep the team slice, not the source.
+data/ict3113_tickets.csv
+*.pyc
+__pycache__/
+.env
+.DS_Store
+.venv/
+
+# DO NOT ignore results/. The .jtl files and service logs are evidence and must
+# be committed -- the brief requires every reported number to reconcile with them.
