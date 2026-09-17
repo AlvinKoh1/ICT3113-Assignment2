@@ -36,11 +36,17 @@ golden:
 sheets:
 	python3 tools/make_label_sheets.py
 
+# Picks up whatever annotator sheets exist, whatever they are named.
+SHEETS ?= $(wildcard golden/labels_*.csv)
+
 agree:
-	python3 tools/agreement.py --sheets golden/labels_A.csv golden/labels_B.csv
+	@test -n "$(SHEETS)" || { echo "no golden/labels_*.csv sheets found -- run 'make sheets'"; exit 1; }
+	@echo "sheets: $(SHEETS)"
+	python3 tools/agreement.py --sheets $(SHEETS)
 
 merge:
-	python3 tools/merge_golden.py --sheets golden/labels_A.csv golden/labels_B.csv
+	@test -n "$(SHEETS)" || { echo "no golden/labels_*.csv sheets found"; exit 1; }
+	python3 tools/merge_golden.py --sheets $(SHEETS)
 
 feed:
 	python3 tools/prepare_jmeter_data.py

@@ -47,14 +47,39 @@ and [§7 Do / Don't](#7-do--dont) before touching anything.
 
 ## Milestones
 
-| When | What | Who |
-|---|---|---|
-| **Week 2 — by Sun 20 Sep** | **🔒 FREEZE GATE.** Golden set + κ + prediction record committed. Nothing measured before this. | Gabriel, Alvin, Muhaimeen |
-| Weeks 3–4 — to Sat 4 Oct | Three-run load tests, stress test, accuracy runs on both machines | Irfan, Uwais, Muhaimeen |
-| Weeks 5–6 — to Thu 9 Oct | Reconcile every figure, build the deck, clean `docker compose` rebuild test | All |
-| **Fri 9 Oct, 23:59** | **Submission.** `GroupXX.pptx` + golden set + prediction record + protocol + label sheets + κ | All |
+Two kinds of deadline below. Keep them straight.
+
+### Imposed by the assignment
+
+| When | What |
+|---|---|
+| ~~Fri 11 Sep~~ | Team registration on xSiTe — **done** |
+| **Fri 9 Oct, 23:59** | **Submission.** `GroupXX.pptx` (max 12 slides) + golden test set + prediction record + labelling protocol with revisions + independent label sheets + agreement statistic |
 
 Late work is penalised 15% per day and refused after four days.
+
+The brief sets **no date** for the freeze. What it requires is an **ordering**:
+the golden test set and prediction record must be committed *before* your first
+benchmark run, and the commit history is the evidence. Freezing late costs you
+schedule, not marks. Measuring before you freeze costs you the component.
+
+### Our own targets (from `comprehensive_project_plan.html`)
+
+Self-imposed. Missing one is a planning problem, not a rule breach — but
+everything in Step 5 is blocked behind the first row.
+
+| Target | What | Who |
+|---|---|---|
+| **Sun 20 Sep** | Freeze: golden set + κ + prediction record committed | Gabriel, Alvin, Muhaimeen |
+| Sat 4 Oct | Three-run load tests, stress test, accuracy runs | Irfan, Uwais, Muhaimeen |
+| Thu 8 Oct | Every figure reconciled, deck built, clean `docker compose` rebuild tested | All |
+
+> **Note on week numbers:** the project plan's week labels are off by one against
+> the brief. The brief anchors the calendar twice — registration at "end of Week 2
+> (Friday 11 September 2026)" and submission at "Friday 9 October 2026 (Week 6)" —
+> which puts **Week 3 at Sep 14–18**, Week 4 at Sep 21–25, Week 5 at Sep 28–Oct 2,
+> Week 6 at Oct 5–9. The plan calls Sep 14–20 "Week 2"; it is Week 3. The plan's
+> *dates* are fine, only its labels are wrong. Use dates, not week numbers.
 
 ```bash
 git clone https://github.com/gemokay/ICT3113-Assignment1.git
@@ -285,6 +310,10 @@ intend to report.
 
 This is not bureaucracy. Labelling after you have seen model output drags labels
 toward whatever the model said and quietly destroys the accuracy measurement.
+
+It is a constraint on **order, not a deadline**. The brief attaches no date to the
+freeze — only the requirement that it precede your first benchmark run. Our
+Sun 20 Sep target is a team decision (see [Milestones](#milestones)).
 
 ---
 
