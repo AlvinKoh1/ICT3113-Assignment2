@@ -13,6 +13,7 @@ that proves you worked through them.
 from __future__ import annotations
 import argparse
 import csv
+import json
 from collections import Counter
 from itertools import combinations
 
@@ -76,6 +77,8 @@ def main() -> int:
                     help="e.g. golden/labels_A.csv golden/labels_B.csv")
     ap.add_argument("--candidates", default="golden/candidates.csv")
     ap.add_argument("--out-disagreements", default="golden/disagreements.csv")
+    ap.add_argument("--json-out", default="golden/agreement.json",
+                    help="machine-readable copy of the statistic (Slide 6, submission)")
     args = ap.parse_args()
 
     sheets = {p: load(p) for p in args.sheets}
@@ -111,6 +114,7 @@ def main() -> int:
         a = [sheets[names[0]][r] for r in rows]
         b = [sheets[names[1]][r] for r in rows]
         obs, k = cohen_kappa(a, b)
+        stat = {"statistic": "Cohen's kappa", "raw_agreement": round(obs, 4), "kappa": round(k, 4)}
         print(f"Raw agreement : {obs:.4f}  ({int(obs * len(rows))}/{len(rows)})")
         print(f"Cohen's kappa : {k:.4f}  -- {interpret(k)}")
     else:
@@ -119,6 +123,7 @@ def main() -> int:
                                  [sheets[y][r] for r in rows])
             print(f"  {x} vs {y}: raw={obs:.4f} kappa={k:.4f}")
         k = fleiss_kappa([[sheets[p][r] for p in names] for r in rows])
+        stat = {"statistic": "Fleiss' kappa", "kappa": round(k, 4)}
         print(f"\nFleiss' kappa : {k:.4f}  -- {interpret(k)}")
 
     disagreements = [r for r in rows
@@ -149,6 +154,13 @@ def main() -> int:
         print("\nMost confused category pairs (useful for Slide 6):")
         for pair, n in pairs.most_common(5):
             print(f"  {n:3d}  {' <-> '.join(pair)}")
+
+    stat.update({"interpretation": interpret(stat["kappa"]), "annotators": names,
+                 "n_tickets": len(rows), "n_disagreements": len(disagreements),
+                 "confused_pairs": [{"pair": list(p), "n": n} for p, n in pairs.most_common(5)]})
+    with open(args.json_out, "w", encoding="utf-8") as fh:
+        json.dump(stat, fh, indent=2)
+    print(f"Statistic written to {args.json_out}")
     return 0
 
 
