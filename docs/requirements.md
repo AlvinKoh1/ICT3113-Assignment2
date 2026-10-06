@@ -1,5 +1,7 @@
 # Performance and Accuracy Requirements — ICT3113 Group P2-9
 
+**Signed off:** Alvin (M2), 6 Oct 2026.
+
 Slide 4. Owner: **Alvin (M2)**. Every requirement is testable (a number, a percentile where relevant, and a load condition) and traces to a figure in `docs/workload_model.md` (WM).
 
 **Position the requirements take** (WM §6): a misrouted ticket costs the client more than a slow one.

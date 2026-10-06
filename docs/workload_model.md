@@ -1,5 +1,7 @@
 # Workload Model — ICT3113 Group P2-9
 
+**Signed off:** Alvin (M2), 6 Oct 2026.
+
 Slide 3. Owner: **Alvin (M2)**. Every figure is either **cited** [n] or marked
 **ESTIMATE** with its method. `tools/workload_model.py` recomputes every
 derived number below and draws `docs/workload.png`.
