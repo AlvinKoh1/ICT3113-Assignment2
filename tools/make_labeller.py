@@ -59,10 +59,10 @@ small,.mut{color:var(--mut)}.warn{color:var(--warn);font-weight:600}
 <div class="row" style="margin:0"><b id="pos"></b><small id="rowid"></small><span style="flex:1"></span><small id="done"></small></div>
 <div class="bar"><div id="prog"></div></div>
 <div id="txt"></div>
-<div class="row">Confidence: <label><input type="radio" name="c" value="high"> high</label><label><input type="radio" name="c" value="low"> low</label></div>
+<div class="row">Confidence: <label><input type="radio" name="c" value="high"> high</label><label><input type="radio" name="c" value="low"> low</label><button onclick="clearConf()" title="Remove confidence (or press the same key again)">Clear</button><small>optional</small></div>
 <div class="row" style="flex-wrap:nowrap">Notes:&nbsp;<input id="notes" style="flex:1;min-width:0" placeholder="rule applied (e.g. &sect;4 precedence), runner-up category, POOR FIT, UNDECIDABLE"></div>
 <div class="row"><button onclick="go(-1)">&larr; Prev</button><button onclick="go(1)">Next &rarr;</button><button onclick="nextUnl()">Next unlabelled</button><span style="flex:1"></span><button class="primary" onclick="exportCsv()">Export labels CSV</button></div>
-<small>Keys: <b>1&ndash;7</b> label &middot; <b>H</b>/<b>L</b> confidence &middot; <b>&larr; &rarr;</b> move &middot; <b>N</b> next unlabelled</small></div></div>
+<small>Keys: <b>1&ndash;7</b> label &middot; <b>H</b>/<b>L</b> confidence (press again to clear) &middot; <b>&larr; &rarr;</b> move &middot; <b>N</b> next unlabelled</small></div></div>
 <div class="card" id="cats" style="align-self:start"></div></div>
 <script>
 const D=__DATA__, C=__CATS__;
@@ -83,8 +83,9 @@ function render(){const d=D[i],l=st.labels[d.row]||{},n=D.filter(x=>(st.labels[x
  document.querySelectorAll('input[name=c]').forEach(r=>r.checked=(r.value===l.confidence));
  document.getElementById('cats').innerHTML='<b>Category</b>'+C.map((c,k)=>`<button class="cat ${l.label===c[0]?'sel':''}" onclick="pick(${k})"><span class="k">${k+1}</span>${c[0]}</button><div class="def">${c[1]}</div>`).join('')}
 function pick(k){cur().label=C[k][0];save();render()}
-function setConf(v){cur().confidence=v;save();render()}
-document.addEventListener('change',e=>{if(e.target.name==='c')setConf(e.target.value);if(e.target.id==='notes'){cur().notes=e.target.value;save()}});
+function setConf(v){const c=cur();if(c.confidence===v)delete c.confidence;else c.confidence=v;save();render()}
+function clearConf(){delete cur().confidence;save();render()}
+document.addEventListener('change',e=>{if(e.target.name==='c'){cur().confidence=e.target.value;save();render()}if(e.target.id==='notes'){cur().notes=e.target.value;save()}});
 function go(s){i=Math.max(0,Math.min(D.length-1,i+s));render()}
 function nextUnl(){const k=D.findIndex((d,j)=>j>i&&!(st.labels[d.row]||{}).label);if(k>=0){i=k;render()}}
 document.addEventListener('keydown',e=>{if(!st||(e.target.tagName==='INPUT'&&e.target.type!=='radio'))return;
