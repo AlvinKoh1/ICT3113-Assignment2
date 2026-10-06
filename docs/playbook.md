@@ -99,18 +99,24 @@ reproduce, every accuracy number needs an error bar and you must say why.
 - (c) error rate exceeds 1% (connection refused, timeouts, 5xx), or
 - (d) Ollama or the service dies (OOM kill, crash).
 
-**Our chosen condition:** <...>
+**Our chosen condition:** (b) + (c). A step is *unsustainable* when requests are still queueing at its end: more than max(5, 15 % of the step's arrivals) in flight, or any error. The limit is the highest step below the first unsustainable one. We also report the **saturated throughput**, the completion rate inside the unsustainable steps, which measures capacity directly. In a simulation of this rule (Poisson arrivals, 300 s steps from 0.5× to 1.5× capacity, 300 seeds), the reported limit fell within 0.9–1.1× the true capacity in 94 % of runs, erring low.
 
 **Procedure:**
 
-1. Preconditions P1–P7. Candidate: <which, and why this one>.
-2. Starting at the highest rate from Test B, run 5-minute steps, increasing the
-   rate by <step> each time, with the service **not** restarted between steps so
-   any backlog carries forward.
-3. After each step, evaluate the failure condition from that step's .jtl.
-4. Stop at the first step where it holds. Record the rate, and capture: `docker
-   stats`, `docker logs triage-ollama`, service log tail, and the .jtl.
-5. Repeat the whole ladder three times — the limit is a measurement too.
+1. Preconditions P1–P7. Candidate: `llama3.2:3b`, the mid-size model and the most likely recommendation. Optionally repeat for `qwen2.5:7b`.
+2. Steps come from Test C's single-request p50 latency S: capacity μ ≈ 60/S tickets/min, with steps at 0.5, 0.75, 0.9, 1.0, 1.1, 1.25 and 1.5 × μ.
+   ```
+   python3 tools/stress_steps.py llama3.2:3b          # prints e.g. "16 24 29 32 35 40 48"
+   ```
+3. On the load generator:
+   ```
+   cd jmeter && ./run_stress.sh <svc-host> llama3.2:3b "<steps>"
+   ```
+   - All steps run inside **one** JMeter run (`triage_stress.jmx`, schedule from `-Jschedule`), 300 s each, with no restart between them, so a backlog carries forward.
+   - There is no search traffic, and the response timeout is 600 s, so queueing shows up as latency rather than being hidden by timeouts.
+   - The ladder is repeated **3 times**, because the limit is a measurement too.
+4. On the SUT during each ladder: `docker stats --no-stream` every 5 s into `results/stress/dockerstats_<tag>.txt` (Ollama CPU should pin at about 400 %), plus `docker logs triage-ollama` at the end.
+5. `run_stress.sh` calls `tools/analyze_stress.py` after each ladder. It writes `results/stress/<tag>.summary.json` (per-step table, limit, saturated throughput) and `<tag>.png` (latency scatter and in-flight count over time).
 
 **Report:** the limiting rate, **which** condition tripped, and the diagnosed
 mechanism. "It got slow" is not a finding; "the Ollama request queue grew without

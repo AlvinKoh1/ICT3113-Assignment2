@@ -3,6 +3,16 @@
 **Group P2-9** · team number **9** → dataset rows **9000–9999**
 Repo: https://github.com/gemokay/ICT3113-Assignment1
 
+> **Status 6 Oct, branch `alvin/continue`:** the team's step-by-step guide to everything left is in
+> `docs/REMAINING_WORK.pdf` (source `docs/remaining_work.html`). Changes on this branch:
+> - **JMeter drain fix:** the plan now pauses after the last arrival. Without it, JMeter cut off in-flight requests at the end of every run and logged them as errors (3–4 per 1-minute test run).
+> - **Run tagging:** the service logs an `X-Run-ID` header, so `run_matrix.sh` tags every run without a restart.
+> - **Stress test:** scripted, in `jmeter/run_stress.sh` and `tools/analyze_stress.py`.
+> - **Labelling page:** `golden/labeller.html`.
+> - **κ saved:** `golden/agreement.json`.
+> - **Docs drafted:** workload model, requirements and prediction record, for M2/M3/M5 sign-off.
+> - **Checks and slides:** `tools/requirements_check.py` and the deck generator `deck/build_deck.py`.
+
 A CPU-only, on-premise complaint triage service. `POST /tickets` classifies a
 complaint narrative into one of seven categories using a local Ollama model;
 `GET /search` and `GET /stats` expose what has been stored.
@@ -269,12 +279,12 @@ authoritative check.
 
 ```bash
 cd jmeter
-./run_matrix.sh <service-host> llama3.2:1b "0.25 0.5 1.0 2.0"
+./run_matrix.sh <service-host> llama3.2:1b      # rates default to 0.0167 0.0333 0.0667 (peak, surge, 2x surge)
 ```
 
-Three runs per rate, 10 minutes each, 120 s cooldown between. Rates come from
-**your workload model**, not from that example — include at least one above your
-predicted peak so the curve shows where it bends.
+- Three runs per rate, 10 minutes each, then a 120 s drain with no new arrivals.
+- The rates come from `docs/workload_model.md`, and searches run at 3× the ticket rate.
+- Every request carries `X-Run-ID=<model>_rate<R>_run<N>`, so `reconcile.py --run-id` separates runs **without restarting the service**.
 
 ### After every run
 
