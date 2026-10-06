@@ -1,0 +1,30 @@
+{
+  "annual_tickets": 141138,
+  "weekly_mean": 2704.8,
+  "daily_mean": 386.7,
+  "mean_per_hour": 16.11,
+  "mean_per_s": 0.00448,
+  "peak_day": 520.4,
+  "quiet_day": 162.3,
+  "peak_hour": 54.6,
+  "offpeak_hour": 3.48,
+  "peak_over_mean": 3.39,
+  "peak_over_offpeak": 15.7,
+  "design_peak_per_min": 1.0,
+  "design_peak_per_s": 0.0167,
+  "surge_per_min": 2.0,
+  "surge_per_s": 0.0333,
+  "agents": 22.6,
+  "peak_searches_per_min": 2.73,
+  "search_ratio": 3,
+  "misroute_hours_per_pct": 117.6,
+  "misroute_hours_at_15pct": 1764.0,
+  "length_chars": {
+    "n": 1000,
+    "min": 202,
+    "p50": 778,
+    "p95": 1759,
+    "max": 1998,
+    "mean": 873
+  }
+}

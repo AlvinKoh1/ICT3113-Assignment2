@@ -11,10 +11,10 @@ set -euo pipefail
 
 HOST="${1:?usage: run_matrix.sh <service-host> <model-tag> [rates]}"
 MODEL="${2:?model tag, e.g. llama3.2:1b -- must already be set as OLLAMA_MODEL on the service}"
-RATES="${3:-0.25 0.5 1.0 2.0}"
+RATES="${3:-0.0167 0.0333 0.0667}"   # peak, surge, 2x surge (docs/requirements.md)
 
 DURATION_MIN="${DURATION_MIN:-10}"
-SEARCH_RATIO="${SEARCH_RATIO:-0.2}"   # search rate as a fraction of ticket rate
+SEARCH_RATIO="${SEARCH_RATIO:-3}"     # searches per ticket at peak (docs/workload_model.md §4)
 RUNS="${RUNS:-3}"
 # Seconds with no new arrivals at the end of each run so in-flight requests
 # finish instead of being cut off (JMeter closes open sockets when the schedule

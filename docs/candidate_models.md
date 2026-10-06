@@ -53,8 +53,23 @@ quantisation and size into `docs/model_pins.md`. **The same pins must be reporte
 with your results** — if you re-pull mid-project and the digest changes, your
 earlier numbers no longer describe the model you are recommending.
 
+## Our set (DRAFT: Gabriel (M3) to confirm before the freeze)
+
+We adopt the suggested starting set. It spans **four size classes, a 15× range in parameters**, and all four run on the pinned Ollama 0.5.7 image.
+
+| Model | Size class | Licence (Slide 12) | In the set to demonstrate |
+|---|---|---|---|
+| `qwen2.5:0.5b` | sub-1B | Apache-2.0 | The floor. Is inference still the bottleneck when the model is this small, and how often does it fail to follow the output format (`UNPARSED`)? |
+| `llama3.2:1b` | 1B | Llama 3.2 Community Licence + Acceptable Use Policy | The plausible "ship it" small model. Already smoke-tested on this stack (354 ms warm). |
+| `llama3.2:3b` | 3B | Llama 3.2 Community Licence + Acceptable Use Policy | The mid-size compromise, and the model we stress-test. |
+| `qwen2.5:7b` | 7B | Apache-2.0 | The accuracy ceiling on CPU: what the client gives up by going small. Its capacity is the lower bound on throughput. |
+
 ## Justification for our set
 
-<Write 3–5 sentences. Cover: why these size classes, why these families, what
-each candidate is in the set to *demonstrate*, and what you deliberately left
-out and why.>
+- **Shape of the curve.** The four sizes give the accuracy/latency curve a shape rather than a point. If accuracy rises steeply from 0.5B to 3B and flattens at 7B, the client should buy a mid-size model. If it keeps rising, the client is paying in latency for every point of accuracy.
+- **Size against family.** Two families, each at two sizes, separate the effect of size from the effect of family: Qwen 0.5B vs 7B, Llama 1B vs 3B.
+- **Deployable licences.** All four permit commercial on-premise use. Apache-2.0 has no conditions. The Llama licence applies only above 700 M monthly users, and needs the "Built with Llama" attribution on Slide 12.
+- **Deliberately left out:**
+  - **Qwen2.5-3B and Qwen2.5-72B**, which ship under Qwen's *research / non-commercial* licences. However well they scored, the client could not deploy them.
+  - **Models of 13B and above.** At roughly 2× the 7B prompt-evaluation cost on the same 4-core limit, they would fail R1 before any queueing.
+  - **Gemma 3**, which needs a newer Ollama than the pinned 0.5.7, and re-pinning the engine is not worth it for a fifth point.
