@@ -46,6 +46,17 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _run_id(request: Request | None) -> str:
+    """Run tag for the log line: the load generator's X-Run-ID header if sent,
+    else the RUN_ID env var. Lets every JMeter run carry its own tag without a
+    service restart (a restart via `make reset` would delete the log)."""
+    if request is not None:
+        hdr = request.headers.get("X-Run-ID")
+        if hdr:
+            return hdr
+    return config.RUN_ID
+
+
 @app.post("/tickets")
 def create_ticket(
     ticket: TicketIn,
@@ -72,6 +83,7 @@ def create_ticket(
         "row_id": ticket.row_id,
         "narrative_chars": len(ticket.narrative),
         "client": request.client.host if request.client else None,
+        "run_id": _run_id(request),
     }
 
     try:
@@ -137,6 +149,7 @@ def search_tickets(
         "ts": _now_iso(),
         "request_id": request_id,
         "endpoint": "GET /search",
+        "run_id": _run_id(request),
         "status": 200,
         "latency_ms": round(latency_ms, 2),
         "query": q,
@@ -153,7 +166,7 @@ def search_tickets(
 
 
 @app.get("/stats")
-def get_stats():
+def get_stats(request: Request):
     """Counts of stored tickets by category."""
     request_id = str(uuid.uuid4())
     t0 = time.perf_counter()
@@ -164,6 +177,7 @@ def get_stats():
         "ts": _now_iso(),
         "request_id": request_id,
         "endpoint": "GET /stats",
+        "run_id": _run_id(request),
         "status": 200,
         "latency_ms": round(latency_ms, 2),
         "total": payload["total"],

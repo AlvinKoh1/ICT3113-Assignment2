@@ -16,6 +16,10 @@ RATES="${3:-0.25 0.5 1.0 2.0}"
 DURATION_MIN="${DURATION_MIN:-10}"
 SEARCH_RATIO="${SEARCH_RATIO:-0.2}"   # search rate as a fraction of ticket rate
 RUNS="${RUNS:-3}"
+# Seconds with no new arrivals at the end of each run so in-flight requests
+# finish instead of being cut off (JMeter closes open sockets when the schedule
+# ends, which shows up as fake errors). Doubles as the cooldown between runs.
+DRAIN_SEC="${DRAIN_SEC:-120}"
 PORT="${PORT:-8000}"
 
 SAFE_MODEL="${MODEL//[:\/]/_}"
@@ -46,23 +50,22 @@ for RATE in $RATES; do
     rm -f "$JTL"
 
     echo "=== $TAG ==="
-    # A fresh RUN_ID per run lets reconcile.py separate this run's service-log
-    # lines from every other run in the same file.
-    echo "  (set RUN_ID=$TAG on the service before this run, or filter by time)"
+    # The plan sends X-Run-ID=$TAG on every request and the service writes it
+    # into each log line, so `reconcile.py --run-id $TAG` separates this run
+    # from every other run in the same log. No service restart needed.
 
     jmeter -n -t triage_load_test.jmx \
       -Jhost="$HOST" -Jport="$PORT" \
       -JticketRate="$RATE" -JsearchRate="$SEARCH_RATE" \
       -JdurationMin="$DURATION_MIN" \
-      -Jseed="$RUN" \
+      -Jseed="$RUN" -JrunId="$TAG" -JdrainSec="$DRAIN_SEC" \
       -Jjtl="$JTL" \
       -j "$LOG"
 
     echo "  -> $JTL"
-    # Let queues drain and the CPU settle so run N+1 does not inherit run N's
-    # backlog. Without this the three runs are not independent.
-    echo "  cooling down 120s..."
-    sleep 120
+    # Queues drained during the plan's pause(); a short settle on top so run
+    # N+1 does not inherit run N's backlog.
+    sleep 10
   done
 
   echo

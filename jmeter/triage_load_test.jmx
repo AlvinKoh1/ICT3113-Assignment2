@@ -82,12 +82,16 @@
             <stringProp name="Header.name">Connection</stringProp>
             <stringProp name="Header.value">close</stringProp>
           </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">X-Run-ID</stringProp>
+            <stringProp name="Header.value">${__P(runId,adhoc)}</stringProp>
+          </elementProp>
         </collectionProp>
       </HeaderManager>
       <hashTree/>
 
       <OpenModelThreadGroup guiclass="OpenModelThreadGroupGui" testclass="OpenModelThreadGroup" testname="TG-Tickets (open model)" enabled="true">
-        <stringProp name="OpenModelThreadGroup.schedule">rate(${ticketRate}/sec) random_arrivals(${durationMin} min)</stringProp>
+        <stringProp name="OpenModelThreadGroup.schedule">rate(${ticketRate}/sec) random_arrivals(${durationMin} min) pause(${__P(drainSec,620)} sec)</stringProp>
         <stringProp name="OpenModelThreadGroup.random_seed">${seed}</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="org.apache.jmeter.control.LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -142,7 +146,7 @@
       </hashTree>
 
       <OpenModelThreadGroup guiclass="OpenModelThreadGroupGui" testclass="OpenModelThreadGroup" testname="TG-Search (open model)" enabled="true">
-        <stringProp name="OpenModelThreadGroup.schedule">rate(${searchRate}/sec) random_arrivals(${durationMin} min)</stringProp>
+        <stringProp name="OpenModelThreadGroup.schedule">rate(${searchRate}/sec) random_arrivals(${durationMin} min) pause(${__P(drainSec,620)} sec)</stringProp>
         <stringProp name="OpenModelThreadGroup.random_seed">${seed}</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="org.apache.jmeter.control.LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
