@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT3113 Assignment 1 - Comprehensive Project Plan</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .badge { @apply px-2.5 py-0.5 rounded-full text-xs font-semibold; }
+    .card { @apply bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm; }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] min-h-screen p-4 sm:p-8 md:p-12 antialiased font-sans leading-relaxed">
+  <div class="max-w-5xl mx-auto space-y-10">
+
+    <!-- Document Header -->
+    <header class="card border-l-4 border-l-blue-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div class="space-y-1">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-500 border border-blue-500/20">SIT Internal • ICT3113</span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500 border border-amber-500/20">15% Coursework</span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">5-Person Team</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-2 text-[var(--foreground)]">
+          Assignment 1: Performance Requirements & Testing
+        </h1>
+        <p class="text-sm text-[var(--muted-foreground)]">
+          Comprehensive Project Execution Plan (PEP) & Task Ownership Specification
+        </p>
+      </div>
+
+      <div class="bg-[var(--sidebar)] border border-[var(--border)] rounded-xl p-4 text-xs space-y-1 min-w-[240px]">
+        <div class="flex justify-between"><span class="text-[var(--muted-foreground)]">Submission:</span> <strong class="text-red-500 font-mono">Fri 9 Oct 2026, 23:59</strong></div>
+        <div class="flex justify-between"><span class="text-[var(--muted-foreground)]">Weightage:</span> <span>15% of Final Mark</span></div>
+        <div class="flex justify-between"><span class="text-[var(--muted-foreground)]">Deliverable:</span> <span>Max 12 Slides (.pptx) + Zip</span></div>
+      </div>
+    </header>
+
+    <div class="card border-l-4 border-l-red-500 text-xs space-y-1">
+      <strong>Status update, Tue 6 Oct 2026.</strong> The freeze gate has not happened yet: both label sheets are still empty.
+      The step-by-step plan for what is left is <code>docs/REMAINING_WORK.pdf</code> in the repo. The numbers in Subtasks 2.3 and 3.3 below
+      have been updated to match <code>docs/requirements.md</code> and <code>docs/candidate_models.md</code>. The original
+      placeholders (p95 &lt; 3 s at 1.5 req/s, 3,000 tickets/h, mistral:7b) did not follow from the workload model.
+    </div>
+
+    <!-- Quick Jump Navigation -->
+    <nav class="flex flex-wrap gap-2 text-xs border-b border-[var(--border)] pb-3">
+      <a href="#gates" class="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-blue-500 transition-colors">1. Non-Negotiable Gates</a>
+      <a href="#raci" class="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-blue-500 transition-colors">2. Rebalanced RACI Matrix</a>
+      <a href="#subtasks" class="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-blue-500 transition-colors">3. Member Subtasks</a>
+      <a href="#timeline" class="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-blue-500 transition-colors">4. 6-Week Roadmap</a>
+      <a href="#slides" class="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-blue-500 transition-colors">5. 12-Slide Map</a>
+      <a href="#checklist" class="px-3 py-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-blue-500 transition-colors">6. Pre-Submission Audit</a>
+    </nav>
+
+    <!-- Section 1: Non-Negotiable Grading Gates -->
+    <section id="gates" class="space-y-4">
+      <h2 class="text-xl font-bold flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center text-sm font-extrabold">1</span>
+        Non-Negotiable Academic & Grading Gates
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="card border-red-500/30 bg-red-500/5 space-y-2">
+          <div class="flex items-center gap-2 text-red-500 font-bold text-sm">
+            <span>🔒 Gate 1: Git Pre-Benchmark Freeze</span>
+          </div>
+          <p class="text-xs text-[var(--foreground)]">
+            The Golden Test Set, Labelling Protocol, Independent Label Sheets, Agreement Statistic, and Prediction Record 
+            <strong>must be committed to GitHub before any benchmark runs appear in your logs</strong>. Commit history is verified against test timestamps.
+          </p>
+        </div>
+
+        <div class="card border-amber-500/30 bg-amber-500/5 space-y-2">
+          <div class="flex items-center gap-2 text-amber-500 font-bold text-sm">
+            <span>💻 Gate 2: Two-Machine Isolation</span>
+          </div>
+          <p class="text-xs text-[var(--foreground)]">
+            Machine A (SUT + Docker + Ollama on CPU) and Machine B (Apache JMeter Load Generator) <strong>must be separate physical/networked hosts</strong>. 
+            A co-hosted load generator steals CPU from the service and invalidates all latency measurements.
+          </p>
+        </div>
+
+        <div class="card border-purple-500/30 bg-purple-500/5 space-y-2">
+          <div class="flex items-center gap-2 text-purple-500 font-bold text-sm">
+            <span>🔄 Gate 3: Open-Loop Load Generation Only</span>
+          </div>
+          <p class="text-xs text-[var(--foreground)]">
+            Traffic must be generated open-loop at controlled arrival rates via JMeter's <strong>Open Model Thread Group</strong> or <strong>Precise Throughput Timer</strong>. 
+            Closed-loop tests self-throttle and hide queue buildup; results from closed-loop tests are rejected.
+          </p>
+        </div>
+
+        <div class="card border-blue-500/30 bg-blue-500/5 space-y-2">
+          <div class="flex items-center gap-2 text-blue-500 font-bold text-sm">
+            <span>📊 Gate 4: 100% Reconciled Log Audit Trail</span>
+          </div>
+          <p class="text-xs text-[var(--foreground)]">
+            Every p50, p95, and p99 latency figure on Slide 9 must directly reconcile with the raw JMeter <code class="bg-[var(--sidebar)] px-1 rounded">.jtl</code> files 
+            and internal Docker service logs. Fabricated or untraceable numbers trigger an academic integrity inquiry.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Rebalanced RACI Matrix -->
+    <section id="raci" class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <h2 class="text-xl font-bold flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center text-sm font-extrabold">2</span>
+          Rebalanced RACI Ownership Matrix
+        </h2>
+        <span class="text-xs text-[var(--muted-foreground)]">Rebalanced: M2 pairs with M3 on labeling; M4 focuses on JMeter</span>
+      </div>
+
+      <div class="card overflow-x-auto p-0">
+        <table class="w-full text-xs text-left border-collapse">
+          <thead class="bg-[var(--sidebar)] border-b border-[var(--border)] text-[var(--muted-foreground)]">
+            <tr>
+              <th class="p-3">Phase / Deliverable Step</th>
+              <th class="p-3 text-center">M1 Irfan<br><span class="font-normal opacity-75">System</span></th>
+              <th class="p-3 text-center">M2 Alvin<br><span class="font-normal opacity-75">Workload</span></th>
+              <th class="p-3 text-center">M3 Gabriel<br><span class="font-normal opacity-75">Data</span></th>
+              <th class="p-3 text-center">M4 Uwais<br><span class="font-normal opacity-75">JMeter</span></th>
+              <th class="p-3 text-center">M5 Muhaimeen<br><span class="font-normal opacity-75">Defense</span></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]">
+            <tr>
+              <td class="p-3 font-semibold">Step 1: Golden Test Set & Protocol</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-blue-500 font-bold">R (Annotator B)</td>
+              <td class="p-3 text-center text-emerald-500 font-bold">A / R (Protocol & A)</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 2: Baseline Docker Service</td>
+              <td class="p-3 text-center text-blue-500 font-bold">A / R (FastAPI/Logs)</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 3: Workload Model Formulation</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-blue-500 font-bold">A / R (CFPB Stats)</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 4: Candidate Models & Predictions</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-emerald-500 font-bold">R (Model Picks)</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-purple-500 font-bold">A / R (Predictions)</td>
+            </tr>
+            <tr class="bg-red-500/5">
+              <td class="p-3 font-bold text-red-500">HARD GIT COMMIT GATE</td>
+              <td class="p-3 text-center text-red-500 font-bold">A (Admin)</td>
+              <td class="p-3 text-center text-red-500">R</td>
+              <td class="p-3 text-center text-red-500">R</td>
+              <td class="p-3 text-center text-red-500">R</td>
+              <td class="p-3 text-center text-red-500">R</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 5A: Open-Loop Load Tests (3 Runs)</td>
+              <td class="p-3 text-center text-blue-500 font-bold">R (Host SUT)</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-amber-500 font-bold">A / R (JMeter Run)</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 5B: Accuracy Tests & Confusion Matrix</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-purple-500 font-bold">A / R (Python Script)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 5C: Stress Testing (Breaking Point)</td>
+              <td class="p-3 text-center text-blue-500 font-bold">R (Telemetry)</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-amber-500 font-bold">A / R (Ramp-up)</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Log Reconciliation Audit</td>
+              <td class="p-3 text-center text-blue-500 font-bold">A / R (Service Logs)</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-gray-400">I</td>
+              <td class="p-3 text-center text-amber-500 font-bold">R (.jtl parser)</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Step 6: Defense & Client Recommendation</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-gray-400">C</td>
+              <td class="p-3 text-center text-purple-500 font-bold">A / R (Deck Lead)</td>
+            </tr>
+            <tr class="bg-[var(--sidebar)] font-semibold">
+              <td class="p-3">Slide Deck Ownership (12 Slides)</td>
+              <td class="p-3 text-center text-blue-500">Slides 2, 7</td>
+              <td class="p-3 text-center text-purple-500">Slides 3, 4</td>
+              <td class="p-3 text-center text-emerald-500">Slides 5, 6</td>
+              <td class="p-3 text-center text-amber-500">Slides 8, 9</td>
+              <td class="p-3 text-center text-rose-500">Slides 10, 11</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="p-3 text-[11px] text-[var(--muted-foreground)] bg-[var(--sidebar)] border-t border-[var(--border)] flex justify-between">
+          <span><strong>A</strong> = Accountable (Final Sign-off) • <strong>R</strong> = Responsible (Does the work)</span>
+          <span><strong>C</strong> = Consulted • <strong>I</strong> = Informed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Member Subtasks -->
+    <section id="subtasks" class="space-y-6">
+      <h2 class="text-xl font-bold flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center text-sm font-extrabold">3</span>
+        Granular Subtasks & Specifications by Member
+      </h2>
+
+      <!-- Member 1 -->
+      <div class="card space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[var(--border)] pb-2 gap-1">
+          <div>
+            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-500/10 text-blue-500">Member 1 · Irfan</span>
+            <h3 class="text-base font-bold inline-block ml-2">System Architecture & SUT Lead</h3>
+          </div>
+          <span class="text-xs text-blue-500 font-semibold">Slides 2 & 7 • Machine A Owner</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 1.1: Web Service API (FastAPI)</h4>
+            <p class="text-[var(--muted-foreground)]">Build synchronous REST service:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li><code class="bg-[var(--card)] px-1">POST /tickets</code>: Classifies single narrative via Ollama, stores to DB, returns category.</li>
+              <li><code class="bg-[var(--card)] px-1">GET /search?q=...</code>: Text query matching stored tickets.</li>
+              <li><code class="bg-[var(--card)] px-1">GET /stats</code>: Ticket counts per category.</li>
+              <li><span class="text-amber-500 font-semibold">Constraint:</span> No Celery, Redis queue, or cache. Baseline must be synchronous.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 1.2: Containerization (`docker-compose.yml`)</h4>
+            <p class="text-[var(--muted-foreground)]">Orchestrate 2 containers on a shared bridge network:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Container 1: Web Service (Python 3.11 / FastAPI).</li>
+              <li>Container 2: Ollama CPU backend.</li>
+              <li>Verify service rebuilds cleanly with <code class="bg-[var(--card)] px-1">docker compose up --build</code>.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 1.3: Audit-Proof Structured Logging</h4>
+            <p class="text-[var(--muted-foreground)]">Log every HTTP request to file/stdout with granular timestamps:</p>
+            <code class="block bg-[var(--card)] p-1.5 rounded text-[11px] font-mono mt-1">
+              {"ts_iso": "...", "req_id": "...", "method": "POST", "endpoint": "/tickets", "model": "...", "inference_ms": 1420, "status": 200}
+            </code>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 1.4: Host SUT on Machine A</h4>
+            <p class="text-[var(--muted-foreground)]">Document hardware profile for Slide 7:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Exact CPU model, physical cores, logical threads.</li>
+              <li>RAM speed, capacity, OS version, Docker version.</li>
+              <li>Document why tests represent client commodity CPU environment.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="card space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[var(--border)] pb-2 gap-1">
+          <div>
+            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/10 text-purple-500">Member 2 · Alvin</span>
+            <h3 class="text-base font-bold inline-block ml-2">Workload Analyst & Annotator B</h3>
+          </div>
+          <span class="text-xs text-purple-500 font-semibold">Slides 3 & 4 • Domain & QA</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 2.1: CFPB Workload Modeling</h4>
+            <p class="text-[var(--muted-foreground)]">Analyze public CFPB dataset:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Estimate daily/hourly complaint volume and search queries.</li>
+              <li>Calculate peak vs non-peak arrival multipliers (done: peak ×3.4 over mean, ×16 over off-peak).</li>
+              <li>Compute narrative length character/token distributions (p50, p90, max).</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 2.2: Independent Annotation (Annotator B)</h4>
+            <p class="text-[var(--muted-foreground)]">Ensure ground truth rigour:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Receive 150–200 ticket sample from team's assigned 1,000 rows.</li>
+              <li>Independently label all tickets using Member 3's protocol.</li>
+              <li>Do NOT confer with Member 3 until both sets are completed.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1 md:col-span-2">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 2.3: Quantitative SLA Formulation</h4>
+            <p class="text-[var(--muted-foreground)]">Define testable requirements with specific load conditions:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li><strong>Latency SLA (R1):</strong> <code class="bg-[var(--card)] px-1">POST /tickets</code> p95 ≤ 15 s and p99 ≤ 30 s at the peak of 0.0167 tickets/s (1/min) with searches at 3×; R2: search p95 ≤ 1 s under the same load.</li>
+              <li><strong>Throughput SLA (R3):</strong> at least 120 tickets/hour sustained (2× peak), achieved ≥ 95 % of offered, no queue build-up.</li>
+              <li><strong>Accuracy SLA (R4/R5):</strong> at least 85 % overall on the golden set and at least 70 % recall in every category. R6: errors &lt; 1 %, unparsed &lt; 2 %.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="card space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[var(--border)] pb-2 gap-1">
+          <div>
+            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500/10 text-emerald-500">Member 3 · Gabriel</span>
+            <h3 class="text-base font-bold inline-block ml-2">Data Integrity & Protocol Lead</h3>
+          </div>
+          <span class="text-xs text-emerald-500 font-semibold">Slides 5 & 6 • NLP Specialist</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 3.1: 7-Category Protocol Document</h4>
+            <p class="text-[var(--muted-foreground)]">Author comprehensive protocol:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Define the 7 categories (*Credit reporting, Debt collection, Mortgage, Credit card, Bank account, Consumer loan, Money transfer*).</li>
+              <li>Establish rules for ambiguous narratives and multi-product complaints.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 3.2: Annotator A & Cohen's Kappa</h4>
+            <p class="text-[var(--muted-foreground)]">Calculate inter-annotator agreement:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Independently label the 150–200 tickets (Annotator A).</li>
+              <li>Compute Cohen's Kappa: <code class="bg-[var(--card)] px-1">&kappa; = (p_o - p_e) / (1 - p_e)</code>.</li>
+              <li>Adjudicate 100% of disagreements with Member 2 and document resolutions.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1 md:col-span-2">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 3.3: Candidate Model Selection (Pinned Digests)</h4>
+            <p class="text-[var(--muted-foreground)]">Select 3–5 Ollama models spanning &ge;2 size classes and pin exact digests:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-1 font-mono text-[11px]">
+              <div class="p-2 rounded bg-[var(--card)]">qwen2.5:0.5b<br><span class="text-[10px] text-gray-500">Sub-1B · Apache-2.0</span></div>
+              <div class="p-2 rounded bg-[var(--card)]">llama3.2:1b<br><span class="text-[10px] text-gray-500">1B · Llama 3.2 licence</span></div>
+              <div class="p-2 rounded bg-[var(--card)]">llama3.2:3b<br><span class="text-[10px] text-gray-500">3B · Llama 3.2 licence</span></div>
+              <div class="p-2 rounded bg-[var(--card)]">qwen2.5:7b<br><span class="text-[10px] text-gray-500">7B · Apache-2.0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="card space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[var(--border)] pb-2 gap-1">
+          <div>
+            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-500/10 text-amber-500">Member 4 · Uwais</span>
+            <h3 class="text-base font-bold inline-block ml-2">JMeter Performance & Load Lead</h3>
+          </div>
+          <span class="text-xs text-amber-500 font-semibold">Slides 8 & 9 • Machine B Owner</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 4.1: Machine B & Open-Loop JMeter</h4>
+            <p class="text-[var(--muted-foreground)]">Strictly open-loop setup:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Configure Apache JMeter on dedicated Machine B.</li>
+              <li>Use <strong>Open Model Thread Group</strong> or <strong>Precise Throughput Timer</strong>.</li>
+              <li>Read complaint narratives from team rows using CSV Data Set Config.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 4.2: 3-Run Load Benchmarks</h4>
+            <p class="text-[var(--muted-foreground)]">Rigorous repeatability:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Test each candidate model across 3 arrival rates.</li>
+              <li>Run <strong>3 independent runs per configuration</strong>.</li>
+              <li>Extract p50, p95, p99 latency, throughput, and error rate.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 4.3: Stress Test (System Limit)</h4>
+            <p class="text-[var(--muted-foreground)]">Find the exact collapse point:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Ramp up arrival rate until latency grows without bound or HTTP 5xx errors occur.</li>
+              <li>Identify the exact bottleneck (CPU exhaustion vs socket exhaustion).</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 4.4: Log Reconciliation Script</h4>
+            <p class="text-[var(--muted-foreground)]">Guarantee audit integrity:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Verify that every request in <code class="bg-[var(--card)] px-1">.jtl</code> matches a timestamp in SUT container logs.</li>
+              <li>Automate reconciliation check using Python.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="card space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[var(--border)] pb-2 gap-1">
+          <div>
+            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-rose-500/10 text-rose-500">Member 5 · Muhaimeen</span>
+            <h3 class="text-base font-bold inline-block ml-2">Evaluation & Client Recommendation Lead</h3>
+          </div>
+          <span class="text-xs text-rose-500 font-semibold">Slides 10 & 11 • Analysis & Defense</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 5.1: Formal Prediction Record</h4>
+            <p class="text-[var(--muted-foreground)]">Draft before any benchmarking:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Bottleneck prediction: CPU core saturation during Ollama inference.</li>
+              <li>Quantified accuracy and single-request latency predictions per model.</li>
+              <li>Identify hardest categories to classify and justify why.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 5.2: Automated Accuracy Evaluation</h4>
+            <p class="text-[var(--muted-foreground)]">Golden set evaluation script:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Send golden set through <code class="bg-[var(--card)] px-1">POST /tickets</code> for each model.</li>
+              <li>Generate overall accuracy, per-category accuracy, and Confusion Matrices using `sklearn`.</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-lg bg-[var(--sidebar)] border border-[var(--border)] space-y-1 md:col-span-2">
+            <h4 class="font-bold text-[var(--foreground)]">Subtask 5.3: Discrepancy Analysis & Client Defense</h4>
+            <p class="text-[var(--muted-foreground)]">Synthesize findings and defend recommendation:</p>
+            <ul class="list-disc list-inside text-[var(--muted-foreground)] space-y-0.5">
+              <li>Dissect where predictions were wrong (as required by rubric).</li>
+              <li>Synthesize trade-offs: latency on CPU vs cost of misrouted tickets.</li>
+              <li>Defend recommended model against stated requirements (or defend finding that no model meets all requirements).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Section 4: Timeline -->
+    <section id="timeline" class="space-y-4">
+      <h2 class="text-xl font-bold flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-sm font-extrabold">4</span>
+        6-Week Sprint Timeline & Milestone Gates
+      </h2>
+
+      <div class="card space-y-4">
+        <div class="border-l-2 border-blue-500 pl-4 space-y-1">
+          <div class="flex justify-between text-xs font-bold text-blue-500"><span>WEEK 1 (Sep 7 – 13)</span><span>Setup & Definitions</span></div>
+          <p class="text-xs text-[var(--muted-foreground)]">M1 builds FastAPI service; M3 drafts labelling protocol; M2 models CFPB workload data.</p>
+        </div>
+
+        <div class="border-l-2 border-red-500 pl-4 space-y-1 bg-red-500/5 p-2 rounded-r-lg">
+          <div class="flex justify-between text-xs font-bold text-red-500"><span>WEEK 2 (Sep 14 – 20)</span><span>Labeling & HARD COMMIT GATE</span></div>
+          <p class="text-xs text-[var(--foreground)]">M2 & M3 label golden set; compute Kappa; M5 writes predictions. <strong>Commit to GitHub before any test runs!</strong></p>
+        </div>
+
+        <div class="border-l-2 border-amber-500 pl-4 space-y-1">
+          <div class="flex justify-between text-xs font-bold text-amber-500"><span>WEEKS 3 – 4 (Sep 21 – Oct 4)</span><span>Dual-Machine Testing</span></div>
+          <p class="text-xs text-[var(--muted-foreground)]">M1 & M4 execute 3-run JMeter benchmarks on LAN; M4 runs stress test; M5 runs accuracy evaluations.</p>
+        </div>
+
+        <div class="border-l-2 border-emerald-500 pl-4 space-y-1">
+          <div class="flex justify-between text-xs font-bold text-emerald-500"><span>WEEKS 5 – 6 (Oct 5 – 9)</span><span>Reconciliation, Slides & Submission</span></div>
+          <p class="text-xs text-[var(--muted-foreground)]">All figures reconciled with logs; compile 12-slide presentation; clean docker build test. Due Oct 9, 23:59.</p>
+          <p class="text-xs text-red-500"><strong>Revised (6 Oct):</strong> labelling Tue night → freeze Wed ~11:30 → accuracy Wed 12:00 → load tests Wed 14:00 (≈7.5 h) → stress Thu AM → analysis + deck Thu PM → submit Fri. See docs/REMAINING_WORK.pdf.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 12-Slide Map -->
+    <section id="slides" class="space-y-4">
+      <h2 class="text-xl font-bold flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center text-sm font-extrabold">5</span>
+        Official 12-Slide Deliverable Grid
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-blue-500"><span>Slide 1: Cover Page</span><span>All</span></div>
+          <p class="text-[var(--muted-foreground)]">Names, IDs, project title, GitHub repo link.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-blue-500"><span>Slide 2: Architecture</span><span>M1</span></div>
+          <p class="text-[var(--muted-foreground)]">Service diagram, endpoints, synchronous confirmation.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-purple-500"><span>Slide 3: Workload</span><span>M2</span></div>
+          <p class="text-[var(--muted-foreground)]">CFPB volume, peak multipliers, length distribution.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-purple-500"><span>Slide 4: Requirements</span><span>M2</span></div>
+          <p class="text-[var(--muted-foreground)]">Testable latency (p95), throughput, and accuracy SLAs.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-emerald-500"><span>Slide 5: Candidate Models</span><span>M3</span></div>
+          <p class="text-[var(--muted-foreground)]">3–5 models (&ge;2 sizes) pinned by tag and SHA256 digest.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-emerald-500"><span>Slide 6: Golden Test Set</span><span>M3</span></div>
+          <p class="text-[var(--muted-foreground)]">Protocol summary, Cohen's Kappa, disagreement resolutions.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-blue-500"><span>Slide 7: Test Environment</span><span>M1</span></div>
+          <p class="text-[var(--muted-foreground)]">Machine A & B specs, separate host proof, scaling limits.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-amber-500"><span>Slide 8: Test Playbook</span><span>M4</span></div>
+          <p class="text-[var(--muted-foreground)]">Open-loop JMeter setup, arrival schedule, repeatability steps.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-amber-500"><span>Slide 9: Load & Stress Results</span><span>M4</span></div>
+          <p class="text-[var(--muted-foreground)]">p50/p95/p99 tables across 3 runs; stress test limits.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-rose-500"><span>Slide 10: Accuracy Results</span><span>M5</span></div>
+          <p class="text-[var(--muted-foreground)]">Per-model accuracy on golden set, confusion matrix highlights.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-rose-500"><span>Slide 11: Predictions & Defense</span><span>M5</span></div>
+          <p class="text-[var(--muted-foreground)]">Predictions vs outcomes; client recommendation defense.</p>
+        </div>
+        <div class="card space-y-1 bg-[var(--sidebar)]">
+          <div class="flex justify-between font-bold text-blue-500"><span>Slide 12: References</span><span>All</span></div>
+          <p class="text-[var(--muted-foreground)]">CFPB citations, Ollama, model licenses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Audit Checklist -->
+    <section id="checklist" class="space-y-4">
+      <h2 class="text-xl font-bold flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-sm font-extrabold">6</span>
+        Pre-Submission Audit Checklist
+      </h2>
+
+      <div class="card space-y-2 text-xs">
+        <label class="flex items-center gap-2.5 p-2 rounded hover:bg-[var(--sidebar)] cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded text-blue-500">
+          <span><strong>Git Commit Check:</strong> Golden set & predictions committed <em>before</em> earliest JMeter timestamp.</span>
+        </label>
+        <label class="flex items-center gap-2.5 p-2 rounded hover:bg-[var(--sidebar)] cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded text-blue-500">
+          <span><strong>Log Reconciliation:</strong> Every p50/p95/p99 cell on Slide 9 traces to raw <code class="bg-[var(--card)] px-1">.jtl</code> and container logs.</span>
+        </label>
+        <label class="flex items-center gap-2.5 p-2 rounded hover:bg-[var(--sidebar)] cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded text-blue-500">
+          <span><strong>Slide Count Limit:</strong> PowerPoint deck contains <strong>strictly 12 slides or fewer</strong>.</span>
+        </label>
+        <label class="flex items-center gap-2.5 p-2 rounded hover:bg-[var(--sidebar)] cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded text-blue-500">
+          <span><strong>Clean Docker Build Test:</strong> Verified with <code class="bg-[var(--card)] px-1">docker compose up --build</code> on clean machine.</span>
+        </label>
+        <label class="flex items-center gap-2.5 p-2 rounded hover:bg-[var(--sidebar)] cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded text-blue-500">
+          <span><strong>Zip Bundle Ready:</strong> Includes <code class="bg-[var(--card)] px-1">GroupXX.pptx</code> + golden set CSV + prediction record + protocol & kappa sheets.</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-[var(--muted-foreground)] pt-6 border-t border-[var(--border)]">
+      SIT ICT3113 Tri 1, 2026–27 • Assignment 1 Performance Optimisation & Design
+    </footer>
+
+  </div>
+</body>
+</html>

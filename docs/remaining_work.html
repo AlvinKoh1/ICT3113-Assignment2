@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>P2-9 Finish Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: single reading column, A4 print-first; one section per person, each a numbered sequence of commands. */
+:root {
+  --paper: #fbfbf8;
+  --ink: #1b2430;
+  --ink-soft: #4f5b69;
+  --rule: #d8dde3;
+  --tint: #eef2f6;
+  --accent: #1f5c7a;     /* steel blue: the course/brief colour */
+  --block: #a1361f;      /* blocked / gate */
+  --done: #2c6e49;
+  --warn: #8a5a00;
+  --code-bg: #f1f3f5;
+  --f-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #13181e; --ink: #e5e9ee; --ink-soft: #a5b0bc; --rule: #2d3640; --tint: #1b232c;
+  --accent: #7cb7d6; --block: #f08a6f; --done: #7cc79a; --warn: #e2b54f; --code-bg: #1c242d; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #13181e; --ink: #e5e9ee; --ink-soft: #a5b0bc; --rule: #2d3640; --tint: #1b232c;
+  --accent: #7cb7d6; --block: #f08a6f; --done: #7cc79a; --warn: #e2b54f; --code-bg: #1c242d; color-scheme: dark; }
+@media print { :root, :root[data-theme="dark"] {
+  --paper: #ffffff; --ink: #1b2430; --ink-soft: #4f5b69; --rule: #d8dde3; --tint: #eef2f6;
+  --accent: #1f5c7a; --block: #a1361f; --done: #2c6e49; --warn: #8a5a00; --code-bg: #f1f3f5; color-scheme: light; } }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 15px/1.6 var(--f-body); }
+.page { max-width: 46rem; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; }
+h1, h2, h3 { font-family: var(--f-display); color: var(--ink); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: 2.1rem; font-weight: 700; }
+h2 { font-size: 1.45rem; font-weight: 700; padding-top: 6px; }
+h3 { font-size: 1.08rem; font-weight: 600; font-family: var(--f-body); }
+p { margin: 0; max-width: 65ch; }
+.stack { display: grid; gap: 14px; }
+section { display: grid; gap: 14px; padding-block: 26px; border-top: 1px solid var(--rule); }
+.eyebrow { font: 600 0.72rem/1 var(--f-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--ink-soft); font-size: 0.88rem; }
+.meta b { color: var(--ink); font-weight: 600; }
+.deadline { color: var(--block); }
+code, pre, .mono { font-family: var(--f-mono); font-size: 0.84em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+pre { background: var(--code-bg); margin: 0; padding: 10px 12px; border-radius: 4px; overflow-x: auto; line-height: 1.5; white-space: pre; }
+pre code { background: none; padding: 0; font-size: inherit; }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; vertical-align: top; padding: 7px 8px; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; color: var(--ink-soft); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: 2px solid var(--ink); }
+td.num { text-align: right; white-space: nowrap; }
+.bar { height: 6px; background: var(--tint); border-radius: 3px; min-width: 70px; margin-top: 7px; }
+.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.tag { display: inline-block; font: 600 0.7rem/1 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase;
+       padding: 4px 7px; border-radius: 3px; border: 1px solid currentColor; white-space: nowrap; }
+.tag.block { color: var(--block); } .tag.done { color: var(--done); } .tag.warn { color: var(--warn); } .tag.go { color: var(--accent); }
+.callout { border-left: 3px solid var(--block); padding: 10px 14px; background: var(--tint); display: grid; gap: 6px; }
+.callout.info { border-left-color: var(--accent); }
+ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 14px; }
+ol.steps > li { counter-increment: s; display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0 10px; break-inside: avoid; }
+ol.steps > li::before { content: counter(s); font: 700 0.95rem/1.6 var(--f-display); color: var(--accent);
+       border: 1.5px solid var(--accent); border-radius: 50%; width: 1.7rem; height: 1.7rem; display: grid; place-items: center; }
+ol.steps > li > div { display: grid; gap: 6px; min-width: 0; }
+.who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.who .role { color: var(--ink-soft); font-size: 0.9rem; }
+.needs { font-size: 0.85rem; color: var(--ink-soft); }
+.needs b { color: var(--block); font-weight: 600; }
+ul.tight { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
+.flow { display: grid; gap: 8px; font-size: 0.88rem; }
+.flow .row { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); gap: 10px; align-items: start; }
+.flow .when { font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.flow .lane { border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; display: block; min-width: 0; }
+.flow .lane.gate { border-color: var(--block); }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.small { font-size: 0.82rem; color: var(--ink-soft); }
+@media (max-width: 480px) {
+  h1 { font-size: 1.7rem; }
+  .flow .row { grid-template-columns: 1fr; gap: 4px; }
+}
+@page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+@media print {
+  body { font-size: 10.4pt; }
+  .page { max-width: none; padding: 0; }
+  section { padding-block: 14px; }
+  section.member { break-before: page; }
+  pre, .callout, table, .flow .row { break-inside: avoid; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; overflow: visible; }
+  h2, h3 { break-after: avoid; }
+  section.order { break-before: page; }
+  a { color: var(--ink); text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+<header class="stack">
+  <div class="eyebrow">ICT3113 Assignment 1 · Group P2-9 · rows 9000–9999</div>
+  <h1>What's left, who does it, and in what order</h1>
+  <div class="meta">
+    <span>Status as of <b>Tue 6 Oct 2026, evening</b></span>
+    <span>Repo <b>github.com/gemokay/ICT3113-Assignment1</b></span>
+    <span class="deadline">Submission <b class="deadline">Fri 9 Oct, 23:59</b></span>
+  </div>
+  <p>Irfan's repo is the base. Alvin's work has been merged into it on the branch <code>alvin/continue</code>. Read your own section and do the steps in order. Where a step says <b>Needs</b>, wait until that person tells the group chat it's done.</p>
+</header>
+
+<section>
+  <h2>Where each person stands</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Who</th><th>Role</th><th style="width:7.5rem">Done</th><th>Still to do</th></tr></thead>
+    <tbody>
+      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~70 %<div class="bar"><i style="width:70%"></i></div></td><td>Merge the branch, set up Machine A (models, pins, test-environment table), host every test, make the freeze commit</td></tr>
+      <tr><td><b>Alvin</b> M2</td><td>Workload, Annotator B</td><td>~55 %<div class="bar"><i style="width:55%"></i></div></td><td>Label all 175 tickets (B), settle disagreements with Gabriel, sign off the workload model and requirements</td></tr>
+      <tr><td><b>Gabriel</b> M3</td><td>Protocol, Annotator A</td><td>~25 %<div class="bar"><i style="width:25%"></i></div></td><td>Sign off the protocol, label all 175 tickets (A), run κ, lead adjudication, build the golden set, confirm the 4 models</td></tr>
+      <tr><td><b>Uwais</b> M4</td><td>JMeter, Machine B</td><td>~30 %<div class="bar"><i style="width:30%"></i></div></td><td>Set up Machine B, run 36 load runs and the stress test, reconcile, analyse, write the Slide 9 interpretation</td></tr>
+      <tr><td><b>Muhaimeen</b> M5</td><td>Evaluation, deck lead</td><td>~25 %<div class="bar"><i style="width:25%"></i></div></td><td>Own the prediction record, run accuracy tests, explain every wrong prediction, write the recommendation, build the deck and the submission</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">The percentages reflect what is in the repo now, much of it scaffolded tooling and drafts. Drafts only count once their owner signs them off.</p>
+</section>
+
+<section class="order">
+  <h2>The order things must happen in</h2>
+  <div class="callout">
+    <p><b>Two rules decide the whole schedule.</b></p>
+    <ul class="tight">
+      <li><b>Nothing is benchmarked before the freeze commit.</b> The golden set and the prediction record must be in git before any model sees a golden ticket and before any JMeter run. The commit history is the evidence, and breaking the order costs the whole measurement component.</li>
+      <li><b>Only one test runs on Machine A at a time.</b> Accuracy, load and stress tests all use Irfan's CPU. Running two at once corrupts both, so the order is accuracy, then load, then stress.</li>
+    </ul>
+  </div>
+  <div class="flow">
+    <div class="row"><div class="when">Tue night</div><div class="lane"><b>Gabriel and Alvin label, in parallel and without talking.</b> Irfan merges the branch and sets up Machine A. Uwais sets up Machine B. Muhaimeen reviews the predictions.</div></div>
+    <div class="row"><div class="when">Wed 10:00</div><div class="lane"><b>Gabriel + Alvin:</b> run κ, settle every disagreement, build the golden set (about 1 h).</div></div>
+    <div class="row"><div class="when">Wed ~11:30</div><div class="lane gate"><b>FREEZE (Irfan).</b> Commit and push the golden set, protocol revisions, prediction record and model pins. Post "FROZEN" plus the commit hash in the group chat.</div></div>
+    <div class="row"><div class="when">Wed 12:00</div><div class="lane"><b>Muhaimeen:</b> accuracy test, 4 models, on Machine A (about 1 h).</div></div>
+    <div class="row"><div class="when">Wed 14:00 →</div><div class="lane"><b>Uwais:</b> load tests, 36 runs × 12 min, about 7.5 h, unattended into the evening. Irfan's PC stays awake and wired.</div></div>
+    <div class="row"><div class="when">Thu morning</div><div class="lane"><b>Uwais:</b> stress test (llama3.2:3b, 3 ladders, about 2.5 h). Then reconcile and analyse.</div></div>
+    <div class="row"><div class="when">Thu afternoon</div><div class="lane"><b>Muhaimeen:</b> compare predictions, requirements check, recommendation, deck. <b>Uwais:</b> Slide 9 text.</div></div>
+    <div class="row"><div class="when">Fri</div><div class="lane"><b>Everyone:</b> read the deck against the brief. Muhaimeen submits <code>Group09.pptx</code> + supporting files well before 23:59.</div></div>
+  </div>
+</section>
+
+<section class="member">
+  <div class="who"><h2>Irfan</h2><span class="role">M1 · System & SUT lead · owns Machine A · Slides 2, 7</span></div>
+  <ol class="steps">
+    <li><div>
+      <h3>Review and merge <code>alvin/continue</code> into main</h3>
+      <p>Changes to your code:</p>
+      <ul class="tight">
+        <li><b>JMeter drain fix:</b> a <code>pause()</code> at the end of both Open Model schedules. Without it, JMeter kills in-flight requests at schedule end and logs them as errors. On a 1-minute test run that was 3–4 fake errors per run, 12–16 %.</li>
+        <li><b>Run tagging:</b> the service logs the <code>X-Run-ID</code> header (falling back to <code>RUN_ID</code>), so <code>run_matrix.sh</code> tags each run with no restart.</li>
+        <li><b><code>agreement.py</code></b> now also writes <code>golden/agreement.json</code>.</li>
+      </ul>
+      <p>Everything else is new files (stress test, labeller, checks, deck builder) or filled-in docs.</p>
+      <pre><code>git fetch origin
+git log --oneline main..origin/alvin/continue
+git checkout main &amp;&amp; git merge origin/alvin/continue &amp;&amp; git push</code></pre>
+      <p class="needs">Do this first: everyone else pulls <code>main</code> after it.</p>
+    </div></li>
+    <li><div>
+      <h3>Bring up Machine A and pull all four models</h3>
+      <pre><code>cp .env.example .env            # OLLAMA_CPUS=4 stays: the predictions assume it
+make reset &amp;&amp; make up MODEL=llama3.2:1b
+for m in qwen2.5:0.5b llama3.2:1b llama3.2:3b qwen2.5:7b; do docker exec triage-ollama ollama pull $m; done
+tools/pin_models.sh qwen2.5:0.5b llama3.2:1b llama3.2:3b qwen2.5:7b    # writes docs/model_pins.md
+make check</code></pre>
+      <p>Machine A needs about 6 GB free RAM for the 7B model. Docker Desktop must give its VM at least 10 GB, or the 8 GB memory limit on Ollama can't be met.</p>
+    </div></li>
+    <li><div>
+      <h3>Fill the M1 table in <code>docs/test_environment.md</code></h3>
+      <p>Fill in the CPU model, cores/threads, RAM, OS, Docker and Ollama versions, and GPU status (none in use; say how you confirmed it). Also add <code>OLLAMA_NUM_PARALLEL</code> from <code>docker logs triage-ollama | grep -i parallel</code>, and the power profile. Slide 7 reads these cells directly.</p>
+    </div></li>
+    <li><div>
+      <h3>Make Machine A reachable and keep it awake</h3>
+      <p>Give Uwais your LAN IP. Allow inbound TCP 8000 through your firewall. Set sleep to "never" and plug in, wired if possible, from Wednesday noon to Thursday afternoon.</p>
+    </div></li>
+    <li><div>
+      <h3>Freeze commit (the gate)</h3>
+      <p class="needs">Needs: <b>Gabriel's golden_set.csv</b> and <b>Muhaimeen's signed prediction record</b>.</p>
+      <pre><code>make freeze
+git add golden/ docs/prediction_record.md docs/model_pins.md docs/candidate_models.md
+git commit -m "Freeze golden test set and prediction record (pre-benchmark)" &amp;&amp; git push</code></pre>
+      <p>Post "FROZEN" and the commit hash in the group chat. No model touches a golden ticket before this message.</p>
+    </div></li>
+    <li><div>
+      <h3>Host the tests: switch models when asked, never reset mid-matrix</h3>
+      <p>Before each model's load matrix:</p>
+      <pre><code>make down &amp;&amp; make up MODEL=&lt;tag&gt;
+python3 tools/warmup.py --base http://localhost:8000     # 3 non-golden tickets, tagged run_id=warmup</code></pre>
+      <p> Don't run <code>make reset</code> between reported runs: it deletes <code>results/logs/requests.jsonl</code>, which is evidence. During each stress ladder, log <code>docker stats --no-stream</code> every 5 s to <code>results/stress/dockerstats_&lt;tag&gt;.txt</code>.</p>
+    </div></li>
+    <li><div>
+      <h3>Commit the service log after each session</h3>
+      <pre><code>git add results/logs/ &amp;&amp; git commit -m "Service logs: &lt;what ran&gt;" &amp;&amp; git push</code></pre>
+    </div></li>
+  </ol>
+</section>
+
+<section class="member">
+  <div class="who"><h2>Alvin</h2><span class="role">M2 · Workload analyst & Annotator B · Slides 3, 4</span></div>
+  <ol class="steps">
+    <li><div>
+      <h3>Label all 175 tickets as Annotator B, alone</h3>
+      <p>Open <code>golden/labeller.html</code> in Chrome or Edge, choose <b>Annotator B</b>, and label with keys <b>1–7</b>. Mark <b>H</b>/<b>L</b> for confidence and write notes on hard calls. Progress autosaves in the browser. When all 175 are done, press <b>Export</b>, which downloads <code>labels_B.csv</code>, and replace <code>golden/labels_B.csv</code> with it.</p>
+      <pre><code>git add golden/labels_B.csv &amp;&amp; git commit -m "Independent labels: Alvin (Annotator B)" &amp;&amp; git push</code></pre>
+      <p>Don't open <code>labels_A.csv</code> or <code>candidates_sourcelabels.csv</code>, and don't discuss tickets with Gabriel until both sheets are pushed.</p>
+    </div></li>
+    <li><div>
+      <h3>Settle every disagreement with Gabriel</h3>
+      <p class="needs">Needs: <b>both sheets pushed</b> and Gabriel's <code>make agree</code>.</p>
+      <p>Fill <code>adjudicated_label</code> and a real <code>resolution_note</code> on every row of <code>golden/disagreements.csv</code>.</p>
+    </div></li>
+    <li><div>
+      <h3>Sign off the workload model and requirements</h3>
+      <p>Read <code>docs/workload_model.md</code> and <code>docs/requirements.md</code>, and change any number you don't agree with before the freeze. The headline figures:</p>
+      <ul class="tight">
+        <li>141,138 tickets a year</li>
+        <li>Peak 55/h, which is 1 ticket/min or 0.0167/s</li>
+        <li>Searches at 3× the ticket rate</li>
+        <li>R1 p95 ≤ 15 s, p99 ≤ 30 s</li>
+        <li>R2 search p95 ≤ 1 s</li>
+        <li>R3 ≥ 120 tickets/h</li>
+        <li>R4 ≥ 85 % overall accuracy</li>
+        <li>R5 ≥ 70 % recall per category</li>
+        <li>R6 errors &lt; 1 %, unparsed &lt; 2 %</li>
+      </ul>
+      <p>The project plan's SLA numbers (1.5 req/s, 3,000/h) were placeholders and don't follow from any workload estimate.</p>
+    </div></li>
+  </ol>
+</section>
+
+<section class="member">
+  <div class="who"><h2>Gabriel</h2><span class="role">M3 · Protocol lead & Annotator A · Slides 5, 6</span></div>
+  <ol class="steps">
+    <li><div>
+      <h3>Sign off the protocol before anyone labels</h3>
+      <p>Read <code>golden/labelling_protocol.md</code> in full. If you want to change the §4 tie-break order, change it now and tell Alvin: changing it after labelling invalidates the labels. Fill in v1.0's date and authors.</p>
+    </div></li>
+    <li><div>
+      <h3>Label all 175 tickets as Annotator A, alone</h3>
+      <p>The same page as Alvin's: <code>golden/labeller.html</code>, choose <b>Annotator A</b>, export, and replace <code>golden/labels_A.csv</code>.</p>
+      <pre><code>git add golden/labels_A.csv &amp;&amp; git commit -m "Independent labels: Gabriel (Annotator A)" &amp;&amp; git push</code></pre>
+    </div></li>
+    <li><div>
+      <h3>Agreement, adjudication, golden set</h3>
+      <p class="needs">Needs: <b>Alvin's sheet pushed</b>.</p>
+      <pre><code>git pull
+make agree      # prints Cohen's kappa, writes golden/disagreements.csv and golden/agreement.json
+#   adjudicate every row with Alvin, then:
+make merge      # writes golden/golden_set.csv; refuses if any row is unresolved</code></pre>
+      <p>Where a disagreement exposed a gap in the protocol, add a <b>v1.1</b> entry to its revision history: the rule added, the rows that prompted it, and how they were resolved. Set <code>protocol_updated: yes</code> on those rows. Push, then tell Irfan the golden set is ready.</p>
+    </div></li>
+    <li><div>
+      <h3>Confirm the four candidate models</h3>
+      <p><code>docs/candidate_models.md</code> proposes <code>qwen2.5:0.5b</code>, <code>llama3.2:1b</code>, <code>llama3.2:3b</code> and <code>qwen2.5:7b</code>. That is 4 size classes, all with licences that allow commercial use. Edit the justification if you disagree, before the freeze. Changing the set also means new predictions from Muhaimeen and new pins from Irfan.</p>
+    </div></li>
+  </ol>
+</section>
+
+<section class="member">
+  <div class="who"><h2>Uwais</h2><span class="role">M4 · JMeter & load lead · owns Machine B · Slides 8, 9</span></div>
+  <ol class="steps">
+    <li><div>
+      <h3>Set up Machine B (your laptop, never Irfan's PC)</h3>
+      <ul class="tight">
+        <li>Install Java 8+ and <b>JMeter 5.6.3</b> (5.5 or newer is required for Open Model Thread Groups), plus Python 3.9+.</li>
+        <li>Clone the repo, <code>git pull</code> after Irfan's merge, then run <code>python3 tools/prepare_jmeter_data.py</code>.</li>
+        <li>Open <code>jmeter/triage_load_test.jmx</code> and <code>triage_stress.jmx</code> in the JMeter GUI once to confirm both thread groups load as <i>Open Model Thread Group</i>.</li>
+        <li>Check that you can reach Machine A: <code>curl http://&lt;irfan-ip&gt;:8000/healthz</code>.</li>
+      </ul>
+      <p>Fill the M2 and Network tables in <code>docs/test_environment.md</code>: CPU, RAM, OS, Java, JMeter, link type, and <code>ping -c 100</code> RTT.</p>
+    </div></li>
+    <li><div>
+      <h3>Load tests: 4 models × 3 rates × 3 runs</h3>
+      <p class="needs">Needs: <b>FROZEN</b> message, then Muhaimeen's accuracy run finished.</p>
+      <p>Irfan switches the model, then you run:</p>
+      <pre><code>cd jmeter
+./run_matrix.sh &lt;irfan-ip&gt; qwen2.5:0.5b     # rates default to 0.0167 0.0333 0.0667 (peak, surge, 2x)
+./run_matrix.sh &lt;irfan-ip&gt; llama3.2:1b
+./run_matrix.sh &lt;irfan-ip&gt; llama3.2:3b
+./run_matrix.sh &lt;irfan-ip&gt; qwen2.5:7b</code></pre>
+      <p>Each run is 10 min of arrivals plus a 2 min drain, so about 1 h 50 min per model and about 7.5 h in total. After every run:</p>
+      <pre><code>python3 ../tools/reconcile.py --jtl ../results/jtl/&lt;tag&gt;.jtl --log ../results/logs/requests.jsonl --run-id &lt;tag&gt;</code></pre>
+      <p>Get the latest log from Irfan first. A run that doesn't say RECONCILED isn't reported until the gap is explained.</p>
+    </div></li>
+    <li><div>
+      <h3>Stress test on llama3.2:3b, 3 ladders</h3>
+      <p class="needs">Needs: <b>Muhaimeen's</b> <code>results/accuracy/summary_llama3.2_3b.json</code>.</p>
+      <pre><code>python3 tools/stress_steps.py llama3.2:3b          # prints the 7 steps (tickets/min)
+cd jmeter &amp;&amp; ./run_stress.sh &lt;irfan-ip&gt; llama3.2:3b "&lt;steps&gt;"</code></pre>
+      <p>That's 7 steps × 5 min per ladder plus a drain, about 50 min each, so about 2.5 h for 3 ladders. Ask Irfan to log <code>docker stats</code> during each ladder. Output: <code>results/stress/*.summary.json</code> and <code>*.png</code>.</p>
+    </div></li>
+    <li><div>
+      <h3>Commit the evidence and write Slide 9</h3>
+      <pre><code>git add results/jtl results/stress docs/test_environment.md &amp;&amp; git commit -m "Load + stress runs" &amp;&amp; git push</code></pre>
+      <p>Write 3–5 sentences in <code>deck/interpretation_slide9.txt</code>: where latency bent, the stress limit and saturated throughput, and the diagnosed bottleneck. Name the bottleneck with evidence: <code>ollama_prompt_eval_ms</code> share in the service log, Ollama CPU in <code>docker stats</code>, and client vs server latency from <code>reconcile.py</code>.</p>
+    </div></li>
+  </ol>
+</section>
+
+<section class="member">
+  <div class="who"><h2>Muhaimeen</h2><span class="role">M5 · Evaluation & recommendation · deck lead · Slides 10, 11</span></div>
+  <ol class="steps">
+    <li><div>
+      <h3>Own the prediction record before the freeze</h3>
+      <p><code>docs/prediction_record.md</code> is a full draft. Every number in it is specific enough to be wrong, as the brief asks. Check each one, change what you disagree with, delete the DRAFT box, and add your name and the date. After the freeze it can't change.</p>
+      <p>Latency predictions are scaled from Irfan's warm 1B measurement under the 4-CPU limit. If Machine A's CPU limit changes, re-derive them.</p>
+    </div></li>
+    <li><div>
+      <h3>Accuracy tests: the golden set through each model</h3>
+      <p class="needs">Needs: <b>FROZEN</b> message. Runs on Machine A, before Uwais starts.</p>
+      <p>For each model, run:</p>
+      <pre><code>make down &amp;&amp; make up MODEL=&lt;tag&gt;
+python3 tools/warmup.py --base http://&lt;irfan-ip&gt;:8000
+python3 tools/accuracy_harness.py --base http://&lt;irfan-ip&gt;:8000 --model &lt;tag&gt; --digest &lt;sha256 from docs/model_pins.md&gt;</code></pre>
+      <p>Commit <code>results/accuracy/</code> and tell Uwais the 3B summary is in.</p>
+    </div></li>
+    <li><div>
+      <h3>Compare, check, recommend</h3>
+      <p class="needs">Needs: <b>Uwais's</b> load and stress results pushed.</p>
+      <pre><code>python3 tools/compare_predictions.py     # docs/prediction_outcomes.md: RIGHT / WRONG per prediction
+python3 tools/requirements_check.py      # results/requirements_check.md: PASS / FAIL per model per requirement</code></pre>
+      <ul class="tight">
+        <li>For every WRONG row, write why the team's mental model was off in <code>docs/prediction_account.md</code>. This is where the marks are.</li>
+        <li>Then write <code>deck/recommendation.txt</code> (6–10 short lines): the model you recommend, why, and how it does against each of R1–R6.</li>
+        <li>State plainly any requirement that no candidate meets. The brief calls that a strong result.</li>
+        <li>The recommendation must not contradict the requirements.</li>
+      </ul>
+    </div></li>
+    <li><div>
+      <h3>Build the deck and the submission</h3>
+      <pre><code>pip install python-pptx matplotlib
+python3 deck/build_deck.py               # deck/Group09.pptx, 12 slides, every number read from results/</code></pre>
+      <p>Fill everyone's student IDs in <code>deck/team.json</code> first. Any red PENDING box means an input is missing. Submit on xSiTe:</p>
+      <ul class="tight">
+        <li><code>Group09.pptx</code> (check whether xSiTe wants <code>GroupP2-9.pptx</code>)</li>
+        <li><code>golden/golden_set.csv</code></li>
+        <li><code>docs/prediction_record.md</code></li>
+        <li><code>golden/labelling_protocol.md</code></li>
+        <li><code>golden/labels_A.csv</code> and <code>golden/labels_B.csv</code></li>
+        <li><code>golden/agreement.json</code></li>
+        <li><code>golden/disagreements.csv</code></li>
+      </ul>
+    </div></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Things that cost marks</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Don't</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Run any model on a golden ticket, or any JMeter test, before the freeze message</td><td>The commit history is the evidence that labels and predictions came first</td></tr>
+      <tr><td>Run JMeter on Irfan's PC</td><td>A co-hosted load generator steals CPU, and the brief rejects those numbers</td></tr>
+      <tr><td>Use a normal (closed-loop) Thread Group</td><td>Closed-loop results are not accepted as evidence</td></tr>
+      <tr><td>Report fewer than 3 runs per configuration</td><td>"A single run is not a measurement"</td></tr>
+      <tr><td>Type a number into a slide by hand</td><td>Every figure must trace to a <code>.jtl</code> or log line. The deck builder reads them from the files</td></tr>
+      <tr><td>Run <code>make reset</code> between reported runs</td><td>It deletes the service log, which is the evidence</td></tr>
+      <tr><td>Open the CSVs in Excel by double-clicking</td><td>Excel can silently break long narratives and lose labels. Use the labeller page</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Full procedures: <code>README.md</code>, <code>docs/playbook.md</code>, <code>jmeter/README.md</code>. Questions about the tooling go to Alvin; questions about the service go to Irfan.</p>
+</section>
+
+</main>
+</body>
+</html>
