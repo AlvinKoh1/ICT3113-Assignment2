@@ -8,3 +8,4 @@ __pycache__/
 
 # DO NOT ignore results/. The .jtl files and service logs are evidence and must
 # be committed -- the brief requires every reported number to reconcile with them.
+deck/build/
