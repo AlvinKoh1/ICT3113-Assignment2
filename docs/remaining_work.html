@@ -113,7 +113,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     <span>Repo <b>github.com/gemokay/ICT3113-Assignment1</b></span>
     <span class="deadline">Submission <b class="deadline">Fri 9 Oct, 23:59</b></span>
   </div>
-  <p>Irfan's repo is the base. Alvin's work has been merged into it on the branch <code>alvin/continue</code>. Read your own section and do the steps in order. Where a step says <b>Needs</b>, wait until that person tells the group chat it's done.</p>
+  <p>Irfan's repo is the base. Alvin's work is now merged into <code>main</code>, so start with <code>git pull</code>. Read your own section and do the steps in order. Where a step says <b>Needs</b>, wait until that person tells the group chat it's done.</p>
 </header>
 
 <section>
@@ -121,7 +121,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="tbl"><table>
     <thead><tr><th>Who</th><th>Role</th><th style="width:7.5rem">Done</th><th>Still to do</th></tr></thead>
     <tbody>
-      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~70 %<div class="bar"><i style="width:70%"></i></div></td><td>Merge the branch, set up Machine A (models, pins, test-environment table), host every test, make the freeze commit</td></tr>
+      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~70 %<div class="bar"><i style="width:70%"></i></div></td><td>Review the merged changes, set up Machine A (models, pins, test-environment table), host every test, make the freeze commit</td></tr>
       <tr><td><b>Alvin</b> M2</td><td>Workload, Annotator B</td><td>~55 %<div class="bar"><i style="width:55%"></i></div></td><td>Label all 175 tickets (B), settle disagreements with Gabriel, sign off the workload model and requirements</td></tr>
       <tr><td><b>Gabriel</b> M3</td><td>Protocol, Annotator A</td><td>~25 %<div class="bar"><i style="width:25%"></i></div></td><td>Sign off the protocol, label all 175 tickets (A), run κ, lead adjudication, build the golden set, confirm the 4 models</td></tr>
       <tr><td><b>Uwais</b> M4</td><td>JMeter, Machine B</td><td>~30 %<div class="bar"><i style="width:30%"></i></div></td><td>Set up Machine B, run 36 load runs and the stress test, reconcile, analyse, write the Slide 9 interpretation</td></tr>
@@ -141,7 +141,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     </ul>
   </div>
   <div class="flow">
-    <div class="row"><div class="when">Tue night</div><div class="lane"><b>Gabriel and Alvin label, in parallel and without talking.</b> Irfan merges the branch and sets up Machine A. Uwais sets up Machine B. Muhaimeen reviews the predictions.</div></div>
+    <div class="row"><div class="when">Tue night</div><div class="lane"><b>Gabriel and Alvin label, in parallel and without talking.</b> Irfan reviews the merged changes and sets up Machine A. Uwais sets up Machine B. Muhaimeen reviews the predictions.</div></div>
     <div class="row"><div class="when">Wed 10:00</div><div class="lane"><b>Gabriel + Alvin:</b> run κ, settle every disagreement, build the golden set (about 1 h).</div></div>
     <div class="row"><div class="when">Wed ~11:30</div><div class="lane gate"><b>FREEZE (Irfan).</b> Commit and push the golden set, protocol revisions, prediction record and model pins. Post "FROZEN" plus the commit hash in the group chat.</div></div>
     <div class="row"><div class="when">Wed 12:00</div><div class="lane"><b>Muhaimeen:</b> accuracy test, 4 models, on Machine A (about 1 h).</div></div>
@@ -156,7 +156,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="who"><h2>Irfan</h2><span class="role">M1 · System & SUT lead · owns Machine A · Slides 2, 7</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Review and merge <code>alvin/continue</code> into main</h3>
+      <h3>Pull <code>main</code> and review what Alvin merged</h3>
       <p>Changes to your code:</p>
       <ul class="tight">
         <li><b>JMeter drain fix:</b> a <code>pause()</code> at the end of both Open Model schedules. Without it, JMeter kills in-flight requests at schedule end and logs them as errors. On a 1-minute test run that was 3–4 fake errors per run, 12–16 %.</li>
@@ -164,10 +164,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         <li><b><code>agreement.py</code></b> now also writes <code>golden/agreement.json</code>.</li>
       </ul>
       <p>Everything else is new files (stress test, labeller, checks, deck builder) or filled-in docs.</p>
-      <pre><code>git fetch origin
-git log --oneline main..origin/alvin/continue
-git checkout main &amp;&amp; git merge origin/alvin/continue &amp;&amp; git push</code></pre>
-      <p class="needs">Do this first: everyone else pulls <code>main</code> after it.</p>
+      <pre><code>git pull
+git log --oneline a2fba65..HEAD     # the 8 merged commits
+git diff a2fba65 -- service/ jmeter/triage_load_test.jmx jmeter/run_matrix.sh tools/agreement.py</code></pre>
+      <p class="needs">If anything looks wrong, say so in the group chat before the freeze. It can be reverted with <code>git revert</code>.</p>
     </div></li>
     <li><div>
       <h3>Bring up Machine A and pull all four models</h3>
@@ -276,7 +276,7 @@ make merge      # writes golden/golden_set.csv; refuses if any row is unresolved
       <h3>Set up Machine B (your laptop, never Irfan's PC)</h3>
       <ul class="tight">
         <li>Install Java 8+ and <b>JMeter 5.6.3</b> (5.5 or newer is required for Open Model Thread Groups), plus Python 3.9+.</li>
-        <li>Clone the repo, <code>git pull</code> after Irfan's merge, then run <code>python3 tools/prepare_jmeter_data.py</code>.</li>
+        <li>Clone the repo (or <code>git pull</code>), then run <code>python3 tools/prepare_jmeter_data.py</code>.</li>
         <li>Open <code>jmeter/triage_load_test.jmx</code> and <code>triage_stress.jmx</code> in the JMeter GUI once to confirm both thread groups load as <i>Open Model Thread Group</i>.</li>
         <li>Check that you can reach Machine A: <code>curl http://&lt;irfan-ip&gt;:8000/healthz</code>.</li>
       </ul>

@@ -3,7 +3,7 @@
 **Group P2-9** · team number **9** → dataset rows **9000–9999**
 Repo: https://github.com/gemokay/ICT3113-Assignment1
 
-> **Status 6 Oct, branch `alvin/continue`:** the team's step-by-step guide to everything left is in
+> **Status 6 Oct (merged from `alvin/continue`):** the team's step-by-step guide to everything left is in
 > `docs/REMAINING_WORK.pdf` (source `docs/remaining_work.html`). Changes on this branch:
 > - **JMeter drain fix:** the plan now pauses after the last arrival. Without it, JMeter cut off in-flight requests at the end of every run and logged them as errors (3–4 per 1-minute test run).
 > - **Run tagging:** the service logs an `X-Run-ID` header, so `run_matrix.sh` tags every run without a restart.
