@@ -53,7 +53,7 @@ quantisation and size into `docs/model_pins.md`. **The same pins must be reporte
 with your results** — if you re-pull mid-project and the digest changes, your
 earlier numbers no longer describe the model you are recommending.
 
-## Our set (DRAFT: Gabriel (M3) to confirm before the freeze)
+## Our set (confirmed by Gabriel (M3) on 7 Oct 2026, before the freeze)
 
 We adopt the suggested starting set. It spans **four size classes, a 15× range in parameters**, and all four run on the pinned Ollama 0.5.7 image.
 

@@ -132,15 +132,16 @@ often not the product issuer, and because that is the team the ticket routes to.
 
 ## Revision history
 
-### v1.0 — 7 Oct 2026
+### v1.0 — 17 Sep 2026
 Initial protocol, written before any ticket was read. Authors: Gabriel (M3, protocol lead) and Alvin (M2, Annotator B).
+*Date corrected on 7 Oct 2026, with Gabriel's agreement: this entry first said "7 Oct 2026", the day the entry was filled in. The v1.0 rules were committed on 17 Sep 2026 (commit `3126eac`) and are unchanged since, so they predate both label sheets (6 and 7 Oct).*
 
 ### v1.1 — 7 Oct 2026
 Added after adjudication of the 36 disagreements between Annotator A (Gabriel) and Annotator B (Alvin). Each rule below closes a gap that a disagreement exposed. The prompting rows are marked `protocol_updated: yes` in `golden/disagreements.csv`. Disagreements where v1.0 already gave the answer and one annotator simply misapplied it (e.g. 9005 scam wire, 9782 prepaid card, 9894 debit-card fraud) did not change the protocol and stay `protocol_updated: no`.
 
 No label was changed by these rules after adjudication. They record the reasoning the adjudication already used, so a third annotator would reach the same labels.
 
-Drafted by Irfan (M1) from the recorded resolution notes. AWAITING CONFIRMATION by Gabriel (M3, protocol lead) and Alvin (M2).
+Drafted by Irfan (M1) from the recorded resolution notes; confirmed by Gabriel (M3, protocol lead) and Alvin (M2) on 7 Oct 2026, before the freeze.
 
 **Rule 1.1: Wrong information furnished by the lender is Credit reporting.**
 When the *main* grievance (for several grievances, the first substantive one, per §5) is an entry on the credit report (a balance on a settled loan, a late payment that did not happen), label Credit reporting. This holds even though the furnisher is the consumer's own lender and the loan is named. If the report is only a consequence or a piece of evidence in a complaint about the loan itself, label the product. For example, 9733 (repossession and fees first, re-aging on the report last) stays Consumer loan. The same goes for a card or loan event whose only link to credit is a side effect on the score (see 1.4). When the furnisher is a debt collector, Rule 1.2 applies instead.
