@@ -14,21 +14,22 @@ Slide 7. Fill from the actual machines. Commands to get each figure are given.
 
 | Property | Value | How to get it |
 |---|---|---|
-| Make / model | | |
-| CPU model | | `lscpu \| grep "Model name"` · macOS: `sysctl -n machdep.cpu.brand_string` |
-| Physical cores / threads | | `lscpu \| grep -E "^CPU\(s\)\|Thread"` |
-| Base / boost clock | | `lscpu` |
-| RAM | | `free -h` · macOS: `sysctl hw.memsize` |
-| Swap configured | | `swapon --show` — **if the model swaps, the numbers are void** |
-| Disk | | SSD/NVMe, model |
-| OS + kernel | | `uname -a` |
-| Docker version | | `docker --version` |
-| Ollama version | | `ollama --version` |
-| GPU present | | **must be none in use** — state how you confirmed |
-| CPU limit applied to Ollama | | `OLLAMA_CPUS` in `.env` |
-| `OLLAMA_NUM_PARALLEL` | | `docker logs triage-ollama \| grep -i parallel` |
-| `OLLAMA_MAX_LOADED_MODELS` | | same |
-| Power / thermal profile | | laptop on battery throttles; say so if applicable |
+| Make / model | Custom-built desktop (Irfan's PC), MSI MPG Z490 GAMING PLUS (MS-7C75) motherboard | `Win32_ComputerSystem`, `Win32_BaseBoard` |
+| CPU model | Intel Core i9-10900K @ 3.70 GHz (Comet Lake, AVX2) | `lscpu \| grep "Model name"` · macOS: `sysctl -n machdep.cpu.brand_string` |
+| Physical cores / threads | 10 cores / 20 threads (1 socket); all 20 visible inside WSL | `lscpu \| grep -E "^CPU\(s\)\|Thread"` |
+| Base / boost clock | 3.70 GHz base (Windows reports 3,696 MHz); max turbo 5.3 GHz per Intel's specification, not measured under load | `lscpu` |
+| RAM | Host: 48 GB DDR4-2667 (3 × 16 GB; an odd number of DIMMs, so not fully dual-channel). WSL 2 VM capped at 12 GB in `%UserProfile%\.wslconfig` (about 11.7 GiB visible). Ollama container capped at 8 GB (`OLLAMA_MEM=8g`) | `free -h` · macOS: `sysctl hw.memsize` |
+| Swap configured | WSL 2 swap partition, 3 GiB, 0 B used at setup. The largest model (`qwen2.5:7b`, 4.68 GB) fits inside the 8 GB container cap | `swapon --show` — **if the model swaps, the numbers are void** |
+| Disk | Samsung SSD 970 EVO Plus 2 TB, NVMe (holds C:, WSL and Docker data). Second disk, Samsung 870 QVO 2 TB SATA SSD, not used | SSD/NVMe, model |
+| OS + kernel | Windows 11 Pro 10.0.26200 (build 26200.9457), WSL 3.0.1, Ubuntu 24.04.5 LTS, kernel `6.18.40.1-microsoft-standard-WSL2` x86_64 | `uname -a` |
+| Docker version | Docker Desktop 4.94.0 (WSL 2 backend, per-user install), Docker Engine 29.8.2, Compose v5.5.1; default runtime `runc` | `docker --version` |
+| Ollama version | 0.5.7, image `ollama/ollama:0.5.7` (reports `0.5.7-0-ga420a45-dirty`) | `ollama --version` |
+| GPU present | NVIDIA GeForce RTX 3090 (24 GB) is installed but **not used**. No GPU is passed to any container. See [GPU exclusion](#gpu-exclusion) for how this was confirmed | **must be none in use** — state how you confirmed |
+| CPU limit applied to Ollama | `OLLAMA_CPUS=4`: a CFS CPU quota of 4 CPUs (`NanoCpus=4000000000`), not pinned to specific cores. Observed at about 395 % CPU in `docker stats` while classifying | `OLLAMA_CPUS` in `.env` |
+| Ollama runner threads | `--threads 10` (Ollama's default: the host's physical core count), so 10 threads share a 4-CPU quota. Left as-is in the baseline (no pre-optimisation) | `docker logs triage-ollama \| grep -- --threads` |
+| `OLLAMA_NUM_PARALLEL` | Not set (`0` = auto). Ollama chose `--parallel 4` (runner `--ctx-size 8192` = 4 slots × 2048) | `docker logs triage-ollama \| grep -i parallel` |
+| `OLLAMA_MAX_LOADED_MODELS` | Not set (`0` = auto). `OLLAMA_KEEP_ALIVE=30m` | same |
+| Power / thermal profile | Desktop on mains power (no battery). Windows power plan "Balanced". Sleep and hibernate on AC to be disabled before test runs (handoff §6 step 7) | laptop on battery throttles; say so if applicable |
 
 ### M2 — Load generator
 
@@ -59,9 +60,10 @@ Slide 7. Fill from the actual machines. Commands to get each figure are given.
 
 The client permits CPU only. Evidence:
 
-- `docker-compose.yml` maps no GPU device and sets no `--gpus` flag.
-- `docker logs triage-ollama` reports <the CPU-only line it prints>.
-- <Any other check, e.g. `nvidia-smi` shows no process, or the host has no GPU.>
+- `docker-compose.yml` maps no GPU device and sets no `--gpus` flag. `docker inspect triage-ollama` shows `DeviceRequests=null` and `Runtime=runc`, not the `nvidia` runtime that Docker Desktop also ships.
+- `docker logs triage-ollama` reports `msg="no compatible GPUs were discovered"` and `msg="inference compute" id=0 library=cpu variant=avx2`. On every model load it reports `msg="offload to cpu" ... layers.offload=0`, meaning no model layer is placed on a GPU.
+- `nvidia-smi` (7 Oct 2026, during three back-to-back `llama3.2:1b` requests): no Ollama or Docker VM process in the GPU process list. GPU memory stayed flat at about 1,375 MiB and utilisation stayed at the idle desktop level (about 31 %), while `docker stats` showed the Ollama container at about 395 % CPU.
+- The Ollama Windows app is not installed. Ollama runs only from our compose file. Docker Desktop's own "Docker Model Runner" is switched off.
 
 ## Threats to validity
 
@@ -73,7 +75,7 @@ Be honest here; it is marked.
 - **Thermal throttling.** <Did you check? Consumer hardware sustaining 100% CPU
   for 10 minutes will clock down, and run 3 may be slower than run 1 for reasons
   unrelated to the system. The spread across your three runs is where this shows.>
-- **Shared machine.** <Anything else running?>
+- **Shared machine.** Machine A is Irfan's everyday desktop. At setup on 7 Oct, other apps were running: Chrome, Spotify, EA Desktop, Riot Vanguard (anti-cheat, runs at boot), Razer App Engine, ProtonVPN, VS Code and the Claude app. They use some CPU and, through the desktop, about 31 % of the GPU. <List what was closed before each reported run, and anything that could not be closed.>
 - **Dataset cap.** Narratives are capped at 2000 chars; real complaints are
   longer, so our latency figures are optimistic.
 - **Single host.** The client would deploy on server-class hardware with more
