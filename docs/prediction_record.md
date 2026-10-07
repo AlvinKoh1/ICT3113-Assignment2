@@ -4,17 +4,15 @@
 
 Committed together with `golden/golden_set.csv`, before any model has been run against the golden set. The commit history is the evidence.
 
-> **DRAFT: owner Muhaimeen (M5).** M5 must review every number, change anything the team disagrees with, and then sign below. Nothing in this file may change after the freeze commit.
->
-> **What the draft is based on:**
+> **What the latency predictions are based on:**
 > - Machine A moved from the MacBook to Irfan's Windows PC (i9-10900K, Docker on WSL 2) on 7 Oct, so the latency rows were re-derived on the PC.
 > - The earlier basis (the MacBook's repeated `make check` smoke request, 126 tokens in 204 ms, about 620 tok/s) was a **prompt-cache artefact**. Repeating an identical prompt lets Ollama reuse its cached evaluation. On the PC the same repeated request showed about 1,500 tok/s warm, but only about 84 tok/s cold. Real tickets are all different, so the latency rows are not based on it.
 > - New basis: 16 sequential `POST /tickets` with **distinct, made-up narratives** (no dataset rows, no golden tickets), `llama3.2:1b`, 236–609 prompt tokens, kept in `results/logs/prefreeze_calibration_pc.jsonl` (`row_id` `probe-00`…`probe-15`). Least-squares fit: latency ≈ −1,285 ms + 13.5 ms × prompt tokens, so **3.0 s at 320 tokens** and **6.7 s at 595 tokens**. Median prefill rate is 109 tok/s and median generation is 151 ms.
 > - Ollama runs with a 4-CPU limit (`OLLAMA_CPUS=4`), but its runner starts `--threads 10` (the host's physical core count). The team decided to leave this in the baseline (no pre-optimisation). A direct-to-Ollama check with made-up prompts gave 3.1 s with the default 10 threads and 2.2 s with `num_thread=4`.
 
-**Committed:** <date, time>
+**Committed:** 7 Oct 2026 (exact time = timestamp of the freeze commit)
 **Commit hash:** <filled in by the commit itself>
-**Authors:** <names> — signed off by M5: <name>
+**Authors:** Alvin Koh Jia Sheng (M2, original draft); Muhammad Izz Irfan bin Amir (M1, latency re-derivation on Machine A) — signed off by M5: Muhammad Muhaimin bin Abdul Rahman (approval given in the group chat, 7 Oct 2026)
 
 ---
 
