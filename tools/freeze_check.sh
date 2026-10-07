@@ -16,7 +16,8 @@ echo
 
 echo "Golden set:"
 if [ -f golden/golden_set.csv ]; then
-  N=$(( $(wc -l < golden/golden_set.csv) - 1 ))
+  # Count CSV records, not lines: narratives contain embedded newlines.
+  N=$(python3 -c "import csv;csv.field_size_limit(10**9);print(len(list(csv.DictReader(open('golden/golden_set.csv',newline='',encoding='utf-8')))))")
   if [ "$N" -ge 150 ] && [ "$N" -le 200 ]; then ok "$N tickets (150-200 required)"
   else bad "$N tickets -- brief requires 150-200"; fi
 else bad "golden/golden_set.csv missing -- run 'make merge'"; fi
@@ -68,16 +69,31 @@ if [ -f golden/labelling_protocol.md ]; then
   grep -q "<DATE>" golden/labelling_protocol.md \
     && bad "revision history still has <DATE> placeholders" \
     || ok "revision history filled in"
+  UPD=$(python3 -c "import csv;csv.field_size_limit(10**9);print(sum((r.get('protocol_updated') or '').strip().lower()=='yes' for r in csv.DictReader(open('golden/disagreements.csv',newline='',encoding='utf-8'))))" 2>/dev/null || echo 0)
+  if [ "$UPD" = "0" ]; then
+    warn "no disagreement is marked protocol_updated=yes -- the brief asks you to update the protocol where a disagreement revealed a gap"
+  else ok "$UPD disagreement(s) led to a protocol revision"; fi
 else bad "golden/labelling_protocol.md missing"; fi
 
 echo
 echo "Prediction record:"
 if [ -f docs/prediction_record.md ]; then
   BLANKS=$(grep -c "____" docs/prediction_record.md || true)
-  PLACE=$(grep -c "<\.\.\.>" docs/prediction_record.md || true)
+  # Any <placeholder> except the commit-hash line, which a commit cannot fill
+  # with its own hash.
+  PLACE=$(grep -o '<[^>]\{1,60\}>' docs/prediction_record.md | grep -vc 'filled in by the commit' || true)
+  DRAFT=$(grep -c 'DRAFT' docs/prediction_record.md || true)
   if [ "$BLANKS" -eq 0 ] && [ "$PLACE" -eq 0 ]; then ok "no placeholders left"
-  else bad "$BLANKS numeric blank(s) and $PLACE placeholder(s) remain -- a vague prediction earns nothing"; fi
+  else bad "$BLANKS numeric blank(s) and $PLACE placeholder(s) remain (e.g. <names>, <date, time>)"; fi
+  if [ "$DRAFT" -eq 0 ]; then ok "DRAFT marker removed (signed off)"
+  else bad "still marked DRAFT -- M5 must review, sign, and delete the DRAFT box"; fi
 else bad "docs/prediction_record.md missing"; fi
+
+echo
+echo "Model pins:"
+if [ -f docs/model_pins.md ] && grep -q 'sha256\|[0-9a-f]\{12\}' docs/model_pins.md; then
+  ok "docs/model_pins.md has digests"
+else bad "docs/model_pins.md missing or has no digests -- run tools/pin_models.sh"; fi
 
 echo
 echo "Git freeze:"
