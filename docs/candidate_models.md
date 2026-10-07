@@ -60,9 +60,11 @@ We adopt the suggested starting set. It spans **four size classes, a 15× range 
 | Model | Size class | Licence (Slide 12) | In the set to demonstrate |
 |---|---|---|---|
 | `qwen2.5:0.5b` | sub-1B | Apache-2.0 | The floor. Is inference still the bottleneck when the model is this small, and how often does it fail to follow the output format (`UNPARSED`)? |
-| `llama3.2:1b` | 1B | Llama 3.2 Community Licence + Acceptable Use Policy | The plausible "ship it" small model. Already smoke-tested on this stack (354 ms warm). |
+| `llama3.2:1b` | 1B | Llama 3.2 Community Licence + Acceptable Use Policy | The plausible "ship it" small model. Calibrated on Machine A with made-up tickets: about 3.0 s for a typical 320-token ticket (`docs/prediction_record.md`). |
 | `llama3.2:3b` | 3B | Llama 3.2 Community Licence + Acceptable Use Policy | The mid-size compromise, and the model we stress-test. |
 | `qwen2.5:7b` | 7B | Apache-2.0 | The accuracy ceiling on CPU: what the client gives up by going small. Its capacity is the lower bound on throughput. |
+
+Exact tags, sha256 digests, quantisation and sizes are in `docs/model_pins.md`. Report the same pins with the results.
 
 ## Justification for our set
 
