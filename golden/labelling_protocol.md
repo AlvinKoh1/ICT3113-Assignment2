@@ -1,6 +1,6 @@
 # Labelling Protocol — ICT3113 Group P2-9
 
-**Version:** v1.0 (DRAFT — must be reviewed by the team before labelling begins)
+**Version:** v1.1. The v1.0 rules below were used for labelling; the v1.1 additions from adjudication are in the revision history at the bottom.
 **Status:** written **before** any ticket was read and before any model was run.
 
 > This is a starting draft. The brief requires the protocol to be revised when a
@@ -134,9 +134,33 @@ often not the product issuer, and because that is the team the ticket routes to.
 ### v1.0 — 7 Oct 2026
 Initial protocol, written before any ticket was read. Authors: Gabriel (M3, protocol lead) and Alvin (M2, Annotator B).
 
-### v1.1 — <DATE>
-<!-- Template. One entry per rule change, each traceable to a disagreement.
-Rule added: ...
-Prompted by: rows ..., where <A> labelled X and <B> labelled Y.
-Resolution: ...
--->
+### v1.1 — 7 Oct 2026
+Added after adjudication of the 36 disagreements between Annotator A (Gabriel) and Annotator B (Alvin). Each rule below closes a gap that a disagreement exposed. The prompting rows are marked `protocol_updated: yes` in `golden/disagreements.csv`. Disagreements where v1.0 already gave the answer and one annotator simply misapplied it (e.g. 9005 scam wire, 9782 prepaid card, 9894 debit-card fraud) did not change the protocol and stay `protocol_updated: no`.
+
+No label was changed by these rules after adjudication. They record the reasoning the adjudication already used, so a third annotator would reach the same labels.
+
+Drafted by Irfan (M1) from the recorded resolution notes. AWAITING CONFIRMATION by Gabriel (M3, protocol lead) and Alvin (M2).
+
+**Rule 1.1: Wrong information furnished by the lender is Credit reporting.**
+When the grievance is an entry on the credit report (a balance on a settled loan, a late payment that did not happen), label Credit reporting even though the furnisher is the consumer's own lender and the loan is named. The reverse also holds: a card or loan event whose only link to credit is a side effect on the score stays with the product (see 1.4).
+*Prompted by:* 9412 and 9459, where A labelled Credit reporting and B labelled Consumer loan. *Resolution:* Credit reporting; the harm is to the record.
+
+**Rule 1.2: For collection debts, the target of the complaint decides between Debt collection and Credit reporting.**
+§4 puts Debt collection above Credit reporting, but that applies only to genuine ties. If the consumer is disputing a collection *entry* with the bureaus, the complaint is about the record → Credit reporting. If the consumer is complaining about what the collector *did* (validation, contact, pursuing a debt not owed) → Debt collection. A request to validate a debt is collection conduct whatever the underlying product.
+*Prompted by:* 9732 and 9941, where A labelled Debt collection / Credit reporting and B the other. *Resolution:* Credit reporting; the dispute is about the report entry. Also 9717, where A labelled Mortgage and B labelled Debt collection. *Resolution:* Debt collection; a validation demand to the debt holder.
+
+**Rule 1.3: Money transfer or service vs Bank account or service.**
+Accounts inside P2P and payment apps (Cash App and similar) are Money transfer or service, including the app closing an account with funds in it and disputes over app payments. They are not deposit accounts, and they are not credit cards. A bank's own handling of a deposit account (freezes, holds, stop-payment orders) is Bank account or service, even when a payment to someone else is involved. A platform that fits none of the seven (e.g. brokerage or payment-platform access) goes to Money transfer or service as nearest fit, flagged POOR FIT.
+*Prompted by:* 9124, where A labelled Bank account or service and B labelled Money transfer or service. *Resolution:* Money transfer or service. Also 9661 (Money transfer vs Credit card; *resolution:* Money transfer or service) and 9953 (Money transfer vs Bank account; *resolution:* Bank account or service, a stop-payment on a bank account).
+
+**Rule 1.4: Credit card covers the whole card-account life cycle.**
+Applications and approval, balance-transfer offers, transfer of the account to another issuer or servicer, and closure are Credit card. This holds even when the consumer mentions the effect on their credit score. When the narrative names an issuer that also offers deposit accounts (e.g. Capital One) but describes only a card relationship, label Credit card. Bank account or service needs a deposit account in the story.
+*Prompted by:* 9771 (A: Bank account or service, B: Credit card), 9779 (A: Debt collection, B: Credit card), 9951 (A: Credit reporting, B: Credit card) and 9411 (A: Bank account or service, B: Credit card). *Resolution:* Credit card in all four.
+
+**Rule 1.5: Point-of-sale instalment financing, and first-party collection.**
+Buy-now-pay-later and point-of-sale instalment financing (e.g. Affirm) is Consumer loan. When the *creditor's own* collections department pursuing the consumer is the grievance, label Debt collection, exactly as for a third-party collector. When the grievance is the loan itself and collection is only a consequence, label the loan's category.
+*Prompted by:* 9012, where A labelled Money transfer or service and B labelled Consumer loan. *Resolution:* Consumer loan. Also 9526, where A labelled Consumer loan and B labelled Debt collection. *Resolution:* Debt collection; the collections department's conduct was the grievance.
+
+**Rule 1.6: Servicing terms are not a Mortgage signal on their own.**
+Forbearance, modification and repayment-plan language appears in both mortgage and non-mortgage servicing. Label Mortgage only when the loan is secured by real property (the house is in the story). Otherwise label Consumer loan.
+*Prompted by:* 9981, where A labelled Mortgage and B labelled Consumer loan. *Resolution:* Consumer loan; student-loan style forbearance with no property involved.
