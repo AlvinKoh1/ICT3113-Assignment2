@@ -1,6 +1,7 @@
 # Labelling Protocol — ICT3113 Group P2-9
 
-**Version:** v1.1. The v1.0 rules below were used for labelling; the v1.1 additions from adjudication are in the revision history at the bottom.
+**Version:** v1.0 (DRAFT — must be reviewed by the team before labelling begins)
+**Current version:** v1.1. The v1.0 rules below were used for labelling and are unchanged; the v1.1 additions from adjudication are appended in the revision history at the bottom.
 **Status:** written **before** any ticket was read and before any model was run.
 
 > This is a starting draft. The brief requires the protocol to be revised when a
