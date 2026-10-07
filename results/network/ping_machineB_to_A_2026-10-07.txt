@@ -1,0 +1,128 @@
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"service":"ok","ollama":true,"model":"llama3.2:1b","run_id":"adhoc"}
+RawContent        : HTTP/1.1 200 OK
+                    Content-Length: 69
+                    Content-Type: application/json
+                    Date: Wed, 07 Oct 2026 15:51:08 GMT
+                    Server: uvicorn
+
+                    {"service":"ok","ollama":true,"model":"llama3.2:1b","run_id":"adhoc"}
+Forms             : {}
+Headers           : {[Content-Length, 69], [Content-Type, application/json], [Date, Wed, 07 Oct 2026 15:51:08 GMT],
+                    [Server, uvicorn]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 69
+
+
+Pinging 100.88.74.36 with 32 bytes of data:
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=11ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=15ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=17ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=12ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=14ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=13ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=11ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=12ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=11ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=10ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=9ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=7ms TTL=128
+Reply from 100.88.74.36: bytes=32 time=8ms TTL=128
+
+Ping statistics for 100.88.74.36:
+    Packets: Sent = 100, Received = 100, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 7ms, Maximum = 17ms, Average = 8ms
+
+Jmeter 5.6.3
