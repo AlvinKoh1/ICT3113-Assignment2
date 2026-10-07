@@ -131,8 +131,8 @@ often not the product issuer, and because that is the team the ticket routes to.
 
 ## Revision history
 
-### v1.0 — <DATE>
-Initial protocol, written before any ticket was read. Authors: <names>.
+### v1.0 — 7 Oct 2026
+Initial protocol, written before any ticket was read. Authors: Gabriel (M3, protocol lead) and Alvin (M2, Annotator B).
 
 ### v1.1 — <DATE>
 <!-- Template. One entry per rule change, each traceable to a disagreement.

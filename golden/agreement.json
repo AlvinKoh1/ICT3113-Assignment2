@@ -1,0 +1,49 @@
+{
+  "statistic": "Cohen's kappa",
+  "raw_agreement": 0.7943,
+  "kappa": 0.7574,
+  "interpretation": "substantial",
+  "annotators": [
+    "golden/labels_A.csv",
+    "golden/labels_B.csv"
+  ],
+  "n_tickets": 175,
+  "n_disagreements": 36,
+  "confused_pairs": [
+    {
+      "pair": [
+        "Bank account or service",
+        "Money transfer or service"
+      ],
+      "n": 5
+    },
+    {
+      "pair": [
+        "Consumer loan",
+        "Credit reporting"
+      ],
+      "n": 5
+    },
+    {
+      "pair": [
+        "Credit reporting",
+        "Debt collection"
+      ],
+      "n": 5
+    },
+    {
+      "pair": [
+        "Bank account or service",
+        "Credit card"
+      ],
+      "n": 4
+    },
+    {
+      "pair": [
+        "Credit card",
+        "Credit reporting"
+      ],
+      "n": 3
+    }
+  ]
+}
