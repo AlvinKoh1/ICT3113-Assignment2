@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","steps_per_min":[2,3,4,5,6],"step_s":300,"schedule":"rate(2/min) random_arrivals(300 sec) rate(2/min) rate(3/min) random_arrivals(300 sec) rate(3/min) rate(4/min) random_arrivals(300 sec) rate(4/min) rate(5/min) random_arrivals(300 sec) rate(5/min) rate(6/min) random_arrivals(300 sec) rate(6/min) pause(620 sec)"}

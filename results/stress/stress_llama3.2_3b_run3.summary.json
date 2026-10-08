@@ -1,0 +1,82 @@
+{
+  "run": "stress_llama3.2_3b_run3",
+  "model": "llama3.2:3b",
+  "step_s": 300,
+  "steps": [
+    {
+      "step": 1,
+      "target_per_min": 2,
+      "arrivals": 10,
+      "offered_per_min": 2.0,
+      "completed_per_min": 1.2,
+      "p50_ms": 66079.0,
+      "p95_ms": 112442.0,
+      "errors": 0,
+      "queue_end": 4,
+      "backlog_growth": 3,
+      "growth_ratio": 1.73,
+      "sustainable": true
+    },
+    {
+      "step": 2,
+      "target_per_min": 3,
+      "arrivals": 15,
+      "offered_per_min": 3.0,
+      "completed_per_min": 2.2,
+      "p50_ms": 142676.0,
+      "p95_ms": 175979.3,
+      "errors": 0,
+      "queue_end": 8,
+      "backlog_growth": 4,
+      "growth_ratio": 1.01,
+      "sustainable": false
+    },
+    {
+      "step": 3,
+      "target_per_min": 4,
+      "arrivals": 20,
+      "offered_per_min": 4.0,
+      "completed_per_min": 3.4,
+      "p50_ms": 184704.0,
+      "p95_ms": 240159.5,
+      "errors": 0,
+      "queue_end": 11,
+      "backlog_growth": 3,
+      "growth_ratio": 1.35,
+      "sustainable": false
+    },
+    {
+      "step": 4,
+      "target_per_min": 5,
+      "arrivals": 29,
+      "offered_per_min": 5.8,
+      "completed_per_min": 4.8,
+      "p50_ms": 185841.0,
+      "p95_ms": 210405.2,
+      "errors": 0,
+      "queue_end": 16,
+      "backlog_growth": 5,
+      "growth_ratio": 0.94,
+      "sustainable": false
+    },
+    {
+      "step": 5,
+      "target_per_min": 6,
+      "arrivals": 26,
+      "offered_per_min": 5.2,
+      "completed_per_min": 5.8,
+      "p50_ms": 171699.0,
+      "p95_ms": 246678.5,
+      "errors": 0,
+      "queue_end": 13,
+      "backlog_growth": -3,
+      "growth_ratio": 1.33,
+      "sustainable": false
+    }
+  ],
+  "max_sustainable_per_min": 2,
+  "first_unsustainable_per_min": 3,
+  "saturated_throughput_per_min": 4.05,
+  "max_inflight": 20,
+  "total_errors": 0
+}
