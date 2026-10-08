@@ -350,15 +350,22 @@ if agree:
     ex = [r for r in (dis or []) if (r.get("adjudicated_label") or "").strip()][:2]
     if ex:
         a_col = [k for k in ex[0] if k.startswith("label_")]
-        table(s, 6.9, 3.0, 6.0, [[r["row"]] + [r[k] for k in a_col] + [r["adjudicated_label"], r["resolution_note"][:110]] for r in ex],
-              ["Row"] + [k.replace("label_", "") for k in a_col] + ["Final", "Resolution"], 9, [0.6, 1.15, 1.15, 1.15, 1.95], 0.55)
+        table(s, 6.9, 3.0, 6.0, [[r["row"]] + [r[k] for k in a_col] + [r["adjudicated_label"], re.sub(r"\s*\(proposed by[^)]*\)\s*$", "", r["resolution_note"])] for r in ex],
+              ["Row"] + [k.replace("label_", "") for k in a_col] + ["Final", "Resolution"], 9, [0.55, 1.05, 1.05, 1.05, 2.3], 0.5)
     pairs = agree.get("confused_pairs", [])[:3]
-    text(s, 6.9, 4.6, 6.0, 1.0, [("Most-disputed pairs", True)] + [f"{p['n']} × {' ↔ '.join(p['pair'])}" for p in pairs], 10)
+    text(s, 6.9, 5.3, 6.0, 1.0, [("Most-disputed pairs", True)] + [f"{p['n']} × {' ↔ '.join(p['pair'])}" for p in pairs], 10)
 else:
     pending(s, 6.9, 1.5, 6.0, 1.3, "both label sheets → make agree → adjudicate → make merge")
 prot = (ROOT / "golden" / "labelling_protocol.md").read_text(encoding="utf-8")
 revs = re.findall(r"^### (v[\d.]+ — .+)$", prot, re.M)
-text(s, 0.4, 5.75, 12.5, 1.4, [("Protocol revisions", True)] + (revs[:5] or ["(revision history not yet filled in)"]), 10)
+rules = re.findall(r"^\*\*Rule (1\.\d+): (.+?)\*\*$", prot, re.M)
+n_upd = sum(1 for r in (dis or []) if (r.get("protocol_updated") or "").strip().lower() == "yes")
+rev_lines = [("Protocol revisions", True)]
+for v in revs[:5]:
+    rev_lines.append(v + (": rules written before any ticket was read" if v.startswith("v1.0") else
+                          f": {len(rules)} rules from adjudication ({n_upd} of {len(dis or [])} disagreements exposed a gap); no label changed" if v.startswith("v1.1") else ""))
+rev_lines += [f"   {n} {title}" for n, title in rules]
+text(s, 0.4, 3.35, 6.2, 3.9, rev_lines if revs else [("Protocol revisions", True), "(revision history not yet filled in)"], 10)
 
 # ------------------------------------------------------------------- 7 environment
 s = prs.slides.add_slide(BLANK)
@@ -464,7 +471,7 @@ card(s, 0.4, 2.75, 4.1, 4.5, "JMeter setup · Machine B", [
 card(s, 4.62, 2.75, 4.1, 4.5, "Each model, each run", [
     "**Handover:** Machine A restarts on the model with an empty ticket store, sends 3 non-golden warm-ups, reports 'ready'; Machine B waits for it (overnight_switch.sh ↔ run_all_models.sh)",
     "**After every run:** reconcile.py per endpoint (counts and errors vs the service log for that run id); analyze_jtl.py gives p50/p95/p99, throughput, errors, mean ± SD of 3 runs",
-    "**Stress:** 7 steps around μ = 60/S from the accuracy run; sustainable ⇔ end-of-step queue ≤ max(5, 15 % of arrivals) and 0 errors; 620 s drain, 60 s settle between ladders",
+    "**Stress:** steps at 0.5–1.5 × μ (μ = 60/S from the accuracy run), rounded to whole tickets/min: 2, 3, 4, 5, 6; sustainable ⇔ end-of-step queue ≤ max(5, 15 % of arrivals) and 0 errors; 620 s drain, 60 s settle between ladders",
 ], TEAL, 12)
 card(s, 8.84, 2.75, 4.1, 4.5, "Validity rules", [
     "**Freeze first:** golden set and prediction record committed before any benchmark run",
@@ -613,5 +620,7 @@ text(s, 0.4, 1.15, 12.5, 6.2, [
     "Software: FastAPI (MIT), Uvicorn (BSD-3-Clause), httpx (BSD-3-Clause), SQLite (public domain), Docker. An AI coding assistant was used for scaffolding and tooling; labelling, test execution and the recommendation are the team's.",
 ], 11)
 
+cp = prs.core_properties
+cp.title, cp.author, cp.last_modified_by, cp.comments = "Routing Complaints On-Premises", "ICT3113 Group P2-9", "ICT3113 Group P2-9", ""
 prs.save(OUT)
 print(f"wrote {OUT.relative_to(ROOT)} ({len(prs.slides)} slides)")
