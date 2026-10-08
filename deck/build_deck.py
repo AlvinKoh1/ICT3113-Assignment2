@@ -572,7 +572,13 @@ if outcomes.exists():
             if l.startswith("| ") and not l.startswith("| Claim")]
     # keep the claims that matter most: per-model accuracy and p50, then every cross-model claim
     keep = [r for r in rows if r[0].endswith("accuracy") or r[0].endswith("single p50")]
-    keep += [r for r in rows if not any(r[0].endswith(t) for t in ("accuracy", "single p50", "single p95"))]
+    other = [r for r in rows if not any(r[0].endswith(t) for t in ("accuracy", "single p50", "single p95"))]
+    stress = [r for r in other if r[0].startswith("stress limit")]
+    keep += [r for r in other if not r[0].startswith("stress limit")]
+    if stress:  # one row for the three ladders; per-ladder detail stays in docs/prediction_outcomes.md
+        got = ", ".join(r[2].split(" (")[0].replace("none sustained", "none") for r in stress)
+        keep.append([stress[0][0].split(" (")[0] + f" ({len(stress)} ladders)", stress[0][1], got,
+                     "RIGHT" if all(r[3] == "RIGHT" for r in stress) else "WRONG"])
     clip = lambda v: v if len(v) <= 58 else v[:56] + "…"   # full text: docs/prediction_outcomes.md
     table(s, 0.4, 1.45, 7.7, [[clip(c) for c in r[:4]] for r in keep[:14]], ["Claim", "Predicted", "Measured", "Verdict"], 8, [2.1, 1.8, 2.7, 1.1], 0.25,
           lambda i, j, v: (RED if v == "WRONG" else GREEN) if j == 3 else None)
@@ -585,7 +591,10 @@ if reqcheck:
           lambda i, j, v: (GREEN if v == "PASS" else RED if v == "FAIL" else None) if j else None)
 else:
     pending(s, 0.4, 5.55, 7.7, 0.8, "python3 tools/requirements_check.py")
-text(s, 8.3, 1.45, 4.8, 5.8, lines_of(DECK / "recommendation.txt", "Recommendation: PENDING (Muhaimeen writes deck/recommendation.txt from the measured results, defended against R1–R6)"), 11)
+# "# Heading" lines in the free-text files render bold
+side = lines_of(DECK / "account_slide11.txt", "Account of wrong predictions: PENDING (deck/account_slide11.txt, from docs/prediction_account.md)") + [""] + \
+       lines_of(DECK / "recommendation.txt", "Recommendation: PENDING (Muhaimeen writes deck/recommendation.txt from the measured results, defended against R1–R6)")
+text(s, 8.3, 1.45, 4.8, 5.8, [(l[2:], True) if l.startswith("# ") else l for l in side], 9)
 
 # ------------------------------------------------------------------- 12 references
 s = prs.slides.add_slide(BLANK)
