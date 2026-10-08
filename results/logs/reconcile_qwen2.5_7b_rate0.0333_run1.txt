@@ -1,0 +1,28 @@
+# qwen2.5_7b_rate0.0333_run1
+
+== POST /tickets ==
+JMeter samples      : 19
+Service log entries : 19
+JMeter errors       : 7
+Service log errors  : 6
+
+MISMATCH: error counts differ. Client-side errors (timeouts, connection refused) will appear in the .jtl but not in the service log -- that gap is itself a finding worth reporting.
+
+Median client-side latency : 156096.0 ms
+Median server-side latency : 214337.9 ms
+Difference (network+queue) : -58241.9 ms
+  WARNING: client latency below server latency. These two files are probably not from the same run.
+
+NOT RECONCILED -- resolve before reporting these numbers
+
+== GET /search ==
+JMeter samples      : 59
+Service log entries : 59
+JMeter errors       : 0
+Service log errors  : 0
+
+Median client-side latency : 27.0 ms
+Median server-side latency : 0.7 ms
+Difference (network+queue) : 26.3 ms
+
+RECONCILED

@@ -1,0 +1,161 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1791416277586,67,GET /search,200,OK,TG-Search (open model) 2-1,text,true,,2001,221,1,2,http://100.88.74.36:8000/search?q=explained,66,0,32
+1791416278128,22,GET /search,200,OK,TG-Search (open model) 2-2,text,true,,690,224,1,3,http://100.88.74.36:8000/search?q=verification,21,0,9
+1791416279707,21,GET /search,200,OK,TG-Search (open model) 2-3,text,true,,2859,218,1,3,http://100.88.74.36:8000/search?q=during,21,0,8
+1791416280861,24,GET /search,200,OK,TG-Search (open model) 2-4,text,true,,1986,220,1,4,http://100.88.74.36:8000/search?q=merchant,23,0,11
+1791416291328,26,GET /search,200,OK,TG-Search (open model) 2-5,text,true,,4638,218,1,4,http://100.88.74.36:8000/search?q=making,26,0,10
+1791416297445,28,GET /search,200,OK,TG-Search (open model) 2-6,text,true,,1553,220,1,4,http://100.88.74.36:8000/search?q=agencies,28,0,12
+1791416300663,31,GET /search,200,OK,TG-Search (open model) 2-7,text,true,,682,219,1,4,http://100.88.74.36:8000/search?q=further,31,0,10
+1791416311934,29,GET /search,200,OK,TG-Search (open model) 2-8,text,true,,677,221,1,4,http://100.88.74.36:8000/search?q=attempted,29,0,9
+1791416318260,22,GET /search,200,OK,TG-Search (open model) 2-9,text,true,,238,219,1,4,http://100.88.74.36:8000/search?q=finally,22,0,10
+1791416318869,23,GET /search,200,OK,TG-Search (open model) 2-10,text,true,,4229,216,1,4,http://100.88.74.36:8000/search?q=fund,22,0,10
+1791416334293,29,GET /search,200,OK,TG-Search (open model) 2-11,text,true,,240,221,1,4,http://100.88.74.36:8000/search?q=effective,28,0,9
+1791416344027,21,GET /search,200,OK,TG-Search (open model) 2-12,text,true,,2463,219,1,5,http://100.88.74.36:8000/search?q=changed,21,0,9
+1791416346343,21,GET /search,200,OK,TG-Search (open model) 2-13,text,true,,240,221,1,5,http://100.88.74.36:8000/search?q=confirmed,21,0,10
+1791416348656,30,GET /search,200,OK,TG-Search (open model) 2-14,text,true,,238,219,1,5,http://100.88.74.36:8000/search?q=nothing,30,0,10
+1791416358307,24,GET /search,200,OK,TG-Search (open model) 2-15,text,true,,238,219,1,6,http://100.88.74.36:8000/search?q=failure,24,0,12
+1791416359665,24,GET /search,200,OK,TG-Search (open model) 2-16,text,true,,4995,220,1,7,http://100.88.74.36:8000/search?q=anything,23,0,10
+1791416366393,21,GET /search,200,OK,TG-Search (open model) 2-17,text,true,,238,219,1,7,http://100.88.74.36:8000/search?q=lawsuit,21,0,9
+1791416368502,36,GET /search,200,OK,TG-Search (open model) 2-18,text,true,,2926,217,1,8,http://100.88.74.36:8000/search?q=weeks,35,0,10
+1791416371070,22,GET /search,200,OK,TG-Search (open model) 2-19,text,true,,2414,219,1,9,http://100.88.74.36:8000/search?q=calling,22,0,10
+1791416372307,32,GET /search,200,OK,TG-Search (open model) 2-20,text,true,,4615,221,1,9,http://100.88.74.36:8000/search?q=knowledge,32,0,10
+1791416378032,20,GET /search,200,OK,TG-Search (open model) 2-21,text,true,,2040,216,1,9,http://100.88.74.36:8000/search?q=good,20,0,9
+1791416381275,20,GET /search,200,OK,TG-Search (open model) 2-22,text,true,,1136,223,1,10,http://100.88.74.36:8000/search?q=immediately,20,0,9
+1791416385267,20,GET /search,200,OK,TG-Search (open model) 2-23,text,true,,6312,220,1,11,http://100.88.74.36:8000/search?q=business,20,0,9
+1791416397225,20,GET /search,200,OK,TG-Search (open model) 2-24,text,true,,2853,217,1,11,http://100.88.74.36:8000/search?q=terms,20,0,9
+1791416397395,22,GET /search,200,OK,TG-Search (open model) 2-25,text,true,,1990,218,1,12,http://100.88.74.36:8000/search?q=refund,22,0,11
+1791416398483,34,GET /search,200,OK,TG-Search (open model) 2-26,text,true,,681,219,1,12,http://100.88.74.36:8000/search?q=writing,33,0,9
+1791416399081,30,GET /search,200,OK,TG-Search (open model) 2-27,text,true,,2415,221,1,13,http://100.88.74.36:8000/search?q=purchased,30,0,10
+1791416399241,23,GET /search,200,OK,TG-Search (open model) 2-28,text,true,,5449,218,1,13,http://100.88.74.36:8000/search?q=letter,23,0,11
+1791416400145,35,GET /search,200,OK,TG-Search (open model) 2-29,text,true,,3356,222,1,13,http://100.88.74.36:8000/search?q=authorized,35,0,14
+1791416405013,21,GET /search,200,OK,TG-Search (open model) 2-30,text,true,,3261,218,1,14,http://100.88.74.36:8000/search?q=saying,21,0,9
+1791416409460,22,GET /search,200,OK,TG-Search (open model) 2-31,text,true,,9018,216,1,14,http://100.88.74.36:8000/search?q=made,20,0,10
+1791416414333,36,GET /search,200,OK,TG-Search (open model) 2-32,text,true,,1543,218,1,14,http://100.88.74.36:8000/search?q=almost,36,0,10
+1791416421709,23,GET /search,200,OK,TG-Search (open model) 2-33,text,true,,2827,217,1,15,http://100.88.74.36:8000/search?q=where,23,0,9
+1791416427395,33,GET /search,200,OK,TG-Search (open model) 2-34,text,true,,8580,216,1,15,http://100.88.74.36:8000/search?q=work,33,0,11
+1791416437226,31,GET /search,200,OK,TG-Search (open model) 2-35,text,true,,236,217,1,15,http://100.88.74.36:8000/search?q=first,31,0,10
+1791416442452,26,GET /search,200,OK,TG-Search (open model) 2-36,text,true,,679,217,1,15,http://100.88.74.36:8000/search?q=valid,26,0,9
+1791416449714,31,GET /search,200,OK,TG-Search (open model) 2-37,text,true,,1545,220,1,15,http://100.88.74.36:8000/search?q=happened,31,0,10
+1791416450878,22,GET /search,200,OK,TG-Search (open model) 2-38,text,true,,239,220,1,16,http://100.88.74.36:8000/search?q=claiming,22,0,9
+1791416459297,31,GET /search,200,OK,TG-Search (open model) 2-39,text,true,,3752,217,1,16,http://100.88.74.36:8000/search?q=right,31,0,10
+1791416474078,28,GET /search,200,OK,TG-Search (open model) 2-40,text,true,,238,219,1,17,http://100.88.74.36:8000/search?q=receipt,28,0,12
+1791416474620,32,GET /search,200,OK,TG-Search (open model) 2-41,text,true,,7804,221,1,17,http://100.88.74.36:8000/search?q=contacted,31,0,10
+1791416482959,22,GET /search,200,OK,TG-Search (open model) 2-42,text,true,,1132,219,1,18,http://100.88.74.36:8000/search?q=details,22,0,10
+1791416486744,23,GET /search,200,OK,TG-Search (open model) 2-43,text,true,,6397,217,1,18,http://100.88.74.36:8000/search?q=times,22,0,10
+1791416499244,56,GET /search,200,OK,TG-Search (open model) 2-44,text,true,,1123,219,1,18,http://100.88.74.36:8000/search?q=inquiry,56,0,17
+1791416499929,80,GET /search,200,OK,TG-Search (open model) 2-45,text,true,,240,221,1,18,http://100.88.74.36:8000/search?q=available,79,0,31
+1791416501361,85,GET /search,200,OK,TG-Search (open model) 2-46,text,true,,3772,219,1,19,http://100.88.74.36:8000/search?q=believe,85,0,22
+1791416511165,58,GET /search,200,OK,TG-Search (open model) 2-47,text,true,,235,216,1,20,http://100.88.74.36:8000/search?q=done,58,0,24
+1791416512752,68,GET /search,200,OK,TG-Search (open model) 2-48,text,true,,2828,216,1,21,http://100.88.74.36:8000/search?q=whom,68,0,42
+1791416520501,63,GET /search,200,OK,TG-Search (open model) 2-49,text,true,,4231,217,1,22,http://100.88.74.36:8000/search?q=fraud,62,0,25
+1791416277586,249212,POST /tickets,200,OK,TG-Tickets (open model) 1-1,text,true,,294,1741,21,21,http://100.88.74.36:8000/tickets,249211,0,32
+1791416528381,71,GET /search,200,OK,TG-Search (open model) 2-50,text,true,,2412,218,1,21,http://100.88.74.36:8000/search?q=formal,71,0,30
+1791416531715,39,GET /search,200,OK,TG-Search (open model) 2-51,text,true,,2817,218,1,21,http://100.88.74.36:8000/search?q=wanted,39,0,18
+1791416533656,50,GET /search,200,OK,TG-Search (open model) 2-52,text,true,,1542,217,1,21,http://100.88.74.36:8000/search?q=bills,50,0,36
+1791416540377,20,GET /search,200,OK,TG-Search (open model) 2-53,text,true,,235,216,1,21,http://100.88.74.36:8000/search?q=gave,20,0,9
+1791416549059,28,GET /search,200,OK,TG-Search (open model) 2-54,text,true,,1130,217,1,21,http://100.88.74.36:8000/search?q=money,28,0,10
+1791416278128,272772,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-2,text,false,Non-200 from POST /tickets,238,1000,20,20,http://100.88.74.36:8000/tickets,272771,0,9
+1791416552456,28,GET /search,200,OK,TG-Search (open model) 2-55,text,true,,240,221,1,20,http://100.88.74.36:8000/search?q=completed,28,0,10
+1791416280862,272854,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-3,text,false,Non-200 from POST /tickets,238,1489,19,19,http://100.88.74.36:8000/tickets,272854,0,10
+1791416563482,37,GET /search,200,OK,TG-Search (open model) 2-56,text,true,,1132,219,1,20,http://100.88.74.36:8000/search?q=between,37,0,10
+1791416563561,24,GET /search,200,OK,TG-Search (open model) 2-57,text,true,,237,218,1,20,http://100.88.74.36:8000/search?q=emails,24,0,10
+1791416569309,24,GET /search,200,OK,TG-Search (open model) 2-58,text,true,,241,222,1,20,http://100.88.74.36:8000/search?q=impossible,24,0,10
+1791416576935,44,GET /search,200,OK,TG-Search (open model) 2-59,text,true,,1573,216,1,20,http://100.88.74.36:8000/search?q=once,44,0,9
+1791416578332,46,GET /search,200,OK,TG-Search (open model) 2-60,text,true,,237,218,1,21,http://100.88.74.36:8000/search?q=actual,46,0,15
+1791416579046,28,GET /search,200,OK,TG-Search (open model) 2-61,text,true,,2925,216,1,21,http://100.88.74.36:8000/search?q=cash,27,0,9
+1791416580143,33,GET /search,200,OK,TG-Search (open model) 2-62,text,true,,2881,222,1,21,http://100.88.74.36:8000/search?q=accordance,33,0,10
+1791416588328,52,GET /search,200,OK,TG-Search (open model) 2-63,text,true,,237,218,1,22,http://100.88.74.36:8000/search?q=update,52,0,11
+1791416598677,19,GET /search,200,OK,TG-Search (open model) 2-64,text,true,,238,219,1,23,http://100.88.74.36:8000/search?q=pending,19,0,8
+1791416601177,34,GET /search,200,OK,TG-Search (open model) 2-65,text,true,,682,219,1,24,http://100.88.74.36:8000/search?q=website,34,0,10
+1791416603811,27,GET /search,200,OK,TG-Search (open model) 2-66,text,true,,239,220,1,24,http://100.88.74.36:8000/search?q=returned,27,0,10
+1791416607734,20,GET /search,200,OK,TG-Search (open model) 2-67,text,true,,2909,220,1,24,http://100.88.74.36:8000/search?q=security,19,0,9
+1791416344027,272774,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-4,text,false,Non-200 from POST /tickets,238,1399,23,23,http://100.88.74.36:8000/tickets,272774,0,10
+1791416620711,22,GET /search,200,OK,TG-Search (open model) 2-68,text,true,,2411,217,1,24,http://100.88.74.36:8000/search?q=light,22,0,9
+1791416627132,22,GET /search,200,OK,TG-Search (open model) 2-69,text,true,,236,217,1,24,http://100.88.74.36:8000/search?q=speak,22,0,10
+1791416629316,20,GET /search,200,OK,TG-Search (open model) 2-70,text,true,,237,218,1,24,http://100.88.74.36:8000/search?q=ensure,20,0,10
+1791416629882,31,GET /search,200,OK,TG-Search (open model) 2-71,text,true,,2907,218,1,24,http://100.88.74.36:8000/search?q=change,31,0,10
+1791416358307,272858,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-5,text,false,Non-200 from POST /tickets,238,625,23,23,http://100.88.74.36:8000/tickets,272858,0,12
+1791416359665,272834,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-6,text,false,Non-200 from POST /tickets,238,1384,22,22,http://100.88.74.36:8000/tickets,272833,0,10
+1791416633617,20,GET /search,200,OK,TG-Search (open model) 2-72,text,true,,683,221,1,22,http://100.88.74.36:8000/search?q=practices,19,0,9
+1791416636836,108,GET /search,200,OK,TG-Search (open model) 2-73,text,true,,4171,216,1,22,http://100.88.74.36:8000/search?q=help,107,0,9
+1791416368502,272893,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-7,text,false,Non-200 from POST /tickets,238,1169,21,21,http://100.88.74.36:8000/tickets,272893,0,9
+1791416371070,272856,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-8,text,false,Non-200 from POST /tickets,238,1899,20,20,http://100.88.74.36:8000/tickets,272856,0,13
+1791416644625,20,GET /search,200,OK,TG-Search (open model) 2-74,text,true,,1134,221,1,20,http://100.88.74.36:8000/search?q=immediate,20,0,9
+1791416644735,18,GET /search,200,OK,TG-Search (open model) 2-75,text,true,,243,224,1,20,http://100.88.74.36:8000/search?q=notification,18,0,8
+1791416648470,22,GET /search,200,OK,TG-Search (open model) 2-76,text,true,,2876,217,1,21,http://100.88.74.36:8000/search?q=below,22,0,13
+1791416652691,30,GET /search,200,OK,TG-Search (open model) 2-77,text,true,,5108,219,1,21,http://100.88.74.36:8000/search?q=support,30,0,8
+1791416653162,32,GET /search,200,OK,TG-Search (open model) 2-78,text,true,,241,222,1,21,http://100.88.74.36:8000/search?q=previously,32,0,11
+1791416381275,272862,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-9,text,false,Non-200 from POST /tickets,238,1971,20,20,http://100.88.74.36:8000/tickets,272862,0,9
+1791416656943,21,GET /search,200,OK,TG-Search (open model) 2-79,text,true,,6386,217,1,20,http://100.88.74.36:8000/search?q=chase,20,0,10
+1791416385267,272795,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-10,text,false,Non-200 from POST /tickets,238,738,19,19,http://100.88.74.36:8000/tickets,272795,0,9
+1791416665930,20,GET /search,200,OK,TG-Search (open model) 2-80,text,true,,7257,217,1,19,http://100.88.74.36:8000/search?q=email,20,0,9
+1791416667546,20,GET /search,200,OK,TG-Search (open model) 2-81,text,true,,3360,224,1,19,http://100.88.74.36:8000/search?q=unauthorized,20,0,10
+1791416397395,272862,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-11,text,false,Non-200 from POST /tickets,238,1760,18,18,http://100.88.74.36:8000/tickets,272862,0,10
+1791416670377,22,GET /search,200,OK,TG-Search (open model) 2-82,text,true,,3346,220,1,19,http://100.88.74.36:8000/search?q=withdraw,22,0,9
+1791416399081,272862,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-12,text,false,Non-200 from POST /tickets,238,1158,18,18,http://100.88.74.36:8000/tickets,272861,0,10
+1791416404999,272922,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-13,text,false,Non-200 from POST /tickets,238,2070,17,17,http://100.88.74.36:8000/tickets,272922,0,10
+1791416682400,20,GET /search,200,OK,TG-Search (open model) 2-83,text,true,,242,223,1,17,http://100.88.74.36:8000/search?q=transferred,20,0,9
+1791416691419,24,GET /search,200,OK,TG-Search (open model) 2-84,text,true,,5996,217,1,18,http://100.88.74.36:8000/search?q=total,24,0,9
+1791416693852,19,GET /search,200,OK,TG-Search (open model) 2-85,text,true,,2481,216,1,18,http://100.88.74.36:8000/search?q=back,19,0,9
+1791416421709,272771,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-14,text,false,Non-200 from POST /tickets,238,1896,17,17,http://100.88.74.36:8000/tickets,272770,0,9
+1791416698667,28,GET /search,200,OK,TG-Search (open model) 2-86,text,true,,6367,218,1,17,http://100.88.74.36:8000/search?q=amount,28,0,9
+1791416700789,31,GET /search,200,OK,TG-Search (open model) 2-87,text,true,,9058,219,1,17,http://100.88.74.36:8000/search?q=provide,30,0,9
+1791416704839,26,GET /search,200,OK,TG-Search (open model) 2-88,text,true,,4969,220,1,17,http://100.88.74.36:8000/search?q=mortgage,25,0,9
+1791416708476,17,GET /search,200,OK,TG-Search (open model) 2-89,text,true,,2906,217,1,17,http://100.88.74.36:8000/search?q=cards,17,0,8
+1791416712348,35,GET /search,200,OK,TG-Search (open model) 2-90,text,true,,4225,217,1,17,http://100.88.74.36:8000/search?q=above,34,0,10
+1791416712972,57,GET /search,200,OK,TG-Search (open model) 2-91,text,true,,1556,217,1,18,http://100.88.74.36:8000/search?q=proof,57,0,11
+1791416720843,29,GET /search,200,OK,TG-Search (open model) 2-92,text,true,,235,216,1,19,http://100.88.74.36:8000/search?q=took,29,0,9
+1791416721003,19,GET /search,200,OK,TG-Search (open model) 2-93,text,true,,236,217,1,19,http://100.88.74.36:8000/search?q=wells,19,0,10
+1791416450878,272874,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-15,text,false,Non-200 from POST /tickets,238,1758,18,18,http://100.88.74.36:8000/tickets,272874,0,9
+1791416732730,22,GET /search,200,OK,TG-Search (open model) 2-94,text,true,,1576,219,1,18,http://100.88.74.36:8000/search?q=concern,22,0,10
+1791416736764,33,GET /search,200,OK,TG-Search (open model) 2-95,text,true,,238,219,1,19,http://100.88.74.36:8000/search?q=release,33,0,9
+1791416741203,19,GET /search,200,OK,TG-Search (open model) 2-96,text,true,,3754,219,1,19,http://100.88.74.36:8000/search?q=privacy,18,0,9
+1791416474078,272868,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-16,text,false,Non-200 from POST /tickets,238,1324,18,18,http://100.88.74.36:8000/tickets,272868,0,13
+1791416747959,21,GET /search,200,OK,TG-Search (open model) 2-97,text,true,,2007,217,1,18,http://100.88.74.36:8000/search?q=false,21,0,10
+1791416482959,272773,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-17,text,false,Non-200 from POST /tickets,238,1343,17,17,http://100.88.74.36:8000/tickets,272772,0,10
+1791416756612,20,GET /search,200,OK,TG-Search (open model) 2-98,text,true,,235,216,1,17,http://100.88.74.36:8000/search?q=cfpa,20,0,9
+1791416757577,21,GET /search,200,OK,TG-Search (open model) 2-99,text,true,,5448,220,1,18,http://100.88.74.36:8000/search?q=response,20,0,9
+1791416768829,33,GET /search,200,OK,TG-Search (open model) 2-100,text,true,,237,218,1,18,http://100.88.74.36:8000/search?q=refuse,33,0,10
+1791416501361,272875,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-18,text,false,Non-200 from POST /tickets,238,1779,17,17,http://100.88.74.36:8000/tickets,272875,0,22
+1791416776231,32,GET /search,200,OK,TG-Search (open model) 2-101,text,true,,2816,217,1,17,http://100.88.74.36:8000/search?q=added,32,0,10
+1791416511165,272872,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-19,text,false,Non-200 from POST /tickets,238,1150,16,16,http://100.88.74.36:8000/tickets,272872,0,23
+1791416784231,25,GET /search,200,OK,TG-Search (open model) 2-102,text,true,,9051,218,1,16,http://100.88.74.36:8000/search?q=report,24,0,9
+1791416512752,272892,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-20,text,false,Non-200 from POST /tickets,238,731,15,15,http://100.88.74.36:8000/tickets,272892,0,21
+1791416791920,20,GET /search,200,OK,TG-Search (open model) 2-103,text,true,,240,221,1,15,http://100.88.74.36:8000/search?q=violation,20,0,10
+1791416520501,272909,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-21,text,false,Non-200 from POST /tickets,238,927,14,14,http://100.88.74.36:8000/tickets,272909,0,25
+1791416800309,20,GET /search,200,OK,TG-Search (open model) 2-104,text,true,,1556,219,1,14,http://100.88.74.36:8000/search?q=company,19,0,10
+1791416802665,20,GET /search,200,OK,TG-Search (open model) 2-105,text,true,,240,221,1,14,http://100.88.74.36:8000/search?q=corrected,20,0,9
+1791416806488,19,GET /search,200,OK,TG-Search (open model) 2-106,text,true,,2414,220,1,14,http://100.88.74.36:8000/search?q=notified,19,0,8
+1791416808395,23,GET /search,200,OK,TG-Search (open model) 2-107,text,true,,5023,216,1,14,http://100.88.74.36:8000/search?q=hold,23,0,10
+1791416815594,32,GET /search,200,OK,TG-Search (open model) 2-108,text,true,,684,218,1,14,http://100.88.74.36:8000/search?q=missed,32,0,10
+1791416820196,20,GET /search,200,OK,TG-Search (open model) 2-109,text,true,,3352,216,1,14,http://100.88.74.36:8000/search?q=line,20,0,9
+1791416563482,272898,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-22,text,false,Non-200 from POST /tickets,238,1934,13,13,http://100.88.74.36:8000/tickets,272898,0,10
+1791416836697,25,GET /search,200,OK,TG-Search (open model) 2-110,text,true,,1543,218,1,14,http://100.88.74.36:8000/search?q=months,25,0,9
+1791416838365,26,GET /search,200,OK,TG-Search (open model) 2-111,text,true,,6346,216,1,15,http://100.88.74.36:8000/search?q=stop,26,0,11
+1791416842769,38,GET /search,200,OK,TG-Search (open model) 2-112,text,true,,239,220,1,16,http://100.88.74.36:8000/search?q=repeated,38,0,11
+1791416578332,272896,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-23,text,false,Non-200 from POST /tickets,238,1231,15,15,http://100.88.74.36:8000/tickets,272896,0,15
+1791416851891,21,GET /search,200,OK,TG-Search (open model) 2-113,text,true,,682,220,1,15,http://100.88.74.36:8000/search?q=creditor,21,0,9
+1791416852676,28,GET /search,200,OK,TG-Search (open model) 2-114,text,true,,2413,218,1,16,http://100.88.74.36:8000/search?q=demand,28,0,9
+1791416855092,23,GET /search,200,OK,TG-Search (open model) 2-115,text,true,,235,216,1,17,http://100.88.74.36:8000/search?q=wait,22,0,10
+1791416858742,34,GET /search,200,OK,TG-Search (open model) 2-116,text,true,,240,221,1,18,http://100.88.74.36:8000/search?q=providing,34,0,9
+1791416588328,272901,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-24,text,false,Non-200 from POST /tickets,238,1060,17,17,http://100.88.74.36:8000/tickets,272901,0,11
+1791416864308,19,GET /search,200,OK,TG-Search (open model) 2-117,text,true,,5547,218,1,17,http://100.88.74.36:8000/search?q=person,19,0,9
+1791416865040,19,GET /search,200,OK,TG-Search (open model) 2-118,text,true,,237,218,1,17,http://100.88.74.36:8000/search?q=either,19,0,8
+1791416866702,31,GET /search,200,OK,TG-Search (open model) 2-119,text,true,,1559,220,1,17,http://100.88.74.36:8000/search?q=pursuant,31,0,11
+1791416598677,273122,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-25,text,false,Non-200 from POST /tickets,238,1927,16,16,http://100.88.74.36:8000/tickets,273122,0,8
+1791416873841,20,GET /search,200,OK,TG-Search (open model) 2-120,text,true,,687,221,1,16,http://100.88.74.36:8000/search?q=documents,20,0,10
+1791416601177,272905,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-26,text,false,Non-200 from POST /tickets,238,761,15,15,http://100.88.74.36:8000/tickets,272905,0,10
+1791416620711,272799,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-27,text,false,Non-200 from POST /tickets,238,1830,14,14,http://100.88.74.36:8000/tickets,272799,0,9
+1791416648470,272885,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-28,text,false,Non-200 from POST /tickets,238,594,13,13,http://100.88.74.36:8000/tickets,272885,0,10
+1791416670377,272765,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-29,text,false,Non-200 from POST /tickets,238,1551,12,12,http://100.88.74.36:8000/tickets,272765,0,9
+1791416691419,272867,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-30,text,false,Non-200 from POST /tickets,238,1298,11,11,http://100.88.74.36:8000/tickets,272867,0,9
+1791416712972,272897,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-31,text,false,Non-200 from POST /tickets,238,1285,10,10,http://100.88.74.36:8000/tickets,272897,0,10
+1791416720843,272869,POST /tickets,502,Bad Gateway,TG-Tickets (open model) 1-32,text,false,Non-200 from POST /tickets,238,1246,9,9,http://100.88.74.36:8000/tickets,272868,0,9
+1791416842769,151681,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-37,text,false,Non-200 from POST /tickets,3169,0,8,8,http://100.88.74.36:8000/tickets,0,0,11
+1791416852661,141789,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-38,text,false,Non-200 from POST /tickets,3169,0,8,8,http://100.88.74.36:8000/tickets,0,0,11
+1791416858742,135708,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-40,text,false,Non-200 from POST /tickets,3169,0,8,8,http://100.88.74.36:8000/tickets,0,0,9
+1791416836697,157753,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-35,text,false,Non-200 from POST /tickets,3169,0,8,8,http://100.88.74.36:8000/tickets,0,0,9
+1791416736764,257686,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-33,text,false,Non-200 from POST /tickets,3169,0,8,8,http://100.88.74.36:8000/tickets,0,0,9
+1791416855093,139356,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-39,text,false,Non-200 from POST /tickets,3169,0,4,4,http://100.88.74.36:8000/tickets,0,0,8
+1791416838365,156086,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-36,text,false,Non-200 from POST /tickets,3169,0,2,2,http://100.88.74.36:8000/tickets,0,0,11
+1791416757577,236874,POST /tickets,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,TG-Tickets (open model) 1-34,text,false,Non-200 from POST /tickets,3169,0,2,2,http://100.88.74.36:8000/tickets,0,0,9

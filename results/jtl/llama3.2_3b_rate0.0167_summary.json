@@ -1,0 +1,184 @@
+{
+  "config": "llama3.2:3b @ 0.0167 req/s",
+  "files": [
+    "../results/jtl/llama3.2_3b_rate0.0167_run1.jtl",
+    "../results/jtl/llama3.2_3b_rate0.0167_run2.jtl",
+    "../results/jtl/llama3.2_3b_rate0.0167_run3.jtl"
+  ],
+  "by_label": {
+    "GET /search": {
+      "runs": [
+        {
+          "samples": 30,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "p50_ms": 29.0,
+          "p95_ms": 42.7,
+          "p99_ms": 49.0,
+          "mean_ms": 28.8,
+          "max_ms": 51.0,
+          "duration_s": 577.6,
+          "achieved_tps": 0.052,
+          "achieved_per_hour": 187.0
+        },
+        {
+          "samples": 30,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "p50_ms": 26.0,
+          "p95_ms": 42.7,
+          "p99_ms": 60.3,
+          "mean_ms": 28.7,
+          "max_ms": 67.0,
+          "duration_s": 577.8,
+          "achieved_tps": 0.052,
+          "achieved_per_hour": 186.9
+        },
+        {
+          "samples": 30,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "p50_ms": 23.5,
+          "p95_ms": 45.6,
+          "p99_ms": 62.8,
+          "mean_ms": 27.3,
+          "max_ms": 66.0,
+          "duration_s": 581.5,
+          "achieved_tps": 0.052,
+          "achieved_per_hour": 185.7
+        }
+      ],
+      "across_runs": {
+        "p50_ms": {
+          "mean": 26.17,
+          "min": 23.5,
+          "max": 29.0,
+          "stdev": 2.75
+        },
+        "p95_ms": {
+          "mean": 43.67,
+          "min": 42.7,
+          "max": 45.6,
+          "stdev": 1.67
+        },
+        "p99_ms": {
+          "mean": 57.37,
+          "min": 49.0,
+          "max": 62.8,
+          "stdev": 7.35
+        },
+        "mean_ms": {
+          "mean": 28.27,
+          "min": 27.3,
+          "max": 28.8,
+          "stdev": 0.84
+        },
+        "achieved_tps": {
+          "mean": 0.05,
+          "min": 0.05,
+          "max": 0.05,
+          "stdev": 0.0
+        },
+        "achieved_per_hour": {
+          "mean": 186.53,
+          "min": 185.7,
+          "max": 187.0,
+          "stdev": 0.72
+        },
+        "error_rate_pct": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stdev": 0.0
+        }
+      }
+    },
+    "POST /tickets": {
+      "runs": [
+        {
+          "samples": 10,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "p50_ms": 24559.0,
+          "p95_ms": 119100.2,
+          "p99_ms": 119569.6,
+          "mean_ms": 58423.5,
+          "max_ms": 119687.0,
+          "duration_s": 693.2,
+          "achieved_tps": 0.014,
+          "achieved_per_hour": 51.9
+        },
+        {
+          "samples": 10,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "p50_ms": 24179.5,
+          "p95_ms": 50742.8,
+          "p99_ms": 55320.6,
+          "mean_ms": 25750.5,
+          "max_ms": 56465.0,
+          "duration_s": 604.0,
+          "achieved_tps": 0.017,
+          "achieved_per_hour": 59.6
+        },
+        {
+          "samples": 10,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "p50_ms": 28261.5,
+          "p95_ms": 66565.2,
+          "p99_ms": 75573.8,
+          "mean_ms": 34231.0,
+          "max_ms": 77826.0,
+          "duration_s": 560.2,
+          "achieved_tps": 0.018,
+          "achieved_per_hour": 64.3
+        }
+      ],
+      "across_runs": {
+        "p50_ms": {
+          "mean": 25666.67,
+          "min": 24179.5,
+          "max": 28261.5,
+          "stdev": 2255.19
+        },
+        "p95_ms": {
+          "mean": 78802.73,
+          "min": 50742.8,
+          "max": 119100.2,
+          "stdev": 35784.09
+        },
+        "p99_ms": {
+          "mean": 83488.0,
+          "min": 55320.6,
+          "max": 119569.6,
+          "stdev": 32847.52
+        },
+        "mean_ms": {
+          "mean": 39468.33,
+          "min": 25750.5,
+          "max": 58423.5,
+          "stdev": 16954.45
+        },
+        "achieved_tps": {
+          "mean": 0.02,
+          "min": 0.01,
+          "max": 0.02,
+          "stdev": 0.0
+        },
+        "achieved_per_hour": {
+          "mean": 58.6,
+          "min": 51.9,
+          "max": 64.3,
+          "stdev": 6.26
+        },
+        "error_rate_pct": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stdev": 0.0
+        }
+      }
+    }
+  }
+}
