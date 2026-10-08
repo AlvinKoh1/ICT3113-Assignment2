@@ -1,0 +1,26 @@
+# llama3.2_3b_rate0.0167_run3
+
+== POST /tickets ==
+JMeter samples      : 10
+Service log entries : 10
+JMeter errors       : 0
+Service log errors  : 0
+
+Median client-side latency : 28261.5 ms
+Median server-side latency : 31018.6 ms
+Difference (network+queue) : -2757.1 ms
+  WARNING: client latency below server latency. These two files are probably not from the same run.
+
+NOT RECONCILED -- resolve before reporting these numbers
+
+== GET /search ==
+JMeter samples      : 30
+Service log entries : 30
+JMeter errors       : 0
+Service log errors  : 0
+
+Median client-side latency : 23.5 ms
+Median server-side latency : 0.5 ms
+Difference (network+queue) : 23.0 ms
+
+RECONCILED

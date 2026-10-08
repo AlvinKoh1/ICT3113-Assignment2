@@ -1,0 +1,606 @@
+2026-10-08 05:58:24,221 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Loading user properties from: C:\apache-jmeter-5.6.3\bin\user.properties
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Loading system properties from: C:\apache-jmeter-5.6.3\bin\system.properties
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: host=100.88.74.36
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: port=8000
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: ticketRate=0.0667
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: searchRate=0.2001
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: durationMin=10
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: seed=3
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: runId=llama3.2_3b_rate0.0667_run3
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: drainSec=120
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Setting JMeter property: jtl=../results/jtl/llama3.2_3b_rate0.0667_run3.jtl
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Version 5.6.3
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: java.version=21.0.5
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: os.name=Windows 11
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: os.arch=amd64
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: os.version=10.0
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: java.awt.headless=true
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-10-08 05:58:24,245 INFO o.a.j.JMeter: Available Processors =16
+2026-10-08 05:58:24,261 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-10-08 05:58:24,261 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-10-08 05:58:24,261 INFO o.a.j.JMeter: JMeterHome=C:\apache-jmeter-5.6.3
+2026-10-08 05:58:24,261 INFO o.a.j.JMeter: user.dir  =C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment1\jmeter
+2026-10-08 05:58:24,261 INFO o.a.j.JMeter: PWD       =C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment1\jmeter
+2026-10-08 05:58:24,261 INFO o.a.j.JMeter: IP: 192.168.50.217 Name: LAPTOP-48GRBIJT FullName: LAPTOP-48GRBIJT
+2026-10-08 05:58:24,271 INFO o.a.j.s.FileServer: Default base='C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment1\jmeter'
+2026-10-08 05:58:24,276 INFO o.a.j.s.FileServer: Set new base='C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment1\jmeter'
+2026-10-08 05:58:24,427 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-10-08 05:58:24,463 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-10-08 05:58:24,464 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-10-08 05:58:24,469 INFO o.a.j.s.SaveService: Loading file: triage_load_test.jmx
+2026-10-08 05:58:24,526 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-08 05:58:24,526 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-08 05:58:24,526 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-08 05:58:24,526 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-08 05:58:24,526 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-10-08 05:58:24,526 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-10-08 05:58:24,544 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-10-08 05:58:24,560 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-10-08 05:58:24,560 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-08 05:58:24,560 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-08 05:58:24,560 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-10-08 05:58:24,560 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-10-08 05:58:24,626 INFO o.a.j.JMeter: Running test (1791410304626)
+2026-10-08 05:58:24,642 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : TG-Tickets (open model)
+2026-10-08 05:58:24,642 INFO o.a.j.e.StandardJMeterEngine: Starting 0 threads for group TG-Tickets (open model).
+2026-10-08 05:58:24,642 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-10-08 05:58:24,642 INFO o.a.j.t.o.OpenModelThreadGroup: Starting OpenModelThreadGroup#1 with schedule rate(0.0667/sec) random_arrivals(10 min) pause(120 sec)
+2026-10-08 05:58:24,676 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : TG-Search (open model)
+2026-10-08 05:58:24,676 INFO o.a.j.e.StandardJMeterEngine: Starting 0 threads for group TG-Search (open model).
+2026-10-08 05:58:24,676 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-10-08 05:58:24,676 INFO o.a.j.t.o.OpenModelThreadGroup: Starting OpenModelThreadGroup#2 with schedule rate(0.2001/sec) random_arrivals(10 min) pause(120 sec)
+2026-10-08 05:58:24,676 INFO o.a.j.t.o.OpenModelThreadGroup: Thread starting init
+2026-10-08 05:58:24,676 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-10-08 05:58:24,676 INFO o.a.j.t.o.OpenModelThreadGroup: Thread starting init
+2026-10-08 05:58:24,681 INFO o.a.j.t.o.PoissonArrivalsRamp: Generating 120 events, beginRate = 0.2001 / sec, endRate = 0.2001 / sec, duration = 600.0 sec
+2026-10-08 05:58:24,681 INFO o.a.j.t.o.PoissonArrivalsRamp: Generating 40 events, beginRate = 0.0667 / sec, endRate = 0.0667 / sec, duration = 600.0 sec
+2026-10-08 05:58:24,999 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-1
+2026-10-08 05:58:25,000 INFO o.a.j.s.FileServer: Stored: ../data/jmeter_search_terms.tsv
+2026-10-08 05:58:25,019 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = LAPTOP-48GRBIJT
+2026-10-08 05:58:25,024 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-10-08 05:58:25,025 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-10-08 05:58:25,025 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-10-08 05:58:25,025 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-10-08 05:58:25,025 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-10-08 05:58:25,153 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-1
+2026-10-08 05:58:25,153 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-1
+2026-10-08 05:58:28,898 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-2
+2026-10-08 05:58:28,930 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-2
+2026-10-08 05:58:28,930 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-2
+2026-10-08 05:58:32,765 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-3
+2026-10-08 05:58:32,792 INFO o.a.j.r.Summariser: summary +      3 in 00:00:08 =    0.4/s Avg:    42 Min:    23 Max:    74 Err:     0 (0.00%) Active: 1 Started: 3 Finished: 2
+2026-10-08 05:58:32,793 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-3
+2026-10-08 05:58:32,793 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-3
+2026-10-08 05:58:36,713 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-4
+2026-10-08 05:58:36,743 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-4
+2026-10-08 05:58:36,743 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-4
+2026-10-08 05:58:42,457 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-5
+2026-10-08 05:58:42,457 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-1
+2026-10-08 05:58:42,457 INFO o.a.j.s.FileServer: Stored: ../data/jmeter_tickets.tsv
+2026-10-08 05:58:42,481 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-5
+2026-10-08 05:58:42,481 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-5
+2026-10-08 05:58:53,260 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-6
+2026-10-08 05:58:53,289 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-6
+2026-10-08 05:58:53,289 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-6
+2026-10-08 05:58:56,242 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-7
+2026-10-08 05:58:56,274 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-7
+2026-10-08 05:58:56,274 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-7
+2026-10-08 05:58:56,842 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-8
+2026-10-08 05:58:56,878 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-8
+2026-10-08 05:58:56,878 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-8
+2026-10-08 05:59:02,659 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-9
+2026-10-08 05:59:02,694 INFO o.a.j.r.Summariser: summary +      6 in 00:00:30 =    0.2/s Avg:    28 Min:    21 Max:    33 Err:     0 (0.00%) Active: 2 Started: 10 Finished: 8
+2026-10-08 05:59:02,694 INFO o.a.j.r.Summariser: summary =      9 in 00:00:38 =    0.2/s Avg:    32 Min:    21 Max:    74 Err:     0 (0.00%)
+2026-10-08 05:59:02,694 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-9
+2026-10-08 05:59:02,694 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-9
+2026-10-08 05:59:03,790 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-10
+2026-10-08 05:59:03,825 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-10
+2026-10-08 05:59:03,826 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-10
+2026-10-08 05:59:04,837 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-11
+2026-10-08 05:59:04,837 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-2
+2026-10-08 05:59:04,861 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-11
+2026-10-08 05:59:04,861 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-11
+2026-10-08 05:59:07,158 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-12
+2026-10-08 05:59:07,159 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-3
+2026-10-08 05:59:07,189 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-12
+2026-10-08 05:59:07,189 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-12
+2026-10-08 05:59:10,986 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-13
+2026-10-08 05:59:11,012 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-13
+2026-10-08 05:59:11,013 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-13
+2026-10-08 05:59:20,698 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-14
+2026-10-08 05:59:20,698 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-4
+2026-10-08 05:59:20,778 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-14
+2026-10-08 05:59:20,779 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-14
+2026-10-08 05:59:26,276 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-15
+2026-10-08 05:59:26,295 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-15
+2026-10-08 05:59:26,295 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-15
+2026-10-08 05:59:28,018 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-1
+2026-10-08 05:59:28,018 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-1
+2026-10-08 05:59:39,799 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-16
+2026-10-08 05:59:39,815 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-5
+2026-10-08 05:59:39,825 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-16
+2026-10-08 05:59:39,826 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-16
+2026-10-08 05:59:43,515 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-17
+2026-10-08 05:59:43,537 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-17
+2026-10-08 05:59:43,537 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-17
+2026-10-08 05:59:47,034 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-18
+2026-10-08 05:59:47,068 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-18
+2026-10-08 05:59:47,068 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-18
+2026-10-08 05:59:48,566 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-19
+2026-10-08 05:59:48,587 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-19
+2026-10-08 05:59:48,588 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-19
+2026-10-08 05:59:48,868 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-20
+2026-10-08 05:59:48,901 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-20
+2026-10-08 05:59:48,901 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-20
+2026-10-08 05:59:54,185 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-21
+2026-10-08 05:59:54,209 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-21
+2026-10-08 05:59:54,209 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-21
+2026-10-08 05:59:56,201 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-22
+2026-10-08 05:59:56,201 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-6
+2026-10-08 05:59:56,233 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-22
+2026-10-08 05:59:56,233 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-22
+2026-10-08 05:59:58,585 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-23
+2026-10-08 05:59:58,606 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-23
+2026-10-08 05:59:58,607 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-23
+2026-10-08 05:59:59,625 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-24
+2026-10-08 05:59:59,626 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-7
+2026-10-08 05:59:59,667 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-24
+2026-10-08 05:59:59,667 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-24
+2026-10-08 06:00:06,076 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-25
+2026-10-08 06:00:06,076 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-8
+2026-10-08 06:00:06,107 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-26
+2026-10-08 06:00:06,107 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-9
+2026-10-08 06:00:06,110 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-25
+2026-10-08 06:00:06,110 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-25
+2026-10-08 06:00:06,127 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-26
+2026-10-08 06:00:06,127 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-26
+2026-10-08 06:00:09,342 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-27
+2026-10-08 06:00:09,367 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-27
+2026-10-08 06:00:09,367 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-27
+2026-10-08 06:00:19,242 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-28
+2026-10-08 06:00:19,265 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-28
+2026-10-08 06:00:19,265 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-28
+2026-10-08 06:00:23,735 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-29
+2026-10-08 06:00:23,762 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-29
+2026-10-08 06:00:23,762 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-29
+2026-10-08 06:00:35,755 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-30
+2026-10-08 06:00:35,777 INFO o.a.j.r.Summariser: summary +     22 in 00:01:33 =    0.2/s Avg:  2098 Min:    18 Max: 45556 Err:     0 (0.00%) Active: 9 Started: 39 Finished: 30
+2026-10-08 06:00:35,777 INFO o.a.j.r.Summariser: summary =     31 in 00:02:11 =    0.2/s Avg:  1498 Min:    18 Max: 45556 Err:     0 (0.00%)
+2026-10-08 06:00:35,777 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-30
+2026-10-08 06:00:35,777 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-30
+2026-10-08 06:00:36,605 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-2
+2026-10-08 06:00:36,605 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-2
+2026-10-08 06:00:36,622 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-3
+2026-10-08 06:00:36,623 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-3
+2026-10-08 06:00:36,634 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-4
+2026-10-08 06:00:36,634 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-4
+2026-10-08 06:00:40,975 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-10
+2026-10-08 06:00:40,976 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-31
+2026-10-08 06:00:41,015 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-31
+2026-10-08 06:00:41,015 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-31
+2026-10-08 06:00:57,041 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-32
+2026-10-08 06:00:57,041 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-11
+2026-10-08 06:00:57,086 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-32
+2026-10-08 06:00:57,087 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-32
+2026-10-08 06:00:59,691 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-33
+2026-10-08 06:00:59,717 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-33
+2026-10-08 06:00:59,717 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-33
+2026-10-08 06:01:00,568 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-12
+2026-10-08 06:01:00,568 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-34
+2026-10-08 06:01:00,591 INFO o.a.j.r.Summariser: summary +      7 in 00:00:25 =    0.3/s Avg: 36755 Min:    21 Max: 91766 Err:     0 (0.00%) Active: 9 Started: 46 Finished: 37
+2026-10-08 06:01:00,591 INFO o.a.j.r.Summariser: summary =     38 in 00:02:36 =    0.2/s Avg:  7993 Min:    18 Max: 91766 Err:     0 (0.00%)
+2026-10-08 06:01:00,592 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-34
+2026-10-08 06:01:00,592 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-34
+2026-10-08 06:01:03,762 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-35
+2026-10-08 06:01:03,791 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-35
+2026-10-08 06:01:03,791 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-35
+2026-10-08 06:01:11,265 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-5
+2026-10-08 06:01:11,265 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-5
+2026-10-08 06:01:11,275 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-6
+2026-10-08 06:01:11,275 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-6
+2026-10-08 06:01:11,365 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-36
+2026-10-08 06:01:11,385 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-36
+2026-10-08 06:01:11,385 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-36
+2026-10-08 06:01:12,747 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-37
+2026-10-08 06:01:12,780 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-37
+2026-10-08 06:01:12,781 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-37
+2026-10-08 06:01:14,380 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-13
+2026-10-08 06:01:14,380 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-38
+2026-10-08 06:01:14,416 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-38
+2026-10-08 06:01:14,416 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-38
+2026-10-08 06:01:15,134 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-39
+2026-10-08 06:01:15,172 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-39
+2026-10-08 06:01:15,172 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-39
+2026-10-08 06:01:16,468 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-14
+2026-10-08 06:01:16,468 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-40
+2026-10-08 06:01:16,508 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-40
+2026-10-08 06:01:16,508 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-40
+2026-10-08 06:01:36,358 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-41
+2026-10-08 06:01:36,380 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-41
+2026-10-08 06:01:36,381 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-41
+2026-10-08 06:01:44,841 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-42
+2026-10-08 06:01:44,841 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-15
+2026-10-08 06:01:44,876 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-42
+2026-10-08 06:01:44,876 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-42
+2026-10-08 06:01:45,723 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-43
+2026-10-08 06:01:45,745 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-43
+2026-10-08 06:01:45,745 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-43
+2026-10-08 06:01:47,441 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-44
+2026-10-08 06:01:47,462 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-44
+2026-10-08 06:01:47,462 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-44
+2026-10-08 06:01:56,154 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-45
+2026-10-08 06:01:56,177 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-45
+2026-10-08 06:01:56,178 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-45
+2026-10-08 06:01:57,483 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-46
+2026-10-08 06:01:57,522 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-46
+2026-10-08 06:01:57,522 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-46
+2026-10-08 06:02:01,276 INFO o.a.j.r.Summariser: summary +     15 in 00:01:01 =    0.2/s Avg: 19234 Min:    19 Max: 121648 Err:     0 (0.00%) Active: 9 Started: 61 Finished: 52
+2026-10-08 06:02:01,276 INFO o.a.j.r.Summariser: summary =     53 in 00:03:37 =    0.2/s Avg: 11174 Min:    18 Max: 121648 Err:     0 (0.00%)
+2026-10-08 06:02:01,276 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-7
+2026-10-08 06:02:01,276 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-7
+2026-10-08 06:02:01,289 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-8
+2026-10-08 06:02:01,289 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-8
+2026-10-08 06:02:22,225 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-47
+2026-10-08 06:02:22,247 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-47
+2026-10-08 06:02:22,247 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-47
+2026-10-08 06:02:23,514 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-9
+2026-10-08 06:02:23,514 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-9
+2026-10-08 06:02:23,524 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-10
+2026-10-08 06:02:23,524 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-10
+2026-10-08 06:02:25,874 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-48
+2026-10-08 06:02:25,897 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-48
+2026-10-08 06:02:25,897 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-48
+2026-10-08 06:02:32,288 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-49
+2026-10-08 06:02:32,288 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-16
+2026-10-08 06:02:32,310 INFO o.a.j.r.Summariser: summary +      6 in 00:00:31 =    0.2/s Avg: 59204 Min:    20 Max: 137405 Err:     0 (0.00%) Active: 7 Started: 65 Finished: 58
+2026-10-08 06:02:32,311 INFO o.a.j.r.Summariser: summary =     59 in 00:04:08 =    0.2/s Avg: 16059 Min:    18 Max: 137405 Err:     0 (0.00%)
+2026-10-08 06:02:32,311 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-49
+2026-10-08 06:02:32,311 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-49
+2026-10-08 06:02:36,189 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-17
+2026-10-08 06:02:36,189 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-50
+2026-10-08 06:02:36,211 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-50
+2026-10-08 06:02:36,211 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-50
+2026-10-08 06:02:42,449 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-11
+2026-10-08 06:02:42,450 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-11
+2026-10-08 06:02:42,468 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-12
+2026-10-08 06:02:42,468 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-12
+2026-10-08 06:02:43,019 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-51
+2026-10-08 06:02:43,040 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-51
+2026-10-08 06:02:43,040 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-51
+2026-10-08 06:02:50,609 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-52
+2026-10-08 06:02:50,609 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-18
+2026-10-08 06:02:50,639 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-52
+2026-10-08 06:02:50,639 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-52
+2026-10-08 06:02:52,846 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-53
+2026-10-08 06:02:52,868 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-53
+2026-10-08 06:02:52,868 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-53
+2026-10-08 06:02:53,484 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-54
+2026-10-08 06:02:53,518 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-54
+2026-10-08 06:02:53,518 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-54
+2026-10-08 06:02:54,631 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-55
+2026-10-08 06:02:54,652 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-55
+2026-10-08 06:02:54,653 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-55
+2026-10-08 06:02:55,417 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-56
+2026-10-08 06:02:55,417 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-19
+2026-10-08 06:02:55,454 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-56
+2026-10-08 06:02:55,454 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-56
+2026-10-08 06:03:02,088 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-57
+2026-10-08 06:03:02,117 INFO o.a.j.r.Summariser: summary +     10 in 00:00:30 =    0.3/s Avg: 20750 Min:    19 Max: 105406 Err:     0 (0.00%) Active: 8 Started: 76 Finished: 68
+2026-10-08 06:03:02,117 INFO o.a.j.r.Summariser: summary =     69 in 00:04:37 =    0.2/s Avg: 16739 Min:    18 Max: 137405 Err:     0 (0.00%)
+2026-10-08 06:03:02,117 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-57
+2026-10-08 06:03:02,117 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-57
+2026-10-08 06:03:05,712 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-58
+2026-10-08 06:03:05,712 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-20
+2026-10-08 06:03:05,740 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-58
+2026-10-08 06:03:05,740 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-58
+2026-10-08 06:03:07,663 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-59
+2026-10-08 06:03:07,698 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-59
+2026-10-08 06:03:07,698 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-59
+2026-10-08 06:03:08,472 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-60
+2026-10-08 06:03:08,495 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-60
+2026-10-08 06:03:08,495 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-60
+2026-10-08 06:03:17,046 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-61
+2026-10-08 06:03:17,046 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-21
+2026-10-08 06:03:17,085 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-61
+2026-10-08 06:03:17,085 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-61
+2026-10-08 06:03:21,782 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-62
+2026-10-08 06:03:21,804 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-62
+2026-10-08 06:03:21,804 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-62
+2026-10-08 06:03:23,576 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-63
+2026-10-08 06:03:23,606 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-63
+2026-10-08 06:03:23,606 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-63
+2026-10-08 06:03:25,239 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-64
+2026-10-08 06:03:25,239 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-22
+2026-10-08 06:03:25,260 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-64
+2026-10-08 06:03:25,261 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-64
+2026-10-08 06:03:31,220 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-65
+2026-10-08 06:03:31,241 INFO o.a.j.r.Summariser: summary +      8 in 00:00:29 =    0.3/s Avg:    26 Min:    19 Max:    38 Err:     0 (0.00%) Active: 11 Started: 87 Finished: 76
+2026-10-08 06:03:31,241 INFO o.a.j.r.Summariser: summary =     77 in 00:05:07 =    0.3/s Avg: 15002 Min:    18 Max: 137405 Err:     0 (0.00%)
+2026-10-08 06:03:31,241 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-65
+2026-10-08 06:03:31,241 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-65
+2026-10-08 06:03:46,030 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-66
+2026-10-08 06:03:46,030 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-23
+2026-10-08 06:03:46,070 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-66
+2026-10-08 06:03:46,071 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-66
+2026-10-08 06:03:48,563 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-67
+2026-10-08 06:03:48,563 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-24
+2026-10-08 06:03:48,601 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-67
+2026-10-08 06:03:48,601 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-67
+2026-10-08 06:03:50,159 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-13
+2026-10-08 06:03:50,160 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-13
+2026-10-08 06:03:50,183 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-14
+2026-10-08 06:03:50,184 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-14
+2026-10-08 06:03:54,027 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-25
+2026-10-08 06:03:54,027 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-68
+2026-10-08 06:03:54,067 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-68
+2026-10-08 06:03:54,067 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-68
+2026-10-08 06:03:58,806 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-69
+2026-10-08 06:03:58,846 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-69
+2026-10-08 06:03:58,846 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-69
+2026-10-08 06:03:59,549 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-70
+2026-10-08 06:03:59,583 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-70
+2026-10-08 06:03:59,583 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-70
+2026-10-08 06:04:07,576 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-26
+2026-10-08 06:04:07,576 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-71
+2026-10-08 06:04:07,628 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-71
+2026-10-08 06:04:07,628 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-71
+2026-10-08 06:04:15,723 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-72
+2026-10-08 06:04:15,757 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-72
+2026-10-08 06:04:15,757 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-72
+2026-10-08 06:04:30,294 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-73
+2026-10-08 06:04:30,322 INFO o.a.j.r.Summariser: summary +     10 in 00:00:59 =    0.2/s Avg: 30978 Min:    26 Max: 155778 Err:     0 (0.00%) Active: 13 Started: 99 Finished: 86
+2026-10-08 06:04:30,322 INFO o.a.j.r.Summariser: summary =     87 in 00:06:06 =    0.2/s Avg: 16838 Min:    18 Max: 155778 Err:     0 (0.00%)
+2026-10-08 06:04:30,323 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-73
+2026-10-08 06:04:30,323 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-73
+2026-10-08 06:04:39,462 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-15
+2026-10-08 06:04:39,462 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-15
+2026-10-08 06:04:39,483 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-16
+2026-10-08 06:04:39,483 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-16
+2026-10-08 06:04:47,000 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-74
+2026-10-08 06:04:47,026 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-74
+2026-10-08 06:04:47,027 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-74
+2026-10-08 06:04:50,403 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-75
+2026-10-08 06:04:50,439 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-75
+2026-10-08 06:04:50,439 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-75
+2026-10-08 06:04:52,398 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-76
+2026-10-08 06:04:52,420 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-76
+2026-10-08 06:04:52,420 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-76
+2026-10-08 06:05:00,752 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-27
+2026-10-08 06:05:00,768 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-77
+2026-10-08 06:05:00,804 INFO o.a.j.r.Summariser: summary +      6 in 00:00:30 =    0.2/s Avg: 50321 Min:    19 Max: 174620 Err:     0 (0.00%) Active: 12 Started: 104 Finished: 92
+2026-10-08 06:05:00,804 INFO o.a.j.r.Summariser: summary =     93 in 00:06:36 =    0.2/s Avg: 18999 Min:    18 Max: 174620 Err:     0 (0.00%)
+2026-10-08 06:05:00,804 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-77
+2026-10-08 06:05:00,804 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-77
+2026-10-08 06:05:06,263 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-78
+2026-10-08 06:05:06,286 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-78
+2026-10-08 06:05:06,286 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-78
+2026-10-08 06:05:08,591 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-79
+2026-10-08 06:05:08,614 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-79
+2026-10-08 06:05:08,615 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-79
+2026-10-08 06:05:09,738 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-80
+2026-10-08 06:05:09,767 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-80
+2026-10-08 06:05:09,767 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-80
+2026-10-08 06:05:19,037 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-28
+2026-10-08 06:05:19,037 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-81
+2026-10-08 06:05:19,079 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-81
+2026-10-08 06:05:19,080 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-81
+2026-10-08 06:05:23,679 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-17
+2026-10-08 06:05:23,679 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-17
+2026-10-08 06:05:23,694 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-18
+2026-10-08 06:05:23,694 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-18
+2026-10-08 06:05:23,704 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-82
+2026-10-08 06:05:23,727 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-82
+2026-10-08 06:05:23,728 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-82
+2026-10-08 06:05:29,722 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-83
+2026-10-08 06:05:29,750 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-83
+2026-10-08 06:05:29,750 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-83
+2026-10-08 06:05:35,080 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-84
+2026-10-08 06:05:35,108 INFO o.a.j.r.Summariser: summary +      9 in 00:00:34 =    0.3/s Avg: 35640 Min:    21 Max: 167488 Err:     0 (0.00%) Active: 11 Started: 112 Finished: 101
+2026-10-08 06:05:35,108 INFO o.a.j.r.Summariser: summary =    102 in 00:07:10 =    0.2/s Avg: 20467 Min:    18 Max: 174620 Err:     0 (0.00%)
+2026-10-08 06:05:35,108 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-84
+2026-10-08 06:05:35,108 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-84
+2026-10-08 06:05:40,124 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-85
+2026-10-08 06:05:40,158 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-85
+2026-10-08 06:05:40,158 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-85
+2026-10-08 06:05:43,197 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-86
+2026-10-08 06:05:43,197 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-29
+2026-10-08 06:05:43,228 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-86
+2026-10-08 06:05:43,228 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-86
+2026-10-08 06:05:43,832 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-87
+2026-10-08 06:05:43,872 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-87
+2026-10-08 06:05:43,873 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-87
+2026-10-08 06:05:47,314 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-88
+2026-10-08 06:05:47,336 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-88
+2026-10-08 06:05:47,336 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-88
+2026-10-08 06:05:49,258 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-19
+2026-10-08 06:05:49,258 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-19
+2026-10-08 06:05:49,279 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-20
+2026-10-08 06:05:49,279 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-20
+2026-10-08 06:05:49,734 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-89
+2026-10-08 06:05:49,756 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-89
+2026-10-08 06:05:49,756 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-89
+2026-10-08 06:05:49,962 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-90
+2026-10-08 06:05:49,988 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-90
+2026-10-08 06:05:49,988 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-90
+2026-10-08 06:05:53,293 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-91
+2026-10-08 06:05:53,293 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-30
+2026-10-08 06:05:53,321 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-91
+2026-10-08 06:05:53,321 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-91
+2026-10-08 06:05:55,483 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-92
+2026-10-08 06:05:55,506 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-92
+2026-10-08 06:05:55,506 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-92
+2026-10-08 06:05:57,271 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-93
+2026-10-08 06:05:57,308 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-93
+2026-10-08 06:05:57,308 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-93
+2026-10-08 06:06:05,467 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-31
+2026-10-08 06:06:05,467 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-94
+2026-10-08 06:06:05,492 INFO o.a.j.r.Summariser: summary +     12 in 00:00:30 =    0.4/s Avg: 28140 Min:    20 Max: 173839 Err:     0 (0.00%) Active: 12 Started: 125 Finished: 113
+2026-10-08 06:06:05,492 INFO o.a.j.r.Summariser: summary =    114 in 00:07:41 =    0.2/s Avg: 21275 Min:    18 Max: 174620 Err:     0 (0.00%)
+2026-10-08 06:06:05,492 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-94
+2026-10-08 06:06:05,492 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-94
+2026-10-08 06:06:22,101 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-95
+2026-10-08 06:06:22,159 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-95
+2026-10-08 06:06:22,159 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-95
+2026-10-08 06:06:26,629 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-96
+2026-10-08 06:06:26,661 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-96
+2026-10-08 06:06:26,661 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-96
+2026-10-08 06:06:26,941 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-97
+2026-10-08 06:06:26,973 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-97
+2026-10-08 06:06:26,973 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-97
+2026-10-08 06:06:28,566 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-98
+2026-10-08 06:06:28,568 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-32
+2026-10-08 06:06:28,588 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-98
+2026-10-08 06:06:28,588 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-98
+2026-10-08 06:06:31,272 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-99
+2026-10-08 06:06:31,272 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-33
+2026-10-08 06:06:31,294 INFO o.a.j.r.Summariser: summary +      5 in 00:00:26 =    0.2/s Avg:    31 Min:    20 Max:    56 Err:     0 (0.00%) Active: 14 Started: 132 Finished: 118
+2026-10-08 06:06:31,295 INFO o.a.j.r.Summariser: summary =    119 in 00:08:07 =    0.2/s Avg: 20382 Min:    18 Max: 174620 Err:     0 (0.00%)
+2026-10-08 06:06:31,295 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-99
+2026-10-08 06:06:31,295 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-99
+2026-10-08 06:06:32,016 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-22
+2026-10-08 06:06:32,016 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-22
+2026-10-08 06:06:48,382 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-100
+2026-10-08 06:06:48,406 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-100
+2026-10-08 06:06:48,406 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-100
+2026-10-08 06:06:50,227 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-101
+2026-10-08 06:06:50,262 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-101
+2026-10-08 06:06:50,262 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-101
+2026-10-08 06:06:54,044 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-102
+2026-10-08 06:06:54,066 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-102
+2026-10-08 06:06:54,066 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-102
+2026-10-08 06:06:59,306 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-24
+2026-10-08 06:06:59,306 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-24
+2026-10-08 06:07:08,692 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-103
+2026-10-08 06:07:08,716 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-103
+2026-10-08 06:07:08,716 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-103
+2026-10-08 06:07:17,569 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-104
+2026-10-08 06:07:17,590 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-104
+2026-10-08 06:07:17,590 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-104
+2026-10-08 06:07:18,512 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-105
+2026-10-08 06:07:18,534 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-105
+2026-10-08 06:07:18,534 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-105
+2026-10-08 06:07:18,936 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-34
+2026-10-08 06:07:18,936 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-106
+2026-10-08 06:07:18,970 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-106
+2026-10-08 06:07:18,970 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-106
+2026-10-08 06:07:22,286 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-107
+2026-10-08 06:07:22,309 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-107
+2026-10-08 06:07:22,309 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-107
+2026-10-08 06:07:24,279 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-108
+2026-10-08 06:07:24,313 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-108
+2026-10-08 06:07:24,313 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-108
+2026-10-08 06:07:30,731 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-35
+2026-10-08 06:07:30,731 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-109
+2026-10-08 06:07:30,756 INFO o.a.j.r.Summariser: summary +     12 in 00:00:59 =    0.2/s Avg: 31481 Min:    20 Max: 190742 Err:     0 (0.00%) Active: 14 Started: 144 Finished: 130
+2026-10-08 06:07:30,756 INFO o.a.j.r.Summariser: summary =    131 in 00:09:06 =    0.2/s Avg: 21399 Min:    18 Max: 190742 Err:     0 (0.00%)
+2026-10-08 06:07:30,756 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-109
+2026-10-08 06:07:30,757 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-109
+2026-10-08 06:07:31,544 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-21
+2026-10-08 06:07:31,548 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-21
+2026-10-08 06:07:31,824 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-25
+2026-10-08 06:07:31,825 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-25
+2026-10-08 06:07:48,801 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-110
+2026-10-08 06:07:48,836 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-110
+2026-10-08 06:07:48,836 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-110
+2026-10-08 06:07:49,579 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-111
+2026-10-08 06:07:49,605 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-111
+2026-10-08 06:07:49,605 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-111
+2026-10-08 06:07:49,944 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-112
+2026-10-08 06:07:49,978 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-112
+2026-10-08 06:07:49,978 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-112
+2026-10-08 06:07:50,467 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-36
+2026-10-08 06:07:50,467 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-113
+2026-10-08 06:07:50,488 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-113
+2026-10-08 06:07:50,488 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-113
+2026-10-08 06:07:51,812 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-37
+2026-10-08 06:07:51,812 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-114
+2026-10-08 06:07:51,834 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-114
+2026-10-08 06:07:51,834 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-114
+2026-10-08 06:08:01,041 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-115
+2026-10-08 06:08:01,069 INFO o.a.j.r.Summariser: summary +      8 in 00:00:30 =    0.3/s Avg: 59056 Min:    20 Max: 254497 Err:     0 (0.00%) Active: 14 Started: 152 Finished: 138
+2026-10-08 06:08:01,069 INFO o.a.j.r.Summariser: summary =    139 in 00:09:36 =    0.2/s Avg: 23566 Min:    18 Max: 254497 Err:     0 (0.00%)
+2026-10-08 06:08:01,069 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-115
+2026-10-08 06:08:01,069 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-115
+2026-10-08 06:08:01,291 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-116
+2026-10-08 06:08:01,292 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-38
+2026-10-08 06:08:01,321 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-116
+2026-10-08 06:08:01,321 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-116
+2026-10-08 06:08:03,379 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-23
+2026-10-08 06:08:03,379 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-23
+2026-10-08 06:08:03,703 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-26
+2026-10-08 06:08:03,703 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-26
+2026-10-08 06:08:03,716 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-27
+2026-10-08 06:08:03,716 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-27
+2026-10-08 06:08:04,963 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-117
+2026-10-08 06:08:04,987 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-117
+2026-10-08 06:08:04,987 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-117
+2026-10-08 06:08:11,075 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-118
+2026-10-08 06:08:11,075 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-39
+2026-10-08 06:08:11,111 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-118
+2026-10-08 06:08:11,111 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-118
+2026-10-08 06:08:21,781 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-119
+2026-10-08 06:08:21,816 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-119
+2026-10-08 06:08:21,816 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-119
+2026-10-08 06:08:24,050 INFO o.a.j.t.o.EvenArrivalsRamp: Generating 0 events, beginRate = 0.0 / sec, endRate = 0.0 / sec, duration = 120.0 sec
+2026-10-08 06:08:24,050 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-40
+2026-10-08 06:08:24,050 INFO o.a.j.t.o.OpenModelThreadGroup: There will be no more events, so will wait for 120 sec till the end of the schedule
+2026-10-08 06:08:24,050 INFO o.a.j.t.JMeterThread: Thread started: TG-Search (open model) 2-120
+2026-10-08 06:08:24,050 INFO o.a.j.t.o.EvenArrivalsRamp: Generating 0 events, beginRate = 0.0 / sec, endRate = 0.0 / sec, duration = 120.0 sec
+2026-10-08 06:08:24,050 INFO o.a.j.t.o.OpenModelThreadGroup: There will be no more events, so will wait for 120 sec till the end of the schedule
+2026-10-08 06:08:24,073 INFO o.a.j.t.JMeterThread: Thread is done: TG-Search (open model) 2-120
+2026-10-08 06:08:24,073 INFO o.a.j.t.JMeterThread: Thread finished: TG-Search (open model) 2-120
+2026-10-08 06:08:36,906 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-28
+2026-10-08 06:08:36,906 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-28
+2026-10-08 06:08:36,917 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-29
+2026-10-08 06:08:36,917 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-29
+2026-10-08 06:09:26,722 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-30
+2026-10-08 06:09:26,722 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-30
+2026-10-08 06:09:26,736 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-31
+2026-10-08 06:09:26,736 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-31
+2026-10-08 06:09:26,753 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-32
+2026-10-08 06:09:26,753 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-32
+2026-10-08 06:10:09,267 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-33
+2026-10-08 06:10:09,267 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-33
+2026-10-08 06:10:09,281 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-34
+2026-10-08 06:10:09,281 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-34
+2026-10-08 06:10:09,297 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-35
+2026-10-08 06:10:09,297 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-35
+2026-10-08 06:10:24,569 INFO o.a.j.t.o.OpenModelThreadGroup: There will be no more events, will shutdown the thread pool
+2026-10-08 06:10:24,569 INFO o.a.j.t.o.OpenModelThreadGroup: Test schedule finished, however, there are 5 thread(s) still running. Will interrupt the threads. If you want to keep some time for the threads to complete, consider adding pause(10 min) at the end of the schedule.
+2026-10-08 06:10:24,569 INFO o.a.j.t.o.OpenModelThreadGroup: Thread starting done
+2026-10-08 06:10:24,569 INFO o.a.j.t.o.OpenModelThreadGroup: Terminating thread org.apache.jmeter.threads.JMeterThread@e1f179d
+2026-10-08 06:10:24,569 INFO o.a.j.t.JMeterThread: Stopping: TG-Tickets (open model) 1-38
+2026-10-08 06:10:24,569 WARN o.a.j.t.JMeterThread: Interrupting: TG-Tickets (open model) 1-38 sampler: POST /tickets
+2026-10-08 06:10:24,570 INFO o.a.j.t.o.OpenModelThreadGroup: Terminating thread org.apache.jmeter.threads.JMeterThread@370b6d4
+2026-10-08 06:10:24,570 INFO o.a.j.t.JMeterThread: Stopping: TG-Tickets (open model) 1-39
+2026-10-08 06:10:24,570 WARN o.a.j.t.JMeterThread: Interrupting: TG-Tickets (open model) 1-39 sampler: POST /tickets
+2026-10-08 06:10:24,570 INFO o.a.j.t.o.OpenModelThreadGroup: Terminating thread org.apache.jmeter.threads.JMeterThread@13dc6db7
+2026-10-08 06:10:24,570 INFO o.a.j.t.JMeterThread: Stopping: TG-Tickets (open model) 1-36
+2026-10-08 06:10:24,570 WARN o.a.j.t.JMeterThread: Interrupting: TG-Tickets (open model) 1-36 sampler: POST /tickets
+2026-10-08 06:10:24,571 INFO o.a.j.t.o.OpenModelThreadGroup: Terminating thread org.apache.jmeter.threads.JMeterThread@7214cef9
+2026-10-08 06:10:24,571 INFO o.a.j.t.JMeterThread: Stopping: TG-Tickets (open model) 1-37
+2026-10-08 06:10:24,571 WARN o.a.j.t.JMeterThread: Interrupting: TG-Tickets (open model) 1-37 sampler: POST /tickets
+2026-10-08 06:10:24,571 INFO o.a.j.t.o.OpenModelThreadGroup: Terminating thread org.apache.jmeter.threads.JMeterThread@7344d573
+2026-10-08 06:10:24,571 INFO o.a.j.t.JMeterThread: Stopping: TG-Tickets (open model) 1-40
+2026-10-08 06:10:24,571 WARN o.a.j.t.JMeterThread: Interrupting: TG-Tickets (open model) 1-40 sampler: POST /tickets
+2026-10-08 06:10:24,571 INFO o.a.j.t.o.OpenModelThreadGroup: Thread starting done
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-36
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-39
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-40
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-37
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-40
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-38
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-39
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-36
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-38
+2026-10-08 06:10:24,572 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-37
+2026-10-08 06:10:24,572 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-10-08 06:10:24,572 INFO o.a.j.s.FileServer: Close: ../data/jmeter_search_terms.tsv
+2026-10-08 06:10:24,574 INFO o.a.j.s.FileServer: Close: ../data/jmeter_tickets.tsv
+2026-10-08 06:10:24,575 INFO o.a.j.r.Summariser: summary +     21 in 00:02:24 =    0.1/s Avg: 137719 Min:    22 Max: 257347 Err:     5 (23.81%) Active: 0 Started: 160 Finished: 160
+2026-10-08 06:10:24,575 INFO o.a.j.r.Summariser: summary =    160 in 00:12:00 =    0.2/s Avg: 38549 Min:    18 Max: 257347 Err:     5 (3.12%)

@@ -1,0 +1,26 @@
+# qwen2.5_7b_rate0.0333_run3
+
+== POST /tickets ==
+JMeter samples      : 19
+Service log entries : 19
+JMeter errors       : 14
+Service log errors  : 14
+
+Median client-side latency : 259118.0 ms
+Median server-side latency : 300097.8 ms
+Difference (network+queue) : -40979.8 ms
+  WARNING: client latency below server latency. These two files are probably not from the same run.
+
+NOT RECONCILED -- resolve before reporting these numbers
+
+== GET /search ==
+JMeter samples      : 59
+Service log entries : 59
+JMeter errors       : 0
+Service log errors  : 0
+
+Median client-side latency : 24.0 ms
+Median server-side latency : 0.7 ms
+Difference (network+queue) : 23.3 ms
+
+RECONCILED

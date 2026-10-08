@@ -1,0 +1,28 @@
+# llama3.2_3b_rate0.0667_run2
+
+== POST /tickets ==
+JMeter samples      : 40
+Service log entries : 40
+JMeter errors       : 6
+Service log errors  : 0
+
+MISMATCH: error counts differ. Client-side errors (timeouts, connection refused) will appear in the .jtl but not in the service log -- that gap is itself a finding worth reporting.
+
+Median client-side latency : 148428.5 ms
+Median server-side latency : 181830.4 ms
+Difference (network+queue) : -33401.9 ms
+  WARNING: client latency below server latency. These two files are probably not from the same run.
+
+NOT RECONCILED -- resolve before reporting these numbers
+
+== GET /search ==
+JMeter samples      : 120
+Service log entries : 120
+JMeter errors       : 0
+Service log errors  : 0
+
+Median client-side latency : 27.5 ms
+Median server-side latency : 1.6 ms
+Difference (network+queue) : 25.9 ms
+
+RECONCILED

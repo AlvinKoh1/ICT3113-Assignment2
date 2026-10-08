@@ -1,0 +1,1690 @@
+2026-10-08 00:09:24 waiting for 100.88.74.36 to report 'qwen2.5:0.5b ready' ...
+2026-10-08 00:09:24 qwen2.5:0.5b is ready -- starting its matrix
+Service host : 100.88.74.36:8000
+Model        : qwen2.5:0.5b
+Rates        : 0.0167 0.0333 0.0667 req/s
+Duration     : 10 min   Runs: 3
+
+=== qwen2.5_0.5b_rate0.0167_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 00:09:26 SGT (1791389366770)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:03 =    0.3/s Avg:    60 Min:    60 Max:    60 Err:     0 (0.00%) Active: 1 Started: 1 Finished: 0
+summary +      6 in 00:01:31 =    0.1/s Avg:   567 Min:    21 Max:  3251 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
+summary =      7 in 00:01:34 =    0.1/s Avg:   494 Min:    21 Max:  3251 Err:     0 (0.00%)
+summary +      2 in 00:00:31 =    0.1/s Avg:    22 Min:    21 Max:    23 Err:     0 (0.00%) Active: 2 Started: 10 Finished: 8
+summary =      9 in 00:02:05 =    0.1/s Avg:   389 Min:    21 Max:  3251 Err:     0 (0.00%)
+summary +      8 in 00:02:01 =    0.1/s Avg:   485 Min:    18 Max:  2177 Err:     0 (0.00%) Active: 2 Started: 18 Finished: 16
+summary =     17 in 00:04:06 =    0.1/s Avg:   434 Min:    18 Max:  3251 Err:     0 (0.00%)
+summary +      3 in 00:00:58 =    0.1/s Avg:   490 Min:    20 Max:  1429 Err:     0 (0.00%) Active: 1 Started: 20 Finished: 19
+summary =     20 in 00:05:04 =    0.1/s Avg:   443 Min:    18 Max:  3251 Err:     0 (0.00%)
+summary +      4 in 00:01:32 =    0.0/s Avg:    20 Min:    19 Max:    24 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:06:36 =    0.1/s Avg:   372 Min:    18 Max:  3251 Err:     0 (0.00%)
+summary +     13 in 00:03:02 =    0.1/s Avg:   756 Min:    19 Max:  3104 Err:     0 (0.00%) Active: 2 Started: 38 Finished: 36
+summary =     37 in 00:09:38 =    0.1/s Avg:   507 Min:    18 Max:  3251 Err:     0 (0.00%)
+summary +      3 in 00:02:22 =    0.0/s Avg:  2666 Min:    24 Max:  4610 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:   669 Min:    18 Max:  4610 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 00:21:26 SGT (1791390086806)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0167_run1.jtl
+=== qwen2.5_0.5b_rate0.0167_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 00:22:38 SGT (1791390158920)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     21 in 00:06:55 =    0.1/s Avg:   314 Min:    19 Max:  2459 Err:     0 (0.00%) Active: 1 Started: 21 Finished: 20
+summary +      3 in 00:00:31 =    0.1/s Avg:   528 Min:    24 Max:  1532 Err:     0 (0.00%) Active: 2 Started: 25 Finished: 23
+summary =     24 in 00:07:26 =    0.1/s Avg:   341 Min:    19 Max:  2459 Err:     0 (0.00%)
+summary +      2 in 00:00:58 =    0.0/s Avg:   323 Min:    22 Max:   624 Err:     0 (0.00%) Active: 1 Started: 26 Finished: 25
+summary =     26 in 00:08:24 =    0.1/s Avg:   339 Min:    19 Max:  2459 Err:     0 (0.00%)
+summary +     10 in 00:01:28 =    0.1/s Avg:   694 Min:    19 Max:  3216 Err:     0 (0.00%) Active: 2 Started: 37 Finished: 35
+summary =     36 in 00:09:52 =    0.1/s Avg:   438 Min:    19 Max:  3216 Err:     0 (0.00%)
+summary +      4 in 00:02:08 =    0.0/s Avg:  3573 Min:    23 Max:  7556 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:   751 Min:    19 Max:  7556 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 00:34:38 SGT (1791390878942)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0167_run2.jtl
+=== qwen2.5_0.5b_rate0.0167_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 00:35:51 SGT (1791390951079)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:40 =    0.1/s Avg:   844 Min:    27 Max:  2431 Err:     0 (0.00%) Active: 2 Started: 4 Finished: 2
+summary +      7 in 00:01:01 =    0.1/s Avg:   665 Min:    21 Max:  2997 Err:     0 (0.00%) Active: 1 Started: 10 Finished: 9
+summary =     10 in 00:01:42 =    0.1/s Avg:   719 Min:    21 Max:  2997 Err:     0 (0.00%)
+summary +     11 in 00:04:01 =    0.0/s Avg:   176 Min:    21 Max:  1714 Err:     0 (0.00%) Active: 1 Started: 21 Finished: 20
+summary =     21 in 00:05:43 =    0.1/s Avg:   434 Min:    21 Max:  2997 Err:     0 (0.00%)
+summary +      6 in 00:01:58 =    0.1/s Avg:   761 Min:    24 Max:  2995 Err:     0 (0.00%) Active: 2 Started: 28 Finished: 26
+summary =     27 in 00:07:41 =    0.1/s Avg:   507 Min:    21 Max:  2997 Err:     0 (0.00%)
+summary +      5 in 00:00:34 =    0.1/s Avg:  2766 Min:    21 Max:  7851 Err:     0 (0.00%) Active: 1 Started: 32 Finished: 31
+summary =     32 in 00:08:15 =    0.1/s Avg:   860 Min:    21 Max:  7851 Err:     0 (0.00%)
+summary +      8 in 00:03:45 =    0.0/s Avg:    35 Min:    21 Max:   106 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:   695 Min:    21 Max:  7851 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 00:47:51 SGT (1791391671096)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0167_run3.jtl
+
+--- aggregate: qwen2.5:0.5b @ 0.0167 req/s ---
+=== qwen2.5:0.5b @ 0.0167 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           30      23.5      36.5      53.3     0.052    0.00
+2           30      22.0      35.7      59.0     0.052    0.00
+3           30      23.0      35.0      62.7     0.052    0.00
+--------------------------------------------------------------
+  p50_ms             mean=22.83        range=[22.0, 23.5]  sd=0.76
+  p95_ms             mean=35.73        range=[35.0, 36.5]  sd=0.75
+  p99_ms             mean=58.33        range=[53.3, 62.7]  sd=4.74
+  achieved_tps       mean=0.05         range=[0.05, 0.05]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== qwen2.5:0.5b @ 0.0167 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           10    2905.5    4049.3    4497.9     0.017    0.00
+2           10    2343.0    7163.6    7477.5     0.018    0.00
+3           10    2090.0    6202.2    7521.2     0.018    0.00
+--------------------------------------------------------------
+  p50_ms             mean=2446.17      range=[2090.0, 2905.5]  sd=417.42
+  p95_ms             mean=5805.03      range=[4049.3, 7163.6]  sd=1594.69
+  p99_ms             mean=6498.87      range=[4497.9, 7521.2]  sd=1733.03
+  achieved_tps       mean=0.02         range=[0.02, 0.02]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/qwen2.5_0.5b_rate0.0167_summary.json
+
+=== qwen2.5_0.5b_rate0.0333_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 00:49:03 SGT (1791391743673)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     22 in 00:02:27 =    0.1/s Avg:   591 Min:    21 Max:  4551 Err:     0 (0.00%) Active: 1 Started: 22 Finished: 21
+summary +      1 in 00:00:29 =    0.0/s Avg:    23 Min:    23 Max:    23 Err:     0 (0.00%) Active: 2 Started: 24 Finished: 22
+summary =     23 in 00:02:56 =    0.1/s Avg:   567 Min:    21 Max:  4551 Err:     0 (0.00%)
+summary +      5 in 00:00:32 =    0.2/s Avg:   649 Min:    20 Max:  2527 Err:     0 (0.00%) Active: 2 Started: 29 Finished: 27
+summary =     28 in 00:03:28 =    0.1/s Avg:   581 Min:    20 Max:  4551 Err:     0 (0.00%)
+summary +      5 in 00:00:28 =    0.2/s Avg:  1050 Min:    24 Max:  3332 Err:     0 (0.00%) Active: 1 Started: 33 Finished: 32
+summary =     33 in 00:03:57 =    0.1/s Avg:   652 Min:    20 Max:  4551 Err:     0 (0.00%)
+summary +     15 in 00:01:30 =    0.2/s Avg:   546 Min:    20 Max:  4766 Err:     0 (0.00%) Active: 1 Started: 48 Finished: 47
+summary =     48 in 00:05:27 =    0.1/s Avg:   619 Min:    20 Max:  4766 Err:     0 (0.00%)
+summary +      5 in 00:01:05 =    0.1/s Avg:    26 Min:    20 Max:    32 Err:     0 (0.00%) Active: 1 Started: 53 Finished: 52
+summary =     53 in 00:06:31 =    0.1/s Avg:   563 Min:    20 Max:  4766 Err:     0 (0.00%)
+summary +      4 in 00:00:25 =    0.2/s Avg:   422 Min:    28 Max:  1597 Err:     0 (0.00%) Active: 1 Started: 57 Finished: 56
+summary =     57 in 00:06:57 =    0.1/s Avg:   553 Min:    20 Max:  4766 Err:     0 (0.00%)
+summary +      3 in 00:00:29 =    0.1/s Avg:  1809 Min:    21 Max:  5366 Err:     0 (0.00%) Active: 1 Started: 60 Finished: 59
+summary =     60 in 00:07:26 =    0.1/s Avg:   616 Min:    20 Max:  5366 Err:     0 (0.00%)
+summary +      9 in 00:02:01 =    0.1/s Avg:  1382 Min:    20 Max:  4820 Err:     0 (0.00%) Active: 1 Started: 69 Finished: 68
+summary =     69 in 00:09:28 =    0.1/s Avg:   716 Min:    20 Max:  5366 Err:     0 (0.00%)
+summary +      9 in 00:00:32 =    0.3/s Avg:   716 Min:    22 Max:  2584 Err:     0 (0.00%) Active: 1 Started: 78 Finished: 77
+summary =     78 in 00:09:59 =    0.1/s Avg:   716 Min:    20 Max:  5366 Err:     0 (0.00%)
+summary =     78 in 00:12:00 =    0.1/s Avg:   716 Min:    20 Max:  5366 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 01:01:03 SGT (1791392463697)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0333_run1.jtl
+=== qwen2.5_0.5b_rate0.0333_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 01:02:15 SGT (1791392535891)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:18 =    0.1/s Avg:    78 Min:    78 Max:    78 Err:     0 (0.00%) Active: 2 Started: 2 Finished: 0
+summary +      8 in 00:00:26 =    0.3/s Avg:   564 Min:    21 Max:  2473 Err:     0 (0.00%) Active: 2 Started: 10 Finished: 8
+summary =      9 in 00:00:45 =    0.2/s Avg:   510 Min:    21 Max:  2473 Err:     0 (0.00%)
+summary +      4 in 00:00:29 =    0.1/s Avg:  1030 Min:    23 Max:  4038 Err:     0 (0.00%) Active: 1 Started: 13 Finished: 12
+summary =     13 in 00:01:14 =    0.2/s Avg:   670 Min:    21 Max:  4038 Err:     0 (0.00%)
+summary +      7 in 00:00:30 =    0.2/s Avg:    22 Min:    19 Max:    30 Err:     0 (0.00%) Active: 1 Started: 20 Finished: 19
+summary =     20 in 00:01:45 =    0.2/s Avg:   443 Min:    19 Max:  4038 Err:     0 (0.00%)
+summary +      1 in 00:00:32 =    0.0/s Avg:    26 Min:    26 Max:    26 Err:     0 (0.00%) Active: 3 Started: 23 Finished: 20
+summary =     21 in 00:02:17 =    0.2/s Avg:   423 Min:    19 Max:  4038 Err:     0 (0.00%)
+summary +     16 in 00:02:29 =    0.1/s Avg:   524 Min:    20 Max:  3076 Err:     0 (0.00%) Active: 2 Started: 38 Finished: 36
+summary =     37 in 00:04:46 =    0.1/s Avg:   467 Min:    19 Max:  4038 Err:     0 (0.00%)
+summary +      8 in 00:01:04 =    0.1/s Avg:  1254 Min:    20 Max:  4747 Err:     0 (0.00%) Active: 1 Started: 45 Finished: 44
+summary =     45 in 00:05:49 =    0.1/s Avg:   607 Min:    19 Max:  4747 Err:     0 (0.00%)
+summary +      7 in 00:01:25 =    0.1/s Avg:    42 Min:    20 Max:   128 Err:     0 (0.00%) Active: 1 Started: 52 Finished: 51
+summary =     52 in 00:07:15 =    0.1/s Avg:   531 Min:    19 Max:  4747 Err:     0 (0.00%)
+summary +     17 in 00:02:05 =    0.1/s Avg:  1271 Min:    18 Max:  6063 Err:     0 (0.00%) Active: 1 Started: 69 Finished: 68
+summary =     69 in 00:09:20 =    0.1/s Avg:   713 Min:    18 Max:  6063 Err:     0 (0.00%)
+summary +      9 in 00:02:40 =    0.1/s Avg:  1613 Min:    20 Max:  5345 Err:     0 (0.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg:   817 Min:    18 Max:  6063 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 01:14:15 SGT (1791393255910)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0333_run2.jtl
+=== qwen2.5_0.5b_rate0.0333_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 01:15:27 SGT (1791393327968)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:00:32 =    0.1/s Avg:  1023 Min:    26 Max:  3956 Err:     0 (0.00%) Active: 1 Started: 4 Finished: 3
+summary +     11 in 00:01:00 =    0.2/s Avg:   795 Min:    23 Max:  4229 Err:     0 (0.00%) Active: 1 Started: 15 Finished: 14
+summary =     15 in 00:01:32 =    0.2/s Avg:   856 Min:    23 Max:  4229 Err:     0 (0.00%)
+summary +      8 in 00:01:00 =    0.1/s Avg:   559 Min:    21 Max:  2320 Err:     0 (0.00%) Active: 1 Started: 23 Finished: 22
+summary =     23 in 00:02:32 =    0.2/s Avg:   753 Min:    21 Max:  4229 Err:     0 (0.00%)
+summary +      9 in 00:01:35 =    0.1/s Avg:    26 Min:    21 Max:    44 Err:     0 (0.00%) Active: 1 Started: 32 Finished: 31
+summary =     32 in 00:04:08 =    0.1/s Avg:   548 Min:    21 Max:  4229 Err:     0 (0.00%)
+summary +      9 in 00:00:59 =    0.2/s Avg:   378 Min:    20 Max:  3217 Err:     0 (0.00%) Active: 1 Started: 41 Finished: 40
+summary =     41 in 00:05:07 =    0.1/s Avg:   511 Min:    20 Max:  4229 Err:     0 (0.00%)
+summary +      6 in 00:00:28 =    0.2/s Avg:   847 Min:    21 Max:  4823 Err:     0 (0.00%) Active: 1 Started: 47 Finished: 46
+summary =     47 in 00:05:34 =    0.1/s Avg:   554 Min:    20 Max:  4823 Err:     0 (0.00%)
+summary +      4 in 00:01:02 =    0.1/s Avg:    30 Min:    23 Max:    37 Err:     0 (0.00%) Active: 2 Started: 52 Finished: 50
+summary =     51 in 00:06:36 =    0.1/s Avg:   513 Min:    20 Max:  4823 Err:     0 (0.00%)
+summary +      3 in 00:00:29 =    0.1/s Avg:   862 Min:    26 Max:  2528 Err:     0 (0.00%) Active: 1 Started: 54 Finished: 53
+summary =     54 in 00:07:05 =    0.1/s Avg:   532 Min:    20 Max:  4823 Err:     0 (0.00%)
+summary +      7 in 00:00:59 =    0.1/s Avg:   906 Min:    19 Max:  4113 Err:     0 (0.00%) Active: 2 Started: 62 Finished: 60
+summary =     61 in 00:08:04 =    0.1/s Avg:   575 Min:    19 Max:  4823 Err:     0 (0.00%)
+summary +      7 in 00:01:02 =    0.1/s Avg:  1568 Min:    23 Max:  7122 Err:     0 (0.00%) Active: 2 Started: 69 Finished: 67
+summary =     68 in 00:09:06 =    0.1/s Avg:   677 Min:    19 Max:  7122 Err:     0 (0.00%)
+summary +      6 in 00:00:31 =    0.2/s Avg:   691 Min:    21 Max:  2489 Err:     0 (0.00%) Active: 1 Started: 74 Finished: 73
+summary =     74 in 00:09:37 =    0.1/s Avg:   678 Min:    19 Max:  7122 Err:     0 (0.00%)
+summary +      4 in 00:02:23 =    0.0/s Avg:   943 Min:    23 Max:  2743 Err:     0 (0.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg:   692 Min:    19 Max:  7122 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 01:27:27 SGT (1791394047998)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0333_run3.jtl
+
+--- aggregate: qwen2.5:0.5b @ 0.0333 req/s ---
+=== qwen2.5:0.5b @ 0.0333 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           59      26.0      45.6      54.8     0.099    0.00
+2           59      25.0      66.3     476.2     0.102    0.00
+3           59      26.0      36.1      61.2     0.101    0.00
+--------------------------------------------------------------
+  p50_ms             mean=25.67        range=[25.0, 26.0]  sd=0.58
+  p95_ms             mean=49.33        range=[36.1, 66.3]  sd=15.44
+  p99_ms             mean=197.4        range=[54.8, 476.2]  sd=241.47
+  achieved_tps       mean=0.1          range=[0.1, 0.1]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== qwen2.5:0.5b @ 0.0333 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           19    2584.0    4874.6    5267.7     0.033    0.00
+2           19    3076.0    5416.8    5933.8     0.033    0.00
+3           19    2489.0    5052.9    6708.2     0.033    0.00
+--------------------------------------------------------------
+  p50_ms             mean=2716.33      range=[2489.0, 3076.0]  sd=315.08
+  p95_ms             mean=5114.77      range=[4874.6, 5416.8]  sd=276.34
+  p99_ms             mean=5969.9       range=[5267.7, 6708.2]  sd=720.93
+  achieved_tps       mean=0.03         range=[0.03, 0.03]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/qwen2.5_0.5b_rate0.0333_summary.json
+
+=== qwen2.5_0.5b_rate0.0667_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 01:28:40 SGT (1791394120568)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      9 in 00:00:23 =    0.4/s Avg:  2591 Min:    22 Max: 10795 Err:     0 (0.00%) Active: 1 Started: 9 Finished: 8
+summary +     10 in 00:01:01 =    0.2/s Avg:   217 Min:    21 Max:  1923 Err:     0 (0.00%) Active: 2 Started: 20 Finished: 18
+summary =     19 in 00:01:24 =    0.2/s Avg:  1341 Min:    21 Max: 10795 Err:     0 (0.00%)
+summary +     12 in 00:00:27 =    0.4/s Avg:   911 Min:    21 Max:  4484 Err:     0 (0.00%) Active: 3 Started: 33 Finished: 30
+summary =     31 in 00:01:51 =    0.3/s Avg:  1175 Min:    21 Max: 10795 Err:     0 (0.00%)
+summary +     14 in 00:00:29 =    0.5/s Avg:  1695 Min:    22 Max:  6358 Err:     0 (0.00%) Active: 1 Started: 45 Finished: 44
+summary =     45 in 00:02:20 =    0.3/s Avg:  1337 Min:    21 Max: 10795 Err:     0 (0.00%)
+summary +      6 in 00:00:35 =    0.2/s Avg:   725 Min:    25 Max:  4183 Err:     0 (0.00%) Active: 1 Started: 51 Finished: 50
+summary =     51 in 00:02:55 =    0.3/s Avg:  1265 Min:    21 Max: 10795 Err:     0 (0.00%)
+summary +      4 in 00:00:24 =    0.2/s Avg:   914 Min:    30 Max:  3550 Err:     0 (0.00%) Active: 2 Started: 56 Finished: 54
+summary =     55 in 00:03:20 =    0.3/s Avg:  1239 Min:    21 Max: 10795 Err:     0 (0.00%)
+summary +      9 in 00:00:31 =    0.3/s Avg:  1031 Min:    20 Max:  3395 Err:     0 (0.00%) Active: 1 Started: 64 Finished: 63
+summary =     64 in 00:03:50 =    0.3/s Avg:  1210 Min:    20 Max: 10795 Err:     0 (0.00%)
+summary +     15 in 00:01:02 =    0.2/s Avg:   499 Min:    19 Max:  3109 Err:     0 (0.00%) Active: 1 Started: 79 Finished: 78
+summary =     79 in 00:04:52 =    0.3/s Avg:  1075 Min:    19 Max: 10795 Err:     0 (0.00%)
+summary +      9 in 00:00:32 =    0.3/s Avg:   418 Min:    18 Max:  1967 Err:     0 (0.00%) Active: 2 Started: 89 Finished: 87
+summary =     88 in 00:05:24 =    0.3/s Avg:  1008 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +      7 in 00:00:25 =    0.3/s Avg:  1944 Min:    20 Max:  5783 Err:     0 (0.00%) Active: 1 Started: 95 Finished: 94
+summary =     95 in 00:05:49 =    0.3/s Avg:  1077 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +     12 in 00:00:33 =    0.4/s Avg:    70 Min:    20 Max:   547 Err:     0 (0.00%) Active: 1 Started: 107 Finished: 106
+summary =    107 in 00:06:22 =    0.3/s Avg:   964 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +     15 in 00:00:59 =    0.3/s Avg:   625 Min:    21 Max:  3948 Err:     0 (0.00%) Active: 1 Started: 122 Finished: 121
+summary =    122 in 00:07:21 =    0.3/s Avg:   922 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +      8 in 00:00:33 =    0.2/s Avg:   471 Min:    19 Max:  3003 Err:     0 (0.00%) Active: 1 Started: 130 Finished: 129
+summary =    130 in 00:07:53 =    0.3/s Avg:   894 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +      5 in 00:00:28 =    0.2/s Avg:   279 Min:    25 Max:  1284 Err:     0 (0.00%) Active: 1 Started: 135 Finished: 134
+summary =    135 in 00:08:22 =    0.3/s Avg:   872 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +      5 in 00:00:30 =    0.2/s Avg:    25 Min:    21 Max:    31 Err:     0 (0.00%) Active: 1 Started: 140 Finished: 139
+summary =    140 in 00:08:52 =    0.3/s Avg:   841 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +      4 in 00:00:30 =    0.1/s Avg:    32 Min:    23 Max:    37 Err:     0 (0.00%) Active: 2 Started: 145 Finished: 143
+summary =    144 in 00:09:22 =    0.3/s Avg:   819 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +     13 in 00:00:28 =    0.5/s Avg:  1174 Min:    24 Max:  5513 Err:     0 (0.00%) Active: 1 Started: 157 Finished: 156
+summary =    157 in 00:09:50 =    0.3/s Avg:   848 Min:    18 Max: 10795 Err:     0 (0.00%)
+summary +      3 in 00:02:10 =    0.0/s Avg:    22 Min:    20 Max:    25 Err:     0 (0.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg:   833 Min:    18 Max: 10795 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 01:40:40 SGT (1791394840590)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0667_run1.jtl
+=== qwen2.5_0.5b_rate0.0667_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 01:41:52 SGT (1791394912651)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      2 in 00:00:13 =    0.2/s Avg:    46 Min:    24 Max:    69 Err:     0 (0.00%) Active: 1 Started: 2 Finished: 1
+summary +     14 in 00:00:29 =    0.5/s Avg:   844 Min:    21 Max:  3212 Err:     0 (0.00%) Active: 1 Started: 16 Finished: 15
+summary =     16 in 00:00:41 =    0.4/s Avg:   744 Min:    21 Max:  3212 Err:     0 (0.00%)
+summary +     16 in 00:00:56 =    0.3/s Avg:   950 Min:    19 Max:  5418 Err:     0 (0.00%) Active: 1 Started: 32 Finished: 31
+summary =     32 in 00:01:37 =    0.3/s Avg:   847 Min:    19 Max:  5418 Err:     0 (0.00%)
+summary +      5 in 00:00:33 =    0.2/s Avg:    27 Min:    21 Max:    33 Err:     0 (0.00%) Active: 1 Started: 37 Finished: 36
+summary =     37 in 00:02:10 =    0.3/s Avg:   736 Min:    19 Max:  5418 Err:     0 (0.00%)
+summary +     13 in 00:00:30 =    0.4/s Avg:  2278 Min:    20 Max:  9319 Err:     0 (0.00%) Active: 2 Started: 51 Finished: 49
+summary =     50 in 00:02:40 =    0.3/s Avg:  1137 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +      6 in 00:00:32 =    0.2/s Avg:   656 Min:    21 Max:  3814 Err:     0 (0.00%) Active: 1 Started: 56 Finished: 55
+summary =     56 in 00:03:12 =    0.3/s Avg:  1086 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +     11 in 00:00:56 =    0.2/s Avg:   547 Min:    21 Max:  3352 Err:     0 (0.00%) Active: 1 Started: 67 Finished: 66
+summary =     67 in 00:04:08 =    0.3/s Avg:   997 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +      5 in 00:00:32 =    0.2/s Avg:    22 Min:    19 Max:    27 Err:     0 (0.00%) Active: 1 Started: 72 Finished: 71
+summary =     72 in 00:04:41 =    0.3/s Avg:   929 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +     18 in 00:00:57 =    0.3/s Avg:   364 Min:    20 Max:  2885 Err:     0 (0.00%) Active: 2 Started: 91 Finished: 89
+summary =     90 in 00:05:38 =    0.3/s Avg:   816 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +      8 in 00:00:29 =    0.3/s Avg:  1057 Min:    24 Max:  3887 Err:     0 (0.00%) Active: 1 Started: 98 Finished: 97
+summary =     98 in 00:06:07 =    0.3/s Avg:   836 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +     22 in 00:01:36 =    0.2/s Avg:   688 Min:    19 Max:  4718 Err:     0 (0.00%) Active: 1 Started: 120 Finished: 119
+summary =    120 in 00:07:43 =    0.3/s Avg:   809 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +      5 in 00:00:25 =    0.2/s Avg:  1112 Min:    22 Max:  5447 Err:     0 (0.00%) Active: 1 Started: 125 Finished: 124
+summary =    125 in 00:08:08 =    0.3/s Avg:   821 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +      9 in 00:00:31 =    0.3/s Avg:  1140 Min:    21 Max:  4231 Err:     0 (0.00%) Active: 1 Started: 134 Finished: 133
+summary =    134 in 00:08:40 =    0.3/s Avg:   842 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +     17 in 00:00:59 =    0.3/s Avg:   465 Min:    20 Max:  3676 Err:     0 (0.00%) Active: 2 Started: 152 Finished: 150
+summary =    151 in 00:09:38 =    0.3/s Avg:   800 Min:    19 Max:  9319 Err:     0 (0.00%)
+summary +      9 in 00:02:22 =    0.1/s Avg:   923 Min:    21 Max:  3062 Err:     0 (0.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg:   807 Min:    19 Max:  9319 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 01:53:52 SGT (1791395632675)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0667_run2.jtl
+=== qwen2.5_0.5b_rate0.0667_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 01:55:04 SGT (1791395704739)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:01 =    2.0/s Avg:    68 Min:    68 Max:    68 Err:     0 (0.00%) Active: 1 Started: 1 Finished: 0
+summary +      6 in 00:00:28 =    0.2/s Avg:   584 Min:    22 Max:  3357 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
+summary =      7 in 00:00:29 =    0.2/s Avg:   510 Min:    22 Max:  3357 Err:     0 (0.00%)
+summary +     10 in 00:00:27 =    0.4/s Avg:   634 Min:    19 Max:  4210 Err:     0 (0.00%) Active: 2 Started: 18 Finished: 16
+summary =     17 in 00:00:56 =    0.3/s Avg:   583 Min:    19 Max:  4210 Err:     0 (0.00%)
+summary +      9 in 00:00:33 =    0.3/s Avg:   469 Min:    21 Max:  3218 Err:     0 (0.00%) Active: 1 Started: 26 Finished: 25
+summary =     26 in 00:01:30 =    0.3/s Avg:   543 Min:    19 Max:  4210 Err:     0 (0.00%)
+summary +     12 in 00:00:30 =    0.4/s Avg:  1767 Min:    21 Max: 11150 Err:     0 (0.00%) Active: 1 Started: 38 Finished: 37
+summary =     38 in 00:01:59 =    0.3/s Avg:   930 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +     15 in 00:00:56 =    0.3/s Avg:   908 Min:    21 Max:  5460 Err:     0 (0.00%) Active: 2 Started: 54 Finished: 52
+summary =     53 in 00:02:55 =    0.3/s Avg:   924 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      9 in 00:01:02 =    0.1/s Avg:  1366 Min:    21 Max:  8872 Err:     0 (0.00%) Active: 1 Started: 62 Finished: 61
+summary =     62 in 00:03:58 =    0.3/s Avg:   988 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      7 in 00:00:28 =    0.2/s Avg:   907 Min:    21 Max:  3673 Err:     0 (0.00%) Active: 2 Started: 70 Finished: 68
+summary =     69 in 00:04:26 =    0.3/s Avg:   980 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +     14 in 00:00:31 =    0.4/s Avg:   452 Min:    20 Max:  1938 Err:     0 (0.00%) Active: 1 Started: 83 Finished: 82
+summary =     83 in 00:04:57 =    0.3/s Avg:   891 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      8 in 00:00:30 =    0.3/s Avg:  1366 Min:    22 Max:  5120 Err:     0 (0.00%) Active: 1 Started: 91 Finished: 90
+summary =     91 in 00:05:27 =    0.3/s Avg:   932 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +     10 in 00:00:59 =    0.2/s Avg:   647 Min:    22 Max:  4816 Err:     0 (0.00%) Active: 1 Started: 101 Finished: 100
+summary =    101 in 00:06:26 =    0.3/s Avg:   904 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      9 in 00:00:33 =    0.3/s Avg:   394 Min:    20 Max:  2820 Err:     0 (0.00%) Active: 1 Started: 110 Finished: 109
+summary =    110 in 00:06:59 =    0.3/s Avg:   862 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      9 in 00:00:26 =    0.3/s Avg:   426 Min:    20 Max:  3620 Err:     0 (0.00%) Active: 1 Started: 119 Finished: 118
+summary =    119 in 00:07:25 =    0.3/s Avg:   829 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      7 in 00:00:32 =    0.2/s Avg:   857 Min:    22 Max:  3481 Err:     0 (0.00%) Active: 1 Started: 126 Finished: 125
+summary =    126 in 00:07:58 =    0.3/s Avg:   831 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      8 in 00:00:28 =    0.3/s Avg:   341 Min:    25 Max:  1984 Err:     0 (0.00%) Active: 1 Started: 134 Finished: 133
+summary =    134 in 00:08:26 =    0.3/s Avg:   802 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      6 in 00:00:30 =    0.2/s Avg:   251 Min:    20 Max:  1375 Err:     0 (0.00%) Active: 1 Started: 140 Finished: 139
+summary =    140 in 00:08:56 =    0.3/s Avg:   778 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      7 in 00:00:30 =    0.2/s Avg:   336 Min:    22 Max:  2203 Err:     0 (0.00%) Active: 1 Started: 147 Finished: 146
+summary =    147 in 00:09:25 =    0.3/s Avg:   757 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +     11 in 00:00:32 =    0.3/s Avg:   831 Min:    22 Max:  3252 Err:     0 (0.00%) Active: 1 Started: 158 Finished: 157
+summary =    158 in 00:09:57 =    0.3/s Avg:   762 Min:    19 Max: 11150 Err:     0 (0.00%)
+summary +      2 in 00:02:03 =    0.0/s Avg:  1036 Min:    23 Max:  2049 Err:     0 (0.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg:   766 Min:    19 Max: 11150 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 02:07:04 SGT (1791396424759)
+... end of run
+  -> ../results/jtl/qwen2.5_0.5b_rate0.0667_run3.jtl
+
+--- aggregate: qwen2.5:0.5b @ 0.0667 req/s ---
+=== qwen2.5:0.5b @ 0.0667 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1          120      26.5      40.1      52.4     0.201    0.00
+2          120      25.0      37.0      41.6     0.201    0.00
+3          120      25.0      36.0      56.4     0.200    0.00
+--------------------------------------------------------------
+  p50_ms             mean=25.5         range=[25.0, 26.5]  sd=0.87
+  p95_ms             mean=37.7         range=[36.0, 40.1]  sd=2.14
+  p99_ms             mean=50.13        range=[41.6, 56.4]  sd=7.66
+  achieved_tps       mean=0.2          range=[0.2, 0.2]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== qwen2.5:0.5b @ 0.0667 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           40    2945.5    6443.8    9734.2     0.069    0.00
+2           40    2825.5    6778.6    8436.4     0.069    0.00
+3           40    2596.5    5630.6   10261.6     0.069    0.00
+--------------------------------------------------------------
+  p50_ms             mean=2789.17      range=[2596.5, 2945.5]  sd=177.31
+  p95_ms             mean=6284.33      range=[5630.6, 6778.6]  sd=590.38
+  p99_ms             mean=9477.4       range=[8436.4, 10261.6]  sd=939.31
+  achieved_tps       mean=0.07         range=[0.07, 0.07]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/qwen2.5_0.5b_rate0.0667_summary.json
+
+Matrix complete. Commit results/jtl/ to the repository.
+2026-10-08 02:08:15 waiting for 100.88.74.36 to report 'llama3.2:1b ready' ...
+2026-10-08 02:10:54 llama3.2:1b is ready -- starting its matrix
+Service host : 100.88.74.36:8000
+Model        : llama3.2:1b
+Rates        : 0.0167 0.0333 0.0667 req/s
+Duration     : 10 min   Runs: 3
+
+=== llama3.2_1b_rate0.0167_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 02:10:56 SGT (1791396656497)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      2 in 00:00:04 =    0.5/s Avg:    42 Min:    27 Max:    57 Err:     0 (0.00%) Active: 2 Started: 3 Finished: 1
+summary +      5 in 00:01:30 =    0.1/s Avg:  1887 Min:    20 Max:  9335 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
+summary =      7 in 00:01:34 =    0.1/s Avg:  1360 Min:    20 Max:  9335 Err:     0 (0.00%)
+summary +      2 in 00:00:31 =    0.1/s Avg:    33 Min:    33 Max:    34 Err:     0 (0.00%) Active: 2 Started: 10 Finished: 8
+summary =      9 in 00:02:05 =    0.1/s Avg:  1065 Min:    20 Max:  9335 Err:     0 (0.00%)
+summary +      8 in 00:02:01 =    0.1/s Avg:   964 Min:    20 Max:  5075 Err:     0 (0.00%) Active: 2 Started: 18 Finished: 16
+summary =     17 in 00:04:06 =    0.1/s Avg:  1017 Min:    20 Max:  9335 Err:     0 (0.00%)
+summary +      3 in 00:00:58 =    0.1/s Avg:  1345 Min:    21 Max:  3985 Err:     0 (0.00%) Active: 1 Started: 20 Finished: 19
+summary =     20 in 00:05:04 =    0.1/s Avg:  1066 Min:    20 Max:  9335 Err:     0 (0.00%)
+summary +      4 in 00:01:32 =    0.0/s Avg:    28 Min:    20 Max:    32 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:06:36 =    0.1/s Avg:   893 Min:    20 Max:  9335 Err:     0 (0.00%)
+summary +     12 in 00:03:02 =    0.1/s Avg:  1158 Min:    20 Max:  5915 Err:     0 (0.00%) Active: 3 Started: 38 Finished: 35
+summary =     36 in 00:09:38 =    0.1/s Avg:   982 Min:    20 Max:  9335 Err:     0 (0.00%)
+summary +      4 in 00:02:22 =    0.0/s Avg:  7224 Min:    32 Max: 10074 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:  1606 Min:    20 Max: 10074 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 02:22:56 SGT (1791397376518)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0167_run1.jtl
+=== llama3.2_1b_rate0.0167_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 02:24:08 SGT (1791397448541)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     21 in 00:06:55 =    0.1/s Avg:   787 Min:    21 Max:  7615 Err:     0 (0.00%) Active: 1 Started: 21 Finished: 20
+summary +      2 in 00:00:29 =    0.1/s Avg:  2758 Min:    28 Max:  5489 Err:     0 (0.00%) Active: 1 Started: 23 Finished: 22
+summary =     23 in 00:07:24 =    0.1/s Avg:   959 Min:    21 Max:  7615 Err:     0 (0.00%)
+summary +      3 in 00:00:59 =    0.1/s Avg:   556 Min:    21 Max:  1613 Err:     0 (0.00%) Active: 1 Started: 26 Finished: 25
+summary =     26 in 00:08:24 =    0.1/s Avg:   912 Min:    21 Max:  7615 Err:     0 (0.00%)
+summary +     10 in 00:01:28 =    0.1/s Avg:  1426 Min:    21 Max:  6772 Err:     0 (0.00%) Active: 2 Started: 37 Finished: 35
+summary =     36 in 00:09:52 =    0.1/s Avg:  1055 Min:    21 Max:  7615 Err:     0 (0.00%)
+summary +      4 in 00:02:08 =    0.0/s Avg:  5122 Min:    26 Max: 10722 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:  1462 Min:    21 Max: 10722 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 02:36:08 SGT (1791398168563)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0167_run2.jtl
+=== llama3.2_1b_rate0.0167_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 02:37:20 SGT (1791398240503)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:40 =    0.1/s Avg:  1879 Min:    31 Max:  5534 Err:     0 (0.00%) Active: 2 Started: 4 Finished: 2
+summary +      7 in 00:01:01 =    0.1/s Avg:  2491 Min:    20 Max: 12260 Err:     0 (0.00%) Active: 1 Started: 10 Finished: 9
+summary =     10 in 00:01:42 =    0.1/s Avg:  2307 Min:    20 Max: 12260 Err:     0 (0.00%)
+summary +     11 in 00:04:01 =    0.0/s Avg:   492 Min:    19 Max:  5115 Err:     0 (0.00%) Active: 1 Started: 21 Finished: 20
+summary =     21 in 00:05:43 =    0.1/s Avg:  1356 Min:    19 Max: 12260 Err:     0 (0.00%)
+summary +      6 in 00:01:58 =    0.1/s Avg:  1153 Min:    23 Max:  4762 Err:     0 (0.00%) Active: 2 Started: 28 Finished: 26
+summary =     27 in 00:07:41 =    0.1/s Avg:  1311 Min:    19 Max: 12260 Err:     0 (0.00%)
+summary +      4 in 00:00:32 =    0.1/s Avg:  3334 Min:    34 Max:  8738 Err:     0 (0.00%) Active: 2 Started: 32 Finished: 30
+summary =     31 in 00:08:13 =    0.1/s Avg:  1572 Min:    19 Max: 12260 Err:     0 (0.00%)
+summary +      9 in 00:03:47 =    0.0/s Avg:  2044 Min:    21 Max: 14800 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:  1678 Min:    19 Max: 14800 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 02:49:20 SGT (1791398960522)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0167_run3.jtl
+
+--- aggregate: llama3.2:1b @ 0.0167 req/s ---
+=== llama3.2:1b @ 0.0167 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           30      28.5      33.5      50.3     0.052    0.00
+2           30      28.5      35.0      56.3     0.052    0.00
+3           30      31.0      61.3     763.1     0.052    0.00
+--------------------------------------------------------------
+  p50_ms             mean=29.33        range=[28.5, 31.0]  sd=1.44
+  p95_ms             mean=43.27        range=[33.5, 61.3]  sd=15.64
+  p99_ms             mean=289.9        range=[50.3, 763.1]  sd=409.81
+  achieved_tps       mean=0.05         range=[0.05, 0.05]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== llama3.2:1b @ 0.0167 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           10    5495.0    9786.9   10016.6     0.017    0.00
+2           10    5347.5   10266.6   10630.9     0.018    0.00
+3           10    5072.0   13657.0   14571.4     0.018    0.00
+--------------------------------------------------------------
+  p50_ms             mean=5304.83      range=[5072.0, 5495.0]  sd=214.7
+  p95_ms             mean=11236.83     range=[9786.9, 13657.0]  sd=2109.6
+  p99_ms             mean=11739.63     range=[10016.6, 14571.4]  sd=2471.54
+  achieved_tps       mean=0.02         range=[0.02, 0.02]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/llama3.2_1b_rate0.0167_summary.json
+
+=== llama3.2_1b_rate0.0333_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 02:50:32 SGT (1791399032841)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     16 in 00:02:03 =    0.1/s Avg:   977 Min:    18 Max:  7929 Err:     0 (0.00%) Active: 1 Started: 16 Finished: 15
+summary +      6 in 00:00:24 =    0.2/s Avg:   994 Min:    20 Max:  5822 Err:     0 (0.00%) Active: 1 Started: 22 Finished: 21
+summary =     22 in 00:02:27 =    0.1/s Avg:   982 Min:    18 Max:  7929 Err:     0 (0.00%)
+summary +      2 in 00:00:31 =    0.1/s Avg:   743 Min:    31 Max:  1455 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:02:58 =    0.1/s Avg:   962 Min:    18 Max:  7929 Err:     0 (0.00%)
+summary +      4 in 00:00:31 =    0.1/s Avg:   992 Min:    20 Max:  3904 Err:     0 (0.00%) Active: 2 Started: 29 Finished: 27
+summary =     28 in 00:03:28 =    0.1/s Avg:   966 Min:    18 Max:  7929 Err:     0 (0.00%)
+summary +      6 in 00:00:30 =    0.2/s Avg:  1889 Min:    21 Max:  6669 Err:     0 (0.00%) Active: 2 Started: 35 Finished: 33
+summary =     34 in 00:03:58 =    0.1/s Avg:  1129 Min:    18 Max:  7929 Err:     0 (0.00%)
+summary +      8 in 00:01:04 =    0.1/s Avg:  1816 Min:    21 Max:  9367 Err:     0 (0.00%) Active: 1 Started: 42 Finished: 41
+summary =     42 in 00:05:02 =    0.1/s Avg:  1260 Min:    18 Max:  9367 Err:     0 (0.00%)
+summary +     11 in 00:01:29 =    0.1/s Avg:   727 Min:    19 Max:  7728 Err:     0 (0.00%) Active: 1 Started: 53 Finished: 52
+summary =     53 in 00:06:31 =    0.1/s Avg:  1149 Min:    18 Max:  9367 Err:     0 (0.00%)
+summary +      7 in 00:00:56 =    0.1/s Avg:  2362 Min:    21 Max:  9023 Err:     0 (0.00%) Active: 1 Started: 60 Finished: 59
+summary =     60 in 00:07:28 =    0.1/s Avg:  1291 Min:    18 Max:  9367 Err:     0 (0.00%)
+summary +      8 in 00:02:01 =    0.1/s Avg:  1734 Min:    21 Max:  7617 Err:     0 (0.00%) Active: 4 Started: 71 Finished: 67
+summary =     68 in 00:09:28 =    0.1/s Avg:  1343 Min:    18 Max:  9367 Err:     0 (0.00%)
+summary +     10 in 00:00:31 =    0.3/s Avg:  3349 Min:    20 Max: 10033 Err:     0 (0.00%) Active: 1 Started: 78 Finished: 77
+summary =     78 in 00:09:59 =    0.1/s Avg:  1600 Min:    18 Max: 10033 Err:     0 (0.00%)
+summary =     78 in 00:12:00 =    0.1/s Avg:  1600 Min:    18 Max: 10033 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 03:02:32 SGT (1791399752868)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0333_run1.jtl
+=== llama3.2_1b_rate0.0333_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 03:03:44 SGT (1791399824797)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:18 =    0.1/s Avg:    82 Min:    82 Max:    82 Err:     0 (0.00%) Active: 2 Started: 2 Finished: 0
+summary +     13 in 00:01:00 =    0.2/s Avg:  1386 Min:    20 Max:  8094 Err:     0 (0.00%) Active: 1 Started: 14 Finished: 13
+summary =     14 in 00:01:19 =    0.2/s Avg:  1293 Min:    20 Max:  8094 Err:     0 (0.00%)
+summary +      7 in 00:00:58 =    0.1/s Avg:    26 Min:    22 Max:    31 Err:     0 (0.00%) Active: 1 Started: 21 Finished: 20
+summary =     21 in 00:02:16 =    0.2/s Avg:   871 Min:    20 Max:  8094 Err:     0 (0.00%)
+summary +     16 in 00:02:29 =    0.1/s Avg:   909 Min:    20 Max:  6631 Err:     0 (0.00%) Active: 2 Started: 38 Finished: 36
+summary =     37 in 00:04:46 =    0.1/s Avg:   887 Min:    20 Max:  8094 Err:     0 (0.00%)
+summary +      7 in 00:01:01 =    0.1/s Avg:  3018 Min:    21 Max:  9407 Err:     0 (0.00%) Active: 1 Started: 44 Finished: 43
+summary =     44 in 00:05:47 =    0.1/s Avg:  1226 Min:    20 Max:  9407 Err:     0 (0.00%)
+summary +      4 in 00:00:34 =    0.1/s Avg:    27 Min:    23 Max:    34 Err:     0 (0.00%) Active: 1 Started: 48 Finished: 47
+summary =     48 in 00:06:20 =    0.1/s Avg:  1126 Min:    20 Max:  9407 Err:     0 (0.00%)
+summary +      5 in 00:00:58 =    0.1/s Avg:   589 Min:    23 Max:  2823 Err:     0 (0.00%) Active: 2 Started: 54 Finished: 52
+summary =     53 in 00:07:19 =    0.1/s Avg:  1075 Min:    20 Max:  9407 Err:     0 (0.00%)
+summary +     12 in 00:01:31 =    0.1/s Avg:  3298 Min:    22 Max: 15948 Err:     0 (0.00%) Active: 1 Started: 65 Finished: 64
+summary =     65 in 00:08:50 =    0.1/s Avg:  1486 Min:    20 Max: 15948 Err:     0 (0.00%)
+summary +      4 in 00:00:29 =    0.1/s Avg:  1734 Min:    20 Max:  6865 Err:     0 (0.00%) Active: 1 Started: 69 Finished: 68
+summary =     69 in 00:09:20 =    0.1/s Avg:  1500 Min:    20 Max: 15948 Err:     0 (0.00%)
+summary +      9 in 00:02:40 =    0.1/s Avg:  4861 Min:    20 Max: 18328 Err:     0 (0.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg:  1888 Min:    20 Max: 18328 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 03:15:44 SGT (1791400544805)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0333_run2.jtl
+=== llama3.2_1b_rate0.0333_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 03:16:56 SGT (1791400616689)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     15 in 00:01:34 =    0.2/s Avg:  1986 Min:    22 Max: 10320 Err:     0 (0.00%) Active: 1 Started: 15 Finished: 14
+summary +      9 in 00:01:01 =    0.1/s Avg:  1025 Min:    19 Max:  6561 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:02:35 =    0.2/s Avg:  1626 Min:    19 Max: 10320 Err:     0 (0.00%)
+summary +      8 in 00:01:33 =    0.1/s Avg:    24 Min:    20 Max:    32 Err:     0 (0.00%) Active: 1 Started: 32 Finished: 31
+summary =     32 in 00:04:08 =    0.1/s Avg:  1225 Min:    19 Max: 10320 Err:     0 (0.00%)
+summary +      9 in 00:00:59 =    0.2/s Avg:   795 Min:    20 Max:  6930 Err:     0 (0.00%) Active: 1 Started: 41 Finished: 40
+summary =     41 in 00:05:07 =    0.1/s Avg:  1131 Min:    19 Max: 10320 Err:     0 (0.00%)
+summary +      4 in 00:00:28 =    0.1/s Avg:    25 Min:    22 Max:    31 Err:     0 (0.00%) Active: 3 Started: 47 Finished: 44
+summary =     45 in 00:05:34 =    0.1/s Avg:  1033 Min:    19 Max: 10320 Err:     0 (0.00%)
+summary +      6 in 00:01:02 =    0.1/s Avg:  3481 Min:    20 Max: 11611 Err:     0 (0.00%) Active: 2 Started: 52 Finished: 50
+summary =     51 in 00:06:36 =    0.1/s Avg:  1321 Min:    19 Max: 11611 Err:     0 (0.00%)
+summary +      3 in 00:00:29 =    0.1/s Avg:  2765 Min:    21 Max:  8248 Err:     0 (0.00%) Active: 1 Started: 54 Finished: 53
+summary =     54 in 00:07:05 =    0.1/s Avg:  1401 Min:    19 Max: 11611 Err:     0 (0.00%)
+summary +      7 in 00:00:59 =    0.1/s Avg:  2364 Min:    20 Max: 12089 Err:     0 (0.00%) Active: 2 Started: 62 Finished: 60
+summary =     61 in 00:08:04 =    0.1/s Avg:  1511 Min:    19 Max: 12089 Err:     0 (0.00%)
+summary +      7 in 00:01:02 =    0.1/s Avg:  2823 Min:    20 Max: 12185 Err:     0 (0.00%) Active: 2 Started: 69 Finished: 67
+summary =     68 in 00:09:06 =    0.1/s Avg:  1646 Min:    19 Max: 12185 Err:     0 (0.00%)
+summary +      5 in 00:00:27 =    0.2/s Avg:  2093 Min:    22 Max:  6272 Err:     0 (0.00%) Active: 1 Started: 73 Finished: 72
+summary =     73 in 00:09:33 =    0.1/s Avg:  1677 Min:    19 Max: 12185 Err:     0 (0.00%)
+summary +      5 in 00:02:26 =    0.0/s Avg:  1594 Min:    21 Max:  7597 Err:     0 (0.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg:  1672 Min:    19 Max: 12185 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 03:28:56 SGT (1791401336714)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0333_run3.jtl
+
+--- aggregate: llama3.2:1b @ 0.0333 req/s ---
+=== llama3.2:1b @ 0.0333 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           59      25.0      36.2      53.3     0.099    0.00
+2           59      25.0      36.1      57.1     0.102    0.00
+3           59      25.0      36.0      59.4     0.101    0.00
+--------------------------------------------------------------
+  p50_ms             mean=25.0         range=[25.0, 25.0]  sd=0.0
+  p95_ms             mean=36.1         range=[36.0, 36.2]  sd=0.1
+  p99_ms             mean=56.6         range=[53.3, 59.4]  sd=3.08
+  achieved_tps       mean=0.1          range=[0.1, 0.1]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== llama3.2:1b @ 0.0333 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           19    6669.0    9433.6    9913.1     0.032    0.00
+2           19    6631.0   16186.0   17899.6     0.032    0.00
+3           19    6930.0   12098.6   12167.7     0.033    0.00
+--------------------------------------------------------------
+  p50_ms             mean=6743.33      range=[6631.0, 6930.0]  sd=162.77
+  p95_ms             mean=12572.73     range=[9433.6, 16186.0]  sd=3401.08
+  p99_ms             mean=13326.8      range=[9913.1, 17899.6]  sd=4117.48
+  achieved_tps       mean=0.03         range=[0.03, 0.03]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/llama3.2_1b_rate0.0333_summary.json
+
+=== llama3.2_1b_rate0.0667_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 03:30:09 SGT (1791401409176)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      7 in 00:00:22 =    0.3/s Avg:  3734 Min:    21 Max: 18635 Err:     0 (0.00%) Active: 2 Started: 8 Finished: 6
+summary +     12 in 00:01:02 =    0.2/s Avg:  1801 Min:    19 Max: 15922 Err:     0 (0.00%) Active: 2 Started: 20 Finished: 18
+summary =     19 in 00:01:24 =    0.2/s Avg:  2513 Min:    19 Max: 18635 Err:     0 (0.00%)
+summary +     12 in 00:00:27 =    0.4/s Avg:  2086 Min:    23 Max: 13041 Err:     0 (0.00%) Active: 3 Started: 33 Finished: 30
+summary =     31 in 00:01:51 =    0.3/s Avg:  2348 Min:    19 Max: 18635 Err:     0 (0.00%)
+summary +     20 in 00:01:04 =    0.3/s Avg:  4895 Min:    20 Max: 24446 Err:     0 (0.00%) Active: 1 Started: 51 Finished: 50
+summary =     51 in 00:02:55 =    0.3/s Avg:  3347 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      6 in 00:00:28 =    0.2/s Avg:  2118 Min:    22 Max:  8729 Err:     0 (0.00%) Active: 1 Started: 57 Finished: 56
+summary =     57 in 00:03:23 =    0.3/s Avg:  3217 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      7 in 00:00:31 =    0.2/s Avg:  1906 Min:    20 Max:  7862 Err:     0 (0.00%) Active: 1 Started: 64 Finished: 63
+summary =     64 in 00:03:55 =    0.3/s Avg:  3074 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +     10 in 00:00:31 =    0.3/s Avg:  1121 Min:    23 Max:  4204 Err:     0 (0.00%) Active: 1 Started: 74 Finished: 73
+summary =     74 in 00:04:26 =    0.3/s Avg:  2810 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      5 in 00:00:29 =    0.2/s Avg:    26 Min:    21 Max:    31 Err:     0 (0.00%) Active: 2 Started: 80 Finished: 78
+summary =     79 in 00:04:55 =    0.3/s Avg:  2634 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      9 in 00:00:29 =    0.3/s Avg:  1553 Min:    20 Max:  6776 Err:     0 (0.00%) Active: 2 Started: 89 Finished: 87
+summary =     88 in 00:05:24 =    0.3/s Avg:  2523 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      7 in 00:00:28 =    0.3/s Avg:  4604 Min:    20 Max: 13897 Err:     0 (0.00%) Active: 1 Started: 95 Finished: 94
+summary =     95 in 00:05:52 =    0.3/s Avg:  2676 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +     12 in 00:00:30 =    0.4/s Avg:   180 Min:    21 Max:  1850 Err:     0 (0.00%) Active: 1 Started: 107 Finished: 106
+summary =    107 in 00:06:22 =    0.3/s Avg:  2396 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +     15 in 00:01:03 =    0.2/s Avg:  1450 Min:    20 Max:  8413 Err:     0 (0.00%) Active: 1 Started: 122 Finished: 121
+summary =    122 in 00:07:25 =    0.3/s Avg:  2280 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      8 in 00:00:28 =    0.3/s Avg:  1176 Min:    20 Max:  7674 Err:     0 (0.00%) Active: 1 Started: 130 Finished: 129
+summary =    130 in 00:07:54 =    0.3/s Avg:  2212 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      5 in 00:00:28 =    0.2/s Avg:   844 Min:    22 Max:  4103 Err:     0 (0.00%) Active: 1 Started: 135 Finished: 134
+summary =    135 in 00:08:22 =    0.3/s Avg:  2161 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      5 in 00:00:30 =    0.2/s Avg:    24 Min:    19 Max:    33 Err:     0 (0.00%) Active: 1 Started: 140 Finished: 139
+summary =    140 in 00:08:52 =    0.3/s Avg:  2085 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      4 in 00:00:30 =    0.1/s Avg:    24 Min:    21 Max:    30 Err:     0 (0.00%) Active: 2 Started: 145 Finished: 143
+summary =    144 in 00:09:22 =    0.3/s Avg:  2028 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +     13 in 00:00:30 =    0.4/s Avg:  2855 Min:    19 Max: 13152 Err:     0 (0.00%) Active: 3 Started: 159 Finished: 156
+summary =    157 in 00:09:52 =    0.3/s Avg:  2096 Min:    19 Max: 24446 Err:     0 (0.00%)
+summary +      3 in 00:02:08 =    0.0/s Avg:  6899 Min:    35 Max: 12151 Err:     0 (0.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg:  2186 Min:    19 Max: 24446 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 03:42:09 SGT (1791402129193)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0667_run1.jtl
+=== llama3.2_1b_rate0.0667_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 03:43:21 SGT (1791402201120)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      2 in 00:00:13 =    0.2/s Avg:    56 Min:    26 Max:    86 Err:     0 (0.00%) Active: 1 Started: 2 Finished: 1
+summary +     13 in 00:00:29 =    0.5/s Avg:  2009 Min:    19 Max: 10366 Err:     0 (0.00%) Active: 2 Started: 16 Finished: 14
+summary =     15 in 00:00:41 =    0.4/s Avg:  1748 Min:    19 Max: 10366 Err:     0 (0.00%)
+summary +      8 in 00:00:29 =    0.3/s Avg:  2122 Min:    21 Max:  9067 Err:     0 (0.00%) Active: 1 Started: 23 Finished: 22
+summary =     23 in 00:01:10 =    0.3/s Avg:  1878 Min:    19 Max: 10366 Err:     0 (0.00%)
+summary +      9 in 00:00:31 =    0.3/s Avg:  1562 Min:    21 Max:  8688 Err:     0 (0.00%) Active: 2 Started: 33 Finished: 31
+summary =     32 in 00:01:41 =    0.3/s Avg:  1789 Min:    19 Max: 10366 Err:     0 (0.00%)
+summary +      5 in 00:00:29 =    0.2/s Avg:  2330 Min:    23 Max: 11548 Err:     0 (0.00%) Active: 1 Started: 37 Finished: 36
+summary =     37 in 00:02:10 =    0.3/s Avg:  1862 Min:    19 Max: 11548 Err:     0 (0.00%)
+summary +     11 in 00:00:30 =    0.4/s Avg:  2729 Min:    21 Max: 13585 Err:     0 (0.00%) Active: 4 Started: 51 Finished: 47
+summary =     48 in 00:02:40 =    0.3/s Avg:  2061 Min:    19 Max: 13585 Err:     0 (0.00%)
+summary +      8 in 00:00:32 =    0.2/s Avg:  7597 Min:    20 Max: 27118 Err:     0 (0.00%) Active: 1 Started: 56 Finished: 55
+summary =     56 in 00:03:12 =    0.3/s Avg:  2852 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +      7 in 00:00:32 =    0.2/s Avg:   721 Min:    21 Max:  4893 Err:     0 (0.00%) Active: 1 Started: 63 Finished: 62
+summary =     63 in 00:03:44 =    0.3/s Avg:  2615 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +      5 in 00:00:27 =    0.2/s Avg:  1342 Min:    24 Max:  6591 Err:     0 (0.00%) Active: 1 Started: 68 Finished: 67
+summary =     68 in 00:04:12 =    0.3/s Avg:  2521 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +      4 in 00:00:29 =    0.1/s Avg:    26 Min:    20 Max:    32 Err:     0 (0.00%) Active: 1 Started: 72 Finished: 71
+summary =     72 in 00:04:41 =    0.3/s Avg:  2383 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +     19 in 00:01:00 =    0.3/s Avg:   827 Min:    19 Max:  6639 Err:     0 (0.00%) Active: 1 Started: 91 Finished: 90
+summary =     91 in 00:05:40 =    0.3/s Avg:  2058 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +      7 in 00:00:30 =    0.2/s Avg:  1079 Min:    21 Max:  7409 Err:     0 (0.00%) Active: 3 Started: 100 Finished: 97
+summary =     98 in 00:06:10 =    0.3/s Avg:  1988 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +     14 in 00:01:05 =    0.2/s Avg:  2100 Min:    20 Max:  9145 Err:     0 (0.00%) Active: 1 Started: 112 Finished: 111
+summary =    112 in 00:07:15 =    0.3/s Avg:  2002 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +      8 in 00:00:28 =    0.3/s Avg:  1679 Min:    20 Max:  8806 Err:     0 (0.00%) Active: 1 Started: 120 Finished: 119
+summary =    120 in 00:07:43 =    0.3/s Avg:  1980 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +     12 in 00:00:56 =    0.2/s Avg:  1546 Min:    21 Max:  7369 Err:     0 (0.00%) Active: 3 Started: 134 Finished: 131
+summary =    132 in 00:08:40 =    0.3/s Avg:  1941 Min:    19 Max: 27118 Err:     0 (0.00%)
+summary +     20 in 00:01:00 =    0.3/s Avg:  1682 Min:    18 Max: 10208 Err:     0 (0.00%) Active: 1 Started: 152 Finished: 151
+summary =    152 in 00:09:39 =    0.3/s Avg:  1907 Min:    18 Max: 27118 Err:     0 (0.00%)
+summary +      8 in 00:02:21 =    0.1/s Avg:  3385 Min:    27 Max: 11861 Err:     0 (0.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg:  1981 Min:    18 Max: 27118 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 03:55:21 SGT (1791402921143)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0667_run2.jtl
+=== llama3.2_1b_rate0.0667_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 03:56:33 SGT (1791402993022)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:01 =    1.9/s Avg:    80 Min:    80 Max:    80 Err:     0 (0.00%) Active: 1 Started: 1 Finished: 0
+summary +      6 in 00:00:28 =    0.2/s Avg:  1171 Min:    22 Max:  6895 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
+summary =      7 in 00:00:29 =    0.2/s Avg:  1015 Min:    22 Max:  6895 Err:     0 (0.00%)
+summary +     11 in 00:00:32 =    0.3/s Avg:  1523 Min:    21 Max:  8914 Err:     0 (0.00%) Active: 1 Started: 18 Finished: 17
+summary =     18 in 00:01:00 =    0.3/s Avg:  1326 Min:    21 Max:  8914 Err:     0 (0.00%)
+summary +      8 in 00:00:29 =    0.3/s Avg:   270 Min:    21 Max:  1985 Err:     0 (0.00%) Active: 1 Started: 26 Finished: 25
+summary =     26 in 00:01:30 =    0.3/s Avg:  1001 Min:    21 Max:  8914 Err:     0 (0.00%)
+summary +     11 in 00:00:30 =    0.4/s Avg:  1648 Min:    21 Max:  8089 Err:     0 (0.00%) Active: 2 Started: 38 Finished: 36
+summary =     37 in 00:01:59 =    0.3/s Avg:  1193 Min:    21 Max:  8914 Err:     0 (0.00%)
+summary +      5 in 00:00:33 =    0.2/s Avg:  4485 Min:    23 Max: 19857 Err:     0 (0.00%) Active: 2 Started: 43 Finished: 41
+summary =     42 in 00:02:32 =    0.3/s Avg:  1585 Min:    21 Max: 19857 Err:     0 (0.00%)
+summary +     11 in 00:00:30 =    0.4/s Avg:  2906 Min:    21 Max: 12627 Err:     0 (0.00%) Active: 2 Started: 54 Finished: 52
+summary =     53 in 00:03:02 =    0.3/s Avg:  1859 Min:    21 Max: 19857 Err:     0 (0.00%)
+summary +      6 in 00:00:25 =    0.2/s Avg:  4120 Min:    22 Max: 17619 Err:     0 (0.00%) Active: 1 Started: 59 Finished: 58
+summary =     59 in 00:03:27 =    0.3/s Avg:  2089 Min:    21 Max: 19857 Err:     0 (0.00%)
+summary +      9 in 00:01:01 =    0.1/s Avg:  7793 Min:    23 Max: 10015 Err:     7 (77.78%) Active: 4 Started: 71 Finished: 67
+summary =     68 in 00:04:28 =    0.3/s Avg:  2844 Min:    21 Max: 19857 Err:     7 (10.29%)
+summary +     13 in 00:00:34 =    0.4/s Avg: 10010 Min: 10001 Max: 10017 Err:    13 (100.00%) Active: 6 Started: 86 Finished: 80
+summary =     81 in 00:05:02 =    0.3/s Avg:  3994 Min:    21 Max: 19857 Err:    20 (24.69%)
+summary +      7 in 00:00:29 =    0.2/s Avg: 10008 Min: 10004 Max: 10013 Err:     7 (100.00%) Active: 6 Started: 93 Finished: 87
+summary =     88 in 00:05:31 =    0.3/s Avg:  4472 Min:    21 Max: 19857 Err:    27 (30.68%)
+summary +     10 in 00:00:30 =    0.3/s Avg: 10010 Min: 10003 Max: 10017 Err:    10 (100.00%) Active: 1 Started: 98 Finished: 97
+summary =     98 in 00:06:01 =    0.3/s Avg:  5038 Min:    21 Max: 19857 Err:    37 (37.76%)
+summary +      2 in 00:00:29 =    0.1/s Avg:  9036 Min:  8058 Max: 10014 Err:     1 (50.00%) Active: 3 Started: 102 Finished: 99
+summary =    100 in 00:06:30 =    0.3/s Avg:  5118 Min:    21 Max: 19857 Err:    38 (38.00%)
+summary +     10 in 00:00:29 =    0.3/s Avg:  1468 Min:    21 Max:  5964 Err:     0 (0.00%) Active: 1 Started: 110 Finished: 109
+summary =    110 in 00:06:59 =    0.3/s Avg:  4786 Min:    21 Max: 19857 Err:    38 (34.55%)
+summary +     10 in 00:00:30 =    0.3/s Avg:   786 Min:    22 Max:  7623 Err:     0 (0.00%) Active: 2 Started: 121 Finished: 119
+summary =    120 in 00:07:29 =    0.3/s Avg:  4452 Min:    21 Max: 19857 Err:    38 (31.67%)
+summary +      6 in 00:00:29 =    0.2/s Avg:  1651 Min:    21 Max:  5560 Err:     0 (0.00%) Active: 1 Started: 126 Finished: 125
+summary =    126 in 00:07:58 =    0.3/s Avg:  4319 Min:    21 Max: 19857 Err:    38 (30.16%)
+summary +      9 in 00:00:32 =    0.3/s Avg:  1344 Min:    22 Max:  6264 Err:     0 (0.00%) Active: 1 Started: 135 Finished: 134
+summary =    135 in 00:08:29 =    0.3/s Avg:  4121 Min:    21 Max: 19857 Err:    38 (28.15%)
+summary +      5 in 00:00:28 =    0.2/s Avg:    26 Min:    21 Max:    32 Err:     0 (0.00%) Active: 2 Started: 141 Finished: 139
+summary =    140 in 00:08:58 =    0.3/s Avg:  3974 Min:    21 Max: 19857 Err:    38 (27.14%)
+summary +      9 in 00:00:30 =    0.3/s Avg:  1033 Min:    20 Max:  5501 Err:     0 (0.00%) Active: 3 Started: 151 Finished: 148
+summary =    149 in 00:09:27 =    0.3/s Avg:  3797 Min:    20 Max: 19857 Err:    38 (25.50%)
+summary +      9 in 00:00:30 =    0.3/s Avg:  2853 Min:    21 Max:  8762 Err:     0 (0.00%) Active: 1 Started: 158 Finished: 157
+summary =    158 in 00:09:57 =    0.3/s Avg:  3743 Min:    20 Max: 19857 Err:    38 (24.05%)
+summary +      2 in 00:02:03 =    0.0/s Avg:  3442 Min:    32 Max:  6852 Err:     0 (0.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg:  3739 Min:    20 Max: 19857 Err:    38 (23.75%)
+Tidying up ...    @ 2026 Oct 8 04:08:33 SGT (1791403713042)
+... end of run
+  -> ../results/jtl/llama3.2_1b_rate0.0667_run3.jtl
+
+--- aggregate: llama3.2:1b @ 0.0667 req/s ---
+=== llama3.2:1b @ 0.0667 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1          120      26.0      36.1      60.2     0.201    0.00
+2          120      27.0      37.0      50.5     0.201    0.00
+3          120      31.0   10014.0   10016.8     0.200   22.50
+--------------------------------------------------------------
+  p50_ms             mean=28.0         range=[26.0, 31.0]  sd=2.65
+  p95_ms             mean=3362.37      range=[36.1, 10014.0]  sd=5760.48
+  p99_ms             mean=3375.83      range=[50.5, 10016.8]  sd=5751.25
+  achieved_tps       mean=0.2          range=[0.2, 0.2]  sd=0.0
+  error_rate_pct     mean=7.5          range=[0.0, 22.5]  sd=12.99
+
+=== llama3.2:1b @ 0.0667 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           40    7498.0   18721.2   22852.5     0.068    0.00
+2           40    6800.0   15529.0   23613.8     0.068    0.00
+3           40    7856.0   12876.6   18984.2     0.068   27.50
+--------------------------------------------------------------
+  p50_ms             mean=7384.67      range=[6800.0, 7856.0]  sd=537.05
+  p95_ms             mean=15708.93     range=[12876.6, 18721.2]  sd=2926.45
+  p99_ms             mean=21816.83     range=[18984.2, 23613.8]  sd=2482.49
+  achieved_tps       mean=0.07         range=[0.07, 0.07]  sd=0.0
+  error_rate_pct     mean=9.17         range=[0.0, 27.5]  sd=15.88
+
+wrote ../results/jtl/llama3.2_1b_rate0.0667_summary.json
+
+Matrix complete. Commit results/jtl/ to the repository.
+2026-10-08 04:09:43 waiting for 100.88.74.36 to report 'llama3.2:3b ready' ...
+2026-10-08 04:12:46 llama3.2:3b is ready -- starting its matrix
+Service host : 100.88.74.36:8000
+Model        : llama3.2:3b
+Rates        : 0.0167 0.0333 0.0667 req/s
+Duration     : 10 min   Runs: 3
+
+=== llama3.2_3b_rate0.0167_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 04:12:47 SGT (1791403967999)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     14 in 00:03:44 =    0.1/s Avg:  4752 Min:    20 Max: 24765 Err:     0 (0.00%) Active: 1 Started: 14 Finished: 13
+summary +      7 in 00:01:30 =    0.1/s Avg:  2710 Min:    20 Max: 18806 Err:     0 (0.00%) Active: 1 Started: 21 Finished: 20
+summary =     21 in 00:05:14 =    0.1/s Avg:  4071 Min:    20 Max: 24765 Err:     0 (0.00%)
+summary +      2 in 00:00:32 =    0.1/s Avg:    27 Min:    24 Max:    31 Err:     0 (0.00%) Active: 1 Started: 23 Finished: 22
+summary =     23 in 00:05:46 =    0.1/s Avg:  3720 Min:    20 Max: 24765 Err:     0 (0.00%)
+summary +      6 in 00:01:56 =    0.1/s Avg:  1359 Min:    20 Max:  8009 Err:     0 (0.00%) Active: 1 Started: 29 Finished: 28
+summary =     29 in 00:07:42 =    0.1/s Avg:  3231 Min:    20 Max: 24765 Err:     0 (0.00%)
+summary +      7 in 00:02:02 =    0.1/s Avg:  3113 Min:    22 Max: 21614 Err:     0 (0.00%) Active: 5 Started: 40 Finished: 35
+summary =     36 in 00:09:44 =    0.1/s Avg:  3208 Min:    20 Max: 24765 Err:     0 (0.00%)
+summary +      4 in 00:02:16 =    0.0/s Avg: 117395 Min: 115300 Max: 119687 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg: 14627 Min:    20 Max: 119687 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 04:24:48 SGT (1791404688014)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0167_run1.jtl
+=== llama3.2_3b_rate0.0167_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 04:25:59 SGT (1791404759901)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:34 =    0.1/s Avg:    35 Min:    23 Max:    44 Err:     0 (0.00%) Active: 1 Started: 3 Finished: 2
+summary +      3 in 00:00:58 =    0.1/s Avg:  8198 Min:    22 Max: 24546 Err:     0 (0.00%) Active: 1 Started: 6 Finished: 5
+summary =      6 in 00:01:32 =    0.1/s Avg:  4117 Min:    22 Max: 24546 Err:     0 (0.00%)
+summary +      5 in 00:01:00 =    0.1/s Avg:  3126 Min:    20 Max: 15538 Err:     0 (0.00%) Active: 1 Started: 11 Finished: 10
+summary =     11 in 00:02:32 =    0.1/s Avg:  3666 Min:    20 Max: 24546 Err:     0 (0.00%)
+summary +      1 in 00:00:59 =    0.0/s Avg:    20 Min:    20 Max:    20 Err:     0 (0.00%) Active: 1 Started: 12 Finished: 11
+summary =     12 in 00:03:31 =    0.1/s Avg:  3362 Min:    20 Max: 24546 Err:     0 (0.00%)
+summary +      1 in 00:00:34 =    0.0/s Avg:    20 Min:    20 Max:    20 Err:     0 (0.00%) Active: 1 Started: 13 Finished: 12
+summary =     13 in 00:04:05 =    0.1/s Avg:  3105 Min:    20 Max: 24546 Err:     0 (0.00%)
+summary +      6 in 00:02:00 =    0.0/s Avg:  5200 Min:    20 Max: 31068 Err:     0 (0.00%) Active: 1 Started: 19 Finished: 18
+summary =     19 in 00:06:05 =    0.1/s Avg:  3767 Min:    20 Max: 31068 Err:     0 (0.00%)
+summary +      8 in 00:02:25 =    0.1/s Avg:  5668 Min:    23 Max: 23813 Err:     0 (0.00%) Active: 1 Started: 27 Finished: 26
+summary =     27 in 00:08:31 =    0.1/s Avg:  4330 Min:    20 Max: 31068 Err:     0 (0.00%)
+summary +      3 in 00:00:30 =    0.1/s Avg:  8748 Min:    21 Max: 26156 Err:     0 (0.00%) Active: 1 Started: 30 Finished: 29
+summary =     30 in 00:09:00 =    0.1/s Avg:  4772 Min:    20 Max: 31068 Err:     0 (0.00%)
+summary +      4 in 00:00:30 =    0.1/s Avg:  3720 Min:    24 Max: 14265 Err:     0 (0.00%) Active: 1 Started: 34 Finished: 33
+summary =     34 in 00:09:30 =    0.1/s Avg:  4648 Min:    20 Max: 31068 Err:     0 (0.00%)
+summary +      5 in 00:01:05 =    0.1/s Avg:  8771 Min:    21 Max: 43749 Err:     0 (0.00%) Active: 2 Started: 40 Finished: 38
+summary =     39 in 00:10:35 =    0.1/s Avg:  5176 Min:    20 Max: 43749 Err:     0 (0.00%)
+summary +      1 in 00:01:25 =    0.0/s Avg: 56465 Min: 56465 Max: 56465 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:  6459 Min:    20 Max: 56465 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 04:37:59 SGT (1791405479921)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0167_run2.jtl
+=== llama3.2_3b_rate0.0167_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 04:39:11 SGT (1791405551975)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:18 =    0.1/s Avg:    66 Min:    66 Max:    66 Err:     0 (0.00%) Active: 2 Started: 2 Finished: 0
+summary +     13 in 00:02:34 =    0.1/s Avg: 11941 Min:    20 Max: 52802 Err:     0 (0.00%) Active: 1 Started: 14 Finished: 13
+summary =     14 in 00:02:52 =    0.1/s Avg: 11093 Min:    20 Max: 52802 Err:     0 (0.00%)
+summary +      3 in 00:02:01 =    0.0/s Avg:    23 Min:    20 Max:    28 Err:     0 (0.00%) Active: 1 Started: 17 Finished: 16
+summary =     17 in 00:04:52 =    0.1/s Avg:  9139 Min:    20 Max: 52802 Err:     0 (0.00%)
+summary +      1 in 00:00:29 =    0.0/s Avg:    21 Min:    21 Max:    21 Err:     0 (0.00%) Active: 1 Started: 18 Finished: 17
+summary =     18 in 00:05:21 =    0.1/s Avg:  8633 Min:    20 Max: 52802 Err:     0 (0.00%)
+summary +      7 in 00:01:57 =    0.1/s Avg:  1238 Min:    20 Max:  8508 Err:     0 (0.00%) Active: 2 Started: 26 Finished: 24
+summary =     25 in 00:07:19 =    0.1/s Avg:  6562 Min:    20 Max: 52802 Err:     0 (0.00%)
+summary +     15 in 00:04:41 =    0.1/s Avg: 11937 Min:    20 Max: 77826 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg:  8578 Min:    20 Max: 77826 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 04:51:11 SGT (1791406271994)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0167_run3.jtl
+
+--- aggregate: llama3.2:3b @ 0.0167 req/s ---
+=== llama3.2:3b @ 0.0167 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           30      29.0      42.7      49.0     0.052    0.00
+2           30      26.0      42.7      60.3     0.052    0.00
+3           30      23.5      45.6      62.8     0.052    0.00
+--------------------------------------------------------------
+  p50_ms             mean=26.17        range=[23.5, 29.0]  sd=2.75
+  p95_ms             mean=43.67        range=[42.7, 45.6]  sd=1.67
+  p99_ms             mean=57.37        range=[49.0, 62.8]  sd=7.35
+  achieved_tps       mean=0.05         range=[0.05, 0.05]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== llama3.2:3b @ 0.0167 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           10   24559.0  119100.2  119569.6     0.014    0.00
+2           10   24179.5   50742.8   55320.6     0.017    0.00
+3           10   28261.5   66565.2   75573.8     0.018    0.00
+--------------------------------------------------------------
+  p50_ms             mean=25666.67     range=[24179.5, 28261.5]  sd=2255.19
+  p95_ms             mean=78802.73     range=[50742.8, 119100.2]  sd=35784.09
+  p99_ms             mean=83488.0      range=[55320.6, 119569.6]  sd=32847.52
+  achieved_tps       mean=0.02         range=[0.01, 0.02]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/llama3.2_3b_rate0.0167_summary.json
+
+=== llama3.2_3b_rate0.0333_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 04:52:24 SGT (1791406344318)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:06 =    0.5/s Avg:    35 Min:    23 Max:    59 Err:     0 (0.00%) Active: 2 Started: 4 Finished: 2
+summary +      3 in 00:01:03 =    0.0/s Avg: 10100 Min:    24 Max: 30253 Err:     0 (0.00%) Active: 2 Started: 7 Finished: 5
+summary =      6 in 00:01:10 =    0.1/s Avg:  5068 Min:    23 Max: 30253 Err:     0 (0.00%)
+summary +      7 in 00:00:27 =    0.3/s Avg:  3168 Min:    18 Max: 21387 Err:     0 (0.00%) Active: 1 Started: 13 Finished: 12
+summary =     13 in 00:01:37 =    0.1/s Avg:  4045 Min:    18 Max: 30253 Err:     0 (0.00%)
+summary +      6 in 00:00:34 =    0.2/s Avg:    27 Min:    22 Max:    33 Err:     0 (0.00%) Active: 2 Started: 20 Finished: 18
+summary =     19 in 00:02:11 =    0.1/s Avg:  2776 Min:    18 Max: 30253 Err:     0 (0.00%)
+summary +      5 in 00:00:57 =    0.1/s Avg:  7425 Min:    25 Max: 25527 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:03:08 =    0.1/s Avg:  3745 Min:    18 Max: 30253 Err:     0 (0.00%)
+summary +      4 in 00:00:33 =    0.1/s Avg:  5394 Min:    22 Max: 21512 Err:     0 (0.00%) Active: 2 Started: 29 Finished: 27
+summary =     28 in 00:03:41 =    0.1/s Avg:  3980 Min:    18 Max: 30253 Err:     0 (0.00%)
+summary +      6 in 00:00:25 =    0.2/s Avg:  5082 Min:    19 Max: 30374 Err:     0 (0.00%) Active: 4 Started: 37 Finished: 33
+summary =     34 in 00:04:06 =    0.1/s Avg:  4175 Min:    18 Max: 30374 Err:     0 (0.00%)
+summary +      3 in 00:00:32 =    0.1/s Avg:    23 Min:    20 Max:    27 Err:     0 (0.00%) Active: 4 Started: 40 Finished: 36
+summary =     37 in 00:04:38 =    0.1/s Avg:  3838 Min:    18 Max: 30374 Err:     0 (0.00%)
+summary +      5 in 00:00:28 =    0.2/s Avg: 15924 Min:    20 Max: 79503 Err:     0 (0.00%) Active: 4 Started: 45 Finished: 41
+summary =     42 in 00:05:06 =    0.1/s Avg:  5277 Min:    18 Max: 79503 Err:     0 (0.00%)
+summary +      5 in 00:00:35 =    0.1/s Avg: 32675 Min:    20 Max: 95169 Err:     0 (0.00%) Active: 2 Started: 48 Finished: 46
+summary =     47 in 00:05:41 =    0.1/s Avg:  8192 Min:    18 Max: 95169 Err:     0 (0.00%)
+summary +      8 in 00:00:55 =    0.1/s Avg:  4690 Min:    18 Max: 37350 Err:     0 (0.00%) Active: 2 Started: 56 Finished: 54
+summary =     55 in 00:06:36 =    0.1/s Avg:  7682 Min:    18 Max: 95169 Err:     0 (0.00%)
+summary +     10 in 00:02:30 =    0.1/s Avg: 10266 Min:    18 Max: 45311 Err:     0 (0.00%) Active: 1 Started: 65 Finished: 64
+summary =     65 in 00:09:06 =    0.1/s Avg:  8080 Min:    18 Max: 95169 Err:     0 (0.00%)
+summary +      4 in 00:00:32 =    0.1/s Avg:    29 Min:    25 Max:    37 Err:     0 (0.00%) Active: 5 Started: 73 Finished: 68
+summary =     69 in 00:09:38 =    0.1/s Avg:  7613 Min:    18 Max: 95169 Err:     0 (0.00%)
+summary +      9 in 00:01:32 =    0.1/s Avg: 41247 Min:    21 Max: 90565 Err:     0 (0.00%) Active: 1 Started: 78 Finished: 77
+summary =     78 in 00:11:10 =    0.1/s Avg: 11494 Min:    18 Max: 95169 Err:     0 (0.00%)
+summary =     78 in 00:12:00 =    0.1/s Avg: 11494 Min:    18 Max: 95169 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 05:04:24 SGT (1791407064343)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0333_run1.jtl
+=== llama3.2_3b_rate0.0333_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 05:05:36 SGT (1791407136272)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:30 =    0.1/s Avg:    35 Min:    20 Max:    65 Err:     0 (0.00%) Active: 2 Started: 4 Finished: 2
+summary +      6 in 00:00:29 =    0.2/s Avg:  4476 Min:    20 Max: 26712 Err:     0 (0.00%) Active: 3 Started: 11 Finished: 8
+summary =      9 in 00:00:58 =    0.2/s Avg:  2995 Min:    20 Max: 26712 Err:     0 (0.00%)
+summary +      4 in 00:00:27 =    0.1/s Avg:    29 Min:    20 Max:    33 Err:     0 (0.00%) Active: 3 Started: 15 Finished: 12
+summary =     13 in 00:01:26 =    0.2/s Avg:  2083 Min:    20 Max: 26712 Err:     0 (0.00%)
+summary +     12 in 00:01:03 =    0.2/s Avg:  8387 Min:    19 Max: 55594 Err:     0 (0.00%) Active: 2 Started: 26 Finished: 24
+summary =     25 in 00:02:29 =    0.2/s Avg:  5108 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +      4 in 00:00:59 =    0.1/s Avg:  5882 Min:    21 Max: 23454 Err:     0 (0.00%) Active: 1 Started: 29 Finished: 28
+summary =     29 in 00:03:27 =    0.1/s Avg:  5215 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +      9 in 00:01:31 =    0.1/s Avg:  2843 Min:    20 Max: 18378 Err:     0 (0.00%) Active: 3 Started: 40 Finished: 37
+summary =     38 in 00:04:58 =    0.1/s Avg:  4653 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +     10 in 00:01:27 =    0.1/s Avg: 10878 Min:    19 Max: 48207 Err:     0 (0.00%) Active: 1 Started: 48 Finished: 47
+summary =     48 in 00:06:25 =    0.1/s Avg:  5950 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +      2 in 00:00:30 =    0.1/s Avg:    22 Min:    22 Max:    23 Err:     0 (0.00%) Active: 2 Started: 51 Finished: 49
+summary =     50 in 00:06:55 =    0.1/s Avg:  5713 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +      4 in 00:00:31 =    0.1/s Avg:  3682 Min:    20 Max: 14645 Err:     0 (0.00%) Active: 3 Started: 56 Finished: 53
+summary =     54 in 00:07:26 =    0.1/s Avg:  5563 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +      4 in 00:00:33 =    0.1/s Avg:  5797 Min:    19 Max: 23119 Err:     0 (0.00%) Active: 2 Started: 59 Finished: 57
+summary =     58 in 00:07:59 =    0.1/s Avg:  5579 Min:    19 Max: 55594 Err:     0 (0.00%)
+summary +     14 in 00:01:58 =    0.1/s Avg:  5102 Min:    18 Max: 36264 Err:     0 (0.00%) Active: 7 Started: 78 Finished: 71
+summary =     72 in 00:09:56 =    0.1/s Avg:  5486 Min:    18 Max: 55594 Err:     0 (0.00%)
+summary +      5 in 00:01:28 =    0.1/s Avg: 74135 Min: 54999 Max: 91451 Err:     0 (0.00%) Active: 2 Started: 78 Finished: 76
+summary =     77 in 00:11:24 =    0.1/s Avg:  9944 Min:    18 Max: 91451 Err:     0 (0.00%)
+summary +      1 in 00:00:36 =    0.0/s Avg: 87700 Min: 87700 Max: 87700 Err:     0 (0.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg: 10941 Min:    18 Max: 91451 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 05:17:36 SGT (1791407856289)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0333_run2.jtl
+=== llama3.2_3b_rate0.0333_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 05:18:48 SGT (1791407928223)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      6 in 00:00:43 =    0.1/s Avg:  3756 Min:    19 Max: 22345 Err:     0 (0.00%) Active: 3 Started: 8 Finished: 5
+summary +      5 in 00:00:33 =    0.2/s Avg:  3752 Min:    20 Max: 18641 Err:     0 (0.00%) Active: 3 Started: 13 Finished: 10
+summary =     11 in 00:01:15 =    0.1/s Avg:  3754 Min:    19 Max: 22345 Err:     0 (0.00%)
+summary +      8 in 00:01:01 =    0.1/s Avg: 14650 Min:    19 Max: 65288 Err:     0 (0.00%) Active: 4 Started: 22 Finished: 18
+summary =     19 in 00:02:16 =    0.1/s Avg:  8342 Min:    19 Max: 65288 Err:     0 (0.00%)
+summary +     10 in 00:00:55 =    0.2/s Avg: 12116 Min:    20 Max: 49691 Err:     0 (0.00%) Active: 1 Started: 29 Finished: 28
+summary =     29 in 00:03:12 =    0.2/s Avg:  9643 Min:    19 Max: 65288 Err:     0 (0.00%)
+summary +     18 in 00:02:31 =    0.1/s Avg:  1825 Min:    18 Max: 32214 Err:     0 (0.00%) Active: 3 Started: 49 Finished: 46
+summary =     47 in 00:05:43 =    0.1/s Avg:  6649 Min:    18 Max: 65288 Err:     0 (0.00%)
+summary +      3 in 00:00:31 =    0.1/s Avg: 27597 Min:    29 Max: 44696 Err:     0 (0.00%) Active: 1 Started: 50 Finished: 49
+summary =     50 in 00:06:14 =    0.1/s Avg:  7906 Min:    18 Max: 65288 Err:     0 (0.00%)
+summary +     17 in 00:03:00 =    0.1/s Avg:  9075 Min:    20 Max: 70075 Err:     0 (0.00%) Active: 3 Started: 69 Finished: 66
+summary =     67 in 00:09:14 =    0.1/s Avg:  8202 Min:    18 Max: 70075 Err:     0 (0.00%)
+summary +      8 in 00:00:32 =    0.2/s Avg: 13669 Min:    20 Max: 67394 Err:     0 (0.00%) Active: 2 Started: 76 Finished: 74
+summary =     75 in 00:09:46 =    0.1/s Avg:  8785 Min:    18 Max: 70075 Err:     0 (0.00%)
+summary +      2 in 00:00:28 =    0.1/s Avg: 13908 Min:    36 Max: 27780 Err:     0 (0.00%) Active: 2 Started: 78 Finished: 76
+summary =     77 in 00:10:14 =    0.1/s Avg:  8919 Min:    18 Max: 70075 Err:     0 (0.00%)
+summary +      1 in 00:01:46 =    0.0/s Avg: 27296 Min: 27296 Max: 27296 Err:     0 (0.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg:  9154 Min:    18 Max: 70075 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 05:30:48 SGT (1791408648243)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0333_run3.jtl
+
+--- aggregate: llama3.2:3b @ 0.0333 req/s ---
+=== llama3.2:3b @ 0.0333 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           59      25.0      35.2      46.8     0.099    0.00
+2           59      25.0      40.3      52.2     0.102    0.00
+3           59      25.0      37.1     149.2     0.101    0.00
+--------------------------------------------------------------
+  p50_ms             mean=25.0         range=[25.0, 25.0]  sd=0.0
+  p95_ms             mean=37.53        range=[35.2, 40.3]  sd=2.58
+  p99_ms             mean=82.73        range=[46.8, 149.2]  sd=57.63
+  achieved_tps       mean=0.1          range=[0.1, 0.1]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== llama3.2:3b @ 0.0333 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           19   34773.0   91025.4   94340.3     0.029    0.00
+2           19   41778.0   88075.1   90775.8     0.029    0.00
+3           19   32214.0   67662.1   69592.4     0.031    0.00
+--------------------------------------------------------------
+  p50_ms             mean=36255.0      range=[32214.0, 41778.0]  sd=4951.24
+  p95_ms             mean=82254.2      range=[67662.1, 91025.4]  sd=12722.94
+  p99_ms             mean=84902.83     range=[69592.4, 94340.3]  sd=13378.47
+  achieved_tps       mean=0.03         range=[0.03, 0.03]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+wrote ../results/jtl/llama3.2_3b_rate0.0333_summary.json
+
+=== llama3.2_3b_rate0.0667_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 05:32:00 SGT (1791408720573)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:03 =    0.3/s Avg:    59 Min:    59 Max:    59 Err:     0 (0.00%) Active: 2 Started: 2 Finished: 0
+summary +     11 in 00:00:57 =    0.2/s Avg:  2345 Min:    20 Max: 25514 Err:     0 (0.00%) Active: 3 Started: 14 Finished: 11
+summary =     12 in 00:01:00 =    0.2/s Avg:  2155 Min:    20 Max: 25514 Err:     0 (0.00%)
+summary +      8 in 00:00:32 =    0.2/s Avg: 16169 Min:    20 Max: 65962 Err:     0 (0.00%) Active: 4 Started: 23 Finished: 19
+summary =     20 in 00:01:32 =    0.2/s Avg:  7760 Min:    20 Max: 65962 Err:     0 (0.00%)
+summary +      7 in 00:00:30 =    0.2/s Avg:  7489 Min:    21 Max: 52274 Err:     0 (0.00%) Active: 7 Started: 33 Finished: 26
+summary =     27 in 00:02:02 =    0.2/s Avg:  7690 Min:    20 Max: 65962 Err:     0 (0.00%)
+summary +     13 in 00:00:31 =    0.4/s Avg:  5803 Min:    20 Max: 38239 Err:     0 (0.00%) Active: 9 Started: 48 Finished: 39
+summary =     40 in 00:02:33 =    0.3/s Avg:  7077 Min:    20 Max: 65962 Err:     0 (0.00%)
+summary +      7 in 00:00:32 =    0.2/s Avg: 20210 Min:    21 Max: 71970 Err:     0 (0.00%) Active: 8 Started: 54 Finished: 46
+summary =     47 in 00:03:05 =    0.3/s Avg:  9033 Min:    20 Max: 71970 Err:     0 (0.00%)
+summary +      6 in 00:00:27 =    0.2/s Avg: 33162 Min:    20 Max: 101420 Err:     0 (0.00%) Active: 8 Started: 60 Finished: 52
+summary =     53 in 00:03:32 =    0.2/s Avg: 11764 Min:    20 Max: 101420 Err:     0 (0.00%)
+summary +     13 in 00:01:02 =    0.2/s Avg: 20351 Min:    22 Max: 132966 Err:     0 (0.00%) Active: 10 Started: 75 Finished: 65
+summary =     66 in 00:04:35 =    0.2/s Avg: 13456 Min:    20 Max: 132966 Err:     0 (0.00%)
+summary +      5 in 00:00:28 =    0.2/s Avg:    29 Min:    20 Max:    37 Err:     0 (0.00%) Active: 11 Started: 81 Finished: 70
+summary =     71 in 00:05:02 =    0.2/s Avg: 12510 Min:    20 Max: 132966 Err:     0 (0.00%)
+summary +     10 in 00:00:31 =    0.3/s Avg: 37373 Min:    18 Max: 195097 Err:     0 (0.00%) Active: 13 Started: 93 Finished: 80
+summary =     81 in 00:05:33 =    0.2/s Avg: 15580 Min:    18 Max: 195097 Err:     0 (0.00%)
+summary +      6 in 00:00:29 =    0.2/s Avg:    30 Min:    26 Max:    37 Err:     0 (0.00%) Active: 14 Started: 100 Finished: 86
+summary =     87 in 00:06:02 =    0.2/s Avg: 14507 Min:    18 Max: 195097 Err:     0 (0.00%)
+summary +      9 in 00:00:29 =    0.3/s Avg: 40690 Min:    19 Max: 194611 Err:     0 (0.00%) Active: 13 Started: 108 Finished: 95
+summary =     96 in 00:06:31 =    0.2/s Avg: 16962 Min:    18 Max: 195097 Err:     0 (0.00%)
+summary +      7 in 00:00:28 =    0.3/s Avg: 54521 Min:    20 Max: 199959 Err:     0 (0.00%) Active: 13 Started: 115 Finished: 102
+summary =    103 in 00:06:59 =    0.2/s Avg: 19514 Min:    18 Max: 199959 Err:     0 (0.00%)
+summary +     16 in 00:01:03 =    0.3/s Avg: 35360 Min:    20 Max: 192738 Err:     0 (0.00%) Active: 13 Started: 131 Finished: 118
+summary =    119 in 00:08:02 =    0.2/s Avg: 21645 Min:    18 Max: 199959 Err:     0 (0.00%)
+summary +      6 in 00:00:28 =    0.2/s Avg: 64896 Min:    31 Max: 199608 Err:     0 (0.00%) Active: 12 Started: 136 Finished: 124
+summary =    125 in 00:08:30 =    0.2/s Avg: 23721 Min:    18 Max: 199959 Err:     0 (0.00%)
+summary +      7 in 00:00:31 =    0.2/s Avg: 39009 Min:    19 Max: 272911 Err:     1 (14.29%) Active: 11 Started: 142 Finished: 131
+summary =    132 in 00:09:01 =    0.2/s Avg: 24532 Min:    18 Max: 272911 Err:     1 (0.76%)
+summary +     16 in 00:00:58 =    0.3/s Avg: 56543 Min:    19 Max: 250796 Err:     0 (0.00%) Active: 13 Started: 160 Finished: 147
+summary =    148 in 00:09:59 =    0.2/s Avg: 27992 Min:    18 Max: 272911 Err:     1 (0.68%)
+summary +      3 in 00:01:03 =    0.0/s Avg: 219690 Min: 206881 Max: 227907 Err:     0 (0.00%) Active: 10 Started: 160 Finished: 150
+summary =    151 in 00:11:03 =    0.2/s Avg: 31801 Min:    18 Max: 272911 Err:     1 (0.66%)
+summary +      4 in 00:00:57 =    0.1/s Avg: 197303 Min: 156081 Max: 218752 Err:     1 (25.00%) Active: 6 Started: 160 Finished: 154
+summary =    155 in 00:12:00 =    0.2/s Avg: 36072 Min:    18 Max: 272911 Err:     2 (1.29%)
+summary +      5 in 00:00:00 = 1666.7/s Avg: 145250 Min: 135695 Max: 157751 Err:     5 (100.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg: 39484 Min:    18 Max: 272911 Err:     7 (4.38%)
+Tidying up ...    @ 2026 Oct 8 05:44:00 SGT (1791409440596)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0667_run1.jtl
+=== llama3.2_3b_rate0.0667_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 05:45:12 SGT (1791409512511)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:00:18 =    0.2/s Avg:    34 Min:    23 Max:    58 Err:     0 (0.00%) Active: 2 Started: 5 Finished: 3
+summary +     16 in 00:01:00 =    0.3/s Avg:  1427 Min:    19 Max: 22409 Err:     0 (0.00%) Active: 7 Started: 26 Finished: 19
+summary =     20 in 00:01:19 =    0.3/s Avg:  1149 Min:    19 Max: 22409 Err:     0 (0.00%)
+summary +     18 in 00:01:01 =    0.3/s Avg: 22140 Min:    21 Max: 91574 Err:     0 (0.00%) Active: 8 Started: 45 Finished: 37
+summary =     38 in 00:02:20 =    0.3/s Avg: 11092 Min:    19 Max: 91574 Err:     0 (0.00%)
+summary +      7 in 00:00:30 =    0.2/s Avg:    32 Min:    21 Max:    64 Err:     0 (0.00%) Active: 10 Started: 54 Finished: 44
+summary =     45 in 00:02:49 =    0.3/s Avg:  9372 Min:    19 Max: 91574 Err:     0 (0.00%)
+summary +      6 in 00:00:28 =    0.2/s Avg: 35122 Min:    20 Max: 111052 Err:     0 (0.00%) Active: 8 Started: 58 Finished: 50
+summary =     51 in 00:03:18 =    0.3/s Avg: 12401 Min:    19 Max: 111052 Err:     0 (0.00%)
+summary +      5 in 00:00:33 =    0.2/s Avg: 27694 Min:    20 Max: 138355 Err:     0 (0.00%) Active: 8 Started: 63 Finished: 55
+summary =     56 in 00:03:50 =    0.2/s Avg: 13766 Min:    19 Max: 138355 Err:     0 (0.00%)
+summary +     13 in 00:01:03 =    0.2/s Avg: 28218 Min:    19 Max: 136475 Err:     0 (0.00%) Active: 7 Started: 75 Finished: 68
+summary =     69 in 00:04:53 =    0.2/s Avg: 16489 Min:    19 Max: 138355 Err:     0 (0.00%)
+summary +      5 in 00:00:26 =    0.2/s Avg:    34 Min:    19 Max:    52 Err:     0 (0.00%) Active: 9 Started: 82 Finished: 73
+summary =     74 in 00:05:19 =    0.2/s Avg: 15377 Min:    19 Max: 138355 Err:     0 (0.00%)
+summary +     11 in 00:00:30 =    0.4/s Avg: 34693 Min:    19 Max: 195188 Err:     0 (0.00%) Active: 9 Started: 93 Finished: 84
+summary =     85 in 00:05:49 =    0.2/s Avg: 17877 Min:    19 Max: 195188 Err:     0 (0.00%)
+summary +      7 in 00:00:28 =    0.2/s Avg:    23 Min:    19 Max:    33 Err:     0 (0.00%) Active: 11 Started: 102 Finished: 91
+summary =     92 in 00:06:18 =    0.2/s Avg: 16519 Min:    19 Max: 195188 Err:     0 (0.00%)
+summary +      7 in 00:00:36 =    0.2/s Avg: 55678 Min:    27 Max: 220449 Err:     0 (0.00%) Active: 10 Started: 108 Finished: 98
+summary =     99 in 00:06:53 =    0.2/s Avg: 19287 Min:    19 Max: 220449 Err:     0 (0.00%)
+summary +      6 in 00:00:25 =    0.2/s Avg: 52966 Min:    21 Max: 179140 Err:     0 (0.00%) Active: 10 Started: 114 Finished: 104
+summary =    105 in 00:07:19 =    0.2/s Avg: 21212 Min:    19 Max: 220449 Err:     0 (0.00%)
+summary +     20 in 00:01:32 =    0.2/s Avg: 28018 Min:    18 Max: 154476 Err:     0 (0.00%) Active: 12 Started: 136 Finished: 124
+summary =    125 in 00:08:50 =    0.2/s Avg: 22301 Min:    18 Max: 220449 Err:     0 (0.00%)
+summary +      8 in 00:00:29 =    0.3/s Avg:    29 Min:    20 Max:    41 Err:     0 (0.00%) Active: 14 Started: 146 Finished: 132
+summary =    133 in 00:09:20 =    0.2/s Avg: 20961 Min:    18 Max: 220449 Err:     0 (0.00%)
+summary +      8 in 00:00:30 =    0.3/s Avg: 46267 Min:    21 Max: 222930 Err:     0 (0.00%) Active: 14 Started: 154 Finished: 140
+summary =    141 in 00:09:50 =    0.2/s Avg: 22397 Min:    18 Max: 222930 Err:     0 (0.00%)
+summary +     19 in 00:02:10 =    0.1/s Avg: 142341 Min:    20 Max: 234667 Err:     6 (31.58%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg: 36640 Min:    18 Max: 234667 Err:     6 (3.75%)
+Tidying up ...    @ 2026 Oct 8 05:57:12 SGT (1791410232537)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0667_run2.jtl
+=== llama3.2_3b_rate0.0667_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 05:58:24 SGT (1791410304544)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:08 =    0.4/s Avg:    42 Min:    23 Max:    74 Err:     0 (0.00%) Active: 1 Started: 3 Finished: 2
+summary +      6 in 00:00:30 =    0.2/s Avg:    28 Min:    21 Max:    33 Err:     0 (0.00%) Active: 2 Started: 10 Finished: 8
+summary =      9 in 00:00:38 =    0.2/s Avg:    32 Min:    21 Max:    74 Err:     0 (0.00%)
+summary +     22 in 00:01:33 =    0.2/s Avg:  2098 Min:    18 Max: 45556 Err:     0 (0.00%) Active: 9 Started: 39 Finished: 30
+summary =     31 in 00:02:11 =    0.2/s Avg:  1498 Min:    18 Max: 45556 Err:     0 (0.00%)
+summary +      7 in 00:00:25 =    0.3/s Avg: 36755 Min:    21 Max: 91766 Err:     0 (0.00%) Active: 9 Started: 46 Finished: 37
+summary =     38 in 00:02:36 =    0.2/s Avg:  7993 Min:    18 Max: 91766 Err:     0 (0.00%)
+summary +     15 in 00:01:01 =    0.2/s Avg: 19234 Min:    19 Max: 121648 Err:     0 (0.00%) Active: 9 Started: 61 Finished: 52
+summary =     53 in 00:03:37 =    0.2/s Avg: 11174 Min:    18 Max: 121648 Err:     0 (0.00%)
+summary +      6 in 00:00:31 =    0.2/s Avg: 59204 Min:    20 Max: 137405 Err:     0 (0.00%) Active: 7 Started: 65 Finished: 58
+summary =     59 in 00:04:08 =    0.2/s Avg: 16059 Min:    18 Max: 137405 Err:     0 (0.00%)
+summary +     10 in 00:00:30 =    0.3/s Avg: 20750 Min:    19 Max: 105406 Err:     0 (0.00%) Active: 8 Started: 76 Finished: 68
+summary =     69 in 00:04:37 =    0.2/s Avg: 16739 Min:    18 Max: 137405 Err:     0 (0.00%)
+summary +      8 in 00:00:29 =    0.3/s Avg:    26 Min:    19 Max:    38 Err:     0 (0.00%) Active: 11 Started: 87 Finished: 76
+summary =     77 in 00:05:07 =    0.3/s Avg: 15002 Min:    18 Max: 137405 Err:     0 (0.00%)
+summary +     10 in 00:00:59 =    0.2/s Avg: 30978 Min:    26 Max: 155778 Err:     0 (0.00%) Active: 13 Started: 99 Finished: 86
+summary =     87 in 00:06:06 =    0.2/s Avg: 16838 Min:    18 Max: 155778 Err:     0 (0.00%)
+summary +      6 in 00:00:30 =    0.2/s Avg: 50321 Min:    19 Max: 174620 Err:     0 (0.00%) Active: 12 Started: 104 Finished: 92
+summary =     93 in 00:06:36 =    0.2/s Avg: 18999 Min:    18 Max: 174620 Err:     0 (0.00%)
+summary +      9 in 00:00:34 =    0.3/s Avg: 35640 Min:    21 Max: 167488 Err:     0 (0.00%) Active: 11 Started: 112 Finished: 101
+summary =    102 in 00:07:10 =    0.2/s Avg: 20467 Min:    18 Max: 174620 Err:     0 (0.00%)
+summary +     12 in 00:00:30 =    0.4/s Avg: 28140 Min:    20 Max: 173839 Err:     0 (0.00%) Active: 12 Started: 125 Finished: 113
+summary =    114 in 00:07:41 =    0.2/s Avg: 21275 Min:    18 Max: 174620 Err:     0 (0.00%)
+summary +      5 in 00:00:26 =    0.2/s Avg:    31 Min:    20 Max:    56 Err:     0 (0.00%) Active: 14 Started: 132 Finished: 118
+summary =    119 in 00:08:07 =    0.2/s Avg: 20382 Min:    18 Max: 174620 Err:     0 (0.00%)
+summary +     12 in 00:00:59 =    0.2/s Avg: 31481 Min:    20 Max: 190742 Err:     0 (0.00%) Active: 14 Started: 144 Finished: 130
+summary =    131 in 00:09:06 =    0.2/s Avg: 21399 Min:    18 Max: 190742 Err:     0 (0.00%)
+summary +      8 in 00:00:30 =    0.3/s Avg: 59056 Min:    20 Max: 254497 Err:     0 (0.00%) Active: 14 Started: 152 Finished: 138
+summary =    139 in 00:09:36 =    0.2/s Avg: 23566 Min:    18 Max: 254497 Err:     0 (0.00%)
+summary +     21 in 00:02:24 =    0.1/s Avg: 137719 Min:    22 Max: 257347 Err:     5 (23.81%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg: 38549 Min:    18 Max: 257347 Err:     5 (3.12%)
+Tidying up ...    @ 2026 Oct 8 06:10:24 SGT (1791411024575)
+... end of run
+  -> ../results/jtl/llama3.2_3b_rate0.0667_run3.jtl
+
+--- aggregate: llama3.2:3b @ 0.0667 req/s ---
+=== llama3.2:3b @ 0.0667 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1          120      26.5      39.0      57.8     0.201    0.00
+2          120      27.5      40.0      56.9     0.201    0.00
+3          120      26.5      42.0      70.6     0.200    0.00
+--------------------------------------------------------------
+  p50_ms             mean=26.83        range=[26.5, 27.5]  sd=0.58
+  p95_ms             mean=40.33        range=[39.0, 42.0]  sd=1.53
+  p99_ms             mean=61.77        range=[56.9, 70.6]  sd=7.66
+  achieved_tps       mean=0.2          range=[0.2, 0.2]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== llama3.2:3b @ 0.0667 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           40  179949.5  232253.9  264286.1     0.056   17.50
+2           40  148428.5  220573.0  230089.6     0.057   15.00
+3           40  154940.5  237045.5  256235.5     0.057   12.50
+--------------------------------------------------------------
+  p50_ms             mean=161106.17    range=[148428.5, 179949.5]  sd=16640.46
+  p95_ms             mean=229957.47    range=[220573.0, 237045.5]  sd=8472.96
+  p99_ms             mean=250203.73    range=[230089.6, 264286.1]  sd=17878.39
+  achieved_tps       mean=0.06         range=[0.06, 0.06]  sd=0.0
+  error_rate_pct     mean=15.0         range=[12.5, 17.5]  sd=2.5
+
+wrote ../results/jtl/llama3.2_3b_rate0.0667_summary.json
+
+Matrix complete. Commit results/jtl/ to the repository.
+2026-10-08 06:11:35 waiting for 100.88.74.36 to report 'qwen2.5:7b ready' ...
+2026-10-08 06:18:40 qwen2.5:7b is ready -- starting its matrix
+Service host : 100.88.74.36:8000
+Model        : qwen2.5:7b
+Rates        : 0.0167 0.0333 0.0667 req/s
+Duration     : 10 min   Runs: 3
+
+=== qwen2.5_7b_rate0.0167_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 06:18:42 SGT (1791411522064)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:00:50 =    0.1/s Avg: 15468 Min:    34 Max: 46321 Err:     0 (0.00%) Active: 1 Started: 3 Finished: 2
+summary +      2 in 00:00:34 =    0.1/s Avg:    21 Min:    20 Max:    23 Err:     0 (0.00%) Active: 1 Started: 5 Finished: 4
+summary =      5 in 00:01:24 =    0.1/s Avg:  9289 Min:    20 Max: 46321 Err:     0 (0.00%)
+summary +      7 in 00:01:56 =    0.1/s Avg:  5177 Min:    20 Max: 36099 Err:     0 (0.00%) Active: 2 Started: 13 Finished: 11
+summary =     12 in 00:03:20 =    0.1/s Avg:  6891 Min:    20 Max: 46321 Err:     0 (0.00%)
+summary +      5 in 00:01:00 =    0.1/s Avg: 12020 Min:    22 Max: 59994 Err:     0 (0.00%) Active: 2 Started: 18 Finished: 16
+summary =     17 in 00:04:20 =    0.1/s Avg:  8399 Min:    20 Max: 59994 Err:     0 (0.00%)
+summary +      1 in 00:00:29 =    0.0/s Avg:    19 Min:    19 Max:    19 Err:     0 (0.00%) Active: 2 Started: 19 Finished: 17
+summary =     18 in 00:04:49 =    0.1/s Avg:  7934 Min:    19 Max: 59994 Err:     0 (0.00%)
+summary +      8 in 00:02:29 =    0.1/s Avg:  6677 Min:    21 Max: 53225 Err:     0 (0.00%) Active: 2 Started: 27 Finished: 25
+summary =     26 in 00:07:19 =    0.1/s Avg:  7547 Min:    19 Max: 59994 Err:     0 (0.00%)
+summary +      5 in 00:02:04 =    0.0/s Avg:  3746 Min:    19 Max: 18627 Err:     0 (0.00%) Active: 2 Started: 32 Finished: 30
+summary =     31 in 00:09:22 =    0.1/s Avg:  6934 Min:    19 Max: 59994 Err:     0 (0.00%)
+summary +      9 in 00:02:38 =    0.1/s Avg: 70957 Min:    20 Max: 156093 Err:     4 (44.44%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg: 21339 Min:    19 Max: 156093 Err:     4 (10.00%)
+Tidying up ...    @ 2026 Oct 8 06:30:42 SGT (1791412242095)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0167_run1.jtl
+=== qwen2.5_7b_rate0.0167_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 06:31:53 SGT (1791412313970)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     16 in 00:05:37 =    0.0/s Avg:  8041 Min:    18 Max: 92101 Err:     0 (0.00%) Active: 2 Started: 17 Finished: 15
+summary +      4 in 00:00:33 =    0.1/s Avg: 16455 Min:    19 Max: 65761 Err:     0 (0.00%) Active: 1 Started: 20 Finished: 19
+summary =     20 in 00:06:10 =    0.1/s Avg:  9724 Min:    18 Max: 92101 Err:     0 (0.00%)
+summary +      4 in 00:01:57 =    0.0/s Avg: 12005 Min:    34 Max: 47889 Err:     0 (0.00%) Active: 2 Started: 25 Finished: 23
+summary =     24 in 00:08:07 =    0.0/s Avg: 10104 Min:    18 Max: 92101 Err:     0 (0.00%)
+summary +      9 in 00:01:32 =    0.1/s Avg: 12018 Min:    19 Max: 59856 Err:     0 (0.00%) Active: 3 Started: 35 Finished: 32
+summary =     33 in 00:09:38 =    0.1/s Avg: 10626 Min:    18 Max: 92101 Err:     0 (0.00%)
+summary +      7 in 00:02:22 =    0.0/s Avg: 66196 Min:    22 Max: 150255 Err:     3 (42.86%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg: 20351 Min:    18 Max: 150255 Err:     3 (7.50%)
+Tidying up ...    @ 2026 Oct 8 06:43:53 SGT (1791413033996)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0167_run2.jtl
+=== qwen2.5_7b_rate0.0167_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 06:45:05 SGT (1791413105909)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:00:56 =    0.1/s Avg:    40 Min:    20 Max:    75 Err:     0 (0.00%) Active: 4 Started: 7 Finished: 3
+summary +      8 in 00:02:03 =    0.1/s Avg: 25114 Min:    24 Max: 139205 Err:     0 (0.00%) Active: 3 Started: 14 Finished: 11
+summary =     12 in 00:02:59 =    0.1/s Avg: 16756 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      4 in 00:01:27 =    0.0/s Avg: 56673 Min:    21 Max: 136908 Err:     0 (0.00%) Active: 1 Started: 16 Finished: 15
+summary =     16 in 00:04:26 =    0.1/s Avg: 26735 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      4 in 00:01:03 =    0.1/s Avg:    31 Min:    25 Max:    40 Err:     0 (0.00%) Active: 1 Started: 20 Finished: 19
+summary =     20 in 00:05:29 =    0.1/s Avg: 21394 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      3 in 00:01:25 =    0.0/s Avg:  6058 Min:    33 Max: 18107 Err:     0 (0.00%) Active: 1 Started: 23 Finished: 22
+summary =     23 in 00:06:54 =    0.1/s Avg: 19394 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      7 in 00:02:00 =    0.1/s Avg:  6542 Min:    21 Max: 45642 Err:     0 (0.00%) Active: 4 Started: 33 Finished: 29
+summary =     30 in 00:08:54 =    0.1/s Avg: 16395 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      2 in 00:00:32 =    0.1/s Avg:    25 Min:    20 Max:    31 Err:     0 (0.00%) Active: 4 Started: 35 Finished: 31
+summary =     32 in 00:09:26 =    0.1/s Avg: 15372 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      6 in 00:00:34 =    0.2/s Avg: 31871 Min:    20 Max: 107107 Err:     0 (0.00%) Active: 3 Started: 40 Finished: 37
+summary =     38 in 00:09:59 =    0.1/s Avg: 17977 Min:    20 Max: 139205 Err:     0 (0.00%)
+summary +      1 in 00:00:59 =    0.0/s Avg: 171975 Min: 171975 Max: 171975 Err:     0 (0.00%) Active: 2 Started: 40 Finished: 38
+summary =     39 in 00:10:59 =    0.1/s Avg: 21926 Min:    20 Max: 171975 Err:     0 (0.00%)
+summary +      1 in 00:01:01 =    0.0/s Avg: 91427 Min: 91427 Max: 91427 Err:     0 (0.00%) Active: 0 Started: 40 Finished: 40
+summary =     40 in 00:12:00 =    0.1/s Avg: 23663 Min:    20 Max: 171975 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Oct 8 06:57:05 SGT (1791413825932)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0167_run3.jtl
+
+--- aggregate: qwen2.5:7b @ 0.0167 req/s ---
+=== qwen2.5:7b @ 0.0167 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           30      24.0      41.7      47.3     0.052    0.00
+2           30      27.5      53.5      67.9     0.052    0.00
+3           30      30.5      38.7      64.9     0.052    0.00
+--------------------------------------------------------------
+  p50_ms             mean=27.33        range=[24.0, 30.5]  sd=3.25
+  p95_ms             mean=44.63        range=[38.7, 53.5]  sd=7.82
+  p99_ms             mean=60.03        range=[47.3, 67.9]  sd=11.13
+  achieved_tps       mean=0.05         range=[0.05, 0.05]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== qwen2.5:7b @ 0.0167 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           10   56609.5  154108.5  155696.1     0.014   40.00
+2           10   62808.5  140455.8  148295.2     0.015   30.00
+3           10   90579.0  157228.5  169025.7     0.016    0.00
+--------------------------------------------------------------
+  p50_ms             mean=69999.0      range=[56609.5, 90579.0]  sd=18090.31
+  p95_ms             mean=150597.6     range=[140455.8, 157228.5]  sd=8920.52
+  p99_ms             mean=157672.33    range=[148295.2, 169025.7]  sd=10505.6
+  achieved_tps       mean=0.01         range=[0.01, 0.02]  sd=0.0
+  error_rate_pct     mean=23.33        range=[0.0, 40.0]  sd=20.82
+
+wrote ../results/jtl/qwen2.5_7b_rate0.0167_summary.json
+
+=== qwen2.5_7b_rate0.0333_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 06:58:18 SGT (1791413898192)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      7 in 00:01:12 =    0.1/s Avg:  8702 Min:    20 Max: 60729 Err:     0 (0.00%) Active: 2 Started: 8 Finished: 6
+summary +      5 in 00:00:33 =    0.2/s Avg:  7141 Min:    20 Max: 35608 Err:     0 (0.00%) Active: 2 Started: 13 Finished: 11
+summary =     12 in 00:01:45 =    0.1/s Avg:  8051 Min:    20 Max: 60729 Err:     0 (0.00%)
+summary +     10 in 00:01:02 =    0.2/s Avg:  5566 Min:    19 Max: 43043 Err:     0 (0.00%) Active: 1 Started: 22 Finished: 21
+summary =     22 in 00:02:48 =    0.1/s Avg:  6922 Min:    19 Max: 60729 Err:     0 (0.00%)
+summary +      2 in 00:00:28 =    0.1/s Avg:  9646 Min:    30 Max: 19263 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:03:16 =    0.1/s Avg:  7149 Min:    19 Max: 60729 Err:     0 (0.00%)
+summary +      4 in 00:00:29 =    0.1/s Avg:    29 Min:    21 Max:    36 Err:     0 (0.00%) Active: 3 Started: 30 Finished: 27
+summary =     28 in 00:03:45 =    0.1/s Avg:  6132 Min:    19 Max: 60729 Err:     0 (0.00%)
+summary +     13 in 00:01:29 =    0.1/s Avg:  3909 Min:    20 Max: 50289 Err:     0 (0.00%) Active: 6 Started: 46 Finished: 40
+summary =     41 in 00:05:14 =    0.1/s Avg:  5427 Min:    19 Max: 60729 Err:     0 (0.00%)
+summary +      3 in 00:00:32 =    0.1/s Avg:    30 Min:    28 Max:    33 Err:     0 (0.00%) Active: 6 Started: 49 Finished: 43
+summary =     44 in 00:05:46 =    0.1/s Avg:  5059 Min:    19 Max: 60729 Err:     0 (0.00%)
+summary +      2 in 00:00:28 =    0.1/s Avg:    26 Min:    23 Max:    30 Err:     0 (0.00%) Active: 6 Started: 51 Finished: 45
+summary =     46 in 00:06:14 =    0.1/s Avg:  4840 Min:    19 Max: 60729 Err:     0 (0.00%)
+summary +     12 in 00:01:28 =    0.1/s Avg: 65778 Min:    20 Max: 213252 Err:     0 (0.00%) Active: 5 Started: 62 Finished: 57
+summary =     58 in 00:07:42 =    0.1/s Avg: 17448 Min:    19 Max: 213252 Err:     0 (0.00%)
+summary +     10 in 00:02:02 =    0.1/s Avg: 27310 Min:    19 Max: 272857 Err:     1 (10.00%) Active: 9 Started: 76 Finished: 67
+summary =     68 in 00:09:44 =    0.1/s Avg: 18898 Min:    19 Max: 272857 Err:     1 (1.47%)
+summary +     10 in 00:02:16 =    0.1/s Avg: 138321 Min:    21 Max: 257691 Err:     6 (60.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg: 34209 Min:    19 Max: 272857 Err:     7 (8.97%)
+Tidying up ...    @ 2026 Oct 8 07:10:18 SGT (1791414618228)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0333_run1.jtl
+=== qwen2.5_7b_rate0.0333_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 07:11:30 SGT (1791414690212)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:00:30 =    0.1/s Avg:    33 Min:    20 Max:    59 Err:     0 (0.00%) Active: 2 Started: 5 Finished: 3
+summary +      5 in 00:00:34 =    0.1/s Avg:    29 Min:    19 Max:    39 Err:     0 (0.00%) Active: 4 Started: 12 Finished: 8
+summary =      9 in 00:01:05 =    0.1/s Avg:    31 Min:    19 Max:    59 Err:     0 (0.00%)
+summary +      4 in 00:00:27 =    0.1/s Avg:    25 Min:    20 Max:    32 Err:     0 (0.00%) Active: 4 Started: 16 Finished: 12
+summary =     13 in 00:01:32 =    0.1/s Avg:    29 Min:    19 Max:    59 Err:     0 (0.00%)
+summary +     10 in 00:01:00 =    0.2/s Avg:    24 Min:    19 Max:    34 Err:     0 (0.00%) Active: 5 Started: 27 Finished: 22
+summary =     23 in 00:02:32 =    0.2/s Avg:    27 Min:    19 Max:    59 Err:     0 (0.00%)
+summary +      3 in 00:01:00 =    0.1/s Avg:    29 Min:    22 Max:    36 Err:     0 (0.00%) Active: 6 Started: 31 Finished: 25
+summary =     26 in 00:03:31 =    0.1/s Avg:    27 Min:    19 Max:    59 Err:     0 (0.00%)
+summary +      1 in 00:00:34 =    0.0/s Avg:    20 Min:    20 Max:    20 Err:     0 (0.00%) Active: 7 Started: 33 Finished: 26
+summary =     27 in 00:04:05 =    0.1/s Avg:    27 Min:    19 Max:    59 Err:     0 (0.00%)
+summary +     10 in 00:01:28 =    0.1/s Avg: 92807 Min:    20 Max: 260173 Err:     0 (0.00%) Active: 5 Started: 41 Finished: 36
+summary =     37 in 00:05:33 =    0.1/s Avg: 25102 Min:    19 Max: 260173 Err:     0 (0.00%)
+summary +      4 in 00:00:33 =    0.1/s Avg:    23 Min:    19 Max:    31 Err:     0 (0.00%) Active: 6 Started: 46 Finished: 40
+summary =     41 in 00:06:05 =    0.1/s Avg: 22656 Min:    19 Max: 260173 Err:     0 (0.00%)
+summary +      5 in 00:00:59 =    0.1/s Avg: 42551 Min:    20 Max: 212659 Err:     0 (0.00%) Active: 6 Started: 51 Finished: 45
+summary =     46 in 00:07:04 =    0.1/s Avg: 24818 Min:    19 Max: 260173 Err:     0 (0.00%)
+summary +     11 in 00:01:27 =    0.1/s Avg: 46222 Min:    20 Max: 190566 Err:     0 (0.00%) Active: 5 Started: 61 Finished: 56
+summary =     57 in 00:08:31 =    0.1/s Avg: 28949 Min:    19 Max: 260173 Err:     0 (0.00%)
+summary +      4 in 00:00:30 =    0.1/s Avg:    29 Min:    21 Max:    36 Err:     0 (0.00%) Active: 8 Started: 68 Finished: 60
+summary =     61 in 00:09:01 =    0.1/s Avg: 27052 Min:    19 Max: 260173 Err:     0 (0.00%)
+summary +      2 in 00:00:29 =    0.1/s Avg:    32 Min:    31 Max:    34 Err:     0 (0.00%) Active: 9 Started: 71 Finished: 62
+summary =     63 in 00:09:30 =    0.1/s Avg: 26195 Min:    19 Max: 260173 Err:     0 (0.00%)
+summary +      9 in 00:02:30 =    0.1/s Avg: 123151 Min:    19 Max: 272857 Err:     3 (33.33%) Active: 7 Started: 78 Finished: 71
+summary =     72 in 00:12:00 =    0.1/s Avg: 38314 Min:    19 Max: 272857 Err:     3 (4.17%)
+summary +      6 in 00:00:00 = 2000.0/s Avg: 166053 Min: 123780 Max: 208982 Err:     6 (100.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg: 48140 Min:    19 Max: 272857 Err:     9 (11.54%)
+Tidying up ...    @ 2026 Oct 8 07:23:30 SGT (1791415410232)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0333_run2.jtl
+=== qwen2.5_7b_rate0.0333_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 07:24:42 SGT (1791415482125)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:18 =    0.1/s Avg:    86 Min:    86 Max:    86 Err:     0 (0.00%) Active: 2 Started: 2 Finished: 0
+summary +     18 in 00:02:32 =    0.1/s Avg:    28 Min:    20 Max:    51 Err:     0 (0.00%) Active: 8 Started: 26 Finished: 18
+summary =     19 in 00:02:50 =    0.1/s Avg:    31 Min:    20 Max:    86 Err:     0 (0.00%)
+summary +      4 in 00:00:30 =    0.1/s Avg:    21 Min:    20 Max:    25 Err:     0 (0.00%) Active: 8 Started: 30 Finished: 22
+summary =     23 in 00:03:20 =    0.1/s Avg:    30 Min:    20 Max:    86 Err:     0 (0.00%)
+summary +      7 in 00:01:31 =    0.1/s Avg: 39013 Min:    20 Max: 272936 Err:     1 (14.29%) Active: 8 Started: 37 Finished: 29
+summary =     30 in 00:04:51 =    0.1/s Avg:  9126 Min:    20 Max: 272936 Err:     1 (3.33%)
+summary +      7 in 00:00:31 =    0.2/s Avg: 72141 Min:    18 Max: 253595 Err:     0 (0.00%) Active: 6 Started: 42 Finished: 36
+summary =     37 in 00:05:21 =    0.1/s Avg: 21047 Min:    18 Max: 272936 Err:     1 (2.70%)
+summary +      7 in 00:00:30 =    0.2/s Avg: 39001 Min:    20 Max: 272861 Err:     1 (14.29%) Active: 7 Started: 50 Finished: 43
+summary =     44 in 00:05:51 =    0.1/s Avg: 23904 Min:    18 Max: 272936 Err:     2 (4.55%)
+summary +      4 in 00:00:58 =    0.1/s Avg: 202083 Min:    36 Max: 272895 Err:     2 (50.00%) Active: 5 Started: 52 Finished: 47
+summary =     48 in 00:06:49 =    0.1/s Avg: 38752 Min:    18 Max: 272936 Err:     4 (8.33%)
+summary +      3 in 00:00:29 =    0.1/s Avg:    29 Min:    19 Max:    35 Err:     0 (0.00%) Active: 6 Started: 56 Finished: 50
+summary =     51 in 00:07:19 =    0.1/s Avg: 36474 Min:    18 Max: 272936 Err:     4 (7.84%)
+summary +     20 in 00:04:33 =    0.1/s Avg: 66308 Min:    19 Max: 272877 Err:     3 (15.00%) Active: 8 Started: 78 Finished: 70
+summary =     71 in 00:11:51 =    0.1/s Avg: 44878 Min:    18 Max: 272936 Err:     7 (9.86%)
+summary +      7 in 00:00:09 =    0.8/s Avg: 187011 Min: 120526 Max: 259118 Err:     7 (100.00%) Active: 0 Started: 78 Finished: 78
+summary =     78 in 00:12:00 =    0.1/s Avg: 57634 Min:    18 Max: 272936 Err:    14 (17.95%)
+Tidying up ...    @ 2026 Oct 8 07:36:42 SGT (1791416202159)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0333_run3.jtl
+
+--- aggregate: qwen2.5:7b @ 0.0333 req/s ---
+=== qwen2.5:7b @ 0.0333 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           59      27.0      37.2     144.7     0.099    0.00
+2           59      25.0      37.2      50.3     0.102    0.00
+3           59      24.0      40.8      65.7     0.101    0.00
+--------------------------------------------------------------
+  p50_ms             mean=25.33        range=[24.0, 27.0]  sd=1.53
+  p95_ms             mean=38.4         range=[37.2, 40.8]  sd=2.08
+  p99_ms             mean=86.9         range=[50.3, 144.7]  sd=50.65
+  achieved_tps       mean=0.1          range=[0.1, 0.1]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== qwen2.5:7b @ 0.0333 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           19  156096.0  259207.6  270127.1     0.027   36.84
+2           19  205667.0  272852.5  272856.1     0.027   47.37
+3           19  259118.0  272899.1  272928.6     0.027   73.68
+--------------------------------------------------------------
+  p50_ms             mean=206960.33    range=[156096.0, 259118.0]  sd=51523.18
+  p95_ms             mean=268319.73    range=[259207.6, 272899.1]  sd=7891.37
+  p99_ms             mean=271970.6     range=[270127.1, 272928.6]  sd=1596.93
+  achieved_tps       mean=0.03         range=[0.03, 0.03]  sd=0.0
+  error_rate_pct     mean=52.63        range=[36.84, 73.68]  sd=18.98
+
+wrote ../results/jtl/qwen2.5_7b_rate0.0333_summary.json
+
+=== qwen2.5_7b_rate0.0667_run1 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 07:37:54 SGT (1791416274427)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:00:06 =    0.6/s Avg:    33 Min:    21 Max:    67 Err:     0 (0.00%) Active: 4 Started: 7 Finished: 3
+summary +      4 in 00:00:31 =    0.1/s Avg:    28 Min:    26 Max:    31 Err:     0 (0.00%) Active: 4 Started: 11 Finished: 7
+summary =      8 in 00:00:37 =    0.2/s Avg:    31 Min:    21 Max:    67 Err:     0 (0.00%)
+summary +      4 in 00:00:32 =    0.1/s Avg:    23 Min:    21 Max:    29 Err:     0 (0.00%) Active: 5 Started: 16 Finished: 11
+summary =     12 in 00:01:10 =    0.2/s Avg:    28 Min:    21 Max:    67 Err:     0 (0.00%)
+summary +      7 in 00:00:27 =    0.3/s Avg:    25 Min:    21 Max:    36 Err:     0 (0.00%) Active: 9 Started: 27 Finished: 18
+summary =     19 in 00:01:37 =    0.2/s Avg:    27 Min:    21 Max:    67 Err:     0 (0.00%)
+summary +     10 in 00:00:29 =    0.3/s Avg:    25 Min:    20 Max:    35 Err:     0 (0.00%) Active: 13 Started: 41 Finished: 28
+summary =     29 in 00:02:06 =    0.2/s Avg:    26 Min:    20 Max:    67 Err:     0 (0.00%)
+summary +     20 in 00:02:00 =    0.2/s Avg:    39 Min:    21 Max:    85 Err:     0 (0.00%) Active: 22 Started: 70 Finished: 48
+summary =     49 in 00:04:06 =    0.2/s Avg:    32 Min:    20 Max:    85 Err:     0 (0.00%)
+summary +      7 in 00:00:30 =    0.2/s Avg: 74598 Min:    20 Max: 272772 Err:     1 (14.29%) Active: 20 Started: 75 Finished: 55
+summary =     56 in 00:04:36 =    0.2/s Avg:  9352 Min:    20 Max: 272772 Err:     1 (1.79%)
+summary +      9 in 00:00:29 =    0.3/s Avg: 30346 Min:    24 Max: 272854 Err:     1 (11.11%) Active: 21 Started: 85 Finished: 64
+summary =     65 in 00:05:06 =    0.2/s Avg: 12259 Min:    20 Max: 272854 Err:     2 (3.08%)
+summary +     15 in 00:01:01 =    0.2/s Avg: 72782 Min:    19 Max: 272893 Err:     4 (26.67%) Active: 21 Started: 100 Finished: 79
+summary =     80 in 00:06:07 =    0.2/s Avg: 23607 Min:    19 Max: 272893 Err:     6 (7.50%)
+summary +     12 in 00:00:29 =    0.4/s Avg: 90963 Min:    18 Max: 272862 Err:     4 (33.33%) Active: 18 Started: 109 Finished: 91
+summary =     92 in 00:06:36 =    0.2/s Avg: 32393 Min:    18 Max: 272893 Err:    10 (10.87%)
+summary +      9 in 00:00:31 =    0.3/s Avg: 90966 Min:    19 Max: 272922 Err:     3 (33.33%) Active: 17 Started: 117 Finished: 100
+summary =    101 in 00:07:06 =    0.2/s Avg: 37612 Min:    18 Max: 272922 Err:    13 (12.87%)
+summary +      8 in 00:00:32 =    0.3/s Avg: 34134 Min:    17 Max: 272874 Err:     1 (12.50%) Active: 18 Started: 126 Finished: 108
+summary =    109 in 00:07:38 =    0.2/s Avg: 37357 Min:    17 Max: 272922 Err:    14 (12.84%)
+summary +     14 in 00:00:59 =    0.2/s Avg: 97464 Min:    19 Max: 272892 Err:     5 (35.71%) Active: 15 Started: 137 Finished: 122
+summary =    123 in 00:08:37 =    0.2/s Avg: 44198 Min:    17 Max: 272922 Err:    19 (15.45%)
+summary +      7 in 00:00:28 =    0.2/s Avg: 39006 Min:    19 Max: 272909 Err:     1 (14.29%) Active: 14 Started: 143 Finished: 129
+summary =    130 in 00:09:06 =    0.2/s Avg: 43919 Min:    17 Max: 272922 Err:    20 (15.38%)
+summary +      5 in 00:00:31 =    0.2/s Avg: 109176 Min:    25 Max: 272898 Err:     2 (40.00%) Active: 15 Started: 149 Finished: 134
+summary =    135 in 00:09:37 =    0.2/s Avg: 46336 Min:    17 Max: 272922 Err:    22 (16.30%)
+summary +     14 in 00:01:32 =    0.2/s Avg: 116969 Min:    19 Max: 273122 Err:     6 (42.86%) Active: 12 Started: 160 Finished: 148
+summary =    149 in 00:11:09 =    0.2/s Avg: 52972 Min:    17 Max: 273122 Err:    28 (18.79%)
+summary +     11 in 00:00:51 =    0.2/s Avg: 199596 Min: 135708 Max: 272897 Err:    11 (100.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg: 63053 Min:    17 Max: 273122 Err:    39 (24.38%)
+Tidying up ...    @ 2026 Oct 8 07:49:54 SGT (1791416994453)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0667_run1.jtl
+=== qwen2.5_7b_rate0.0667_run2 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 07:51:06 SGT (1791417066315)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      7 in 00:00:25 =    0.3/s Avg:    30 Min:    19 Max:    54 Err:     0 (0.00%) Active: 3 Started: 9 Finished: 6
+summary +      7 in 00:00:34 =    0.2/s Avg:    29 Min:    18 Max:    57 Err:     0 (0.00%) Active: 6 Started: 19 Finished: 13
+summary =     14 in 00:00:58 =    0.2/s Avg:    29 Min:    18 Max:    57 Err:     0 (0.00%)
+summary +      6 in 00:00:27 =    0.2/s Avg:    28 Min:    20 Max:    40 Err:     0 (0.00%) Active: 9 Started: 28 Finished: 19
+summary =     20 in 00:01:26 =    0.2/s Avg:    29 Min:    18 Max:    57 Err:     0 (0.00%)
+summary +     13 in 00:01:03 =    0.2/s Avg:    27 Min:    20 Max:    36 Err:     0 (0.00%) Active: 15 Started: 47 Finished: 32
+summary =     33 in 00:02:29 =    0.2/s Avg:    28 Min:    18 Max:    57 Err:     0 (0.00%)
+summary +     11 in 00:00:59 =    0.2/s Avg:    26 Min:    19 Max:    33 Err:     0 (0.00%) Active: 16 Started: 59 Finished: 43
+summary =     44 in 00:03:27 =    0.2/s Avg:    27 Min:    18 Max:    57 Err:     0 (0.00%)
+summary +      5 in 00:00:30 =    0.2/s Avg:    31 Min:    25 Max:    37 Err:     0 (0.00%) Active: 17 Started: 65 Finished: 48
+summary =     49 in 00:03:57 =    0.2/s Avg:    28 Min:    18 Max:    57 Err:     0 (0.00%)
+summary +      9 in 00:00:58 =    0.2/s Avg:    22 Min:    19 Max:    31 Err:     0 (0.00%) Active: 19 Started: 76 Finished: 57
+summary =     58 in 00:04:55 =    0.2/s Avg:    27 Min:    18 Max:    57 Err:     0 (0.00%)
+summary +     11 in 00:00:32 =    0.3/s Avg: 125053 Min:    24 Max: 282469 Err:     1 (9.09%) Active: 15 Started: 83 Finished: 68
+summary =     69 in 00:05:27 =    0.2/s Avg: 19959 Min:    18 Max: 282469 Err:     1 (1.45%)
+summary +     10 in 00:00:27 =    0.4/s Avg: 28392 Min:    18 Max: 283694 Err:     1 (10.00%) Active: 17 Started: 95 Finished: 78
+summary =     79 in 00:05:55 =    0.2/s Avg: 21026 Min:    18 Max: 283694 Err:     2 (2.53%)
+summary +     10 in 00:00:34 =    0.3/s Avg: 85494 Min:    19 Max: 285466 Err:     3 (30.00%) Active: 16 Started: 104 Finished: 88
+summary =     89 in 00:06:28 =    0.2/s Avg: 28270 Min:    18 Max: 285466 Err:     5 (5.62%)
+summary +      4 in 00:00:27 =    0.2/s Avg:    24 Min:    18 Max:    33 Err:     0 (0.00%) Active: 18 Started: 110 Finished: 92
+summary =     93 in 00:06:55 =    0.2/s Avg: 27055 Min:    18 Max: 285466 Err:     5 (5.38%)
+summary +     11 in 00:00:29 =    0.4/s Avg: 131069 Min:    20 Max: 288826 Err:     5 (45.45%) Active: 14 Started: 117 Finished: 103
+summary =    104 in 00:07:24 =    0.2/s Avg: 38056 Min:    18 Max: 288826 Err:    10 (9.62%)
+summary +      5 in 00:00:34 =    0.1/s Avg: 57776 Min:    19 Max: 288778 Err:     1 (20.00%) Active: 15 Started: 123 Finished: 108
+summary =    109 in 00:07:59 =    0.2/s Avg: 38961 Min:    18 Max: 288826 Err:    11 (10.09%)
+summary +     12 in 00:00:56 =    0.2/s Avg: 48256 Min:    18 Max: 289568 Err:     2 (16.67%) Active: 17 Started: 137 Finished: 120
+summary =    121 in 00:08:54 =    0.2/s Avg: 39883 Min:    18 Max: 289568 Err:    13 (10.74%)
+summary +     18 in 00:01:02 =    0.3/s Avg: 32252 Min:    19 Max: 290204 Err:     2 (11.11%) Active: 22 Started: 160 Finished: 138
+summary =    139 in 00:09:56 =    0.2/s Avg: 38895 Min:    18 Max: 290204 Err:    15 (10.79%)
+summary +      2 in 00:00:31 =    0.1/s Avg: 289959 Min: 289889 Max: 290030 Err:     2 (100.00%) Active: 20 Started: 160 Finished: 140
+summary =    141 in 00:10:27 =    0.2/s Avg: 42456 Min:    18 Max: 290204 Err:    17 (12.06%)
+summary +      2 in 00:00:28 =    0.1/s Avg: 289930 Min: 289917 Max: 289944 Err:     2 (100.00%) Active: 18 Started: 160 Finished: 142
+summary =    143 in 00:10:55 =    0.2/s Avg: 45917 Min:    18 Max: 290204 Err:    19 (13.29%)
+summary +     17 in 00:01:05 =    0.3/s Avg: 206942 Min: 123788 Max: 289904 Err:    17 (100.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg: 63026 Min:    18 Max: 290204 Err:    36 (22.50%)
+Tidying up ...    @ 2026 Oct 8 08:03:06 SGT (1791417786337)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0667_run2.jtl
+=== qwen2.5_7b_rate0.0667_run3 ===
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using triage_load_test.jmx
+Starting standalone test @ 2026 Oct 8 08:04:18 SGT (1791417858225)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:00:12 =    0.3/s Avg:    31 Min:    20 Max:    59 Err:     0 (0.00%) Active: 1 Started: 4 Finished: 3
+summary +      8 in 00:00:30 =    0.3/s Avg:    28 Min:    21 Max:    33 Err:     0 (0.00%) Active: 4 Started: 15 Finished: 11
+summary =     12 in 00:00:43 =    0.3/s Avg:    29 Min:    20 Max:    59 Err:     0 (0.00%)
+summary +      4 in 00:00:33 =    0.1/s Avg:    41 Min:    24 Max:    73 Err:     0 (0.00%) Active: 6 Started: 21 Finished: 15
+summary =     16 in 00:01:15 =    0.2/s Avg:    32 Min:    20 Max:    73 Err:     0 (0.00%)
+summary +     11 in 00:00:30 =    0.4/s Avg:    29 Min:    21 Max:    49 Err:     0 (0.00%) Active: 10 Started: 36 Finished: 26
+summary =     27 in 00:01:45 =    0.3/s Avg:    31 Min:    20 Max:    73 Err:     0 (0.00%)
+summary +      4 in 00:00:32 =    0.1/s Avg:    26 Min:    22 Max:    32 Err:     0 (0.00%) Active: 11 Started: 41 Finished: 30
+summary =     31 in 00:02:16 =    0.2/s Avg:    30 Min:    20 Max:    73 Err:     0 (0.00%)
+summary +      5 in 00:00:30 =    0.2/s Avg:    35 Min:    25 Max:    50 Err:     0 (0.00%) Active: 13 Started: 48 Finished: 35
+summary =     36 in 00:02:47 =    0.2/s Avg:    31 Min:    20 Max:    73 Err:     0 (0.00%)
+summary +      5 in 00:00:25 =    0.2/s Avg:    24 Min:    19 Max:    31 Err:     0 (0.00%) Active: 15 Started: 55 Finished: 40
+summary =     41 in 00:03:12 =    0.2/s Avg:    30 Min:    19 Max:    73 Err:     0 (0.00%)
+summary +     18 in 00:01:31 =    0.2/s Avg:    25 Min:    18 Max:    35 Err:     0 (0.00%) Active: 21 Started: 79 Finished: 58
+summary =     59 in 00:04:43 =    0.2/s Avg:    28 Min:    18 Max:    73 Err:     0 (0.00%)
+summary +      7 in 00:00:32 =    0.2/s Avg: 42509 Min:    21 Max: 297419 Err:     1 (14.29%) Active: 22 Started: 87 Finished: 65
+summary =     66 in 00:05:15 =    0.2/s Avg:  4534 Min:    18 Max: 297419 Err:     1 (1.52%)
+summary +      8 in 00:00:28 =    0.3/s Avg: 74455 Min:    17 Max: 297760 Err:     2 (25.00%) Active: 24 Started: 97 Finished: 73
+summary =     74 in 00:05:43 =    0.2/s Avg: 12093 Min:    17 Max: 297760 Err:     3 (4.05%)
+summary +      4 in 00:00:30 =    0.1/s Avg: 149042 Min:    32 Max: 298173 Err:     2 (50.00%) Active: 22 Started: 99 Finished: 77
+summary =     78 in 00:06:13 =    0.2/s Avg: 19116 Min:    17 Max: 298173 Err:     5 (6.41%)
+summary +     10 in 00:00:31 =    0.3/s Avg: 119300 Min:    21 Max: 298251 Err:     4 (40.00%) Active: 19 Started: 106 Finished: 87
+summary =     88 in 00:06:44 =    0.2/s Avg: 30500 Min:    17 Max: 298251 Err:     9 (10.23%)
+summary +      6 in 00:00:31 =    0.2/s Avg: 49783 Min:    20 Max: 298549 Err:     1 (16.67%) Active: 19 Started: 112 Finished: 93
+summary =     94 in 00:07:15 =    0.2/s Avg: 31731 Min:    17 Max: 298549 Err:    10 (10.64%)
+summary +     24 in 00:01:29 =    0.3/s Avg: 62279 Min:    19 Max: 298973 Err:     5 (20.83%) Active: 19 Started: 136 Finished: 117
+summary =    118 in 00:08:44 =    0.2/s Avg: 37944 Min:    17 Max: 298973 Err:    15 (12.71%)
+summary +     20 in 00:01:02 =    0.3/s Avg: 74920 Min:    21 Max: 299700 Err:     5 (25.00%) Active: 20 Started: 157 Finished: 137
+summary =    138 in 00:09:46 =    0.2/s Avg: 43303 Min:    17 Max: 299700 Err:    20 (14.49%)
+summary +      8 in 00:00:56 =    0.1/s Avg: 224897 Min:    26 Max: 299975 Err:     6 (75.00%) Active: 15 Started: 160 Finished: 145
+summary =    146 in 00:10:43 =    0.2/s Avg: 53254 Min:    17 Max: 299975 Err:    26 (17.81%)
+summary +     14 in 00:01:17 =    0.2/s Avg: 210370 Min: 120529 Max: 300183 Err:    14 (100.00%) Active: 0 Started: 160 Finished: 160
+summary =    160 in 00:12:00 =    0.2/s Avg: 67001 Min:    17 Max: 300183 Err:    40 (25.00%)
+Tidying up ...    @ 2026 Oct 8 08:16:18 SGT (1791418578258)
+... end of run
+  -> ../results/jtl/qwen2.5_7b_rate0.0667_run3.jtl
+
+--- aggregate: qwen2.5:7b @ 0.0667 req/s ---
+=== qwen2.5:7b @ 0.0667 req/s | GET /search ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1          120      24.5      63.2      84.1     0.201    0.00
+2          120      26.0      39.0      53.2     0.201    0.00
+3          120      28.0      40.1      58.4     0.200    0.00
+--------------------------------------------------------------
+  p50_ms             mean=26.17        range=[24.5, 28.0]  sd=1.76
+  p95_ms             mean=47.43        range=[39.0, 63.2]  sd=13.67
+  p99_ms             mean=65.23        range=[53.2, 84.1]  sd=16.54
+  achieved_tps       mean=0.2          range=[0.2, 0.2]  sd=0.0
+  error_rate_pct     mean=0.0          range=[0.0, 0.0]  sd=0.0
+
+=== qwen2.5:7b @ 0.0667 req/s | POST /tickets ===
+run          n       p50       p95       p99       tps    err%
+--------------------------------------------------------------
+1           40  272860.0  272909.7  273044.0     0.056   97.50
+2           40  283985.0  289948.3  290136.1     0.057   90.00
+3           40  298227.0  299984.0  300172.1     0.057  100.00
+--------------------------------------------------------------
+  p50_ms             mean=285024.0     range=[272860.0, 298227.0]  sd=12715.38
+  p95_ms             mean=287614.0     range=[272909.7, 299984.0]  sd=13687.26
+  p99_ms             mean=287784.07    range=[273044.0, 300172.1]  sd=13716.14
+  achieved_tps       mean=0.06         range=[0.06, 0.06]  sd=0.0
+  error_rate_pct     mean=95.83        range=[90.0, 100.0]  sd=5.2
+
+wrote ../results/jtl/qwen2.5_7b_rate0.0667_summary.json
+
+Matrix complete. Commit results/jtl/ to the repository.
+2026-10-08 08:17:29 all models done. Commit results/jtl/.

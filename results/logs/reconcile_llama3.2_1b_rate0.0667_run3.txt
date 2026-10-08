@@ -1,0 +1,35 @@
+# llama3.2_1b_rate0.0667_run3
+
+== POST /tickets ==
+JMeter samples      : 40
+Service log entries : 29
+JMeter errors       : 11
+Service log errors  : 0
+
+MISMATCH: 11 request(s) unaccounted for.
+  Common causes: the log file was not cleared between runs (filter with --run-id), a connection was reset before the service logged it, or JMeter aborted mid-run.
+
+MISMATCH: error counts differ. Client-side errors (timeouts, connection refused) will appear in the .jtl but not in the service log -- that gap is itself a finding worth reporting.
+
+Median client-side latency : 7856.0 ms
+Median server-side latency : 6844.9 ms
+Difference (network+queue) : 1011.1 ms
+
+NOT RECONCILED -- resolve before reporting these numbers
+
+== GET /search ==
+JMeter samples      : 120
+Service log entries : 93
+JMeter errors       : 27
+Service log errors  : 0
+
+MISMATCH: 27 request(s) unaccounted for.
+  Common causes: the log file was not cleared between runs (filter with --run-id), a connection was reset before the service logged it, or JMeter aborted mid-run.
+
+MISMATCH: error counts differ. Client-side errors (timeouts, connection refused) will appear in the .jtl but not in the service log -- that gap is itself a finding worth reporting.
+
+Median client-side latency : 31.0 ms
+Median server-side latency : 0.9 ms
+Difference (network+queue) : 30.1 ms
+
+NOT RECONCILED -- resolve before reporting these numbers
