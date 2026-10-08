@@ -1,0 +1,35 @@
+Model: qwen2.5:7b   tickets: 175
+  [10/175] running accuracy 1.000
+  [20/175] running accuracy 0.950
+  [30/175] running accuracy 0.933
+  [40/175] running accuracy 0.875
+  [50/175] running accuracy 0.820
+  [60/175] running accuracy 0.767
+  [70/175] running accuracy 0.771
+  [80/175] running accuracy 0.738
+  [90/175] running accuracy 0.733
+  [100/175] running accuracy 0.740
+  [110/175] running accuracy 0.745
+  [120/175] running accuracy 0.767
+  [130/175] running accuracy 0.754
+  [140/175] running accuracy 0.764
+  [150/175] running accuracy 0.753
+  [160/175] running accuracy 0.744
+  [170/175] running accuracy 0.741
+  [175/175] running accuracy 0.731
+
+Overall accuracy : 0.7314  (128/175)
+Unparsed         : 0   Errors: 0
+Single-request latency p50/p95/p99 (ms): 34124.98 / 73168.97 / 78894.99
+
+Per-category recall:
+  Credit reporting             0.850
+  Debt collection              0.850
+  Mortgage                     0.909
+  Credit card                  0.583
+  Bank account or service      0.810
+  Consumer loan                0.636
+  Money transfer or service    0.462
+
+Wrote results/accuracy/predictions_qwen2.5_7b.csv
+      results/accuracy/summary_qwen2.5_7b.json

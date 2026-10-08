@@ -54,3 +54,50 @@ warm-up row 9000: Credit reporting in 7201 ms (llama3.2:1b)
 warm-up row 9001: Credit reporting in 2710 ms (llama3.2:1b)
 warm-up row 9002: Credit reporting in 6091 ms (llama3.2:1b)
 2026-10-08 08:39:48 +0800  [llama3.2:1b] READY -- /healthz reports model=llama3.2:1b run_id=ready
+2026-10-08 09:04:56 +0800  accuracy_all.sh start: models=qwen2.5:0.5b llama3.2:1b llama3.2:3b qwen2.5:7b, then repeat qwen2.5:0.5b (determinism)
+2026-10-08 09:04:56 +0800  [qwen2.5:0.5b] ACCURACY (accuracy_qwen2.5_0.5b): stopping stack and clearing the ticket store
+2026-10-08 09:04:56 +0800  ABORT: ollama-models volume missing
+2026-10-08 09:04:56 +0800  accuracy_all.sh stopped
+2026-10-08 09:06:25 +0800  accuracy_all.sh start: models=qwen2.5:0.5b llama3.2:1b llama3.2:3b qwen2.5:7b, then repeat qwen2.5:0.5b (determinism)
+2026-10-08 09:06:25 +0800  [qwen2.5:0.5b] ACCURACY (accuracy_qwen2.5_0.5b): stopping stack and clearing the ticket store
+2026-10-08 09:06:31 +0800  [qwen2.5:0.5b] digest ok: a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67
+2026-10-08 09:06:31 +0800  [qwen2.5:0.5b] warming up
+warm-up row 9000: Consumer loan in 4397 ms (qwen2.5:0.5b)
+warm-up row 9001: Consumer loan in 1220 ms (qwen2.5:0.5b)
+warm-up row 9002: Consumer loan in 2405 ms (qwen2.5:0.5b)
+2026-10-08 09:06:42 +0800  [qwen2.5:0.5b] ticket store empty, run_id=accuracy_qwen2.5_0.5b; starting accuracy harness
+2026-10-08 09:15:10 +0800  [qwen2.5:0.5b] DONE: Overall accuracy : 0.1200  (21/175)
+2026-10-08 09:15:10 +0800  [llama3.2:1b] ACCURACY (accuracy_llama3.2_1b): stopping stack and clearing the ticket store
+2026-10-08 09:15:16 +0800  [llama3.2:1b] digest ok: baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878
+2026-10-08 09:15:16 +0800  [llama3.2:1b] warming up
+warm-up row 9000: Credit reporting in 7968 ms (llama3.2:1b)
+warm-up row 9001: Credit reporting in 3506 ms (llama3.2:1b)
+warm-up row 9002: Credit reporting in 7320 ms (llama3.2:1b)
+2026-10-08 09:15:38 +0800  [llama3.2:1b] ticket store empty, run_id=accuracy_llama3.2_1b; starting accuracy harness
+2026-10-08 09:33:07 +0800  [llama3.2:1b] DONE: Overall accuracy : 0.2229  (39/175)
+2026-10-08 09:33:07 +0800  [llama3.2:3b] ACCURACY (accuracy_llama3.2_3b): stopping stack and clearing the ticket store
+2026-10-08 09:33:13 +0800  [llama3.2:3b] digest ok: a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72
+2026-10-08 09:33:14 +0800  [llama3.2:3b] warming up
+warm-up row 9000: Bank account or service in 28881 ms (llama3.2:3b)
+warm-up row 9001: Bank account or service in 12479 ms (llama3.2:3b)
+warm-up row 9002: Debt collection in 22501 ms (llama3.2:3b)
+2026-10-08 09:34:21 +0800  [llama3.2:3b] ticket store empty, run_id=accuracy_llama3.2_3b; starting accuracy harness
+2026-10-08 10:23:31 +0800  [llama3.2:3b] DONE: Overall accuracy : 0.4457  (78/175)
+2026-10-08 10:23:31 +0800  [qwen2.5:7b] ACCURACY (accuracy_qwen2.5_7b): stopping stack and clearing the ticket store
+2026-10-08 10:23:37 +0800  [qwen2.5:7b] digest ok: 845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e
+2026-10-08 10:23:37 +0800  [qwen2.5:7b] warming up
+warm-up row 9000: Credit reporting in 49440 ms (qwen2.5:7b)
+warm-up row 9001: Credit card in 26233 ms (qwen2.5:7b)
+warm-up row 9002: Debt collection in 50470 ms (qwen2.5:7b)
+2026-10-08 10:25:47 +0800  [qwen2.5:7b] ticket store empty, run_id=accuracy_qwen2.5_7b; starting accuracy harness
+2026-10-08 12:13:45 +0800  [qwen2.5:7b] DONE: Overall accuracy : 0.7314  (128/175)
+2026-10-08 12:13:45 +0800  [qwen2.5:0.5b] ACCURACY (accuracy_repeat_qwen2.5_0.5b): stopping stack and clearing the ticket store
+2026-10-08 12:13:51 +0800  [qwen2.5:0.5b] digest ok: a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67
+2026-10-08 12:13:51 +0800  [qwen2.5:0.5b] warming up
+warm-up row 9000: Consumer loan in 4376 ms (qwen2.5:0.5b)
+warm-up row 9001: Consumer loan in 1114 ms (qwen2.5:0.5b)
+warm-up row 9002: Consumer loan in 3677 ms (qwen2.5:0.5b)
+2026-10-08 12:14:04 +0800  [qwen2.5:0.5b] ticket store empty, run_id=accuracy_repeat_qwen2.5_0.5b; starting accuracy harness
+2026-10-08 12:22:19 +0800  [qwen2.5:0.5b] DONE: Overall accuracy : 0.1200  (21/175)
+2026-10-08 12:22:19 +0800  ACCURACY ALL DONE.
+2026-10-08 12:22:19 +0800  accuracy_all.sh stopped
