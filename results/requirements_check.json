@@ -1,0 +1,126 @@
+{
+  "qwen2.5:0.5b": {
+    "R1": [
+      "PASS",
+      "worst run p95 7.16s, p99 7.52s, err 0.0% (3 runs)"
+    ],
+    "R2": [
+      "PASS",
+      "worst run search p95 37 ms"
+    ],
+    "R3": [
+      "PASS",
+      "worst achieved/offered 99%, max in flight at end 2, err 0.0%"
+    ],
+    "R6_http": [
+      "PASS",
+      "worst error rate 0.00% at surge (3 runs)"
+    ],
+    "R4": [
+      "FAIL",
+      "12.0% (Wilson 95% CI 8%-18%, n=175)"
+    ],
+    "R5": [
+      "FAIL",
+      "Credit reporting 0%, Debt collection 0%, Mortgage 5%, Credit card 0%, Bank account or service 5%, Money transfer or service 0%"
+    ],
+    "R6_unparsed": [
+      "PASS",
+      "unparsed 0.0%"
+    ],
+    "all_pass": false
+  },
+  "llama3.2:1b": {
+    "R1": [
+      "PASS",
+      "worst run p95 13.66s, p99 14.57s, err 0.0% (3 runs)"
+    ],
+    "R2": [
+      "PASS",
+      "worst run search p95 61 ms"
+    ],
+    "R3": [
+      "PASS",
+      "worst achieved/offered 98%, max in flight at end 3, err 0.0%"
+    ],
+    "R6_http": [
+      "PASS",
+      "worst error rate 0.00% at surge (3 runs)"
+    ],
+    "R4": [
+      "FAIL",
+      "22.3% (Wilson 95% CI 17%-29%, n=175)"
+    ],
+    "R5": [
+      "FAIL",
+      "Credit reporting 48%, Debt collection 0%, Mortgage 0%, Credit card 0%, Bank account or service 0%, Consumer loan 0%"
+    ],
+    "R6_unparsed": [
+      "PASS",
+      "unparsed 0.0%"
+    ],
+    "all_pass": false
+  },
+  "llama3.2:3b": {
+    "R1": [
+      "FAIL",
+      "worst run p95 119.10s, p99 119.57s, err 0.0% (3 runs)"
+    ],
+    "R2": [
+      "PASS",
+      "worst run search p95 46 ms"
+    ],
+    "R3": [
+      "FAIL",
+      "worst achieved/offered 87%, max in flight at end 6, err 0.0%"
+    ],
+    "R6_http": [
+      "PASS",
+      "worst error rate 0.00% at surge (3 runs)"
+    ],
+    "R4": [
+      "FAIL",
+      "44.6% (Wilson 95% CI 37%-52%, n=175)"
+    ],
+    "R5": [
+      "FAIL",
+      "Credit reporting 28%, Debt collection 45%, Mortgage 55%, Credit card 33%, Consumer loan 68%, Money transfer or service 8%"
+    ],
+    "R6_unparsed": [
+      "PASS",
+      "unparsed 0.0%"
+    ],
+    "all_pass": false
+  },
+  "qwen2.5:7b": {
+    "R1": [
+      "FAIL",
+      "worst run p95 157.23s, p99 169.03s, err 40.0% (3 runs)"
+    ],
+    "R2": [
+      "PASS",
+      "worst run search p95 54 ms"
+    ],
+    "R3": [
+      "FAIL",
+      "worst achieved/offered 22%, max in flight at end 11, err 73.7%"
+    ],
+    "R6_http": [
+      "FAIL",
+      "worst error rate 73.68% at surge (3 runs)"
+    ],
+    "R4": [
+      "FAIL",
+      "73.1% (Wilson 95% CI 66%-79%, n=175)"
+    ],
+    "R5": [
+      "FAIL",
+      "Credit card 58%, Consumer loan 64%, Money transfer or service 46%"
+    ],
+    "R6_unparsed": [
+      "PASS",
+      "unparsed 0.0%"
+    ],
+    "all_pass": false
+  }
+}
