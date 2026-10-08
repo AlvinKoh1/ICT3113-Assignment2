@@ -45,3 +45,12 @@ warm-up row 9002: Debt collection in 46123 ms (qwen2.5:7b)
 2026-10-08 08:24:20 +0800  [qwen2.5:7b] DONE -- 834 log lines for this model
 2026-10-08 08:24:20 +0800  ALL MODELS DONE. Stack left running on qwen2.5:7b.
 2026-10-08 08:24:20 +0800  stopped (signal or exit)
+2026-10-08 08:39:22 +0800  [llama3.2:1b] RE-RUN of llama3.2_1b_rate0.0667_run3 (network drop 04:00-04:03) as llama3.2_1b_rate0.0667_run3b
+2026-10-08 08:39:22 +0800  [llama3.2:1b] stopping stack and clearing the ticket store (ict3113-assignment1_triage-data)
+2026-10-08 08:39:23 +0800  [llama3.2:1b] starting stack (RUN_ID=warming)
+2026-10-08 08:39:28 +0800  [llama3.2:1b] digest ok: baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878
+2026-10-08 08:39:28 +0800  [llama3.2:1b] warming up
+warm-up row 9000: Credit reporting in 7201 ms (llama3.2:1b)
+warm-up row 9001: Credit reporting in 2710 ms (llama3.2:1b)
+warm-up row 9002: Credit reporting in 6091 ms (llama3.2:1b)
+2026-10-08 08:39:48 +0800  [llama3.2:1b] READY -- /healthz reports model=llama3.2:1b run_id=ready
