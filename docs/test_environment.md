@@ -70,12 +70,15 @@ The client permits CPU only. Evidence:
 Be honest here; it is marked.
 
 - **Model warm-up.** First request after load pays model load time. We discard
-  <n> warm-up requests (P5) and set `OLLAMA_KEEP_ALIVE=30m` so the model is not
-  evicted mid-run.
+  3 warm-up requests per model (P5, `tools/warmup.py`, non-golden rows, tagged
+  `run_id=warmup` in the log) and set `OLLAMA_KEEP_ALIVE=30m` so the model is not
+  evicted mid-run. For the load tests, `tools/overnight_switch.sh` warms each
+  model before Machine B starts and keeps it loaded until the first run arrives.
 - **Thermal throttling.** <Did you check? Consumer hardware sustaining 100% CPU
   for 10 minutes will clock down, and run 3 may be slower than run 1 for reasons
   unrelated to the system. The spread across your three runs is where this shows.>
-- **Shared machine.** Machine A is Irfan's everyday desktop. At setup on 7 Oct, other apps were running: Chrome, Spotify, EA Desktop, Riot Vanguard (anti-cheat, runs at boot), Razer App Engine, ProtonVPN, VS Code and the Claude app. They use some CPU and, through the desktop, about 31 % of the GPU. <List what was closed before each reported run, and anything that could not be closed.>
+- **Shared machine.** Machine A is Irfan's everyday desktop. At setup on 7 Oct, other apps were running: Chrome, Spotify, EA Desktop, Riot Vanguard (anti-cheat, runs at boot), Razer App Engine, ProtonVPN, VS Code and the Claude app. They use some CPU and, through the desktop, about 31 % of the GPU.
+  - **Load tests (from 8 Oct 2026, ~00:00 SGT):** ProtonVPN disconnected and quit (Tailscale stays on; it carries the test traffic). Closed: Chrome, Spotify, EA Desktop (and its helper processes), Razer App Engine, Riot Client, Windows Settings. Still running because they need admin rights to stop: EA Background Service, Razer Elevation Service and Razer Game Manager Service (idle background services), and Riot Vanguard's kernel driver `vgk` (starts at boot; cannot be stopped without a reboot). VS Code, the Claude app, Docker Desktop, Tailscale and a terminal window for `tools/overnight_switch.sh` were open. Windows Update paused for 1 week; sleep and hibernate on AC disabled.
 - **Dataset cap.** Narratives are capped at 2000 chars; real complaints are
   longer, so our latency figures are optimistic.
 - **Single host.** The client would deploy on server-class hardware with more

@@ -1,0 +1,47 @@
+2026-10-08 00:03:52 +0800  start: models=qwen2.5:0.5b llama3.2:1b llama3.2:3b qwen2.5:7b last_rate=0.0667 runs=3 idle=300s
+2026-10-08 00:03:52 +0800  [qwen2.5:0.5b] stopping stack and clearing the ticket store (ict3113-assignment1_triage-data)
+2026-10-08 00:03:52 +0800  [qwen2.5:0.5b] starting stack (RUN_ID=warming)
+2026-10-08 00:03:58 +0800  [qwen2.5:0.5b] digest ok: a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67
+2026-10-08 00:03:58 +0800  [qwen2.5:0.5b] warming up
+warm-up row 9000: Consumer loan in 3418 ms (qwen2.5:0.5b)
+warm-up row 9001: Consumer loan in 880 ms (qwen2.5:0.5b)
+warm-up row 9002: Consumer loan in 1827 ms (qwen2.5:0.5b)
+2026-10-08 00:04:04 +0800  [qwen2.5:0.5b] READY -- /healthz reports model=qwen2.5:0.5b run_id=ready
+2026-10-08 00:09:33 +0800  [qwen2.5:0.5b] Machine B started (first qwen2.5_0.5b_rate* line in the log)
+2026-10-08 01:55:13 +0800  [qwen2.5:0.5b] last run qwen2.5_0.5b_rate0.0667_run3 started; waiting for 300s of log silence
+2026-10-08 02:10:16 +0800  [qwen2.5:0.5b] DONE -- 834 log lines for this model
+2026-10-08 02:10:16 +0800  [llama3.2:1b] stopping stack and clearing the ticket store (ict3113-assignment1_triage-data)
+2026-10-08 02:10:17 +0800  [llama3.2:1b] starting stack (RUN_ID=warming)
+2026-10-08 02:10:23 +0800  [llama3.2:1b] digest ok: baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878
+2026-10-08 02:10:23 +0800  [llama3.2:1b] warming up
+warm-up row 9000: Credit reporting in 6710 ms (llama3.2:1b)
+warm-up row 9001: Credit reporting in 3669 ms (llama3.2:1b)
+warm-up row 9002: Credit reporting in 6399 ms (llama3.2:1b)
+2026-10-08 02:10:40 +0800  [llama3.2:1b] READY -- /healthz reports model=llama3.2:1b run_id=ready
+2026-10-08 02:11:07 +0800  [llama3.2:1b] Machine B started (first llama3.2_1b_rate* line in the log)
+2026-10-08 03:56:44 +0800  [llama3.2:1b] last run llama3.2_1b_rate0.0667_run3 started; waiting for 300s of log silence
+2026-10-08 04:11:47 +0800  [llama3.2:1b] DONE -- 796 log lines for this model
+2026-10-08 04:11:47 +0800  [llama3.2:3b] stopping stack and clearing the ticket store (ict3113-assignment1_triage-data)
+2026-10-08 04:11:49 +0800  [llama3.2:3b] starting stack (RUN_ID=warming)
+2026-10-08 04:11:55 +0800  [llama3.2:3b] digest ok: a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72
+2026-10-08 04:11:55 +0800  [llama3.2:3b] warming up
+warm-up row 9000: Bank account or service in 25782 ms (llama3.2:3b)
+warm-up row 9001: Bank account or service in 9627 ms (llama3.2:3b)
+warm-up row 9002: Debt collection in 19759 ms (llama3.2:3b)
+2026-10-08 04:12:47 +0800  [llama3.2:3b] READY -- /healthz reports model=llama3.2:3b run_id=ready
+2026-10-08 04:13:00 +0800  [llama3.2:3b] Machine B started (first llama3.2_3b_rate* line in the log)
+2026-10-08 05:58:35 +0800  [llama3.2:3b] last run llama3.2_3b_rate0.0667_run3 started; waiting for 300s of log silence
+2026-10-08 06:16:48 +0800  [llama3.2:3b] DONE -- 834 log lines for this model
+2026-10-08 06:16:48 +0800  [qwen2.5:7b] stopping stack and clearing the ticket store (ict3113-assignment1_triage-data)
+2026-10-08 06:16:50 +0800  [qwen2.5:7b] starting stack (RUN_ID=warming)
+2026-10-08 06:16:55 +0800  [qwen2.5:7b] digest ok: 845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e
+2026-10-08 06:16:55 +0800  [qwen2.5:7b] warming up
+warm-up row 9000: Credit reporting in 44556 ms (qwen2.5:7b)
+warm-up row 9001: Credit card in 22577 ms (qwen2.5:7b)
+warm-up row 9002: Debt collection in 46123 ms (qwen2.5:7b)
+2026-10-08 06:18:41 +0800  [qwen2.5:7b] READY -- /healthz reports model=qwen2.5:7b run_id=ready
+2026-10-08 06:18:53 +0800  [qwen2.5:7b] Machine B started (first qwen2.5_7b_rate* line in the log)
+2026-10-08 08:04:37 +0800  [qwen2.5:7b] last run qwen2.5_7b_rate0.0667_run3 started; waiting for 300s of log silence
+2026-10-08 08:24:20 +0800  [qwen2.5:7b] DONE -- 834 log lines for this model
+2026-10-08 08:24:20 +0800  ALL MODELS DONE. Stack left running on qwen2.5:7b.
+2026-10-08 08:24:20 +0800  stopped (signal or exit)
