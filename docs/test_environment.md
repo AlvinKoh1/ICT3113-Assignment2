@@ -35,12 +35,13 @@ Slide 7. Fill from the actual machines. Commands to get each figure are given.
 
 | Property | Value |
 |---|---|
-| CPU / cores | |
-| RAM | |
-| OS | |
-| Java version | `java -version` |
-| JMeter version | `jmeter --version` — **must be ≥ 5.5** for Open Model Thread Group |
-| JMeter heap | `HEAP` env var |
+| Make / model | Lenovo laptop (Uwais's), a separate machine from M1 |
+| CPU / cores | AMD Ryzen 7 8845HS, 8 cores / 16 threads |
+| RAM | 16 GB (15,677 MB reported by Windows) |
+| OS | Windows 11 Home 10.0.26200; JMeter run from Git Bash |
+| Java version | Oracle Java SE 21.0.5 LTS (HotSpot 64-bit), `JAVA_HOME=C:\Program Files\Java\jdk-21` |
+| JMeter version | Apache JMeter 5.6.3 (≥ 5.5, so Open Model Thread Group is available) |
+| JMeter heap | Default `-Xms1g -Xmx1g` (`HEAP` not overridden) |
 
 ### Network between them
 
