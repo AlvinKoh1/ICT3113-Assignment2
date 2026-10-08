@@ -47,10 +47,13 @@ Slide 7. Fill from the actual machines. Commands to get each figure are given.
 
 | Property | Value | How |
 |---|---|---|
-| Link | | e.g. 1 GbE switched / shared Wi-Fi |
-| RTT | | `ping -c 100 <svc>` — report min/avg/max/mdev |
-| Bandwidth | | `iperf3` if available |
-| Other traffic on the link | | |
+| Link | Not a LAN: the two machines are in different homes, joined by a **Tailscale** (WireGuard) overlay across two home broadband connections. Both machines on **wired Ethernet** to their home routers for all reported runs (Machine B: Realtek USB GbE adapter, 1 Gbps; Wi-Fi off). No VPN other than Tailscale (ProtonVPN on Machine A was quit) | Machine A reached at Tailscale IP `100.88.74.36`; adapters from `Get-NetAdapter` |
+| Path | **Direct** peer-to-peer, not relayed through a Tailscale DERP server (`tailscale ping` → `pong ... via <public ip>:<port> in 12ms`, 8 Oct) | `tailscale ping 100.88.74.36` |
+| RTT | 100 packets, **0 % loss**; min **7** / avg **8.8** / max **17** ms, sd 1.7 ms, p95 12 ms (Windows `ping -n 100` from Machine B, 7 Oct). Raw output: `results/network/ping_machineB_to_A_2026-10-07.txt` | `ping -n 100 100.88.74.36` |
+| RTT during the load tests | TCP connect time in the `.jtl` files, 3,166 successful requests over 36 runs (excluding the dropped run): median **10** ms, p95 13 ms, p99 44 ms, max 1,024 ms | `Connect` column of `results/jtl/*.jtl` |
+| Bandwidth | Not measured (`iperf3` not available). Requests are small: ≤ 2,000-character tickets, < 1 kB responses, at most ~0.27 requests/s | |
+| Other traffic on the link | Home broadband on both sides, shared with other household use that we could not control | |
+| Outages | One: ~2 min (04:00:30–04:02:38 SGT, 8 Oct) during `llama3.2_1b_rate0.0667_run3`. 38 requests failed with `ConnectTimeoutException` and never reached the service. That run was redone as `run3b`; see `results/logs/reconcile_notes.md` | `.jtl` timestamps |
 
 > If the link is Wi-Fi, say so. Wi-Fi jitter lands directly in your p99 and can
 > be mistaken for server-side queueing. `reconcile.py` prints the gap between
