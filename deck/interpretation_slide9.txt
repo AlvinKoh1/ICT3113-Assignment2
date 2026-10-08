@@ -1,0 +1,16 @@
+## Where latency bends
+- **0.5B and 1B** stay flat from 1 to 4 tickets/min (p95 ≤ 6.3 s and ≤ 21.7 s)
+- **3B** bends between 2 and 4/min: p50 36 s → 161 s
+- **7B** is past capacity at the 1/min peak (p50 70 s, longer than the 60 s between arrivals), so its queue grows at every rate
+- **Stress (3B, 3 ladders):** the backlog grows already at 2/min; at most ~2.5–3/min completes. Once requests hit the 300 s timeout (ladders 1–2), throughput collapses to 0.6–1.8/min (110 × 502)
+
+## Bottleneck: Ollama CPU (prompt prefill)
+- **Ollama ≈ 395 % CPU**, its full 4-CPU quota, whenever it has work; the triage service stays under 6 % (docker stats)
+- **Prefill is 94–99 %** of Ollama's compute time per ~360-token ticket; service latency equals Ollama's own time to within 0.1 s
+- **Under overload:** the queue builds inside Ollama: 148 requests waited past the 300 s backend timeout and got a 502 (147 of them on 7B)
+- **Not the network or search:** Tailscale RTT 8.8 ms, median connect 10 ms; search p95 36–49 ms in every run
+
+## Incidents and how we handled them
+- **Network drop (04:00–04:02):** 38 requests never reached the service. 1B run 3 at 4/min was redone as run3b (0 errors); the original is kept
+- **Spill-over:** past capacity, the 120 s drain was too short. 34 tickets from 7 runs (3B at 4/min, 7B at every rate) were still running 42–81 s into the next run, and the 78 that JMeter cut off count as errors
+- **Not re-run:** only configurations already past capacity are affected, so their verdicts stand; the stress test drains for 620 s

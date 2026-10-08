@@ -170,6 +170,45 @@ def lines_of(path, fallback):
     return p.read_text(encoding="utf-8").strip().splitlines() if p.exists() and p.read_text(encoding="utf-8").strip() else [fallback]
 
 
+def card(s, x, y, w, h, title, items, accent=TEAL, size=10.5):
+    """Light panel with an accent bar, a bold title and bullets. An item
+    "**Lead** rest" renders Lead in bold; a tuple (text, True) is a bold line."""
+    bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(x), Inches(y), Inches(w), Inches(h))
+    bg.fill.solid(); bg.fill.fore_color.rgb = LIGHT; bg.line.fill.background()
+    bar = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(x), Inches(y), Inches(0.07), Inches(h))
+    bar.fill.solid(); bar.fill.fore_color.rgb = accent; bar.line.fill.background()
+    text(s, x + 0.18, y + 0.08, w - 0.28, 0.35, title, size + 2, True, accent)
+    tb = s.shapes.add_textbox(Inches(x + 0.18), Inches(y + 0.45), Inches(w - 0.3), Inches(h - 0.5))
+    tf = tb.text_frame; tf.word_wrap = True
+    for i, item in enumerate(items):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.space_after = Pt(4)
+        whole_bold = isinstance(item, tuple)
+        item = item[0] if whole_bold else item
+        lead, rest = "", item
+        if item.startswith("**") and "**" in item[2:]:
+            lead, rest = item[2:].split("**", 1)
+        for seg, b in (("• " if not whole_bold else "", False), (lead, True), (rest, whole_bold)):
+            if seg:
+                r = p.add_run(); r.text = seg
+                r.font.size, r.font.bold, r.font.color.rgb, r.font.name = Pt(size), b, GREY, "Calibri"
+    return tb
+
+
+def sections_of(path):
+    """'## Title' starts a card, '- item' adds a bullet; [] if the file is absent."""
+    p = Path(path)
+    out = []
+    if p.exists():
+        for line in p.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line.startswith("## "):
+                out.append((line[3:], []))
+            elif line.startswith("- ") and out:
+                out[-1][1].append(line[2:])
+    return out
+
+
 def fs(ms):
     return "" if ms is None else f"{ms / 1000:.2f}"
 
@@ -189,12 +228,17 @@ if (DOCS / "model_pins.md").exists():
             pins_rows.append(c[:5])
 acc = {m: jload(RES / "accuracy" / f"summary_{safe(m)}.json") for m in MODELS}
 acc = {m: a for m, a in acc.items() if a}
-load = {}
-for p in sorted((RES / "jtl").glob("*_summary.json")):
+load, load_redo = {}, {}
+# <model>_rate<R>_summary_<redo>.json replaces the plain summary when a run was
+# redone (e.g. _summary_run3b.json: run3 lost to a network drop). The original
+# files stay in results/ as evidence.
+for p in sorted((RES / "jtl").glob("*_summary*.json")):
     j = json.loads(p.read_text(encoding="utf-8"))
-    mm = re.match(r"(.+)_rate([\d.]+)_summary\.json$", p.name)
-    if mm:
+    mm = re.match(r"(.+)_rate([\d.]+)_summary(?:_(\w+))?\.json$", p.name)
+    if mm and (mm[3] or (mm[1], float(mm[2])) not in load_redo):
         load[(mm[1], float(mm[2]))] = j
+        if mm[3]:
+            load_redo[(mm[1], float(mm[2]))] = mm[3]
 stress = {p.name.replace(".summary.json", ""): json.loads(p.read_text()) for p in sorted((RES / "stress").glob("*.summary.json"))}
 env = md_tables(DOCS / "test_environment.md")
 reqcheck = jload(RES / "requirements_check.json")
@@ -336,33 +380,38 @@ bullets(s, 6.8, 3.4, 6.1, 3.6, [
 # ------------------------------------------------------------------- 8 playbook
 s = prs.slides.add_slide(BLANK)
 header(s, 8, "Playbook: Testing Procedure", "Full procedure in docs/playbook.md; preconditions P1–P7 before every test")
-steps = [("Freeze", "golden set + predictions\ncommitted first"), ("A · Single request", "sequential, no load\n= accuracy run latency"),
-         ("B · Load (open)", "0.0167 / 0.0333 / 0.0667 /s\n+ search 3× · 3 × 10 min"), ("C · Accuracy", "golden set × 4 models\nconfusion matrix"),
-         ("D · Stress", "stepped rate 0.5μ→1.5μ\n300 s steps · 3 ladders")]
+steps = [("Freeze", "golden set + predictions\ncommitted first"),
+         ("B · Load (open loop)", "4 models × 3 rates × 3 runs\n1 / 2 / 4 tickets/min + search 3×"),
+         ("C · Accuracy", "golden set × 4 models\nsequential → single-request S"),
+         ("D · Stress", "llama3.2:3b, stepped rate\n0.5μ→1.5μ · 300 s steps · 3 ladders")]
 for i, (t, d) in enumerate(steps):
-    box(s, 0.4 + i * 2.55, 1.5, 2.2, 1.3, f"{t}\n{d}", [GREY, TEAL, NAVY, GREEN, RED][i], 12)
-    if i < 4:
-        arrow(s, 2.6 + i * 2.55, 2.15, 2.95 + i * 2.55, 2.15)
-bullets(s, 0.4, 3.1, 6.3, 4.0, [
-    ("JMeter, open loop (triage_load_test.jmx)", True),
-    "Open Model Thread Group: rate(R/sec) random_arrivals(10 min) pause(120 s); Poisson arrivals that do not wait for responses; the pause lets in-flight requests finish",
-    "2nd Open Model TG: GET /search at 3 × R, terms from TSV",
-    "CSV Data Set: pre-escaped TSV of our 1,000 rows (tools/prepare_jmeter_data.py)",
-    "Keep-alive off (fresh connection per ticket); X-Run-ID header tags every service log line",
-    "Response timeout 600 s; seed = run number",
-], 11)
-bullets(s, 6.8, 3.1, 6.1, 4.0, [
-    ("Every run", True),
-    "Service started empty (make reset) and warmed; model checked via /healthz",
-    "reconcile.py: .jtl vs service log for that run_id (counts, errors, client ≥ server latency)",
-    "analyze_jtl.py: p50/p95/p99, throughput, error rate, mean and spread of 3 runs",
-    ("Stress (run_stress.sh)", True),
-    "steps around μ = 60/S from Test A; sustainable ⇔ end-of-step queue ≤ max(5, 15 % of arrivals) and 0 errors",
-], 11)
+    box(s, 0.4 + i * 3.2, 1.4, 2.8, 1.05, f"{t}\n{d}", [GREY, NAVY, GREEN, RED][i], 12)
+    if i < len(steps) - 1:
+        arrow(s, 3.2 + i * 3.2, 1.92, 3.6 + i * 3.2, 1.92)
+card(s, 0.4, 2.75, 4.1, 4.5, "JMeter setup · Machine B", [
+    "**Open loop:** Open Model Thread Group, rate(R/sec) random_arrivals(10 min) pause(120 s). Poisson arrivals that never wait for a response",
+    "**Mixed load:** POST /tickets at R, GET /search at 3 × R",
+    "**Rates:** 1, 2, 4 tickets/min (peak, surge, 2× surge); 3 runs × 10 min each",
+    "**Feed:** pre-escaped TSV of our 1,000 rows (tools/prepare_jmeter_data.py)",
+    "**Per request:** keep-alive off; X-Run-ID header tags the service log line; seed = run number",
+    "**Timeouts:** JMeter 600 s; service → Ollama 300 s (then 502)",
+], NAVY, 12)
+card(s, 4.62, 2.75, 4.1, 4.5, "Each model, each run", [
+    "**Handover:** Machine A restarts on the model with an empty ticket store, sends 3 non-golden warm-ups, reports 'ready'; Machine B waits for it (overnight_switch.sh ↔ run_all_models.sh)",
+    "**After every run:** reconcile.py per endpoint (counts and errors vs the service log for that run id); analyze_jtl.py gives p50/p95/p99, throughput, errors, mean ± SD of 3 runs",
+    "**Stress:** 7 steps around μ = 60/S from the accuracy run; sustainable ⇔ end-of-step queue ≤ max(5, 15 % of arrivals) and 0 errors; 620 s drain, 60 s settle between ladders",
+], TEAL, 12)
+card(s, 8.84, 2.75, 4.1, 4.5, "Validity rules", [
+    "**Freeze first:** golden set and prediction record committed before any benchmark run",
+    "**Separate machines:** JMeter on Machine B, service + Ollama on Machine A",
+    "**Reconcile every run:** every gap between the .jtl and the service log is explained in results/logs/reconcile_notes.md",
+    "**Harness fault → redo:** a run hit by a test-side fault is repeated under a new run id; the original stays as evidence (e.g. run3b)",
+    "**No backlog across models:** Machine A switches only after 300 s with no new log lines",
+], RED, 12)
 
 # ------------------------------------------------------------------- 9 load + stress
 s = prs.slides.add_slide(BLANK)
-header(s, 9, "Load & Stress Test Results", "POST /tickets latency in seconds: mean of 3 runs (± SD); open-loop arrivals")
+header(s, 9, "Load & Stress Test Results", "POST /tickets latency in seconds: mean of 3 runs (± SD); open-loop arrivals; red = misses a requirement threshold")
 rows = []
 order = {safe(m): i for i, m in enumerate(MODELS)}
 for (sm, rate), j in sorted(load.items(), key=lambda kv: (order.get(kv[0][0], 99), kv[0][1])):
@@ -372,30 +421,43 @@ for (sm, rate), j in sorted(load.items(), key=lambda kv: (order.get(kv[0][0], 99
     if not post:
         continue
     f = lambda k: f"{fs(post[k]['mean'])} ±{fs(post[k]['stdev'])}" if post.get(k) else ""
-    rows.append([sm.replace("_", ":", 1), f"{rate:g}", f("p50_ms"), f("p95_ms"), f("p99_ms"),
+    rows.append([sm.replace("_", ":", 1), f"{rate * 60:.0f}/min", f("p50_ms"), f("p95_ms"), f("p99_ms"),
                  f"{post['achieved_per_hour']['mean']:.0f}", f"{post['error_rate_pct']['mean']:.1f}",
                  f"{srch['p95_ms']['mean']:.0f}" if srch.get("p95_ms") else "", n])
+ROW_H = 0.235
 if rows:
     def red(i, j, v):
         try:
-            x = float(str(v).split()[0])
+            x = float(str(v).split()[0].rstrip("/min"))
         except ValueError:
             return None
         return RED if (j == 3 and x > 15) or (j == 4 and x > 30) or (j == 6 and x >= 1) or (j == 7 and x > 1000) or (j == 8 and x < 3) else None
-    table(s, 0.4, 1.4, 8.1, rows, ["Model", "Rate /s", "p50", "p95", "p99", "Achieved /h", "Err %", "Search p95 ms", "Runs"], 9,
-          [1.2, 0.7, 1.0, 1.0, 1.0, 1.0, 0.6, 1.0, 0.6], 0.25, red)
+    table(s, 0.4, 1.35, 8.1, rows, ["Model", "Tickets", "p50", "p95", "p99", "Achieved /h", "Err %", "Search p95 ms", "Runs"], 9,
+          [1.2, 0.75, 1.0, 1.0, 1.0, 0.95, 0.6, 1.0, 0.6], ROW_H, red)
+    if load_redo:
+        text(s, 0.4, 1.35 + ROW_H * (len(rows) + 1) + 0.02, 8.1, 0.3,
+             "; ".join(f"{sm.replace('_', ':', 1)} @ {rate * 60:.0f}/min uses {redo} in place of the run lost to a network drop"
+                       for (sm, rate), redo in load_redo.items()) + " (results/logs/reconcile_notes.md)", 8.5, color=TEAL)
 else:
     pending(s, 0.4, 1.5, 8.1, 1.0, "Test B: jmeter/run_matrix.sh for each model (writes results/jtl/*_summary.json)")
 if stress:
     k0 = sorted(stress)[0]
     if (RES / "stress" / f"{k0}.png").exists():
-        s.shapes.add_picture(str(RES / "stress" / f"{k0}.png"), Inches(8.65), Inches(1.4), width=Inches(4.5))
-    text(s, 8.65, 4.25, 4.5, 1.5, [("Stress limit", True)] + [
-        f"{v['model']} ({k.split('_run')[-1] and 'run ' + k.split('_run')[-1]}): sustainable ≤ {v['max_sustainable_per_min']}/min; "
-        f"saturated {v['saturated_throughput_per_min']}/min; errors {v['total_errors']}" for k, v in stress.items()], 10)
+        s.shapes.add_picture(str(RES / "stress" / f"{k0}.png"), Inches(8.75), Inches(1.35), width=Inches(4.25))
+    first = next(iter(stress.values()))
+    text(s, 8.75, 3.95, 4.25, 0.9, [(f"Stress limit · {first['model']} (chart: ladder 1)", True)] + [
+        f"Ladder {k.split('_run')[-1]}: sustainable "
+        f"{'≤ ' + str(v['max_sustainable_per_min']) + '/min' if v['max_sustainable_per_min'] else 'at no step'} · "
+        f"saturated {v['saturated_throughput_per_min']}/min · {v['total_errors']} errors" for k, v in stress.items()], 9)
 else:
-    pending(s, 8.65, 1.5, 4.5, 1.0, "Test D: jmeter/run_stress.sh → tools/analyze_stress.py")
-text(s, 0.4, 5.55, 12.5, 1.7, lines_of(DECK / "interpretation_slide9.txt", "Interpretation + diagnosed bottleneck: PENDING (Uwais writes deck/interpretation_slide9.txt from the results)"), 11)
+    pending(s, 8.75, 1.4, 4.25, 1.0, "Test D: jmeter/run_stress.sh → tools/analyze_stress.py")
+cards = sections_of(DECK / "interpretation_slide9.txt")
+if cards:
+    w = (12.55 - 0.12 * (len(cards) - 1)) / len(cards)
+    for i, (title, items) in enumerate(cards):
+        card(s, 0.4 + i * (w + 0.12), 4.9, w, 2.45, title, items, [NAVY, TEAL, RED, GREEN][i % 4], 9.5)
+else:
+    text(s, 0.4, 5.0, 12.5, 1.7, lines_of(DECK / "interpretation_slide9.txt", "Interpretation + diagnosed bottleneck: PENDING (Uwais writes deck/interpretation_slide9.txt from the results)"), 11)
 
 # ------------------------------------------------------------------- 10 accuracy
 s = prs.slides.add_slide(BLANK)
