@@ -224,7 +224,7 @@ pins = md_tables(DOCS / "model_pins.md").get("Model Pins", {})
 pins_rows = []
 if (DOCS / "model_pins.md").exists():
     for line in (DOCS / "model_pins.md").read_text(encoding="utf-8").splitlines():
-        c = [x.strip() for x in line.strip().strip("|").split("|")]
+        c = [x.strip().strip("`") for x in line.strip().strip("|").split("|")]  # tags/digests are `code` in the md
         if line.startswith("|") and len(c) >= 5 and c[0] in MODELS:
             pins_rows.append(c[:5])
 acc = {m: jload(RES / "accuracy" / f"summary_{safe(m)}.json") for m in MODELS}
