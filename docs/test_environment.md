@@ -29,7 +29,7 @@ Slide 7. Fill from the actual machines. Commands to get each figure are given.
 | Ollama runner threads | `--threads 10` (Ollama's default: the host's physical core count), so 10 threads share a 4-CPU quota. Left as-is in the baseline (no pre-optimisation) | `docker logs triage-ollama \| grep -- --threads` |
 | `OLLAMA_NUM_PARALLEL` | Not set (`0` = auto). Ollama chose `--parallel 4` (runner `--ctx-size 8192` = 4 slots × 2048) | `docker logs triage-ollama \| grep -i parallel` |
 | `OLLAMA_MAX_LOADED_MODELS` | Not set (`0` = auto). `OLLAMA_KEEP_ALIVE=30m` | same |
-| Power / thermal profile | Desktop on mains power (no battery). Windows power plan "Balanced". Sleep and hibernate on AC to be disabled before test runs (handoff §6 step 7) | laptop on battery throttles; say so if applicable |
+| Power / thermal profile | Desktop on mains power (no battery). Windows power plan "Balanced". Sleep and hibernate on AC disabled on 7 Oct before the tests (`powercfg /change standby-timeout-ac 0`, `hibernate-timeout-ac 0`); Windows Update paused for 1 week | laptop on battery throttles; say so if applicable |
 
 ### M2 — Load generator
 
@@ -78,9 +78,19 @@ Be honest here; it is marked.
   `run_id=warmup` in the log) and set `OLLAMA_KEEP_ALIVE=30m` so the model is not
   evicted mid-run. For the load tests, `tools/overnight_switch.sh` warms each
   model before Machine B starts and keeps it loaded until the first run arrives.
-- **Thermal throttling.** <Did you check? Consumer hardware sustaining 100% CPU
-  for 10 minutes will clock down, and run 3 may be slower than run 1 for reasons
-  unrelated to the system. The spread across your three runs is where this shows.>
+- **Thermal throttling.** Not measured directly: CPU temperature and clock speed
+  were not logged on Machine A. Indirect check from the service log
+  (`results/logs/requests.jsonl`), POST /tickets p50 for runs 1 / 2 / 3 of the
+  overnight matrix, which ran back to back:
+  - `qwen2.5:0.5b`: 3.1 / 2.4 / 1.9 s at 1/min; 2.8 / 3.3 / 2.7 s at 2/min
+  - `llama3.2:1b`: 5.5 / 5.7 / 5.5 s at 1/min; 7.3 / 7.2 / 7.6 s at 2/min
+  - `llama3.2:3b`: 26.7 / 26.1 / 30.9 s at 1/min; 38.2 / 45.9 / 35.4 s at 2/min
+  - `qwen2.5:7b`: 50.9 / 65.8 / 98.6 s at 1/min
+
+  0.5B to 3B show no steady slowdown from run 1 to run 3. 7B's rise coincides
+  with backlog carried between runs (4 tickets from run 1 were still in flight
+  when run 2 started), so thermal effects cannot be ruled out for 7B. These are
+  service-log figures; the reported ones come from the `.jtl` files.
 - **Shared machine.** Machine A is Irfan's everyday desktop. At setup on 7 Oct, other apps were running: Chrome, Spotify, EA Desktop, Riot Vanguard (anti-cheat, runs at boot), Razer App Engine, ProtonVPN, VS Code and the Claude app. They use some CPU and, through the desktop, about 31 % of the GPU.
   - **Load tests (from 8 Oct 2026, ~00:00 SGT):** ProtonVPN disconnected and quit (Tailscale stays on; it carries the test traffic). Closed: Chrome, Spotify, EA Desktop (and its helper processes), Razer App Engine, Riot Client, Windows Settings. Still running because they need admin rights to stop: EA Background Service, Razer Elevation Service and Razer Game Manager Service (idle background services), and Riot Vanguard's kernel driver `vgk` (starts at boot; cannot be stopped without a reboot). VS Code, the Claude app, Docker Desktop, Tailscale and a terminal window for `tools/overnight_switch.sh` were open. Windows Update paused for 1 week; sleep and hibernate on AC disabled.
   - **Accuracy tests (8 Oct 2026, 09:06–12:22 SGT, `tools/accuracy_all.sh`):** same setup, except Chrome had been reopened: it was running when the test started (09:05) and was closed by about 12:30; when exactly is not recorded. Single-request latencies from this run may include some contention from it.
@@ -90,17 +100,30 @@ Be honest here; it is marked.
 - **Single host.** The client would deploy on server-class hardware with more
   cores and likely more Ollama replicas. §Scaling below.
 - **SQLite growth.** `GET /search` does a full scan. Search latency at 200 stored
-  tickets is not search latency at 200,000. <Did you measure at a realistic
-  table size? If not, say so — this is a real limitation of the baseline result.>
+  tickets is not search latency at 200,000. **Not measured at a realistic table
+  size.** Each model's load matrix started with an empty ticket store
+  (`tools/overnight_switch.sh`) and held at most 210 tickets by its last run
+  (3 warm-ups + 207 tickets). The search figures on Slide 9 hold for that table
+  size only.
 
 ## Scaling to the client's deployment
 
 How do results here map to production?
 
-- **Throughput** scales roughly with total cores available to Ollama, until
-  memory bandwidth saturates. Our box has __ cores; the client's assumed server
-  has __. Predicted scaling factor: __×, and what makes that prediction shaky.
-- **Latency** does *not* improve with more cores beyond the point where one
-  request already saturates the memory bus. Single-request latency is roughly
-  what the client would see per instance.
-- **What would need re-measuring on client hardware:** <...>
+- **What we measured is one 4-CPU Ollama instance** (`OLLAMA_CPUS=4`) on a
+  10-core desktop CPU (i9-10900K, up to 5.3 GHz boost). Its capacity is
+  μ ≈ 60 / S tickets/min, with S the single-request p50 from the sequential
+  accuracy run (`results/accuracy/summary_<model>.json`): 0.5B 2.5 s → 24.2/min,
+  1B 5.7 s → 10.5/min, 3B 16.2 s → 3.7/min, 7B 34.1 s → 1.8/min.
+- **The client's servers are not specified** beyond "commodity CPU servers with
+  no GPUs" (brief), so we give no scaling factor. Throughput should scale with
+  the number of such instances (replicas behind a load balancer), each with its
+  own cores and memory. Server cores are usually clocked lower than a desktop
+  CPU's boost, so S per instance may be higher there. This is an assumption,
+  not a measurement.
+- **Latency** of one request does not shrink by adding replicas; it depends on
+  the per-core speed and the cores given to one instance.
+- **What would need re-measuring on client hardware:** S for the chosen model on
+  one client server (sequential, as in Test C), then the stress test (Test D)
+  on that server to find its limit. Divide the client's required rate by the
+  measured per-instance limit to size the deployment.

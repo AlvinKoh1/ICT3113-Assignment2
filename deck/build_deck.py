@@ -22,6 +22,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from pptx import Presentation
 from pptx.dml.color import RGBColor
+from pptx.enum.dml import MSO_LINE
 from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
 from pptx.enum.text import PP_ALIGN
 from pptx.oxml.ns import qn
@@ -258,22 +259,28 @@ text(s, 0.8, 6.6, 11.7, 0.4, "Rebuild: git clone … && cp .env.example .env && 
 
 # ------------------------------------------------------------------- 2 architecture
 s = prs.slides.add_slide(BLANK)
-header(s, 2, "Service Architecture", "Baseline is synchronous: POST /tickets blocks on one Ollama call. No cache, no queue, no batching, no retries.")
-box(s, 0.4, 1.9, 2.6, 1.2, "Machine B: load generator\nApache JMeter (open model)\nUwais's laptop", GREY)
-box(s, 4.0, 1.7, 3.3, 1.6, "triage-service (Docker)\nFastAPI · 1 uvicorn worker\nsync `def` endpoints → threadpool\nJSON-lines request log", TEAL)
-box(s, 8.5, 1.7, 2.8, 1.6, "triage-ollama (Docker)\nOllama 0.5.7 · CPU only\n4-CPU limit · one model\nprompt asks for a number", NAVY)
-box(s, 4.4, 4.0, 2.5, 0.9, "SQLite (volume)\nempty after make reset", RGBColor(0x6B, 0x8E, 0x23))
-box(s, 8.5, 4.0, 2.8, 0.9, "results/logs/requests.jsonl\none line per request + run_id", RGBColor(0x8E, 0x6C, 0x23))
-arrow(s, 3.0, 2.5, 4.0, 2.5, "HTTP · LAN")
-arrow(s, 7.3, 2.5, 8.5, 2.5, "/api/generate")
-arrow(s, 5.65, 3.3, 5.65, 4.0)
-arrow(s, 7.0, 3.2, 8.5, 4.3)
-text(s, 0.4, 3.3, 3.3, 0.6, "Machine A: Irfan's PC (both containers)", 10, True, NAVY)
-table(s, 0.4, 5.2, 12.5, [
-    ["POST /tickets", "{narrative, row_id?} → classify via Ollama (waits) → store → {ticket_id, category, model, latency_ms}"],
-    ["GET /search?q=&limit=", "stored tickets whose narrative contains q (unindexed SQL LIKE), newest first"],
-    ["GET /stats", "count of stored tickets per category, incl. UNPARSED"]], ["Endpoint", "Behaviour"], 11, [2.3, 10.2])
-text(s, 11.45, 1.7, 1.85, 2.4, ["temperature 0,", "seed 42,", "num_predict 16,", "num_ctx 2048;", "reply parsed to", "1 of 7 or", "UNPARSED"], 10)
+header(s, 2, "Service Architecture", "Baseline is synchronous: POST /tickets waits for one Ollama call. No cache, no queue, no batching, no retries in the service.")
+grp = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(3.5), Inches(1.45), Inches(9.45), Inches(3.75))
+grp.adjustments[0] = 0.04
+grp.fill.background(); grp.line.color.rgb = NAVY; grp.line.width = Pt(1.25); grp.line.dash_style = MSO_LINE.DASH
+text(s, 3.65, 1.5, 9.2, 0.35, "Machine A · Irfan's PC · Docker Desktop on WSL 2 · CPU-only inference", 11, True, NAVY)
+box(s, 0.4, 2.05, 2.35, 1.3, "Machine B · load generator\nApache JMeter 5.6.3, open model\nUwais's laptop, another home", GREY)
+box(s, 3.85, 1.95, 3.6, 1.55, "triage-service (container)\nFastAPI · 1 uvicorn worker\nsync def endpoints → threadpool (40)\nOllama call timeout 300 s → HTTP 502", TEAL)
+box(s, 8.75, 1.95, 3.9, 1.55, "triage-ollama (container)\nOllama 0.5.7 · one model at a time\n4-CPU quota · 8 GB · 4 parallel slots\ntemperature 0 · seed 42 · ≤ 16 tokens out", NAVY)
+box(s, 3.85, 4.05, 3.6, 0.95, "SQLite tickets.db (volume)\nemptied before each test", RGBColor(0x6B, 0x8E, 0x23))
+box(s, 8.75, 4.05, 3.9, 0.95, "results/logs/requests.jsonl\none JSON line per request, with run_id", RGBColor(0x8E, 0x6C, 0x23))
+arrow(s, 2.75, 2.72, 3.85, 2.72)
+text(s, 2.72, 2.12, 0.8, 0.55, ["HTTP via", "Tailscale"], 9)
+arrow(s, 7.45, 2.72, 8.75, 2.72, "POST /api/generate")
+arrow(s, 5.65, 3.5, 5.65, 4.05)
+arrow(s, 7.45, 3.4, 8.75, 4.45)
+table(s, 0.4, 5.4, 12.5, [
+    ["POST /tickets", "{narrative, row_id?} → classify via Ollama (waits for the answer) → store → {ticket_id, category, model, latency_ms}"],
+    ["GET /search?q=&limit=", "stored tickets whose narrative contains q (unindexed SQL LIKE scan), newest first"],
+    ["GET /stats", "count of stored tickets per category, including UNPARSED"]], ["Endpoint", "Behaviour"], 11, [2.3, 10.2])
+text(s, 0.4, 6.6, 12.5, 0.8, [
+    "Prompt: the 7 categories as a numbered list, \"reply with the category number\"; the reply is parsed to 1 of 7 or UNPARSED (scored as wrong).",
+    "Concurrency is bounded only by the FastAPI threadpool and Ollama's 4 parallel slots; requests beyond 4 wait inside Ollama, not in the service."], 10)
 
 # ------------------------------------------------------------------- 3 workload
 s = prs.slides.add_slide(BLANK)
@@ -355,27 +362,85 @@ text(s, 0.4, 5.75, 12.5, 1.4, [("Protocol revisions", True)] + (revs[:5] or ["(r
 
 # ------------------------------------------------------------------- 7 environment
 s = prs.slides.add_slide(BLANK)
-header(s, 7, "Test Environment", "Load generator and system under test on separate machines; inference CPU-only")
-m1 = next((v for k, v in env.items() if k.startswith("M1")), {})
-m2 = next((v for k, v in env.items() if k.startswith("M2")), {})
-net = env.get("Network between them", {})
-g = lambda d, k: (d.get(k) or "").strip() or "PENDING"
-table(s, 0.4, 1.45, 12.5, [
-    ["A: SUT (Irfan)", g(m1, "CPU model"), g(m1, "Physical cores / threads"), g(m1, "RAM"), g(m1, "OS + kernel"), f"Docker {g(m1, 'Docker version')}; Ollama {g(m1, 'Ollama version')}; GPU: {g(m1, 'GPU present')}"],
-    ["B: load gen (Uwais)", g(m2, "CPU / cores"), "", g(m2, "RAM"), g(m2, "OS"), f"JMeter {g(m2, 'JMeter version')}; Java {g(m2, 'Java version')}"],
-    ["Network", g(net, "Link"), "", "", f"RTT {g(net, 'RTT')}", ""],
-], ["Machine", "CPU", "Cores/threads", "RAM", "OS", "Software"], 9, [1.6, 2.6, 1.3, 1.2, 2.3, 3.5], 0.45)
-bullets(s, 0.4, 3.4, 6.2, 3.6, [
-    "Ollama limited to 4 CPUs (OLLAMA_CPUS) so runs are comparable; NUM_PARALLEL as reported by `docker logs triage-ollama`.",
-    "Warm-up: 3 non-golden tickets discarded before every measured run; KEEP_ALIVE 30 m.",
-    "Narratives capped at 2,000 chars → latency optimistic vs production.",
-    "/search measured at a small table; full LIKE scan grows with stored tickets.",
-], 11)
-bullets(s, 6.8, 3.4, 6.1, 3.6, [
-    ("Scaling: one runner's capacity μ ≈ 60 / S tickets/min (S = single-request latency).", True),
-    "Throughput scales ~ with cores given to Ollama until memory bandwidth saturates; single-request latency does not improve past that.",
-    "Client deploys more cores → several Ollama replicas behind a balancer; re-measure S on one client server and scale by S_ours / S_client.",
-], 11)
+header(s, 7, "Test Environment", "JMeter on Machine B, service + Ollama on Machine A: two machines in two homes, joined by Tailscale. Inference CPU-only.")
+# Measured figures on this slide are read from the evidence files, not typed.
+ping_txt = (RES / "network" / "ping_machineB_to_A_2026-10-07.txt")
+ping_ms = [int(x) for x in re.findall(r"time=(\d+)ms", ping_txt.read_text(encoding="utf-8"))] if ping_txt.exists() else []
+loss = re.search(r"\((\d+)% loss\)", ping_txt.read_text(encoding="utf-8")) if ping_txt.exists() else None
+connect = []
+for p in sorted((RES / "jtl").glob("*.jtl")):
+    if p.name == "llama3.2_1b_rate0.0667_run3.jtl":   # lost to the network drop; redone as run3b
+        continue
+    connect += [int(r["Connect"]) for r in read_csv(p) or [] if r.get("success") == "true" and r.get("Connect")]
+connect.sort()
+q = lambda v, f: v[min(len(v) - 1, int(round(f * (len(v) - 1))))]
+busy = []
+for line in (RES / "stress" / "dockerstats_stress_llama3.2_3b.txt").read_text(encoding="utf-8").splitlines() \
+        if (RES / "stress" / "dockerstats_stress_llama3.2_3b.txt").exists() else []:
+    mm = re.match(r"triage-ollama cpu=([\d.]+)%", line)
+    if mm and float(mm[1]) > 50:
+        busy.append(float(mm[1]))
+busy.sort()
+stored = {}
+if (RES / "logs" / "requests.jsonl").exists():
+    for line in (RES / "logs" / "requests.jsonl").read_text(encoding="utf-8").splitlines():
+        d = json.loads(line)
+        if d.get("endpoint") == "POST /tickets" and d.get("status") == 200 and "_rate" in d.get("run_id", ""):
+            # one store per model's matrix; a redone run (run3b) had a store of its own
+            redo = re.search(r"_run\d+([a-z]+)$", d["run_id"])
+            k = d["run_id"].split("_rate")[0] + (redo[1] if redo else "")
+            stored[k] = stored.get(k, 0) + 1
+S = {m: a["latency_ms"]["p50"] / 1000 for m, a in acc.items()}
+
+card(s, 0.4, 1.4, 4.1, 2.55, "Machine A · system under test", [
+    "**CPU** Intel Core i9-10900K, 10 cores / 20 threads, AVX2",
+    "**Memory** 48 GB host · WSL 2 VM 12 GB · Ollama container 8 GB",
+    "**Software** Windows 11 Pro · WSL 2 Ubuntu 24.04 · Docker Engine 29.8.2 · Ollama 0.5.7",
+    f"**Ollama** 4-CPU quota (median {q(busy, .5):.0f} % CPU when busy) · 4 parallel slots · --threads 10" if busy else
+    "**Ollama** 4-CPU quota · 4 parallel slots · --threads 10",
+    "**GPU** RTX 3090 installed, not used: none mapped to Docker; Ollama log: library=cpu, layers.offload=0",
+], NAVY, 9.5)
+card(s, 4.62, 1.4, 4.1, 2.55, "Machine B · load generator", [
+    "**CPU** AMD Ryzen 7 8845HS, 8 cores / 16 threads · 16 GB",
+    "**Software** Windows 11 Home · JMeter 5.6.3 (Git Bash) · Java 21 · 1 GB heap",
+    "**Separate machine, separate home:** JMeter never shares a CPU with the service or Ollama",
+    "**Evidence:** every .jtl was written on Machine B and targets Machine A's Tailscale address (URL column: 100.88.74.36:8000)",
+], GREY, 9.5)
+net_items = ["**Link** Tailscale (WireGuard), direct peer-to-peer; both machines wired to home broadband"]
+if ping_ms:
+    net_items.append(f"**Ping** {len(ping_ms)} packets, {loss[1] if loss else '?'} % loss; RTT min {min(ping_ms)} / avg "
+                     f"{sum(ping_ms) / len(ping_ms):.1f} / max {max(ping_ms)} ms")
+if connect:
+    net_items.append(f"**During tests** TCP connect median {q(connect, .5)} ms, p95 {q(connect, .95)} ms ({len(connect):,} requests)")
+if ping_ms and S:
+    net_items.append(f"**Share of latency** avg RTT is {sum(ping_ms) / len(ping_ms) / 10 / min(S.values()):.2f} % of the fastest model's "
+                     f"single-request p50 ({min(S.values()):.1f} s)")
+net_items.append("**One outage** ~2 min on 8 Oct 04:00; the affected run was redone as run3b, the original kept")
+card(s, 8.84, 1.4, 4.1, 2.55, "Network", net_items, TEAL, 9.5)
+
+card(s, 0.4, 4.07, 6.2, 3.28, "Scaling to the client's servers", [], GREEN, 10)
+if S:
+    table(s, 0.58, 4.55, 2.75, [[m, f"{S[m]:.1f}", f"{60 / S[m]:.1f}"] for m in MODELS if m in S],
+          ["Model", "S (s)", "μ /min"], 9, [1.25, 0.65, 0.85], 0.27)
+    text(s, 0.58, 4.55 + 0.27 * (len(S) + 1) + 0.05, 2.75, 0.6,
+         "S = single-request p50 from the accuracy run (sequential). μ = 60 / S per 4-CPU Ollama instance.", 8.5)
+else:
+    pending(s, 0.58, 4.55, 2.75, 0.9, "accuracy run (S per model)")
+bullets(s, 3.45, 4.5, 3.05, 2.85, [
+    "Client: commodity CPU servers, no GPU (brief).",
+    "Capacity ≈ number of 4-CPU instances × μ; replicas behind a load balancer.",
+    "Our cores boost up to 5.3 GHz; server cores are usually slower per core, so S may be higher there (assumption, not measured).",
+    "Before sizing: measure S on one client server, then rerun the stress test there.",
+], 10.5)
+card(s, 6.72, 4.07, 6.21, 3.28, "Limitations and threats to validity", [
+    "**Shared desktop:** EA, Razer and Riot Vanguard background services could not be stopped; Chrome was open for part of the accuracy run",
+    "**Oversubscribed runner:** Ollama's --threads 10 inside a 4-CPU quota, kept for the baseline (pre-freeze check: 3.1 s vs 2.2 s with 4 threads)",
+    "**Data:** narratives capped at 2,000 chars, so latency is optimistic",
+    (f"**Search:** measured with at most {max(stored.values()) + 3} stored tickets (store emptied per model); "
+     "an unindexed LIKE scan slows at production volume") if stored else "**Search:** measured at a small table size",
+    "**Thermal:** CPU temperature not logged; 0.5B–3B show no steady run 1 → 3 slowdown; 7B's rise coincides with backlog between runs",
+    "**Docker Desktop** stopped once on 8 Oct between tests; restarted, no run affected",
+], RED, 10.5)
 
 # ------------------------------------------------------------------- 8 playbook
 s = prs.slides.add_slide(BLANK)
