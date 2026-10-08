@@ -1,0 +1,553 @@
+2026/10/08 05:34:37 routes.go:1187: INFO server config env="map[CUDA_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_DEBUG:false OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://0.0.0.0:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:30m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/root/.ollama/models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://*] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"
+time=2026-10-08T05:34:37.624Z level=INFO source=images.go:432 msg="total blobs: 15"
+time=2026-10-08T05:34:37.624Z level=INFO source=images.go:439 msg="total unused blobs removed: 0"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /api/pull                 --> github.com/ollama/ollama/server.(*Server).PullHandler-fm (5 handlers)
+[GIN-debug] POST   /api/generate             --> github.com/ollama/ollama/server.(*Server).GenerateHandler-fm (5 handlers)
+[GIN-debug] POST   /api/chat                 --> github.com/ollama/ollama/server.(*Server).ChatHandler-fm (5 handlers)
+[GIN-debug] POST   /api/embed                --> github.com/ollama/ollama/server.(*Server).EmbedHandler-fm (5 handlers)
+[GIN-debug] POST   /api/embeddings           --> github.com/ollama/ollama/server.(*Server).EmbeddingsHandler-fm (5 handlers)
+[GIN-debug] POST   /api/create               --> github.com/ollama/ollama/server.(*Server).CreateHandler-fm (5 handlers)
+[GIN-debug] POST   /api/push                 --> github.com/ollama/ollama/server.(*Server).PushHandler-fm (5 handlers)
+[GIN-debug] POST   /api/copy                 --> github.com/ollama/ollama/server.(*Server).CopyHandler-fm (5 handlers)
+[GIN-debug] DELETE /api/delete               --> github.com/ollama/ollama/server.(*Server).DeleteHandler-fm (5 handlers)
+[GIN-debug] POST   /api/show                 --> github.com/ollama/ollama/server.(*Server).ShowHandler-fm (5 handlers)
+[GIN-debug] POST   /api/blobs/:digest        --> github.com/ollama/ollama/server.(*Server).CreateBlobHandler-fm (5 handlers)
+[GIN-debug] HEAD   /api/blobs/:digest        --> github.com/ollama/ollama/server.(*Server).HeadBlobHandler-fm (5 handlers)
+[GIN-debug] GET    /api/ps                   --> github.com/ollama/ollama/server.(*Server).PsHandler-fm (5 handlers)
+[GIN-debug] POST   /v1/chat/completions      --> github.com/ollama/ollama/server.(*Server).ChatHandler-fm (6 handlers)
+[GIN-debug] POST   /v1/completions           --> github.com/ollama/ollama/server.(*Server).GenerateHandler-fm (6 handlers)
+[GIN-debug] POST   /v1/embeddings            --> github.com/ollama/ollama/server.(*Server).EmbedHandler-fm (6 handlers)
+[GIN-debug] GET    /v1/models                --> github.com/ollama/ollama/server.(*Server).ListHandler-fm (6 handlers)
+[GIN-debug] GET    /v1/models/:model         --> github.com/ollama/ollama/server.(*Server).ShowHandler-fm (6 handlers)
+[GIN-debug] GET    /                         --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func1 (5 handlers)
+[GIN-debug] GET    /api/tags                 --> github.com/ollama/ollama/server.(*Server).ListHandler-fm (5 handlers)
+[GIN-debug] GET    /api/version              --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func2 (5 handlers)
+[GIN-debug] HEAD   /                         --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func1 (5 handlers)
+[GIN-debug] HEAD   /api/tags                 --> github.com/ollama/ollama/server.(*Server).ListHandler-fm (5 handlers)
+[GIN-debug] HEAD   /api/version              --> github.com/ollama/ollama/server.(*Server).GenerateRoutes.func2 (5 handlers)
+time=2026-10-08T05:34:37.624Z level=INFO source=routes.go:1238 msg="Listening on [::]:11434 (version 0.5.7-0-ga420a45-dirty)"
+time=2026-10-08T05:34:37.626Z level=INFO source=routes.go:1267 msg="Dynamic LLM libraries" runners="[cpu cpu_avx cpu_avx2 cuda_v11_avx cuda_v12_avx]"
+time=2026-10-08T05:34:37.626Z level=INFO source=gpu.go:226 msg="looking for compatible GPUs"
+time=2026-10-08T05:34:37.632Z level=INFO source=gpu.go:392 msg="no compatible GPUs were discovered"
+time=2026-10-08T05:34:37.632Z level=INFO source=types.go:131 msg="inference compute" id=0 library=cpu variant=avx2 compute="" driver=0.0 name="" total="11.7 GiB" available="10.6 GiB"
+[GIN] 2026/10/08 - 05:34:39 | 200 |     1.63686ms |      172.18.0.3 | GET      "/api/tags"
+[GIN] 2026/10/08 - 05:34:39 | 200 |     427.596µs |      172.18.0.1 | GET      "/api/tags"
+time=2026-10-08T05:34:40.008Z level=INFO source=server.go:104 msg="system memory" total="11.7 GiB" free="10.6 GiB" free_swap="3.0 GiB"
+time=2026-10-08T05:34:40.009Z level=INFO source=memory.go:356 msg="offload to cpu" layers.requested=-1 layers.model=29 layers.offload=0 layers.split="" memory.available="[10.6 GiB]" memory.gpu_overhead="0 B" memory.required.full="3.3 GiB" memory.required.partial="0 B" memory.required.kv="896.0 MiB" memory.required.allocations="[3.3 GiB]" memory.weights.total="2.4 GiB" memory.weights.repeating="2.1 GiB" memory.weights.nonrepeating="308.2 MiB" memory.graph.full="424.0 MiB" memory.graph.partial="570.7 MiB"
+time=2026-10-08T05:34:40.009Z level=INFO source=server.go:376 msg="starting llama server" cmd="/usr/lib/ollama/runners/cpu_avx2/ollama_llama_server runner --model /root/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff --ctx-size 8192 --batch-size 512 --threads 10 --no-mmap --parallel 4 --port 42559"
+time=2026-10-08T05:34:40.010Z level=INFO source=sched.go:449 msg="loaded runners" count=1
+time=2026-10-08T05:34:40.010Z level=INFO source=server.go:555 msg="waiting for llama runner to start responding"
+time=2026-10-08T05:34:40.010Z level=INFO source=server.go:589 msg="waiting for server to become available" status="llm server error"
+time=2026-10-08T05:34:40.014Z level=INFO source=runner.go:936 msg="starting go runner"
+time=2026-10-08T05:34:40.015Z level=INFO source=runner.go:937 msg=system info="CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | LLAMAFILE = 1 | AARCH64_REPACK = 1 | cgo(gcc)" threads=10
+time=2026-10-08T05:34:40.015Z level=INFO source=.:0 msg="Server listening on 127.0.0.1:42559"
+llama_model_loader: loaded meta data with 30 key-value pairs and 255 tensors from /root/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Llama 3.2 3B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Llama-3.2
+llama_model_loader: - kv   5:                         general.size_label str              = 3B
+llama_model_loader: - kv   6:                               general.tags arr[str,6]       = ["facebook", "meta", "pytorch", "llam...
+llama_model_loader: - kv   7:                          general.languages arr[str,8]       = ["en", "de", "fr", "it", "pt", "hi", ...
+llama_model_loader: - kv   8:                          llama.block_count u32              = 28
+llama_model_loader: - kv   9:                       llama.context_length u32              = 131072
+llama_model_loader: - kv  10:                     llama.embedding_length u32              = 3072
+llama_model_loader: - kv  11:                  llama.feed_forward_length u32              = 8192
+llama_model_loader: - kv  12:                 llama.attention.head_count u32              = 24
+llama_model_loader: - kv  13:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  14:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  15:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  16:                 llama.attention.key_length u32              = 128
+llama_model_loader: - kv  17:               llama.attention.value_length u32              = 128
+llama_model_loader: - kv  18:                          general.file_type u32              = 15
+llama_model_loader: - kv  19:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  20:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  21:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  22:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  23:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  24:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  25:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  26:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  27:                tokenizer.ggml.eos_token_id u32              = 128009
+llama_model_loader: - kv  28:                    tokenizer.chat_template str              = {{- bos_token }}\n{%- if custom_tools ...
+llama_model_loader: - kv  29:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   58 tensors
+llama_model_loader: - type q4_K:  168 tensors
+llama_model_loader: - type q6_K:   29 tensors
+time=2026-10-08T05:34:40.261Z level=INFO source=server.go:589 msg="waiting for server to become available" status="llm server loading model"
+llm_load_vocab: special tokens cache size = 256
+llm_load_vocab: token to piece cache size = 0.7999 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 128256
+llm_load_print_meta: n_merges         = 280147
+llm_load_print_meta: vocab_only       = 0
+llm_load_print_meta: n_ctx_train      = 131072
+llm_load_print_meta: n_embd           = 3072
+llm_load_print_meta: n_layer          = 28
+llm_load_print_meta: n_head           = 24
+llm_load_print_meta: n_head_kv        = 8
+llm_load_print_meta: n_rot            = 128
+llm_load_print_meta: n_swa            = 0
+llm_load_print_meta: n_embd_head_k    = 128
+llm_load_print_meta: n_embd_head_v    = 128
+llm_load_print_meta: n_gqa            = 3
+llm_load_print_meta: n_embd_k_gqa     = 1024
+llm_load_print_meta: n_embd_v_gqa     = 1024
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 8192
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 0
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 500000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 131072
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: ssm_dt_b_c_rms   = 0
+llm_load_print_meta: model type       = 3B
+llm_load_print_meta: model ftype      = Q4_K - Medium
+llm_load_print_meta: model params     = 3.21 B
+llm_load_print_meta: model size       = 1.87 GiB (5.01 BPW) 
+llm_load_print_meta: general.name     = Llama 3.2 3B Instruct
+llm_load_print_meta: BOS token        = 128000 '<|begin_of_text|>'
+llm_load_print_meta: EOS token        = 128009 '<|eot_id|>'
+llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
+llm_load_print_meta: EOM token        = 128008 '<|eom_id|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOG token        = 128008 '<|eom_id|>'
+llm_load_print_meta: EOG token        = 128009 '<|eot_id|>'
+llm_load_print_meta: max token length = 256
+llm_load_tensors:          CPU model buffer size =  1918.35 MiB
+llama_new_context_with_model: n_seq_max     = 4
+llama_new_context_with_model: n_ctx         = 8192
+llama_new_context_with_model: n_ctx_per_seq = 2048
+llama_new_context_with_model: n_batch       = 2048
+llama_new_context_with_model: n_ubatch      = 512
+llama_new_context_with_model: flash_attn    = 0
+llama_new_context_with_model: freq_base     = 500000.0
+llama_new_context_with_model: freq_scale    = 1
+llama_new_context_with_model: n_ctx_per_seq (2048) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+llama_kv_cache_init: kv_size = 8192, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 28, can_shift = 1
+llama_kv_cache_init:        CPU KV buffer size =   896.00 MiB
+llama_new_context_with_model: KV self size  =  896.00 MiB, K (f16):  448.00 MiB, V (f16):  448.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     2.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =   424.01 MiB
+llama_new_context_with_model: graph nodes  = 902
+llama_new_context_with_model: graph splits = 1
+time=2026-10-08T05:34:44.281Z level=INFO source=server.go:594 msg="llama runner started in 4.27 seconds"
+llama_model_loader: loaded meta data with 30 key-value pairs and 255 tensors from /root/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Llama 3.2 3B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Llama-3.2
+llama_model_loader: - kv   5:                         general.size_label str              = 3B
+llama_model_loader: - kv   6:                               general.tags arr[str,6]       = ["facebook", "meta", "pytorch", "llam...
+llama_model_loader: - kv   7:                          general.languages arr[str,8]       = ["en", "de", "fr", "it", "pt", "hi", ...
+llama_model_loader: - kv   8:                          llama.block_count u32              = 28
+llama_model_loader: - kv   9:                       llama.context_length u32              = 131072
+llama_model_loader: - kv  10:                     llama.embedding_length u32              = 3072
+llama_model_loader: - kv  11:                  llama.feed_forward_length u32              = 8192
+llama_model_loader: - kv  12:                 llama.attention.head_count u32              = 24
+llama_model_loader: - kv  13:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  14:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  15:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  16:                 llama.attention.key_length u32              = 128
+llama_model_loader: - kv  17:               llama.attention.value_length u32              = 128
+llama_model_loader: - kv  18:                          general.file_type u32              = 15
+llama_model_loader: - kv  19:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  20:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  21:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  22:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  23:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  24:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  25:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  26:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  27:                tokenizer.ggml.eos_token_id u32              = 128009
+llama_model_loader: - kv  28:                    tokenizer.chat_template str              = {{- bos_token }}\n{%- if custom_tools ...
+llama_model_loader: - kv  29:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   58 tensors
+llama_model_loader: - type q4_K:  168 tensors
+llama_model_loader: - type q6_K:   29 tensors
+llm_load_vocab: special tokens cache size = 256
+llm_load_vocab: token to piece cache size = 0.7999 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 128256
+llm_load_print_meta: n_merges         = 280147
+llm_load_print_meta: vocab_only       = 1
+llm_load_print_meta: model type       = ?B
+llm_load_print_meta: model ftype      = all F32
+llm_load_print_meta: model params     = 3.21 B
+llm_load_print_meta: model size       = 1.87 GiB (5.01 BPW) 
+llm_load_print_meta: general.name     = Llama 3.2 3B Instruct
+llm_load_print_meta: BOS token        = 128000 '<|begin_of_text|>'
+llm_load_print_meta: EOS token        = 128009 '<|eot_id|>'
+llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
+llm_load_print_meta: EOM token        = 128008 '<|eom_id|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOG token        = 128008 '<|eom_id|>'
+llm_load_print_meta: EOG token        = 128009 '<|eot_id|>'
+llm_load_print_meta: max token length = 256
+llama_model_load: vocab only - skipping tensors
+[GIN] 2026/10/08 - 05:34:56 | 200 | 16.261136866s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:35:02 | 200 |  5.649980182s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:35:17 | 200 | 15.777944692s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:35:20 | 200 |     466.648µs |      172.18.0.3 | GET      "/api/tags"
+[GIN] 2026/10/08 - 05:35:24 | 200 |     367.394µs |      172.18.0.3 | GET      "/api/tags"
+[GIN] 2026/10/08 - 05:37:08 | 200 |     659.211µs |      172.18.0.3 | GET      "/api/tags"
+[GIN] 2026/10/08 - 05:37:31 | 200 |    4.664514ms |      172.18.0.3 | GET      "/api/tags"
+[GIN] 2026/10/08 - 05:38:05 | 200 |  24.86262059s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:38:53 | 200 | 12.529441299s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:39:43 | 200 | 24.996120614s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:40:03 | 200 | 21.552698614s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:41:25 | 200 |  7.745210639s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:42:40 | 200 | 21.233807576s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:44:18 | 200 |         1m57s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:44:18 | 200 |         1m55s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:44:55 | 200 |         2m27s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:44:55 | 200 |         2m26s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:44:55 | 200 |         2m14s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:45:51 | 200 |         2m37s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:45:51 | 200 |         2m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:46:51 | 200 |         3m25s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:46:51 | 200 |         2m43s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:47:33 | 200 |          3m9s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:47:33 | 200 |          3m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:48:17 | 200 |         3m38s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:48:17 | 200 |          3m6s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:48:43 | 200 |         3m27s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:49:32 | 200 |         3m24s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:50:32 | 200 |         4m34s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:50:32 | 200 |          4m2s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:50:32 | 200 |         3m51s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:51:12 | 200 |         4m49s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:51:12 | 200 |         3m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:51:12 | 200 |         3m21s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:52:12 | 200 |         3m50s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:52:12 | 200 |         3m45s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:52:12 | 200 |         3m40s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:53:00 | 200 |         4m25s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:53:00 | 200 |         4m19s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:53:25 | 200 |         4m41s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:53:25 | 200 |         4m36s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:53:53 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:54:10 | 200 |         4m32s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:54:49 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:54:51 | 200 |         4m47s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:54:51 | 200 |         4m29s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:55:23 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:55:32 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:55:37 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:55:46 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:57:06 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:57:31 | 200 |         4m59s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:57:31 | 200 |          4m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:58:07 | 200 |         4m25s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:58:07 | 200 |         4m25s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:58:15 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:58:27 | 200 |         4m15s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:58:27 | 200 |          4m7s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:59:32 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:59:35 | 200 |         4m47s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:59:35 | 200 |         4m43s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 05:59:58 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:07 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:11 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:11 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:24 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:26 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:35 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:00:48 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:00:48.842Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:00:55 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:00:55.389Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:00:56 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:00:56.197Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+time=2026-10-08T06:01:14.868Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:01:14 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:01:36.381Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:01:36 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:02:12 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:02:28 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:02:34 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:02:39 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:02:39.465Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+time=2026-10-08T06:02:42.318Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:02:42 | 500 |         4m59s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:02:48.264Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:02:48 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:01 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:01 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:09 | 500 |         4m59s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:16 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:25 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:03:25.607Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:03:28 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:03:28.604Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:03:41 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:42 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:47 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:03:56 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:04 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:12 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:37 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:37 | 200 |         4m52s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:44 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:49 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:05:51 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:06:09 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:06:11 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:06:11.901Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:06:13 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:06:13.016Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:06:16 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:06:16.728Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:06:33 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:06:33.032Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:06:40 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:06:40.897Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+time=2026-10-08T06:06:47.003Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:06:47 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:06:50 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:06:50.682Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:07:03 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:07:34 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:07:35 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:15:57 | 200 | 30.385886806s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:16:34 | 200 | 21.653079216s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:18:05 | 200 | 31.783901904s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:19:08 | 200 | 24.983268613s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:19:17 | 200 | 29.537555094s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:19:51 | 200 | 29.234639912s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:20:45 | 200 |         1m10s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:20:45 | 200 | 55.589579519s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:21:41 | 200 |         1m40s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:21:41 | 200 |         1m39s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:22:33 | 200 |         2m19s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:22:33 | 200 |         2m13s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:23:47 | 200 |         3m25s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:23:47 | 200 |         2m56s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:24:40 | 200 |         3m26s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:24:40 | 200 |         2m49s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:25:32 | 200 |         3m24s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:25:32 | 200 |          3m4s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:26:12 | 200 |         3m18s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:26:12 | 200 |         3m12s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:27:08 | 200 |         2m47s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:04 | 200 |         4m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:04 | 200 |          3m9s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:04 | 200 |          3m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:04 | 200 |         3m43s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:51 | 200 |         3m36s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:51 | 200 |         3m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:28:51 | 200 |         3m28s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:29:48 | 200 |         4m10s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:29:48 | 200 |          4m6s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:30:33 | 200 |         4m48s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:30:33 | 200 |         4m45s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:30:56 | 200 |         4m42s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:30:56 | 200 |         4m41s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:31:20 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:31:26 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:31:50 | 200 |         4m26s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:32:26 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:32:52 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:33:08 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:33:11 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:33:19 | 200 |         4m46s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:34:05 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:34:14 | 200 |         4m56s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:34:14 | 200 |         4m28s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:34:58 | 200 |         4m39s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:35:14 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:35:30 | 200 |         4m37s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:35:35 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:35:48 | 200 |         4m53s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:35:48 | 200 |         4m51s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:35:58 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:36:22 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:36:44 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:36:49 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:37:04 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:37:12 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:37:24 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:37:32 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:37:32.682Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:37:44 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:37:44.426Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:37:53 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:37:53.227Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+time=2026-10-08T06:37:55.288Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:37:55 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:38:05 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:38:16 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:38:43 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:38:57 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:39:03 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:39:06 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:39:31 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:39:31.581Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:39:37 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:39:37.729Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:40:06 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:40:17 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:40:30 | 200 |         4m51s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:40:58 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:40:59 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:41:06 | 200 |         4m39s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:41:31 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:41:38 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:41:54 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:41:58 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:42:02 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:42:02.957Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:42:10 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:42:10.328Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:42:33 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:42:44 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:42:45 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:42:45.648Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:42:45 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:43:01 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:43:01.537Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:43:11 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:43:15 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:43:20 | 500 |         4m59s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:43:24 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:43:37.616Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:43:37 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:43:45.800Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:43:45 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:43:48.266Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:43:48 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:44:10 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:44:10.269Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:44:26 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:44:31 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:44:36 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:44:39 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:44:51 | 500 |          5m0s |      172.18.0.3 | POST     "/api/generate"
+time=2026-10-08T06:44:51.184Z level=INFO source=runner.go:653 msg="aborting completion request due to client closing the connection"
+[GIN] 2026/10/08 - 06:53:03 | 200 | 27.049573933s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:53:54 | 200 |          1m6s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:53:54 | 200 |          1m5s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:54:18 | 200 | 42.969748523s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:55:54 | 200 |  8.737422655s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:56:34 | 200 | 27.970329018s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:58:15 | 200 |         1m56s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:58:15 | 200 |         1m45s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:58:15 | 200 |         1m44s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:58:54 | 200 |         1m41s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 06:58:54 | 200 | 57.880578741s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:00:03 | 200 |         1m49s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:00:03 | 200 |         1m47s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:01:12 | 200 |         2m52s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:01:12 | 200 |         2m17s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:02:03 | 200 |         2m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:02:03 | 200 |         2m21s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:02:45 | 200 |         2m50s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:02:45 | 200 |         2m34s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:03:11 | 200 |         2m57s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:04:04 | 200 |          2m2s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:04:36 | 200 |         2m40s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:04:36 | 200 |         2m15s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:04:36 | 200 |          2m8s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:05:00 | 200 |         2m48s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:05:00 | 200 |         1m54s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:05:00 | 200 |         1m41s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:05:33 | 200 |         1m48s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:05:33 | 200 |         1m46s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:06:35 | 200 |         2m40s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:06:35 | 200 |         2m29s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:06:35 | 200 |         2m25s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:06:57 | 200 |         2m46s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:06:57 | 200 |         2m21s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:07:56 | 200 |         3m10s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:07:56 | 200 |          3m5s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:07:56 | 200 |         2m56s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:08:56 | 200 |         3m54s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:08:56 | 200 |         3m51s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:08:56 | 200 |         3m43s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:09:45 | 200 |         4m21s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:09:45 | 200 |         3m46s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:09:45 | 200 |         3m29s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:10:26 | 200 |         3m42s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:10:26 | 200 |          3m7s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:10:54 | 200 |          3m7s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:10 | 200 |         3m24s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:10 | 200 |          3m8s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:10 | 200 |         2m57s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:11 | 200 |         3m16s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:43 | 200 |         3m27s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:43 | 200 |         3m24s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:43 | 200 |          3m6s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:59 | 200 |         3m10s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:59 | 200 |          3m3s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:11:59 | 200 |         2m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:12:33 | 200 |         2m48s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:12:33 | 200 |         2m16s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:13:16 | 200 |         2m58s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:13:16 | 200 |         2m50s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:13:28 | 200 |         3m28s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:13:29 | 200 |         2m47s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:13:29 | 200 |         2m44s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:14:00 | 200 |          3m7s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:14:00 | 200 |         2m57s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:14:22 | 200 |         3m11s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:14:22 | 200 |          3m5s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:14:48 | 200 |          3m1s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:14:48 | 200 |         2m47s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:02 | 200 |         2m31s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:25 | 200 |         2m51s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:25 | 200 |         2m50s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:28 | 200 |         3m14s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:28 | 200 |         2m51s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:59 | 200 |          3m8s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:59 | 200 |         2m49s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:15:59 | 200 |         2m46s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:16:28 | 200 |          3m4s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:16:28 | 200 |         2m59s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:16:28 | 200 |         2m37s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:01 | 200 |          3m5s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:01 | 200 |         2m44s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:01 | 200 |         2m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:14 | 200 |         2m33s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:14 | 200 |         2m28s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:25 | 200 |         2m35s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:17:25 | 200 |         2m32s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:18:30 | 200 |         2m56s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:18:30 | 200 |         2m30s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:18:45 | 200 |         2m39s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:18:45 | 200 |         2m33s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:19:29 | 200 |         3m15s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:19:29 | 200 |         2m46s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:19:29 | 200 |         2m36s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:20:00 | 200 |          3m2s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:20:00 | 200 |          3m2s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:20:40 | 200 |         3m39s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:20:40 | 200 |         3m26s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:21:31 | 200 |         4m10s |      172.18.0.3 | POST     "/api/generate"
+[GIN] 2026/10/08 - 07:21:31 | 200 |          4m8s |      172.18.0.3 | POST     "/api/generate"

@@ -1,0 +1,176 @@
+row,gold,predicted,correct,client_latency_ms,server_latency_ms,narrative_chars
+9241,Money transfer or service,Money transfer or service,1,11586.84,11521.32,217
+9956,Credit reporting,Credit reporting,1,47640.38,47623.3,1075
+9872,Money transfer or service,Money transfer or service,1,21215.85,21203.5,562
+9732,Credit reporting,Credit reporting,1,34746.18,34699.61,744
+9758,Credit reporting,Credit reporting,1,66163.08,66147.17,1405
+9903,Credit reporting,Credit reporting,1,45697.47,45659.52,952
+9803,Debt collection,Debt collection,1,58770.52,58751.63,1428
+9084,Credit card,Credit card,1,49949.19,49934.32,787
+9351,Consumer loan,Consumer loan,1,25810.34,25773.78,498
+9152,Credit reporting,Credit reporting,1,43512.01,43473.31,878
+9972,Bank account or service,Bank account or service,1,16382.22,16323.73,387
+9779,Credit card,Credit card,1,24416.93,24376.28,478
+9771,Credit card,Credit card,1,34124.98,34108.39,853
+9307,Credit card,Bank account or service,0,16201.87,16190.9,317
+9927,Mortgage,Mortgage,1,42629.41,42591.93,821
+9937,Mortgage,Mortgage,1,49077.03,49059.91,1104
+9777,Debt collection,Debt collection,1,12858.17,12824.39,250
+9101,Mortgage,Mortgage,1,40787.35,40759.14,736
+9537,Credit reporting,Credit reporting,1,51260.71,51239.97,1137
+9772,Mortgage,Mortgage,1,35549.01,35513.49,772
+9953,Bank account or service,Bank account or service,1,76104.66,76065.87,1644
+9473,Credit card,Credit card,1,25016.08,24954.51,504
+9887,Credit card,Credit card,1,24455.34,24438.79,671
+9131,Mortgage,Mortgage,1,52013.93,51978.55,1148
+9438,Credit reporting,Credit reporting,1,25115.83,25071.67,613
+9527,Bank account or service,Bank account or service,1,64311.69,64276.82,1462
+9954,Credit reporting,Debt collection,0,52383.75,52354.47,1112
+9437,Credit reporting,Credit reporting,1,10609.06,10561.86,261
+9967,Debt collection,Debt collection,1,44062.29,44041.16,984
+9868,Credit reporting,Credit reporting,1,63934.49,63900.3,1160
+9881,Money transfer or service,Money transfer or service,1,38370.69,38325.08,778
+9924,Credit card,Consumer loan,0,74376.88,74362.56,1647
+9160,Credit reporting,Credit card,0,13443.97,13405.99,296
+9629,Credit card,Credit card,1,36503.68,36457.12,934
+9774,Money transfer or service,Bank account or service,0,62452.14,62437.94,1644
+9518,Debt collection,Debt collection,1,14040.75,14003.14,263
+9013,Credit reporting,Credit reporting,1,23357.78,23332.34,597
+9713,Mortgage,Mortgage,1,47000.46,46985.55,1156
+9884,Bank account or service,Bank account or service,1,36160.86,36124.11,738
+9200,Mortgage,Mortgage,1,95011.04,94962.37,1886
+9873,Credit card,Credit card,1,49420.81,49397.17,1033
+9661,Money transfer or service,Bank account or service,0,33216.75,33196.49,754
+9862,Money transfer or service,Consumer loan,0,15532.74,15491.76,310
+9172,Credit reporting,Credit reporting,1,42704.26,42663.0,925
+9045,Credit card,Debt collection,0,16440.19,16425.49,317
+9579,Consumer loan,Mortgage,0,56908.41,56894.12,1169
+9764,Credit card,Credit card,1,33453.11,33413.53,750
+9688,Debt collection,Debt collection,1,59121.29,59062.31,1289
+9773,Consumer loan,Consumer loan,1,8020.96,7997.46,205
+9755,Debt collection,Debt collection,1,18920.26,18908.9,346
+9387,Credit card,Consumer loan,0,25868.74,25848.57,660
+9398,Money transfer or service,Money transfer or service,1,28171.42,28126.87,635
+9717,Debt collection,Mortgage,0,22010.96,21959.84,408
+9859,Credit reporting,Credit reporting,1,39012.82,38998.72,651
+9347,Money transfer or service,Money transfer or service,1,49555.73,49532.99,1130
+9431,Money transfer or service,Bank account or service,0,13510.03,13471.57,359
+9916,Bank account or service,Debt collection,0,45407.59,45360.23,1028
+9089,Consumer loan,Credit reporting,0,13888.12,13865.57,247
+9419,Mortgage,Mortgage,1,40767.52,40728.19,771
+9598,Bank account or service,Bank account or service,1,41102.47,41077.77,1045
+9993,Mortgage,Mortgage,1,59857.83,59803.3,1116
+9411,Credit card,Credit reporting,0,48862.33,48827.42,1038
+9567,Money transfer or service,Money transfer or service,1,32102.2,32074.52,852
+9552,Bank account or service,Bank account or service,1,61995.28,61947.21,1476
+9414,Credit card,Credit card,1,36654.94,36640.34,778
+9950,Credit reporting,Credit reporting,1,23158.48,23128.07,574
+9311,Bank account or service,Bank account or service,1,75322.16,75269.25,1853
+9261,Debt collection,Debt collection,1,73263.25,73242.32,1828
+9849,Debt collection,Bank account or service,0,18053.01,18039.11,384
+9495,Credit card,Credit card,1,27632.78,27619.77,694
+9699,Credit reporting,Credit reporting,1,15541.15,15503.57,323
+9090,Consumer loan,Debt collection,0,15301.11,15259.85,369
+9012,Consumer loan,Consumer loan,1,28830.01,28815.29,585
+9995,Credit reporting,Credit reporting,1,38797.79,38783.6,931
+9786,Consumer loan,Credit card,0,41958.58,41928.21,1004
+9476,Bank account or service,Money transfer or service,0,68661.36,68648.77,1743
+9362,Debt collection,Credit reporting,0,73078.61,73064.0,1741
+9942,Money transfer or service,Bank account or service,0,72169.55,72132.62,1926
+9534,Bank account or service,Bank account or service,1,32108.12,32057.38,662
+9443,Mortgage,Mortgage,1,32888.16,32857.18,1078
+9981,Consumer loan,Consumer loan,1,29268.07,29228.31,589
+9468,Debt collection,Debt collection,1,21533.85,21500.41,385
+9838,Mortgage,Mortgage,1,51264.7,51215.21,1265
+9526,Debt collection,Debt collection,1,17295.97,17280.14,380
+9205,Credit reporting,Credit reporting,1,22812.77,22779.12,512
+9759,Debt collection,Debt collection,1,26091.23,26075.62,444
+9497,Money transfer or service,Bank account or service,0,37831.87,37792.34,729
+9201,Consumer loan,Consumer loan,1,39630.08,39572.09,797
+9589,Credit reporting,Debt collection,0,12227.45,12213.9,245
+9005,Money transfer or service,Debt collection,0,34326.29,34286.28,637
+9319,Consumer loan,Consumer loan,1,25889.01,25856.99,571
+9092,Credit reporting,Credit reporting,1,32566.94,32549.48,741
+9472,Mortgage,Mortgage,1,33175.43,33130.23,759
+9065,Mortgage,Debt collection,0,18353.12,18336.2,352
+9833,Money transfer or service,Money transfer or service,1,44069.18,44056.36,976
+9332,Credit reporting,Credit reporting,1,27331.69,27320.82,493
+9821,Bank account or service,Debt collection,0,35221.04,35193.47,762
+9157,Consumer loan,Consumer loan,1,73412.67,73376.28,1613
+9870,Debt collection,Debt collection,1,31104.27,31071.44,786
+9690,Bank account or service,Bank account or service,1,75809.77,75752.86,1812
+9757,Money transfer or service,Money transfer or service,1,25840.72,25824.56,604
+9253,Mortgage,Mortgage,1,16909.81,16871.14,456
+9819,Consumer loan,Consumer loan,1,29996.91,29978.41,820
+9733,Consumer loan,Consumer loan,1,42211.72,42174.83,779
+9555,Credit reporting,Credit reporting,1,66752.14,66737.31,1573
+9692,Consumer loan,Consumer loan,1,54495.82,54482.36,1337
+9686,Consumer loan,Debt collection,0,51963.62,51941.99,1103
+9498,Consumer loan,Consumer loan,1,24419.79,24379.6,587
+9794,Bank account or service,Bank account or service,1,53221.35,53162.68,1285
+9009,Credit reporting,Consumer loan,0,39283.65,39236.34,845
+9863,Mortgage,Mortgage,1,26330.08,26315.53,617
+9140,Mortgage,Mortgage,1,53375.03,53320.5,1317
+9684,Mortgage,Mortgage,1,21990.68,21948.59,503
+9591,Debt collection,Debt collection,1,31289.71,31247.43,521
+9504,Credit reporting,Credit reporting,1,17665.47,17641.81,315
+9334,Credit reporting,Credit reporting,1,35964.08,35953.11,826
+9465,Bank account or service,Bank account or service,1,15784.27,15729.49,263
+9720,Credit card,Credit card,1,24504.92,24456.41,431
+9560,Credit reporting,Credit reporting,1,29156.92,29107.68,775
+9412,Credit reporting,Credit reporting,1,21097.63,21047.54,450
+9321,Credit reporting,Credit reporting,1,15849.06,15833.67,304
+9723,Mortgage,Bank account or service,0,35983.46,35948.04,859
+9895,Bank account or service,Bank account or service,1,16355.72,16338.76,299
+9782,Money transfer or service,Credit card,0,26711.81,26665.26,472
+9202,Money transfer or service,Money transfer or service,1,42190.86,42150.35,960
+9818,Mortgage,Mortgage,1,19569.31,19554.02,383
+9828,Credit card,Debt collection,0,48324.58,48310.79,1070
+9173,Debt collection,Debt collection,1,17727.94,17702.8,322
+9407,Credit reporting,Credit card,0,72801.25,72772.51,1491
+9276,Bank account or service,Bank account or service,1,31409.61,31368.8,801
+9580,Credit reporting,Credit reporting,1,22470.65,22447.98,510
+9151,Money transfer or service,Bank account or service,0,39092.11,39079.56,758
+9094,Credit reporting,Credit reporting,1,40839.44,40802.5,918
+9142,Consumer loan,Consumer loan,1,44971.61,44948.11,1126
+9087,Debt collection,Debt collection,1,39593.0,39578.31,1058
+9744,Money transfer or service,Money transfer or service,1,19764.12,19752.87,530
+9748,Credit reporting,Credit reporting,1,75072.49,75044.76,1989
+9521,Bank account or service,Bank account or service,1,34857.42,34834.27,754
+9035,Credit reporting,Credit reporting,1,23443.68,23412.77,466
+9926,Mortgage,Mortgage,1,51393.66,51352.65,1324
+9124,Money transfer or service,Bank account or service,0,12594.39,12552.76,204
+9459,Credit reporting,Consumer loan,0,21600.07,21558.25,442
+9032,Money transfer or service,Bank account or service,0,33205.32,33169.37,673
+9918,Mortgage,Mortgage,1,68143.11,68120.94,1668
+9194,Money transfer or service,Money transfer or service,1,23819.55,23808.95,648
+9058,Credit reporting,Credit reporting,1,18751.1,18706.62,600
+9385,Debt collection,Debt collection,1,15954.41,15938.25,295
+9770,Consumer loan,Consumer loan,1,20134.72,20095.69,433
+9992,Bank account or service,Bank account or service,1,16807.41,16767.73,273
+9853,Consumer loan,Debt collection,0,52975.37,52947.98,1060
+9144,Credit reporting,Credit reporting,1,73128.56,73080.59,1778
+9046,Money transfer or service,Bank account or service,0,56188.88,56145.92,1322
+9509,Bank account or service,Bank account or service,1,32448.33,32420.94,699
+9951,Credit card,Bank account or service,0,43054.42,43010.22,1079
+9966,Credit card,Debt collection,0,26990.71,26961.62,464
+9860,Credit card,Credit card,1,19795.12,19757.77,400
+9906,Consumer loan,Consumer loan,1,27511.51,27472.7,584
+9237,Money transfer or service,Bank account or service,0,36593.96,36546.53,674
+9714,Credit reporting,Credit reporting,1,17430.41,17413.93,376
+9222,Credit card,Credit card,1,21722.87,21710.08,512
+9008,Credit card,Bank account or service,0,48555.84,48510.02,1163
+9264,Credit reporting,Credit reporting,1,24089.6,24055.69,524
+9848,Credit reporting,Credit reporting,1,11053.9,11029.37,261
+9455,Bank account or service,Bank account or service,1,43651.79,43622.22,1054
+9719,Debt collection,Debt collection,1,33110.96,33064.06,710
+9941,Credit reporting,Credit reporting,1,53727.24,53712.8,1006
+9274,Credit card,Bank account or service,0,48370.84,48332.73,941
+9212,Mortgage,Mortgage,1,52969.46,52949.47,1339
+9344,Consumer loan,Mortgage,0,49388.7,49368.45,1116
+9616,Debt collection,Debt collection,1,37146.63,37109.93,905
+9196,Money transfer or service,Bank account or service,0,22818.97,22796.38,422
+9894,Bank account or service,Credit reporting,0,36101.24,36089.91,900
+9496,Consumer loan,Debt collection,0,27395.34,27384.53,497
+9402,Credit card,Credit card,1,86836.7,86822.4,1873
+9308,Money transfer or service,Money transfer or service,1,22267.57,22256.43,652

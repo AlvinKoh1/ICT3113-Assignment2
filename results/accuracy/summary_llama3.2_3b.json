@@ -1,0 +1,143 @@
+{
+  "model": "llama3.2:3b",
+  "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "golden_set": "golden/golden_set.csv",
+  "n_tickets": 175,
+  "n_scored": 175,
+  "errors": 0,
+  "unparsed": 0,
+  "overall_accuracy": 0.4457,
+  "per_category": {
+    "Credit reporting": {
+      "support": 40,
+      "correct": 11,
+      "recall": 0.275,
+      "precision": 0.8461538461538461,
+      "f1": 0.41509433962264153
+    },
+    "Debt collection": {
+      "support": 20,
+      "correct": 9,
+      "recall": 0.45,
+      "precision": 0.5294117647058824,
+      "f1": 0.48648648648648646
+    },
+    "Mortgage": {
+      "support": 22,
+      "correct": 12,
+      "recall": 0.5454545454545454,
+      "precision": 0.9230769230769231,
+      "f1": 0.6857142857142856
+    },
+    "Credit card": {
+      "support": 24,
+      "correct": 8,
+      "recall": 0.3333333333333333,
+      "precision": 0.8888888888888888,
+      "f1": 0.48484848484848486
+    },
+    "Bank account or service": {
+      "support": 21,
+      "correct": 21,
+      "recall": 1.0,
+      "precision": 0.22105263157894736,
+      "f1": 0.3620689655172414
+    },
+    "Consumer loan": {
+      "support": 22,
+      "correct": 15,
+      "recall": 0.6818181818181818,
+      "precision": 0.5769230769230769,
+      "f1": 0.6249999999999999
+    },
+    "Money transfer or service": {
+      "support": 26,
+      "correct": 2,
+      "recall": 0.07692307692307693,
+      "precision": 1.0,
+      "f1": 0.14285714285714288
+    }
+  },
+  "confusion_matrix": {
+    "Credit reporting": {
+      "Credit reporting": 11,
+      "Debt collection": 5,
+      "Mortgage": 1,
+      "Credit card": 1,
+      "Bank account or service": 17,
+      "Consumer loan": 5,
+      "Money transfer or service": 0,
+      "UNPARSED": 0
+    },
+    "Debt collection": {
+      "Credit reporting": 2,
+      "Debt collection": 9,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 7,
+      "Consumer loan": 2,
+      "Money transfer or service": 0,
+      "UNPARSED": 0
+    },
+    "Mortgage": {
+      "Credit reporting": 0,
+      "Debt collection": 1,
+      "Mortgage": 12,
+      "Credit card": 0,
+      "Bank account or service": 7,
+      "Consumer loan": 2,
+      "Money transfer or service": 0,
+      "UNPARSED": 0
+    },
+    "Credit card": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 8,
+      "Bank account or service": 16,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "UNPARSED": 0
+    },
+    "Bank account or service": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 21,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "UNPARSED": 0
+    },
+    "Consumer loan": {
+      "Credit reporting": 0,
+      "Debt collection": 2,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 5,
+      "Consumer loan": 15,
+      "Money transfer or service": 0,
+      "UNPARSED": 0
+    },
+    "Money transfer or service": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 22,
+      "Consumer loan": 2,
+      "Money transfer or service": 2,
+      "UNPARSED": 0
+    }
+  },
+  "latency_ms": {
+    "n": 175,
+    "mean": 16832.05,
+    "p50": 16205.8,
+    "p95": 32425.51,
+    "p99": 39067.72,
+    "max": 43490.74
+  },
+  "git_commit": "0f6056ee79b95fe120d5d1bd57bf9085bcc19a73",
+  "generated_at": "2026-10-08T10:23:31+0800"
+}

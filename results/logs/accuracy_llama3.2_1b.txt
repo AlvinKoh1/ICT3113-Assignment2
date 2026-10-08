@@ -1,0 +1,35 @@
+Model: llama3.2:1b   tickets: 175
+  [10/175] running accuracy 0.400
+  [20/175] running accuracy 0.200
+  [30/175] running accuracy 0.200
+  [40/175] running accuracy 0.225
+  [50/175] running accuracy 0.200
+  [60/175] running accuracy 0.200
+  [70/175] running accuracy 0.200
+  [80/175] running accuracy 0.212
+  [90/175] running accuracy 0.222
+  [100/175] running accuracy 0.220
+  [110/175] running accuracy 0.209
+  [120/175] running accuracy 0.208
+  [130/175] running accuracy 0.208
+  [140/175] running accuracy 0.214
+  [150/175] running accuracy 0.220
+  [160/175] running accuracy 0.225
+  [170/175] running accuracy 0.224
+  [175/175] running accuracy 0.223
+
+Overall accuracy : 0.2229  (39/175)
+Unparsed         : 0   Errors: 0
+Single-request latency p50/p95/p99 (ms): 5695.13 / 12329.75 / 14635.79
+
+Per-category recall:
+  Credit reporting             0.475
+  Debt collection              0.000
+  Mortgage                     0.000
+  Credit card                  0.000
+  Bank account or service      0.000
+  Consumer loan                0.000
+  Money transfer or service    0.769
+
+Wrote results/accuracy/predictions_llama3.2_1b.csv
+      results/accuracy/summary_llama3.2_1b.json
