@@ -254,8 +254,42 @@ text(s, 0.8, 2.1, 11.7, 0.8, "CPU-only LLM ticket triage: requirements, measurem
 text(s, 0.8, 3.2, 11.7, 0.5, "ICT3113 Performance Testing & Optimisation · Assignment 1 · Group P2-9 · dataset rows 9000–9999", 15, color=RGBColor(0xDD, 0xDD, 0xDD))
 for i, m in enumerate(team.get("members", [])):
     text(s, 0.8 + (i % 3) * 4.0, 4.2 + (i // 3) * 0.45, 3.9, 0.45, f"{m['name']} · {m['id']}", 15, color=WHITE)
-text(s, 0.8, 6.2, 11.7, 0.5, "Repository: " + team.get("repo", "PENDING"), 14, color=RGBColor(0x9F, 0xD8, 0xD6))
-text(s, 0.8, 6.6, 11.7, 0.4, "Rebuild: git clone … && cp .env.example .env && docker compose up -d --build", 11, color=RGBColor(0xBB, 0xBB, 0xBB))
+
+
+def link_lines(s, x, y, w, h, lines, size, color):
+    """Each line is a list of (text, url-or-None) runs; runs with a url become clickable (kept in PDF export)."""
+    tf = s.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h)).text_frame
+    tf.word_wrap = True
+    for i, runs in enumerate(lines):
+        para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        para.space_after = Pt(3)
+        for txt, url in runs:
+            r = para.add_run(); r.text = txt
+            r.font.size, r.font.color.rgb, r.font.name = Pt(size), color, "Calibri"
+            if url:
+                r.hyperlink.address = url; r.font.underline = True
+
+
+repo = team.get("repo", "")
+# Supporting files are linked at the commit they were submitted from, so the links cannot drift.
+pin = team.get("submission_commit", "main")
+blob = f"{repo}/blob/{pin}/"
+files = [("Golden test set", "golden/golden_set.csv"), ("Prediction record", "docs/prediction_record.md"),
+         ("Labelling protocol + revisions", "golden/labelling_protocol.md"), ("Label sheet A", "golden/labels_A.csv"),
+         ("Label sheet B", "golden/labels_B.csv"), ("Agreement statistic (κ)", "golden/agreement.json"),
+         ("Disagreements + resolutions", "golden/disagreements.csv")]
+def joined(fs):
+    out = []
+    for i, (label, path) in enumerate(fs):
+        if i: out.append(("   ·   ", None))
+        out.append((label, blob + path))
+    return out
+LINK = RGBColor(0x9F, 0xD8, 0xD6)
+text(s, 0.8, 5.15, 11.7, 0.35, f"Supporting files (GitHub, commit {pin[:7]}; click to open)", 12, True, WHITE)
+link_lines(s, 0.8, 5.5, 11.7, 0.75, [joined(files[:4]), joined(files[4:])], 12, LINK)
+link_lines(s, 0.8, 6.35, 11.7, 0.45, [[("Repository: ", None), (repo, repo)]], 14, LINK)
+link_lines(s, 0.8, 6.75, 11.7, 0.4, [[("Rebuild: git clone … && cp .env.example .env && docker compose up -d --build · verified on a clean clone: ", None),
+                                     ("docs/rebuild_check_2026-10-09.txt", blob + "docs/rebuild_check_2026-10-09.txt")]], 11, RGBColor(0xBB, 0xBB, 0xBB))
 
 # ------------------------------------------------------------------- 2 architecture
 s = prs.slides.add_slide(BLANK)
@@ -620,6 +654,11 @@ text(s, 0.4, 1.15, 12.5, 6.2, [
     "Software: FastAPI (MIT), Uvicorn (BSD-3-Clause), httpx (BSD-3-Clause), SQLite (public domain), Docker. An AI coding assistant was used for scaffolding and tooling; labelling, test execution and the recommendation are the team's.",
 ], 11)
 
+# PowerPoint draws every hyperlink in the theme's hyperlink colour, whatever the run colour says:
+# make it readable on the navy cover (no other slide has links).
+from pptx.opc.constants import RELATIONSHIP_TYPE as RT
+theme = prs.slide_master.part.part_related_by(RT.THEME)
+theme._blob = re.sub(rb'(<a:(?:hlink|folHlink)>\s*<a:srgbClr val=")[0-9A-Fa-f]{6}', rb'\g<1>9FD8D6', theme.blob)
 cp = prs.core_properties
 cp.title, cp.author, cp.last_modified_by, cp.comments = "Routing Complaints On-Premises", "ICT3113 Group P2-9", "ICT3113 Group P2-9", ""
 prs.save(OUT)
