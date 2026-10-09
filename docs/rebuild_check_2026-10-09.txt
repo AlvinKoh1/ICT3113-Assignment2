@@ -1,0 +1,44 @@
+Fri Oct  9 08:26:10 +08 2026
+clone HEAD: 0adb0f4 Merge pull request #6 from gemokay/muhaimeen/slides-10-11
+NAME             IMAGE                 COMMAND                  SERVICE   CREATED          STATUS          PORTS
+triage-ollama    ollama/ollama:0.5.7   "/bin/ollama serve"      ollama    21 seconds ago   Up 20 seconds   0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
+triage-service   rebuild-test-triage   "uvicorn app.main:ap…"   triage    21 seconds ago   Up 20 seconds   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+--- POST /tickets ---
+{
+    "ticket_id": 1,
+    "request_id": "90f42fb0-129c-40de-b412-3e6adc2bb5d5",
+    "category": "Credit card",
+    "model": "qwen2.5:0.5b",
+    "latency_ms": 2420.67
+}
+--- GET /search?q=mortgage ---
+{
+    "request_id": "5e02b4e4-41c7-46a9-8d6f-626ac68e1bd0",
+    "query": "mortgage",
+    "count": 1,
+    "results": [
+        {
+            "id": 1,
+            "row_id": "smoke",
+            "category": "Credit card",
+            "model": "qwen2.5:0.5b",
+            "created_at": "2026-10-09T00:26:11.037724+00:00",
+            "snippet": "My mortgage servicer applied my payment to escrow instead of principal and now reports me late."
+        }
+    ]
+}
+--- GET /stats ---
+{
+    "request_id": "aa018188-ddfd-436b-a4e8-9074b860097e",
+    "total": 1,
+    "by_category": {
+        "Credit reporting": 0,
+        "Debt collection": 0,
+        "Mortgage": 0,
+        "Credit card": 1,
+        "Bank account or service": 0,
+        "Consumer loan": 0,
+        "Money transfer or service": 0,
+        "UNPARSED": 0
+    }
+}
