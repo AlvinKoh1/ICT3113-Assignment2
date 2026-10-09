@@ -2,7 +2,7 @@
 - **0.5B and 1B** stay flat from 1 to 4 tickets/min (p95 ≤ 6.3 s and ≤ 21.7 s)
 - **3B** bends between 2 and 4/min: p50 36 s → 161 s
 - **7B** is past capacity at the 1/min peak (p50 70 s, longer than the 60 s between arrivals), so its queue grows at every rate
-- **Stress (3B, 3 ladders):** the backlog grows already at 2/min; at most ~2.5–3/min completes. Once requests hit the 300 s timeout (ladders 1–2), throughput collapses to 0.6–1.8/min (110 × 502)
+- **Stress (3B, 3 ladders):** limit ≈ 2/min. At 2/min only 1.0–1.2/min complete in every ladder (ladder 3 passes the queue rule narrowly, 4 in flight). Saturated throughput is 4.05/min when nothing times out (ladder 3) but 1.7–1.8/min in ladders 1–2, where 110 requests hit the 300 s timeout (502) and Ollama aborted work already done
 
 ## Bottleneck: Ollama CPU (prompt prefill)
 - **Ollama ≈ 395 % CPU**, its full 4-CPU quota, whenever it has work; the triage service stays under 6 % (docker stats)

@@ -1,0 +1,6 @@
+# Recommendation
+Do not deploy any candidate for automatic routing yet. No candidate meets all of R1–R6; none meets R4 (≥ 85 %) or R5 (≥ 70 % per category).
+Take qwen2.5:7b forward, as it is the only one close on accuracy, which our requirements rank first: 73.1 % (95 % CI 66–79 %). It fails R5 on Money transfer 46 %, Credit card 58 % and Consumer loan 64 %.
+On 4 CPUs the 7B is past capacity at the 1/min peak: p50 70 s, p95 151 s. It fails R1, R3 (22 % of offered completed) and R6 (errors up to 74 % at surge). It passes R2 and unparsed (0 %).
+The fast models are not a cheaper option: 0.5B (12 %) and 1B (22 %) pass R1–R3 only because they give nearly the same answer every time. 3B fails on both sides: 44.6 %, p95 79 s at peak.
+The 7B's latency gap is CPU: Ollama is pinned at ~395 % and prefill is 97 % of its time. Assignment 2 should measure more cores and prompt changes against R1–R5. Until then, the client keeps human routing.

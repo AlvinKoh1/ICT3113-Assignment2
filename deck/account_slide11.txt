@@ -1,0 +1,5 @@
+# Where and why we were wrong (docs/prediction_account.md)
+Latency ~2× slow for all four: the size scaling held (×0.43 / ×2.85 / ×6.0 vs 1B), but the base came from one 1B calibration at 110 tok/s; every 1B test ran at 52–56 tok/s.
+Small-model accuracy: 0.5B and 1B mostly answer the same list number for every ticket (0.5B: Consumer loan on 143/175). We assumed they would misread the text, not ignore it.
+Confusion: the real hard pair is Money transfer → Bank account (7B: 11/26), not Debt collection → Credit reporting (7B: 1).
+Stress 7.4/min → ~2/min: half from the latency base, half from parallel slots sharing 4 CPUs; the 300 s timeout (we assumed 600 s) turned overload into 502s.
