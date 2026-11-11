@@ -273,10 +273,16 @@ draft_slot = s  # DRAFT banner is added at the end if anything is pending
 
 # =================================================================== 2 cascade design
 s = prs.slides.add_slide(BLANK)
-header(s, 2, "Cascade Design", "Length rule inside POST /tickets: short tickets to llama3.2:3b, long ones straight to qwen2.5:7b. The caller still sees one category.")
+# Which small model actually ran: the primary pair, or the fallback that
+# docs/a2/escalation_rule.md section 5 pre-declares if 3b + 7b do not fit.
+_m3 = next((v for k, v in mem.items() if "llama3.2_3b" in k), None)
+_m1 = next((v for k, v in mem.items() if "llama3.2_1b" in k), None)
+SMALL = "llama3.2:1b" if (_m3 and _m3["verdict"] != "FIT" and _m1 and _m1["verdict"] == "FIT") else "llama3.2:3b"
+header(s, 2, "Cascade Design", f"Length rule inside POST /tickets: short tickets to {SMALL}, long ones straight to qwen2.5:7b. "
+       + ("Fallback pair: 3b + 7b did not fit in memory (rule §5)." if SMALL != "llama3.2:3b" else "The caller still sees one category."))
 box(s, 0.35, 1.90, 1.45, 0.75, "POST /tickets\nnarrative", NAVY, 11)
 box(s, 2.15, 1.80, 1.9, 0.95, "n ≤ T ?\nn = characters", AMBER, 13, MSO_SHAPE.DIAMOND)
-box(s, 4.75, 1.35, 1.9, 0.7, "llama3.2:3b\nsmall · same prompt", TEAL, 11)
+box(s, 4.75, 1.35, 1.9, 0.7, f"{SMALL}\nsmall · same prompt", TEAL, 11)
 box(s, 4.75, 2.70, 1.9, 0.7, "qwen2.5:7b\nlarge · same prompt", NAVY, 11)
 box(s, 7.3, 1.35, 1.55, 0.7, "parsed?", AMBER, 11, MSO_SHAPE.DIAMOND)
 box(s, 9.4, 1.35, 1.55, 0.7, "answer\nnot escalated", GREEN, 11)
@@ -293,7 +299,7 @@ text(s, 11.1, 1.35, 2.1, 2.2, ["Log line per ticket:", "final_model", "escalated
 card(s, 0.35, 3.5, 6.25, 3.55, "Escalation rule in full (docs/a2/escalation_rule.md)", [
     "n = characters of the narrative as received (same figure A1 logged as narrative_chars).",
     "n > T → qwen2.5:7b classifies; its answer is final (escalated).",
-    "n ≤ T → llama3.2:3b classifies; answer accepted unless it parses to UNPARSED, then qwen2.5:7b (escalated).",
+    f"n ≤ T → {SMALL} classifies; answer accepted unless it parses to UNPARSED, then qwen2.5:7b (escalated).",
     "Both models: unchanged A1 prompt v1, temperature 0, seed 42, num_predict 16, num_ctx 2048, same parser.",
     "**Settings tested:** T = 400 (conservative) and T = 500 (largest cut-off that passes the tuning check). Chosen on the 88 tuning tickets only.",
     "Response 'model' field = configuration name, never the answering model; which model answered is only in the service log.",
@@ -640,7 +646,7 @@ if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
     p95g = (speed["top7b"]["p95_pooled_s"] - speed[recommended]["p95_pooled_s"]) / speed["top7b"]["p95_pooled_s"] * 100 if recommended != "top7b" else 0
     catd = [f"{SHORT[c]} {rec['per_category'][c]['correct'] - top['per_category'][c]['correct']:+d}" for c in CATS
             if rec["per_category"][c]["correct"] != top["per_category"][c]["correct"]]
-    lines = [f"**Deploy: {CFG_LABEL[recommended]}**" + ("" if recommended == "top7b" else " (llama3.2:3b → qwen2.5:7b)")]
+    lines = [f"**Deploy: {CFG_LABEL[recommended]}**" + ("" if recommended == "top7b" else f" ({SMALL} → qwen2.5:7b)")]
     if recommended != "top7b":
         lines += [f"Speed: p50 {p50(recommended)['mean']:.1f} s vs {p50('top7b')['mean']:.1f} s for 7b alone ({gain:.0f}% faster); "
                   f"pooled p95 {speed[recommended]['p95_pooled_s']:.0f} vs {speed['top7b']['p95_pooled_s']:.0f} s ({p95g:+.0f}%).",
@@ -700,8 +706,8 @@ refs = [
 ]
 card(s, 6.95, 1.1, 6.05, 3.2, "References and model licences", refs, NAVY, 9)
 ai = txt.get("ai_declaration") or [
-    "An AI coding assistant (Claude) wrote the cascade code, the test scripts (memory check, accuracy, calibration, JMeter plan, analysis) and this deck generator, and replayed candidate rules over our A1 records to tabulate options.",
-    "The team chose the rule and its two settings, reviewed and committed the split, rule and predictions, ran every test on Machines A and B, checked the figures against the raw .jtl and log files, and made the recommendation.",
+    "An AI assistant (Claude) proposed the length rule and its two settings from a tuning-set replay of our A1 records, drafted the prediction record, and wrote the cascade code, all test and analysis scripts, this deck generator and the first draft of the prediction account.",
+    "The team reviewed and signed off the rule and predictions before any measurement, ran every test on Machines A and B, checked figures against the raw .jtl and log files, and is responsible for the recommendation.",
 ]
 card(s, 6.95, 4.45, 6.05, 2.6, "AI declaration", ai, TEAL, 9.5)
 footer(s, "docs/model_pins.md (licences) · docs/a2/")

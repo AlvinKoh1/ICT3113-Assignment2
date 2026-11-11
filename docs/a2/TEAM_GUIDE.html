@@ -155,8 +155,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="who"><h2>Irfan</h2><span class="role">M1 · System & SUT lead · owns Machine A</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Clone the new repo in WSL and sign off</h3>
-      <pre><code>git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
+      <h3>Accept the invite, clone the new repo in WSL and sign off</h3>
+      <p>Accept the GitHub invite from AlvinKoh1 first (it gives you push access). Clone into your WSL home folder, not under <code>/mnt/c</code>, so the scripts keep their execute permission:</p>
+      <pre><code>cd ~
+git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2</code></pre>
       <p>Skim <code>docs/a2/RUNBOOK.md</code>. Post "signed — Irfan".</p>
       <p class="needs">The repo reuses your existing <code>ollama-models</code> volume (the compose project name is pinned). Never run <code>docker compose down -v</code> and never <code>ollama pull</code>.</p>
@@ -165,7 +167,8 @@ cd ICT3113-Assignment2</code></pre>
       <h3>Start one command, then leave the PC on</h3>
       <p class="needs">Needs: <b>all five "signed"</b> in the group chat.</p>
       <p>Before you start: sleep set to "never", plugged in, wired, Windows Update paused, games and browsers closed.</p>
-      <pre><code>git pull
+      <pre><code>cd ~/ICT3113-Assignment2
+git pull
 tools/a2_machineA_all.sh</code></pre>
       <p>It rebuilds the service, runs the preflight and the memory check, the accuracy test, its side of the calibration and the 9 speed runs, and commits and pushes after each stage. About 10 hours. Uwais can start his side before or after you; his laptop must also stay on and on Tailscale all night, because the two scripts hand over to each other through your service at <code>100.88.74.36:8000</code>.</p>
     </div></li>
@@ -181,7 +184,7 @@ tools/a2_machineA_all.sh</code></pre>
   <ol class="steps">
     <li><div>
       <h3>Invite the team and answer questions</h3>
-      <p>Add Irfan, Uwais, Gabriel and Muhaimin as collaborators on <code>AlvinKoh1/ICT3113-Assignment2</code> (Settings → Collaborators). Post "signed — Alvin". First point of contact if either machine says <b>STOPPED</b>.</p>
+      <p>Add Irfan, Uwais, Gabriel and Muhaimin as collaborators on <code>AlvinKoh1/ICT3113-Assignment2</code> (Settings → Collaborators), with write access so their machines can push. The repo is private and the cover links to it, so also give the lecturer read access the way the Assignment 1 repo did. Post "signed — Alvin". First point of contact if either machine says <b>STOPPED</b>.</p>
     </div></li>
     <li><div>
       <h3>Finish everything in one command</h3>
@@ -226,7 +229,8 @@ tools/a2_finish.sh</code></pre>
   <div class="who"><h2>Uwais</h2><span class="role">M4 · JMeter & load lead · owns Machine B</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Clone the new repo in Git Bash and sign off</h3>
+      <h3>Accept the invite, clone the new repo in Git Bash and sign off</h3>
+      <p>Accept the GitHub invite from AlvinKoh1 first (it gives you push access), then:</p>
       <pre><code>git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2</code></pre>
       <p>Skim <code>docs/a2/RUNBOOK.md</code>. Post "signed — Uwais".</p>
@@ -237,7 +241,7 @@ cd ICT3113-Assignment2</code></pre>
       <p>Before you start: power plan "never sleep", plugged in, Ethernet, Windows Update paused.</p>
       <pre><code>git pull
 jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
-      <p>It checks JMeter and Python, waits for Machine A, measures S when Machine A is ready, runs its side of the 9 speed runs, and commits and pushes. About 10 hours, most of it waiting. Keep the laptop on Tailscale the whole time: it watches Machine A's <code>/healthz</code> for "ready" and reports each finished run back through <code>/stats</code>.</p>
+      <p>It checks JMeter and Python (<code>python3</code> or <code>python</code>, whichever Git Bash has), waits for Machine A, measures S when Machine A is ready, runs its side of the 9 speed runs, and commits and pushes. About 10 hours, most of it waiting. Keep the laptop on Tailscale the whole time: it watches Machine A's <code>/healthz</code> for "ready" and reports each finished run back through <code>/stats</code>.</p>
     </div></li>
     <li><div>
       <h3>Only if it says STOPPED</h3>

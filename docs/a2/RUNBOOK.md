@@ -17,15 +17,15 @@ Budget: ~1 h set-up and memory check, ~2 h accuracy, ~15 min calibration, **~7 h
 After everyone has signed off, Irfan and Uwais each start one command, in either order, and leave the machines on for one night (about 10 h). Each stage commits and pushes its own results; re-running the same command after an interruption resumes where it stopped.
 
 ```bash
-# Machine A (Irfan, WSL)
-git pull && tools/a2_machineA_all.sh
+# Machine A (Irfan, WSL; clone in ~, not under /mnt/c)
+cd ~/ICT3113-Assignment2 && git pull && tools/a2_machineA_all.sh
 ```
 ```bash
 # Machine B (Uwais, Git Bash)
 git pull && jmeter/a2_machineB_all.sh 100.88.74.36
 ```
 
-Machine A runs §2–§5 below in order (memory check with the pre-declared fallback, accuracy test, calibration, speed test); Machine B waits for it at each step, measures S, and runs its side of the speed test. If no model pair fits in memory, Machine A runs 7b alone and tells Machine B to skip the cascade runs. Then anyone runs §6 (`tools/a2_finish.sh`). The sections below are the same steps one at a time, for reruns and troubleshooting.
+Both need the GitHub invite accepted first (push access). Machine A runs §2–§5 below in order (memory check with the pre-declared fallback, accuracy test, calibration, speed test); Machine B waits for it at each step, measures S, and runs its side of the speed test. If no model pair fits in memory, Machine A runs 7b alone and tells Machine B to skip the cascade runs. Then anyone runs §6 (`tools/a2_finish.sh`). The sections below are the same steps one at a time, for reruns and troubleshooting.
 
 ## 1. Before anything (both machines)
 

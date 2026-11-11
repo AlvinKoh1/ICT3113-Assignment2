@@ -24,7 +24,7 @@ die() { say "STOPPED: $*"; say "Screenshot this and send it to Alvin. Re-running
 push() { tools/a2_push.sh "$@" || say "WARNING: push failed; results are committed locally"; }
 
 say "=== A2 Machine A: start ($(git rev-parse --short HEAD))"
-git pull -q --rebase || say "WARNING: git pull failed; continuing on the local copy"
+git pull -q --rebase --autostash || say "WARNING: git pull failed; continuing on the local copy"
 
 # 1. stack + preflight
 say "1/5 rebuilding the service"

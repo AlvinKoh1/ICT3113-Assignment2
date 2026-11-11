@@ -1,6 +1,6 @@
 # ICT3113 Assignment 1 & 2 — Ticket Triage Service
 
-> **Assignment 2 (due Fri 27 Nov, 23:59): start at [`docs/a2/RUNBOOK.md`](docs/a2/RUNBOOK.md).**
+> **Assignment 2 (due Fri 27 Nov, 23:59): who does what is in [`docs/a2/TEAM_GUIDE.pdf`](docs/a2/TEAM_GUIDE.pdf); commands in [`docs/a2/RUNBOOK.md`](docs/a2/RUNBOOK.md).**
 > Cascade `llama3.2:3b` → `qwen2.5:7b` by ticket length (T = 400 and 500 chars), inside `POST /tickets`
 > (`service/app/cascade.py`, rule in `docs/a2/escalation_rule.md`). Golden split, limits, tuning analysis and the
 > prediction record are committed before any A2 measurement. Deck: `python3 deck/build_deck_a2.py` → `deck/Group09_A2.pptx`.

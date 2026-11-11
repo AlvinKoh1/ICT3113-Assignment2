@@ -21,7 +21,7 @@ say() { echo "$(date '+%F %T %z')  $*"; }
 die() { say "STOPPED: $*"; say "Screenshot this and send it to Alvin. Re-running the same command resumes."; exit 1; }
 
 say "=== A2 Machine B: start, service at $HOST:$PORT ($(git rev-parse --short HEAD))"
-git pull -q --rebase || say "WARNING: git pull failed; continuing on the local copy"
+git pull -q --rebase --autostash || say "WARNING: git pull failed; continuing on the local copy"
 
 # 1. self-check
 command -v jmeter >/dev/null || die "jmeter is not on PATH"
