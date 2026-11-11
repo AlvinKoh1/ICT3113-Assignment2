@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import statistics
+import shutil
 import subprocess
 import time
 import urllib.request
@@ -62,7 +63,8 @@ def main() -> int:
         fail += bool(err)
         print(f"row {row} ({rec['chars']} chars): {rec['category'] or err}  client {ms/1000:.1f} s", flush=True)
         if a.ps:
-            ps = subprocess.run(["docker", "exec", "triage-ollama", "ollama", "ps"], capture_output=True, text=True).stdout
+            docker = shutil.which("docker") or "docker"   # resolves docker.exe / wrappers on any OS
+            ps = subprocess.run([docker, "exec", "triage-ollama", "ollama", "ps"], capture_output=True, text=True).stdout
             rec["ollama_ps"] = ps
             print(ps, flush=True)
     if a.json_out:
