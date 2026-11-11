@@ -380,7 +380,7 @@ card(s, 0.35, 4.1, 6.3, 2.95, "Each run (tools/a2_machineA.sh ↔ jmeter/a2_mach
     "2. Three fixed warm-up tickets, one at a time, timings discarded. For the cascade, W1 (274 chars) loads 3b and W2/W3 load 7b.",
     "3. `ollama ps` must list every model of the configuration (both for the cascade) or the run aborts; snapshot kept.",
     "4. Machine B: GET /stats (total), JMeter open-model run, drain pause, GET /stats again; the increase = requests completed and stored.",
-    "5. Sent = A2SENT lines in the JMeter log; completed / errored from the .jtl; unfinished = sent − recorded. Escalation from the service log.",
+    "5. Sent = A2SENT lines in the JMeter log; completed / errored from the .jtl; unfinished = timed out by JMeter or never recorded. Escalation from the service log.",
 ], TEAL, 9.5)
 card(s, 6.8, 4.1, 6.2, 2.95, "Changes from Assignment 1", [
     "**POST /tickets** can run the cascade (TRIAGE_MODE=cascade); single-model path unchanged. Endpoints, prompt, models, golden set unchanged.",
@@ -480,7 +480,7 @@ if cm_cfgs:
     if pic.height > Inches(2.85):
         ratio = Inches(2.85) / pic.height
         pic.height, pic.width = Inches(2.85), int(pic.width * ratio)
-text(s, 0.3, 6.95 - 0.1, 6.1, 0.3, "* n ≤ 13 on the test set: one ticket = 7.7–10 points, so these per-category verdicts rest on 1–2 tickets.", 9)
+text(s, 0.3, 6.95 - 0.1, 6.1, 0.3, "* n ≤ 13: one ticket = 7.7–10 points, so these verdicts rest on 1–2 tickets. Confusion matrices for every configuration: docs/a2/accuracy_notes.md.", 9)
 footer(s, "results/a2/accuracy/*_test.json, *_predictions.csv (cascade; log results/logs/a2_requests.jsonl) · results/a2/accuracy/single_*_test.json (A1 records)")
 
 # =================================================================== 5 speed results

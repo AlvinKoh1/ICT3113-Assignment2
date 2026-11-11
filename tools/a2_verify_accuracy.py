@@ -78,6 +78,23 @@ def main() -> int:
                   + (f", mostly answered as {', '.join(f'{SHORT.get(k, k)} ×{v}' for k, v in answered.most_common(3))}." if kept_wrong else "."),
                   f"Categories that lost tickets against 7b alone: {', '.join(lost) or 'none'}.", "",
                   ("**Checks: all passed.**" if not issues else "**Problems:**\n" + "\n".join(f"- {i}" for i in issues)), ""]
+    # Confusion matrix for every configuration (brief, Step 4: "and a confusion matrix").
+    lines += ["## Confusion matrices, every configuration (test set; rows = golden, columns = predicted)", ""]
+    configs = [(f"{m} alone (A1 records)", A2 / "accuracy" / f"single_{m.replace(':', '_')}_test.json")
+               for m in ("qwen2.5:0.5b", "llama3.2:1b", "llama3.2:3b", "qwen2.5:7b")]
+    configs += [(f"cascade T={T}", A2 / "accuracy" / f"{c}_test.json") for c, T in CASCADES.items()]
+    cols = CATS + ["UNPARSED"]
+    for name, path in configs:
+        j = jload(path)
+        if not j:
+            lines += [f"**{name}:** not measured.", ""]
+            continue
+        lines += [f"**{name}:** {j['correct']}/{j['n']}", "",
+                  "| golden \\ predicted | " + " | ".join(SHORT.get(c, "UNP") for c in cols) + " |",
+                  "|---|" + "---|" * len(cols)]
+        for g in CATS:
+            lines.append(f"| {SHORT[g]} | " + " | ".join(str(j["confusion"][g].get(c, 0) or "") for c in cols) + " |")
+        lines.append("")
     (DOCS_OUT / "accuracy_notes.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
     return 1 if problems else 0

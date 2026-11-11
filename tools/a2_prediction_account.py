@@ -33,6 +33,9 @@ def load():
     d["runs"] = {c: jload(A2 / "speed" / f"{c}.json") for c in d["speed"]}
     d["acc"] = {c: jload(A2 / "accuracy" / f"{c}_test.json") for c in CASC}
     d["acc"]["top7b"] = jload(A2 / "accuracy" / "single_qwen2.5_7b_test.json")
+    m1 = next((jload(p) for p in sorted((A2 / "memory").glob("memory_check_llama3.2_1b*.json"))
+               if not p.name.endswith(".sends.json")), None)
+    d["mem1"] = m1
     d["mem"] = next((jload(p) for p in sorted((A2 / "memory").glob("memory_check_llama3.2_3b*.json"))
                      if not p.name.endswith(".sends.json")), None)
     # per-call model times under load, from the service log
@@ -70,7 +73,13 @@ def main() -> int:
     pred, plan, speed, acc = d["pred"], d["plan"], d["speed"], d["acc"]
     rows, misses = [], []  # misses kept for the account; slide bullets are ordered below
 
+    # Neither model pair fits in memory: the cascade was never measured (brief Step 2).
+    infeasible = bool(d["mem"] and d["mem"]["verdict"] != "FIT" and d["mem1"] and d["mem1"]["verdict"] != "FIT")
+
     def add(claim, predicted, measured, right, why, src):
+        if measured is None and infeasible and ("cascade" in claim or claim.startswith(("Category", "T=500"))):
+            rows.append((claim, predicted, "not run: no model pair fits in memory", "NOT RUN", "", src))
+            return
         v = "PENDING" if measured is None else ("RIGHT" if right else "WRONG")
         rows.append((claim, predicted, "—" if measured is None else measured, v, why if v == "WRONG" else "", src))
         if v == "WRONG":
@@ -168,7 +177,8 @@ def main() -> int:
 
     # 6. fastest and spread
     qual = [c for c in ["top7b"] + CASC if (c == "top7b" or (acc.get(c) and acc[c]["limits"]["pass"])) and speed.get(c)]
-    fastest = min(qual, key=lambda c: speed[c]["p50_s"]["mean"]) if qual and all(speed.get(c) for c in ["top7b"] + CASC) else None
+    done = all(speed.get(c) for c in ["top7b"] + CASC) or (infeasible and speed.get("top7b"))
+    fastest = min(qual, key=lambda c: speed[c]["p50_s"]["mean"]) if qual and done else None
     why = ""
     if fastest and fastest != REC["fastest"]:
         c = REC["fastest"]
@@ -177,6 +187,8 @@ def main() -> int:
         elif speed.get(c):
             why = (f"{LABEL[c]} measured p50 {speed[c]['p50_s']['mean']:.1f} s against {speed[fastest]['p50_s']['mean']:.1f} s for {LABEL[fastest]}: "
                    f"it still escalated {speed[c].get('escalation_pooled', 0) * 100:.0f} % of tickets, and the 3b runner competed with the 7b runner for the same 4 CPUs.")
+    if fastest and infeasible:
+        why = "Neither 3b + 7b nor 1b + 7b stayed resident in the 8 GiB container, so the cascade could not be run on this machine."
     add("Fastest configuration within the limits", LABEL[REC["fastest"]], fastest and LABEL[fastest], fastest == REC["fastest"], why,
         "results/a2/speed/summary.json, results/a2/accuracy/")
     if speed.get("top7b") and speed.get("cascade500"):

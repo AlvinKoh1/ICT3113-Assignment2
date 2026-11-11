@@ -105,7 +105,7 @@ It runs, in order, and stops nothing on the way so every problem is listed at on
 
 * Every run in `summary.md` must say `Reconciled yes`. A `NO` is explained in `results/a2/reconcile_notes.md` (cause from the `.jtl`, JMeter log and service log), then `tools/a2_finish.sh` is run again.
 * Read `accuracy_notes.md`, `prediction_account.md`, `crosscheck.md` and the deck. The generated reasons can be edited by hand after the last run (re-running overwrites them).
-* Commit `results/a2 docs/a2 deck`. Submit `Group09_A2.pptx` with the supporting files `docs/a2/prediction_record.md`, `docs/a2/escalation_rule.md`, `data/a2_speed_rows.csv`.
+* Commit `results/a2 docs/a2 deck`. Submit `deck/Group09_A2.pptx` with the three supporting files as PDFs from `docs/a2/supporting/` (escalation rule, prediction record, speed-test rows; regenerate with `python docs/a2/build_supporting_pdfs.py` if a source changes, which it should not).
 
 ## Things that void a result
 
