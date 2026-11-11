@@ -14,7 +14,7 @@ Budget: ~1 h set-up and memory check, ~2 h accuracy, ~15 min calibration, **~7 h
 
 ## The short version: one command per machine
 
-After everyone has signed off, Irfan and Uwais each start one command, in either order, and leave the machines on for one night (about 10 h). Each stage commits and pushes its own results; re-running the same command after an interruption resumes where it stopped.
+Everyone signed off the split, rule and predictions on Wed 11 Nov (group chat), so they are frozen. Irfan and Uwais now each start one command, in either order, and leave the machines on for one night (about 10 h). Each stage commits and pushes its own results; re-running the same command after an interruption resumes where it stopped.
 
 ```bash
 # Machine A (Irfan, WSL; clone in ~, not under /mnt/c)

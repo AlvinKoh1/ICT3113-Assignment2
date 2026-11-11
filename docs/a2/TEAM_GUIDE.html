@@ -109,7 +109,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="eyebrow">ICT3113 Assignment 2 · Group P2-9 · rows 9000–9999</div>
   <h1>What's left, who does it, and in what order</h1>
   <div class="meta">
-    <span>Status as of <b>Wed 11 Nov 2026, night</b></span>
+    <span>Status as of <b>Wed 11 Nov 2026, night · all five signed off</b></span>
     <span>Repo <b>github.com/AlvinKoh1/ICT3113-Assignment2</b></span>
     <span class="deadline">Submission <b class="deadline">Fri 27 Nov, 23:59</b></span>
   </div>
@@ -121,11 +121,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="tbl"><table>
     <thead><tr><th>Who</th><th>Role</th><th>Hands-on</th><th>Can start</th><th>Still to do</th></tr></thead>
     <tbody>
-      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~30 min</td><td>Fri 13 Nov, after sign-off</td><td>Sign off, start <b>one command</b> on Machine A, leave the PC on for one night</td></tr>
-      <tr><td><b>Alvin</b> M2</td><td>Repo, tooling, finish</td><td>~1.5 h</td><td>Now</td><td>Invite everyone, answer any STOPPED message, run <code>tools/a2_finish.sh</code>, check slides 3, 5, 6</td></tr>
-      <tr><td><b>Gabriel</b> M3</td><td>Rule and accuracy check</td><td>~1 h</td><td>Now (sign-off)</td><td>Sign off the rule and split; read the generated accuracy notes; check slides 2 and 4</td></tr>
-      <tr><td><b>Uwais</b> M4</td><td>JMeter, Machine B</td><td>~30 min</td><td>Fri 13 Nov, after sign-off</td><td>Sign off, start <b>one command</b> on Machine B, leave the laptop on for one night</td></tr>
-      <tr><td><b>Muhaimin</b> M5</td><td>Predictions, deck lead</td><td>~1.5 h</td><td>Now (sign-off)</td><td>Sign off the predictions; read the generated prediction account and deck; check slides 1, 7, 8; submit</td></tr>
+      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~30 min</td><td>Now</td><td>Start <b>one command</b> on Machine A, leave the PC on for one night</td></tr>
+      <tr><td><b>Alvin</b> M2</td><td>Repo, tooling, finish</td><td>~1.5 h</td><td>After both machines finish</td><td>Answer any STOPPED message, run <code>tools/a2_finish.sh</code>, check slides 3, 5, 6</td></tr>
+      <tr><td><b>Gabriel</b> M3</td><td>Rule and accuracy check</td><td>~45 min</td><td>After Alvin's finish run</td><td>Read the generated accuracy notes; check slides 2 and 4</td></tr>
+      <tr><td><b>Uwais</b> M4</td><td>JMeter, Machine B</td><td>~30 min</td><td>Now</td><td>Start <b>one command</b> on Machine B, leave the laptop on for one night</td></tr>
+      <tr><td><b>Muhaimin</b> M5</td><td>Predictions, deck lead</td><td>~1 h</td><td>After Alvin's finish run</td><td>Read the generated prediction account and deck; check slides 1, 7, 8; submit</td></tr>
     </tbody>
   </table></div>
   <p class="small">Hands-on is the time each person spends at the keyboard from here; the machines also run unattended for about 10 hours on Friday night. The split, limits, escalation rule, prediction record, cascade code, test scripts and the finish step are already in the repo.</p>
@@ -136,14 +136,14 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="callout">
     <b>Two rules decide the whole schedule.</b>
     <ul class="tight">
-      <li><b>Nothing is measured before everyone signs off.</b> The split, the escalation rule and the prediction record are already committed. Once Irfan starts the memory check they are frozen: the commit history is the evidence they came before any measurement.</li>
+      <li><b>The design is frozen.</b> Everyone has signed off the split, the escalation rule and the prediction record, and they are committed. Don't change them now: the commit history is the evidence they came before any measurement.</li>
       <li><b>Only one test runs on Machine A at a time.</b> The memory check, accuracy test and speed runs all use Irfan's CPU, so one script runs them one after another: memory, accuracy, calibration, then speed. Nobody else uses Machine A that night.</li>
     </ul>
   </div>
   <div class="flow">
-    <div class="row"><div class="when">Thu 12 Nov</div><div class="lane"><b>Everyone signs off, in parallel.</b> Gabriel reads the rule and tuning analysis, Muhaimin the prediction record, Irfan and Uwais their scripts. Each posts "signed — &lt;name&gt;". Alvin sends the repo invites.</div></div>
-    <div class="row"><div class="when">Fri 13, evening</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh 100.88.74.36</code>, in either order. You two don't need to be at your computers together, but <b>both machines must be on and connected over Tailscale all night</b>: the scripts talk to each other through the service on Machine A.</div></div>
-    <div class="row"><div class="when">Fri 13 night →<br>Sat 14 morning</div><div class="lane"><b>The machines, unattended (about 10 h):</b> memory check, then the cascade accuracy test, then S calibration, then the 9 speed runs. Each stage commits and pushes its own results. If 3b + 7b don't fit, the script falls back to 1b + 7b, or to 7b alone, by itself.</div></div>
+    <div class="row"><div class="when">Wed 11 Nov</div><div class="lane"><b>Done: everyone signed off</b> the split, escalation rule and prediction record. They are now frozen.</div></div>
+    <div class="row"><div class="when">Next free evening<br>(by Fri 13)</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh 100.88.74.36</code>, in either order. You two don't need to be at your computers together, but <b>both machines must be on and connected over Tailscale all night</b>: the scripts talk to each other through the service on Machine A.</div></div>
+    <div class="row"><div class="when">That night →<br>next morning</div><div class="lane"><b>The machines, unattended (about 10 h):</b> memory check, then the cascade accuracy test, then S calibration, then the 9 speed runs. Each stage commits and pushes its own results. If 3b + 7b don't fit, the script falls back to 1b + 7b, or to 7b alone, by itself.</div></div>
     <div class="row"><div class="when">Sat 14 – Mon 16</div><div class="lane"><b>Redo window.</b> If either machine says STOPPED (power cut, network drop), re-run the same command: it skips everything already done.</div></div>
     <div class="row"><div class="when">Tue 17 Nov</div><div class="lane"><b>Alvin:</b> <code>tools/a2_finish.sh</code>: analysis, accuracy check, prediction account, deck and raw-file cross-check in one run (about 5 min). Commit.</div></div>
     <div class="row"><div class="when">Wed 18 – Fri 20</div><div class="lane"><b>Gabriel:</b> reads the accuracy notes. <b>Muhaimin:</b> reads the prediction account and the deck, edits wording if needed.</div></div>
@@ -155,17 +155,17 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="who"><h2>Irfan</h2><span class="role">M1 · System & SUT lead · owns Machine A</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Accept the invite, clone the new repo in WSL and sign off</h3>
+      <h3>Accept the invite and clone the new repo in WSL</h3>
       <p>Accept the GitHub invite from AlvinKoh1 first (it gives you push access). Clone into your WSL home folder, not under <code>/mnt/c</code>, so the scripts keep their execute permission:</p>
       <pre><code>cd ~
 git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2</code></pre>
-      <p>Skim <code>docs/a2/RUNBOOK.md</code>. Post "signed — Irfan".</p>
+      <p>Signed off ✓.</p>
       <p class="needs">The repo reuses your existing <code>ollama-models</code> volume (the compose project name is pinned). Never run <code>docker compose down -v</code> and never <code>ollama pull</code>.</p>
     </div></li>
     <li><div>
       <h3>Start one command, then leave the PC on</h3>
-      <p class="needs">Needs: <b>all five "signed"</b> in the group chat.</p>
+      <p class="needs">Sign-off done: <b>you can start now</b>.</p>
       <p>Before you start: sleep set to "never", plugged in, wired, Windows Update paused, games and browsers closed.</p>
       <pre><code>cd ~/ICT3113-Assignment2
 git pull
@@ -184,7 +184,7 @@ tools/a2_machineA_all.sh</code></pre>
   <ol class="steps">
     <li><div>
       <h3>Invite the team and answer questions</h3>
-      <p>Add Irfan, Uwais, Gabriel and Muhaimin as collaborators on <code>AlvinKoh1/ICT3113-Assignment2</code> (Settings → Collaborators), with write access so their machines can push. The repo is private and the cover links to it, so also give the lecturer read access the way the Assignment 1 repo did. Post "signed — Alvin". First point of contact if either machine says <b>STOPPED</b>.</p>
+      <p>Add Irfan, Uwais, Gabriel and Muhaimin as collaborators on <code>AlvinKoh1/ICT3113-Assignment2</code> (Settings → Collaborators), with write access so their machines can push. The repo is private and the cover links to it, so also give the lecturer read access the way the Assignment 1 repo did. First point of contact if either machine says <b>STOPPED</b>.</p>
     </div></li>
     <li><div>
       <h3>Finish everything in one command</h3>
@@ -210,8 +210,8 @@ tools/a2_finish.sh</code></pre>
   <div class="who"><h2>Gabriel</h2><span class="role">M3 · Rule & accuracy integrity · Slides 2, 4</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Sign off the rule, the tuning analysis and the split</h3>
-      <p>Read <code>docs/a2/escalation_rule.md</code>, <code>docs/a2/tuning_analysis.md</code> and <code>golden/a2_split.csv</code>. Check that another team could implement the rule from the description, that the split is odd/even positions of the golden set, and that only tuning rows were used to choose the rule. Disagree now; after Irfan starts, it is frozen. Post "signed — Gabriel".</p>
+      <h3>Sign off the rule, the tuning analysis and the split ✓</h3>
+      <p>Done on Wed 11 Nov. Nothing to do here.</p>
     </div></li>
     <li><div>
       <h3>Read the accuracy notes</h3>
@@ -229,15 +229,15 @@ tools/a2_finish.sh</code></pre>
   <div class="who"><h2>Uwais</h2><span class="role">M4 · JMeter & load lead · owns Machine B</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Accept the invite, clone the new repo in Git Bash and sign off</h3>
+      <h3>Accept the invite and clone the new repo in Git Bash</h3>
       <p>Accept the GitHub invite from AlvinKoh1 first (it gives you push access), then:</p>
       <pre><code>git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2</code></pre>
-      <p>Skim <code>docs/a2/RUNBOOK.md</code>. Post "signed — Uwais".</p>
+      <p>Signed off ✓.</p>
     </div></li>
     <li><div>
       <h3>Start one command, then leave the laptop on</h3>
-      <p class="needs">Needs: <b>all five "signed"</b>. Irfan does not need to have started yet: the script waits until his service answers.</p>
+      <p class="needs">Sign-off done: <b>you can start now</b>. Irfan does not need to have started yet: the script waits until his service answers.</p>
       <p>Before you start: power plan "never sleep", plugged in, Ethernet, Windows Update paused.</p>
       <pre><code>git pull
 jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
@@ -254,8 +254,8 @@ jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
   <div class="who"><h2>Muhaimin</h2><span class="role">M5 · Predictions & recommendation · deck lead · Slides 1, 7, 8</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Sign off the prediction record and the limits</h3>
-      <p>Read <code>docs/a2/prediction_record.md</code> and <code>docs/a2/limits.json</code>. Every prediction must be specific enough to be shown wrong, and together they must cover: the fastest configuration within the limits, the escalation fraction, accuracy and median latency at each setting, and which categories lose most. Post "signed — Muhaimin".</p>
+      <h3>Sign off the prediction record and the limits ✓</h3>
+      <p>Done on Wed 11 Nov. Nothing to do here.</p>
     </div></li>
     <li><div>
       <h3>Read the prediction account and the deck</h3>
