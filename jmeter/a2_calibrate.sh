@@ -15,6 +15,7 @@
 #       pause     = timeout + 60 s, rounded up to a whole minute (outlasts the timeout)
 # 4. Tell Machine A it is done (GET /stats tagged a2_calib:done).
 set -euo pipefail
+PY="$(command -v python3 || command -v python)"   # Git Bash on Windows often has only "python"
 cd "$(dirname "$0")/.."
 HOST="${1:?usage: jmeter/a2_calibrate.sh <service-host>}"
 PORT="${PORT:-8000}"
@@ -25,11 +26,11 @@ echo "waiting for Machine A (ready-a2_calib) ..."
 until curl -sf -m 10 "$BASE/healthz" | grep -q '"run_id":"ready-a2_calib"'; do sleep 10; done
 curl -sf "$BASE/healthz"; echo
 
-python3 tools/a2_send.py --base "$BASE" --rows data/a2_calib_rows.csv --run-id a2_calib \
+"$PY" tools/a2_send.py --base "$BASE" --rows data/a2_calib_rows.csv --run-id a2_calib \
   --model qwen2.5:7b --json-out results/a2/calib/S.json
 curl -sf -H "X-Run-ID: a2_calib:done" "$BASE/stats" > /dev/null
 
-python3 - <<'PY'
+"$PY" - <<'PY'
 import json, math
 s = json.load(open("results/a2/calib/S.json"))
 times = [t["client_ms"] / 1000 for t in s["tickets"]]

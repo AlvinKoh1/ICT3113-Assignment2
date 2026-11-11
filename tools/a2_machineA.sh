@@ -61,9 +61,23 @@ prepare() {  # $1 config (real), $2 tag
   say "[$TAG] READY (/healthz run_id=ready-$TAG)"
 }
 
+done_tag() { grep -qF "\"run_id\": \"$1\"" "$A2_LOG" 2>/dev/null; }
+
 for C in "${CONFIGS[@]}"; do
+  if [[ "$C" == skip:* ]]; then
+    # Tell Machine B this configuration will not run (cascade not feasible), and
+    # wait until it acknowledges, so its loop moves on instead of waiting forever.
+    S="${C#skip:}"
+    done_tag "${S}:skip-ack" && { say "[$S] skip already acknowledged"; continue; }
+    stack_up top7b "skip-$S" && wait_healthz "skip-$S" || die "could not signal skip for $S"
+    say "[$S] signalled SKIP; waiting for Machine B to acknowledge"
+    until done_tag "${S}:skip-ack"; do sleep 10; done
+    say "[$S] skip acknowledged"
+    continue
+  fi
   if [ "$C" = "calib" ]; then
     TAG="a2_calib"
+    done_tag "${TAG}:done" && { say "[$TAG] already done, skipping"; continue; }
     prepare top7b "$TAG"
     say "[$TAG] waiting for Machine B to finish the S calibration"
     until grep -qF "\"run_id\": \"${TAG}:done\"" "$A2_LOG"; do sleep 10; done
@@ -76,6 +90,7 @@ for C in "${CONFIGS[@]}"; do
   # RUN_LIST="3b" redoes one run under a new tag (keep the original files).
   for RUN in ${RUN_LIST:-$(seq 1 "$RUNS")}; do
     TAG="a2_${C}_run${RUN}"
+    done_tag "${TAG}:stats-after" && { say "[$TAG] already done, skipping"; continue; }
     prepare "$C" "$TAG"
     ( while true; do
         echo "== $(date '+%F %T %z')"

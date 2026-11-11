@@ -15,6 +15,7 @@
 #   4. GET /stats  (X-Run-ID <tag>:stats-after)   -> results/a2/runs/<tag>.stats_after.json
 #      (this request is also Machine A's signal that the run is over)
 set -euo pipefail
+PY="$(command -v python3 || command -v python)"   # Git Bash on Windows often has only "python"
 cd "$(dirname "$0")"
 HOST="${1:?usage: a2_machineB.sh <service-host> <config...> [runs]}"; shift
 PORT="${PORT:-8000}"
@@ -24,19 +25,36 @@ CONFIGS=()
 for a in "$@"; do [[ "$a" =~ ^[0-9]+$ ]] && RUNS="$a" || CONFIGS+=("$a"); done
 PLAN=../results/a2/calib/plan.json
 [ -f "$PLAN" ] || { echo "no $PLAN -- run jmeter/a2_calibrate.sh first"; exit 1; }
-get() { python3 -c "import json;print(json.load(open('$PLAN'))['$1'])"; }
+get() { "$PY" -c "import json;print(json.load(open('$PLAN'))['$1'])"; }
 RATE=$(get rate_per_min); DUR=$(get duration_min); TIMEOUT=$(get timeout_s); PAUSE=$(get pause_s)
 echo "plan: rate ${RATE}/min, ${DUR} min, timeout ${TIMEOUT} s, pause ${PAUSE} s, runs $RUNS"
 mkdir -p ../results/a2/jtl ../results/a2/runs
 
 for C in "${CONFIGS[@]}"; do
+  if [ -f "../results/a2/runs/${C}.skipped" ]; then echo "=== $C was skipped by Machine A earlier"; continue; fi
   # RUN_LIST="3b" redoes one run under a new tag; the JMeter seed stays the run number.
   for RUN in ${RUN_LIST:-$(seq 1 "$RUNS")}; do
     TAG="a2_${C}_run${RUN}"
     SEED="${RUN//[!0-9]/}"
+    if [ -s "../results/a2/jtl/${TAG}.jtl" ] && [ -s "../results/a2/runs/${TAG}.stats_after.json" ]; then
+      echo "=== $TAG already done, skipping"; continue
+    fi
     echo "=== $TAG: waiting for Machine A (ready-$TAG) ==="
-    until curl -sf -m 10 "$BASE/healthz" | grep -q "\"run_id\":\"ready-$TAG\""; do sleep 10; done
-    curl -sf "$BASE/healthz" | tee "../results/a2/runs/${TAG}.healthz.json"; echo
+    SKIP=0
+    while true; do
+      H=$(curl -sf -m 10 "$BASE/healthz" || true)
+      [[ "$H" == *"\"run_id\":\"ready-$TAG\""* ]] && break
+      if [[ "$H" == *"\"run_id\":\"skip-$C\""* ]]; then SKIP=1; break; fi
+      sleep 10
+    done
+    if [ "$SKIP" = 1 ]; then
+      # Machine A will not run this configuration (cascade not feasible on this machine).
+      curl -sf -H "X-Run-ID: ${C}:skip-ack" "$BASE/stats" > /dev/null || true
+      echo "$(date '+%F %T %z') skipped $C (Machine A: cascade not feasible)" | tee -a ../results/a2/runs/machineB.log
+      touch "../results/a2/runs/${C}.skipped"
+      break
+    fi
+    { curl -sf "$BASE/healthz" || true; } | tee "../results/a2/runs/${TAG}.healthz.json"; echo
     curl -sf -H "X-Run-ID: ${TAG}:stats-before" "$BASE/stats" > "../results/a2/runs/${TAG}.stats_before.json"
     JTL="../results/a2/jtl/${TAG}.jtl"; rm -f "$JTL"
     echo "$(date '+%F %T %z') start $TAG" | tee -a ../results/a2/runs/machineB.log
