@@ -10,7 +10,8 @@
 #   4. commit + push the .jtl files and run files
 # Re-running after an interruption skips every run already done.
 set -uo pipefail
-PY="$(command -v python3 || command -v python)"   # Git Bash on Windows often has only "python"
+# First Python that actually runs (on Windows "python3" can be the Microsoft Store placeholder).
+PY=""; for c in python3 python py; do command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys" >/dev/null 2>&1 && { PY="$c"; break; }; done
 HOST="${1:-100.88.74.36}"
 PORT="${PORT:-8000}"
 cd "$(dirname "$0")/.."
@@ -21,7 +22,7 @@ say() { echo "$(date '+%F %T %z')  $*"; }
 die() { say "STOPPED: $*"; say "Screenshot this and send it to Alvin. Re-running the same command resumes."; exit 1; }
 
 say "=== A2 Machine B: start, service at $HOST:$PORT ($(git rev-parse --short HEAD))"
-git pull -q --rebase --autostash || say "WARNING: git pull failed; continuing on the local copy"
+git pull -q --no-rebase --no-edit || say "WARNING: git pull failed; continuing on the local copy"
 
 # 1. self-check
 command -v jmeter >/dev/null || die "jmeter is not on PATH"
@@ -30,6 +31,9 @@ jmeter --version 2>/dev/null | grep -q "5\.6" || say "WARNING: JMeter is not 5.6
 say "1/4 waiting for the service at http://$HOST:$PORT (Machine A may still be starting)"
 until curl -sf -m 10 "http://$HOST:$PORT/healthz" >/dev/null; do sleep 30; done
 say "1/4 service reachable"
+{ echo "# Machine B software, recorded $(date '+%F %T %z')"; uname -a; jmeter --version 2>&1 | grep -iE "version|[0-9]+\.[0-9]+\.[0-9]+" | head -5
+  java -version 2>&1; "$PY" --version 2>&1; git --version; } > results/a2/runs/machineB_env.txt
+say "1/4 software versions recorded in results/a2/runs/machineB_env.txt"
 say "     Reminder: power plan 'never sleep', Windows Update paused, Ethernet, until this finishes."
 
 # 2. calibration

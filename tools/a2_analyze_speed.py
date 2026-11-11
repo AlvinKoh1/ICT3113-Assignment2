@@ -46,12 +46,23 @@ def load_jtl(p: Path):
     return rows
 
 
+UNFINISHED_MARKERS = ("SocketTimeoutException", "Read timed out", "InterruptedIOException", "interrupted", "RequestAbortedException")
+
+
+def is_unfinished(r) -> bool:
+    text = f"{r.get('code', '')} {r.get('msg', '')}"
+    return any(m in text for m in UNFINISHED_MARKERS)
+
+
 def analyse_run(tag: str, logs_by_run) -> dict:
     jtl = load_jtl(JTL_DIR / f"{tag}.jtl")
     jlog = JTL_DIR / f"{tag}.jmeter.log"
     sent = len(re.findall(r"A2SENT", jlog.read_text(encoding="utf-8", errors="replace"))) if jlog.exists() else None
     ok = [r for r in jtl if r["ok"]]
-    err = [r for r in jtl if not r["ok"]]
+    # A request JMeter gave up on (response timeout) or cut off is "unfinished", not an
+    # error from the service: the brief reports sent / completed / errored / unfinished.
+    cut = [r for r in jtl if not r["ok"] and is_unfinished(r)]
+    err = [r for r in jtl if not r["ok"] and not is_unfinished(r)]
     lat = [r["elapsed"] / 1000 for r in ok]
     t0 = min((r["ts"] for r in jtl), default=0)
     t1 = max((r["ts"] + r["elapsed"] for r in jtl), default=0)
@@ -68,7 +79,8 @@ def analyse_run(tag: str, logs_by_run) -> dict:
         routes[x.get("route") or x.get("mode")] += 1
     rec = {
         "tag": tag, "sent": sent, "jtl_samples": len(jtl), "completed": len(ok), "errored": len(err),
-        "unfinished": (sent - len(jtl)) if sent is not None else None,
+        "unfinished": ((sent - len(jtl)) if sent is not None else 0) + len(cut),
+        "timed_out": len(cut), "never_recorded": (sent - len(jtl)) if sent is not None else None,
         "error_rate_pct": (len(err) / sent * 100) if sent else (len(err) / len(jtl) * 100 if jtl else None),
         "error_codes": dict(sorted(defaultdict(int, {c: sum(r["code"] == c for r in err) for c in {r["code"] for r in err}}).items())),
         "p50_s": pct(lat, 50), "p95_s": pct(lat, 95), "mean_s": st.mean(lat) if lat else None,

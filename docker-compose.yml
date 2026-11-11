@@ -51,6 +51,10 @@ services:
       - CASCADE_SMALL_MODEL=${CASCADE_SMALL_MODEL:-llama3.2:3b}
       - CASCADE_LARGE_MODEL=${CASCADE_LARGE_MODEL:-qwen2.5:7b}
       - CASCADE_MAX_CHARS=${CASCADE_MAX_CHARS:-500}
+      # Assignment 2: the service waits up to 20 min per model call (A1: 300 s), so a
+      # slow request is measured by JMeter's 10xS timeout rather than cut off as a
+      # 502 by the service first. Same value for every configuration.
+      - OLLAMA_TIMEOUT_S=${OLLAMA_TIMEOUT_S:-1200}
     volumes:
       - triage-data:/data
       # Logs land on the host so they can be committed with the .jtl files.

@@ -204,8 +204,16 @@ def p50(c):
 qualifying = [c for c in ["top7b"] + CASCADES + [f"single-{m}" for m in MODELS if m != TOP_MODEL]
               if passes(c) and p50(c).get("mean") is not None]
 recommended = min(qualifying, key=lambda c: p50(c)["mean"]) if qualifying else None
-ALL_SPEED_DONE = all(p50(c).get("n") == 3 for c in ["top7b"] + CASCADES)
-ALL_ACC_DONE = all(c in acc for c in CASCADES)
+# Which small model ran: the primary pair, or the fallback docs/a2/escalation_rule.md section 5
+# pre-declares if 3b + 7b do not fit. If neither pair fits, the cascade is infeasible here
+# and only qwen2.5:7b alone is measured (brief, Step 2).
+_m3 = next((v for k, v in mem.items() if "llama3.2_3b" in k), None)
+_m1 = next((v for k, v in mem.items() if "llama3.2_1b" in k), None)
+SMALL = "llama3.2:1b" if (_m3 and _m3["verdict"] != "FIT" and _m1 and _m1["verdict"] == "FIT") else "llama3.2:3b"
+INFEASIBLE = bool(_m3 and _m3["verdict"] != "FIT" and _m1 and _m1["verdict"] != "FIT")
+NOT_RUN = "not run: no model pair fits in memory"
+ALL_SPEED_DONE = p50("top7b").get("n") == 3 and (INFEASIBLE or all(p50(c).get("n") == 3 for c in CASCADES))
+ALL_ACC_DONE = INFEASIBLE or all(c in acc for c in CASCADES)
 
 
 def log_split_latency(c):
@@ -275,9 +283,6 @@ draft_slot = s  # DRAFT banner is added at the end if anything is pending
 s = prs.slides.add_slide(BLANK)
 # Which small model actually ran: the primary pair, or the fallback that
 # docs/a2/escalation_rule.md section 5 pre-declares if 3b + 7b do not fit.
-_m3 = next((v for k, v in mem.items() if "llama3.2_3b" in k), None)
-_m1 = next((v for k, v in mem.items() if "llama3.2_1b" in k), None)
-SMALL = "llama3.2:1b" if (_m3 and _m3["verdict"] != "FIT" and _m1 and _m1["verdict"] == "FIT") else "llama3.2:3b"
 header(s, 2, "Cascade Design", f"Length rule inside POST /tickets: short tickets to {SMALL}, long ones straight to qwen2.5:7b. "
        + ("Fallback pair: 3b + 7b did not fit in memory (rule §5)." if SMALL != "llama3.2:3b" else "The caller still sees one category."))
 box(s, 0.35, 1.90, 1.45, 0.75, "POST /tickets\nnarrative", NAVY, 11)
@@ -380,7 +385,7 @@ card(s, 0.35, 4.1, 6.3, 2.95, "Each run (tools/a2_machineA.sh ↔ jmeter/a2_mach
 card(s, 6.8, 4.1, 6.2, 2.95, "Changes from Assignment 1", [
     "**POST /tickets** can run the cascade (TRIAGE_MODE=cascade); single-model path unchanged. Endpoints, prompt, models, golden set unchanged.",
     "**Speed test:** one POST /tickets stream at 1/(2S); no /search stream (A2 compares triage configurations); 3 runs; restart + warm-up before every run (A1: once per model).",
-    "**Timeouts:** JMeter 10×S (A1: 600 s); pause outlasts it by ≥ 1 min. Service→Ollama timeout unchanged (300 s per call).",
+    "**Timeouts:** JMeter 10×S (A1: 600 s); pause outlasts it by ≥ 1 min. Service→Ollama timeout raised 300 → 1,200 s per call so JMeter, not the service, decides a request is too slow.",
     "**OLLAMA_NUM_PARALLEL=4** set explicitly — the value Ollama chose automatically in A1 — so it cannot change when two models load.",
     "**Separate log** results/logs/a2_requests.jsonl with final_model / escalated / route per ticket.",
     "**Single-model accuracy** reused from A1 records, test rows only (same digests, prompt, Ollama 0.5.7, machine).",
@@ -389,13 +394,13 @@ footer(s, "docs/test_environment.md (A1) · results/a2/env/ · results/a2/calib/
 
 # =================================================================== 4 accuracy results
 s = prs.slides.add_slide(BLANK)
-header(s, 4, "Accuracy Results (test set, 87 tickets)", "Counts next to every percentage; red = below the limit. Single models: Assignment 1 records, test rows only. Cascade: measured through POST /tickets.")
+header(s, 4, "Accuracy Results (test set, 87 tickets)", "Test set = even positions of the golden set sorted by row (odd = tuning). Counts next to every %; red = below the limit. Singles: A1 records, test rows.")
 order = [f"single-{m}" for m in MODELS if m != TOP_MODEL] + ["top7b"] + CASCADES
 rows, colmap = [], {}
 for c in order:
     a = acc.get(c)
     if not a:
-        rows.append([CFG_LABEL[c], "PENDING"] + [""] * 9)
+        rows.append([CFG_LABEL[c], NOT_RUN if INFEASIBLE and c in CASCADES else "PENDING"] + [""] * 9)
         continue
     lim = a.get("limits") or {}
     r = [CFG_LABEL[c] + (" (A1 rec.)" if c.startswith("single") or (c == "top7b" and "source" in a) else ""),
@@ -488,10 +493,10 @@ rows = []
 for c in speed_cfgs:
     j = speed_runs.get(c)
     if not j:
-        rows.append([CFG_LABEL.get(c, c), "PENDING", "", "", "", "", "", "", "", ""])
+        rows.append([CFG_LABEL.get(c, c), NOT_RUN if INFEASIBLE and c in CASCADES else "PENDING", "", "", "", "", "", "", "", ""])
         continue
     for r in j["runs"]:
-        rows.append([f"{CFG_LABEL.get(c, c)} · run {r['tag'][-1]}", r["sent"], r["completed"], r["errored"], r["unfinished"],
+        rows.append([f"{CFG_LABEL.get(c, c)} · run {r['tag'].split('_run')[-1]}", r["sent"], r["completed"], r["errored"], r["unfinished"],
                      f1(r["p50_s"]), f"{r['throughput_per_min']:.2f}" if r["throughput_per_min"] else "–",
                      f1(r["error_rate_pct"]),
                      "–" if r["escalation_fraction"] is None or c == "top7b" else f"{r['escalated']}/{r['service_log_200']} {r['escalation_fraction'] * 100:.0f}%",
@@ -634,6 +639,9 @@ if all(c in acc for c in CASCADES) and "top7b" in acc:
     prow.append(["Category losing most", "Credit reporting", f"{worst} ({-drops[worst]:+d} tickets over both)", "RIGHT" if worst == "Credit reporting" else "WRONG"])
 else:
     prow.append(["Category losing most", "Credit reporting", "", "PENDING"])
+if INFEASIBLE:
+    prow = [[a, b, (NOT_RUN if d == "PENDING" else c), ("not run" if d == "PENDING" else d)] for a, b, c, d in prow]
+    prow[0][2], prow[0][3] = "neither pair fits", "WRONG"
 table(s, 0.3, 1.35, 6.9, prow, ["Claim", "Predicted", "Measured", "Verdict"], size=9, col_w=[2.55, 1.45, 2.0, 0.9], row_h=0.25,
       color=lambda i, j, v: (GREEN if v == "RIGHT" else RED if v in ("WRONG", "PENDING") else None) if j == 3 else None)
 text(s, 0.3, 6.78, 6.9, 0.3, "Verdict tolerances: latency ±15%, escalation ±5 points, accuracy ±2 tickets, S ±15%.", 8.5)
@@ -647,6 +655,10 @@ if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
     catd = [f"{SHORT[c]} {rec['per_category'][c]['correct'] - top['per_category'][c]['correct']:+d}" for c in CATS
             if rec["per_category"][c]["correct"] != top["per_category"][c]["correct"]]
     lines = [f"**Deploy: {CFG_LABEL[recommended]}**" + ("" if recommended == "top7b" else f" ({SMALL} → qwen2.5:7b)")]
+    if INFEASIBLE:
+        lines.append("**Cascade not feasible on this machine:** neither llama3.2:3b + qwen2.5:7b nor llama3.2:1b + qwen2.5:7b "
+                     "stayed resident in the unchanged 8 GiB Ollama container (memory checks, slide 2; results/a2/memory/). "
+                     "Attempted: rule, code and two settings built and committed; both pairs memory-checked; 7b alone speed-tested.")
     if recommended != "top7b":
         lines += [f"Speed: p50 {p50(recommended)['mean']:.1f} s vs {p50('top7b')['mean']:.1f} s for 7b alone ({gain:.0f}% faster); "
                   f"pooled p95 {speed[recommended]['p95_pooled_s']:.0f} vs {speed['top7b']['p95_pooled_s']:.0f} s ({p95g:+.0f}%).",
@@ -664,8 +676,15 @@ if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
         if pc is None:
             continue
         faster = pc < p50(recommended)["mean"]
-        speed_txt = (f"p50 {pc:.1f} s ({'faster' if faster else 'slower'} than the recommendation); {e * 100:.0f}% escalated under load; "
-                     f"mean call 3b {f1(smv)} s, 7b {f1(lgv)} s") if e is not None else f"p50 {pc:.1f} s"
+        _, top_lg, _, _ = log_split_latency("top7b")
+        why = ""
+        if e is not None and smv and lgv and top_lg:
+            # Length rule: a short ticket costs one small call, a long one one large call (no double cost).
+            per_ticket = (1 - e) * smv + e * lgv
+            why = (f"; model time per ticket ≈ (1−{e:.2f})×{smv:.1f} + {e:.2f}×{lgv:.1f} = {per_ticket:.1f} s vs {top_lg:.1f} s for 7b alone"
+                   + ("" if per_ticket < top_lg else ": the 7b calls it still makes cost more under contention than the 3b saves"))
+        speed_txt = (f"p50 {pc:.1f} s ({'faster' if faster else 'slower'} than the recommendation); {e * 100:.0f}% escalated under load"
+                     f"{why}") if e is not None else f"p50 {pc:.1f} s"
         if not passes(c):
             lines.append(f"{CFG_LABEL[c]}: NOT passing accuracy (fails " + (", ".join(acc[c]["limits"]["failed_categories"]) or "overall")
                          + f"); speed reported anyway: {speed_txt}.")

@@ -15,7 +15,8 @@
 #       pause     = timeout + 60 s, rounded up to a whole minute (outlasts the timeout)
 # 4. Tell Machine A it is done (GET /stats tagged a2_calib:done).
 set -euo pipefail
-PY="$(command -v python3 || command -v python)"   # Git Bash on Windows often has only "python"
+# First Python that actually runs (on Windows "python3" can be the Microsoft Store placeholder).
+PY=""; for c in python3 python py; do command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys" >/dev/null 2>&1 && { PY="$c"; break; }; done
 cd "$(dirname "$0")/.."
 HOST="${1:?usage: jmeter/a2_calibrate.sh <service-host>}"
 PORT="${PORT:-8000}"
@@ -47,5 +48,9 @@ plan = {"S_s": round(S, 2), "timings_s": [round(t, 2) for t in times],
         "schedule": f"rate({rate_per_min:.4f}/min) random_arrivals({duration_min} min) pause({pause_s} sec)"}
 json.dump(plan, open("results/a2/calib/plan.json", "w"), indent=2)
 print(json.dumps(plan, indent=2))
+# The first short ticket (<= 400 chars) is 12th in the speed list; if 12 x 2S passes Ollama's
+# 30 min keep-alive, the small model may unload before it and reload mid-run.
+if 12 * 2 * S > 25 * 60:
+    print("WARNING: S is long enough that llama3.2 may unload between short tickets; reloads will show as 'reload!' in the analysis.")
 PY
 echo "Commit results/a2/calib/ before the first speed run."

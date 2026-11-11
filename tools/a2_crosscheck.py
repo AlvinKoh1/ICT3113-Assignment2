@@ -19,6 +19,7 @@ import sys
 from pathlib import Path
 
 from a2_common import A2, A2_LOG, ROOT, golden, iter_log, jload, pct, read_csv, split_rows
+from a2_analyze_speed import UNFINISHED_MARKERS
 
 TOL = 0.05   # seconds / fraction
 
@@ -54,8 +55,11 @@ def main() -> int:
             pooled += ok_lat
             p50 = pct(ok_lat, 50)
             chk(f"{tag} p50 (s)", f"{p50:.2f}", f"{run['p50_s']:.2f}", abs(p50 - run["p50_s"]) <= TOL)
-            chk(f"{tag} samples / errors", f"{len(rows)} / {len(rows) - len(ok_lat)}", f"{run['jtl_samples']} / {run['errored']}",
-                len(rows) == run["jtl_samples"] and len(rows) - len(ok_lat) == run["errored"])
+            failed = [r for r in rows if r.get("success", "").lower() != "true"]
+            cut = [r for r in failed if any(m in f"{r.get('responseCode', '')} {r.get('responseMessage', '')}" for m in UNFINISHED_MARKERS)]
+            chk(f"{tag} samples / errored / timed out", f"{len(rows)} / {len(failed) - len(cut)} / {len(cut)}",
+                f"{run['jtl_samples']} / {run['errored']} / {run.get('timed_out', 0)}",
+                len(rows) == run["jtl_samples"] and len(failed) - len(cut) == run["errored"] and len(cut) == run.get("timed_out", 0))
             L = [x for x in log.get(tag, []) if x.get("status") == 200]
             if cfg != "top7b":
                 e = sum(bool(x.get("escalated")) for x in L) / len(L) if L else None
@@ -80,7 +84,14 @@ def main() -> int:
     if deck.exists():
         try:
             from pptx import Presentation
-            words = " ".join(sh.text_frame.text for s in Presentation(deck).slides for sh in s.shapes if sh.has_text_frame)
+            parts = []
+            for s in Presentation(deck).slides:
+                for sh in s.shapes:
+                    if sh.has_text_frame:
+                        parts.append(sh.text_frame.text)
+                    if getattr(sh, "has_table", False) and sh.has_table:
+                        parts += [cell.text for row in sh.table.rows for cell in row.cells]
+            words = " ".join(parts)
             n = len(Presentation(deck).slides)
             chk("deck: slides / PENDING / DRAFT", deck.name, f"{n} slides, PENDING {'present' if 'PENDING' in words else 'none'}, "
                 f"DRAFT {'present' if 'DRAFT' in words else 'none'}", n <= 8 and "PENDING" not in words and "DRAFT" not in words)

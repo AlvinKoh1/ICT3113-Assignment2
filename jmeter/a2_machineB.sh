@@ -15,7 +15,8 @@
 #   4. GET /stats  (X-Run-ID <tag>:stats-after)   -> results/a2/runs/<tag>.stats_after.json
 #      (this request is also Machine A's signal that the run is over)
 set -euo pipefail
-PY="$(command -v python3 || command -v python)"   # Git Bash on Windows often has only "python"
+# First Python that actually runs (on Windows "python3" can be the Microsoft Store placeholder).
+PY=""; for c in python3 python py; do command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys" >/dev/null 2>&1 && { PY="$c"; break; }; done
 cd "$(dirname "$0")"
 HOST="${1:?usage: a2_machineB.sh <service-host> <config...> [runs]}"; shift
 PORT="${PORT:-8000}"

@@ -14,6 +14,7 @@ FAIL=0
 {
   echo "# A2 preflight  $(date '+%F %T %z')  label=$LABEL  git=$(git rev-parse --short HEAD)"
   echo "## host";            uname -a; nproc; free -h 2>/dev/null | head -2
+  echo "## cpu";             (lscpu 2>/dev/null | grep -E "Model name|^CPU\(s\)") || grep -m1 "model name" /proc/cpuinfo
   echo "## docker";          docker --version; docker compose version
   echo "## ollama version";  docker exec triage-ollama ollama --version 2>&1
   echo "## ollama container env (inference settings, recorded once, held constant)"
@@ -36,6 +37,7 @@ done
 docker exec triage-ollama ollama --version 2>&1 | grep -q '0.5.7' || { echo "FAIL  Ollama version is not 0.5.7" >> "$OUT"; FAIL=1; }
 docker inspect triage-ollama --format '{{.HostConfig.NanoCpus}} {{.HostConfig.Memory}}' | grep -q '^4000000000 8589934592$' \
   || { echo "FAIL  Ollama container limits are not 4 CPUs / 8 GiB" >> "$OUT"; FAIL=1; }
+grep -qi "10900K" /proc/cpuinfo 2>/dev/null || echo "WARN  CPU is not the Assignment 1 i9-10900K: single-model accuracy from A1 can only be reused on the same machine" >> "$OUT"
 echo "## verdict: $([ $FAIL = 0 ] && echo OK || echo FAIL)" >> "$OUT"
 cat "$OUT"
 exit $FAIL
