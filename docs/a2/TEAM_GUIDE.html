@@ -109,7 +109,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="eyebrow">ICT3113 Assignment 2 · Group P2-9 · rows 9000–9999</div>
   <h1>What's left, who does it, and in what order</h1>
   <div class="meta">
-    <span>Status as of <b>Wed 11 Nov 2026, night · all five signed off</b></span>
+    <span>Status as of <b>Thu 12 Nov 2026</b></span>
     <span>Repo <b>github.com/AlvinKoh1/ICT3113-Assignment2</b></span>
     <span class="deadline">Submission <b class="deadline">Fri 27 Nov, 23:59</b></span>
   </div>
@@ -136,12 +136,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="callout">
     <b>Two rules decide the whole schedule.</b>
     <ul class="tight">
-      <li><b>The design is frozen.</b> Everyone has signed off the split, the escalation rule and the prediction record, and they are committed. Don't change them now: the commit history is the evidence they came before any measurement.</li>
+      <li><b>The design is frozen.</b> Don't change the split, the escalation rule or the prediction record: the commit history is the evidence they came before any measurement.</li>
       <li><b>Only one test runs on Machine A at a time.</b> The memory check, accuracy test and speed runs all use Irfan's CPU, so one script runs them one after another: memory, accuracy, calibration, then speed. Nobody else uses Machine A that night.</li>
     </ul>
   </div>
   <div class="flow">
-    <div class="row"><div class="when">Wed 11 Nov</div><div class="lane"><b>Done: everyone signed off</b> the split, escalation rule and prediction record. They are now frozen.</div></div>
     <div class="row"><div class="when">Next free evening<br>(by Fri 13)</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh 100.88.74.36</code>, in either order. You two don't need to be at your computers together, but <b>both machines must be on and connected over Tailscale all night</b>: the scripts talk to each other through the service on Machine A.</div></div>
     <div class="row"><div class="when">That night →<br>next morning</div><div class="lane"><b>The machines, unattended (about 10 h):</b> memory check, then the cascade accuracy test, then S calibration, then the 9 speed runs. Each stage commits and pushes its own results. If 3b + 7b don't fit, the script falls back to 1b + 7b, or to 7b alone, by itself.</div></div>
     <div class="row"><div class="when">Sat 14 – Mon 16</div><div class="lane"><b>Redo window.</b> If either machine says STOPPED (power cut, network drop), re-run the same command: it skips everything already done.</div></div>
@@ -160,12 +159,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
       <pre><code>cd ~
 git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2</code></pre>
-      <p>Signed off ✓.</p>
       <p class="needs">The repo reuses your existing <code>ollama-models</code> volume (the compose project name is pinned). Never run <code>docker compose down -v</code> and never <code>ollama pull</code>.</p>
     </div></li>
     <li><div>
       <h3>Start one command, then leave the PC on</h3>
-      <p class="needs">Sign-off done: <b>you can start now</b>.</p>
       <p>Before you start: sleep set to "never", plugged in, wired, Windows Update paused, games and browsers closed.</p>
       <pre><code>cd ~/ICT3113-Assignment2
 git pull
@@ -210,10 +207,6 @@ tools/a2_finish.sh</code></pre>
   <div class="who"><h2>Gabriel</h2><span class="role">M3 · Rule & accuracy integrity · Slides 2, 4</span></div>
   <ol class="steps">
     <li><div>
-      <h3>Sign off the rule, the tuning analysis and the split ✓</h3>
-      <p>Done on Wed 11 Nov. Nothing to do here.</p>
-    </div></li>
-    <li><div>
       <h3>Read the accuracy notes</h3>
       <p class="needs">Needs: <b>Alvin's</b> "Finish done".</p>
       <p><code>docs/a2/accuracy_notes.md</code> is generated: it re-counts every category from the per-ticket file, confirms each escalation follows the rule, shows pass or fail against the limits with the margin in tickets, and lists the categories that lost tickets against 7b alone. Read it; if a reason needs better wording, edit the file and tell Muhaimin.</p>
@@ -233,11 +226,10 @@ tools/a2_finish.sh</code></pre>
       <p>Accept the GitHub invite from AlvinKoh1 first (it gives you push access), then:</p>
       <pre><code>git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2</code></pre>
-      <p>Signed off ✓.</p>
     </div></li>
     <li><div>
       <h3>Start one command, then leave the laptop on</h3>
-      <p class="needs">Sign-off done: <b>you can start now</b>. Irfan does not need to have started yet: the script waits until his service answers.</p>
+      <p class="needs">Irfan does not need to have started yet: the script waits until his service answers.</p>
       <p>Before you start: power plan "never sleep", plugged in, Ethernet, Windows Update paused.</p>
       <pre><code>git pull
 jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
@@ -253,10 +245,6 @@ jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
 <section class="member">
   <div class="who"><h2>Muhaimin</h2><span class="role">M5 · Predictions & recommendation · deck lead · Slides 1, 7, 8</span></div>
   <ol class="steps">
-    <li><div>
-      <h3>Sign off the prediction record and the limits ✓</h3>
-      <p>Done on Wed 11 Nov. Nothing to do here.</p>
-    </div></li>
     <li><div>
       <h3>Read the prediction account and the deck</h3>
       <p class="needs">Needs: <b>Alvin's</b> "Finish done".</p>
