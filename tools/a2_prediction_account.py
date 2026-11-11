@@ -195,7 +195,7 @@ def main() -> int:
         a, b = speed["cascade500"]["p50_s"], speed["top7b"]["p50_s"]
         overlap = not (a["max"] < b["min"] or a["min"] > b["max"])
         add("T=500 gain within run-to-run spread", "yes", "yes" if overlap else "no", overlap == REC["gain_within_spread"],
-            f"Per-run p50 ranges {a['min']:.0f}–{a['max']:.0f} s (T=500) and {b['min']:.0f}–{b['max']:.0f} s (7b) "
+            f"Per-run p50 ranges {a['min']:.1f}–{a['max']:.1f} s (T=500) and {b['min']:.1f}–{b['max']:.1f} s (7b) "
             + ("overlap." if overlap else "do not overlap: the difference is larger than the run-to-run spread."),
             "results/a2/speed/a2_*.json")
     errs = sum((speed.get(c) or {}).get("totals", {}).get("errored", 0) + (speed.get(c) or {}).get("totals", {}).get("unfinished", 0) or 0

@@ -516,7 +516,7 @@ for c in speed_cfgs:
     p = j["p50_s"]
     agg_rows.append([CFG_LABEL.get(c, c), f"{p['mean']:.1f} ± {p['sd']:.1f}", f"{p['min']:.1f}–{p['max']:.1f}",
                      f"{j['p95_pooled_s']:.1f} (n={j['p95_pooled_n']})",
-                     f"{j['throughput_per_min']['mean']:.2f}" if j.get("throughput_per_min") else "–",
+                     f"{j['throughput_per_min']['mean']:.1f}" if j.get("throughput_per_min") else "–",
                      f"{j['error_rate_pct']['mean']:.1f}" if j.get("error_rate_pct") else "–",
                      "–" if c == "top7b" or j.get("escalation_pooled") is None else f"{j['escalation_pooled'] * 100:.0f}%"])
 if agg_rows:
