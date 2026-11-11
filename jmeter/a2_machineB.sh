@@ -30,8 +30,10 @@ echo "plan: rate ${RATE}/min, ${DUR} min, timeout ${TIMEOUT} s, pause ${PAUSE} s
 mkdir -p ../results/a2/jtl ../results/a2/runs
 
 for C in "${CONFIGS[@]}"; do
-  for RUN in $(seq 1 "$RUNS"); do
+  # RUN_LIST="3b" redoes one run under a new tag; the JMeter seed stays the run number.
+  for RUN in ${RUN_LIST:-$(seq 1 "$RUNS")}; do
     TAG="a2_${C}_run${RUN}"
+    SEED="${RUN//[!0-9]/}"
     echo "=== $TAG: waiting for Machine A (ready-$TAG) ==="
     until curl -sf -m 10 "$BASE/healthz" | grep -q "\"run_id\":\"ready-$TAG\""; do sleep 10; done
     curl -sf "$BASE/healthz" | tee "../results/a2/runs/${TAG}.healthz.json"; echo
@@ -41,7 +43,7 @@ for C in "${CONFIGS[@]}"; do
     jmeter -n -t a2_speed.jmx \
       -Jhost="$HOST" -Jport="$PORT" \
       -JticketRatePerMin="$RATE" -JdurationMin="$DUR" -JpauseSec="$PAUSE" -JtimeoutMs="$((TIMEOUT * 1000))" \
-      -Jseed="$RUN" -JrunId="$TAG" -JdataFile=../data/a2_speed_tickets.tsv \
+      -Jseed="$SEED" -JrunId="$TAG" -JdataFile=../data/a2_speed_tickets.tsv \
       -Jjtl="$JTL" -j "../results/a2/jtl/${TAG}.jmeter.log"
     curl -sf -H "X-Run-ID: ${TAG}:stats-after" "$BASE/stats" > "../results/a2/runs/${TAG}.stats_after.json"
     echo "$(date '+%F %T %z') end   $TAG  samples=$(($(wc -l < "$JTL") - 1))  sent=$(grep -c 'A2SENT' "../results/a2/jtl/${TAG}.jmeter.log" || true)" \

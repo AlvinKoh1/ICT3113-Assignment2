@@ -67,7 +67,7 @@ jmeter/a2_machineB.sh 100.88.74.36 top7b cascade400 cascade500
 
 Per run, Machine A restarts Ollama, warms up with the same three tickets, checks `ollama ps` lists every model of the configuration (both for the cascade), then sets `/healthz` to `ready-<tag>`; Machine B calls `GET /stats`, runs JMeter at the planned rate for S minutes with the pause, calls `GET /stats` again. Only configurations that pass both accuracy limits are speed-tested, plus the cascade in all cases — so `top7b cascade400 cascade500` is the complete list (no other single model passes).
 
-If a run is hit by a test-side fault (network drop, laptop sleep): **keep the files**, re-run it under a new tag (`RUNS=1` and rename to `run3b`, as in A1), and write it up in `results/a2/reconcile_notes.md`.
+If a run is hit by a test-side fault (network drop, laptop sleep): **keep the files**, re-run it under a new tag with `RUN_LIST=3b` on both machines (same config; the analysis uses run3b instead of run3), and write it up in `results/a2/reconcile_notes.md`.
 
 Commit `results/a2/jtl`, `results/a2/runs`, `results/a2/env`, `results/logs/a2_requests.jsonl`.
 

@@ -4,6 +4,7 @@
 #
 #   tools/a2_machineA.sh <config> [runs]       config: top7b | cascade400 | cascade500 | calib
 #   tools/a2_machineA.sh top7b cascade400 cascade500    (several configs back to back, 3 runs each)
+#   RUN_LIST=3b tools/a2_machineA.sh cascade500         (redo run 3 as run3b; Machine B must use the same RUN_LIST)
 #
 # For every run (brief, Step 4 "Each run"):
 #   1. Bring the service up on the configuration (triage container only).
@@ -72,7 +73,8 @@ for C in "${CONFIGS[@]}"; do
   config_env "$C" >/dev/null || exit 1
   tools/a2_preflight.sh "$C" >/dev/null || die "preflight failed for $C (see results/a2/env/preflight_$C.txt)"
   say "[$C] preflight ok"
-  for RUN in $(seq 1 "$RUNS"); do
+  # RUN_LIST="3b" redoes one run under a new tag (keep the original files).
+  for RUN in ${RUN_LIST:-$(seq 1 "$RUNS")}; do
     TAG="a2_${C}_run${RUN}"
     prepare "$C" "$TAG"
     ( while true; do

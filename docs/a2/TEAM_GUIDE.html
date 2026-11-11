@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ICT3113 A2 Team Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6EFE3; --paper-2:#EFE4D2; --paper-3:#E6D7BF; --sheet:#FBF7F0;
+  --ink:#2B2420; --ink-2:#4A3F37; --muted:#7A6A5C; --rule:#DCCDB8; --rule-2:#3A302A;
+  --terra:#B4532A; --terra-2:#8E3F1F; --olive:#6B7A3A; --olive-2:#4F5A2A; --ochre:#C08A2B; --clay:#9A6B54;
+  --serif:"Source Serif 4", Georgia, serif; --display:"Fraunces", Georgia, serif; --mono:"JetBrains Mono", Consolas, monospace;
+}
+@page{ size:A4; margin:0 }
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{margin:0;background:var(--paper);color:var(--ink);font:10.2pt/1.5 var(--serif);}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);margin:0;letter-spacing:-0.01em}
+h2{font-size:21pt;font-weight:600;line-height:1.1;margin:0 0 4mm;padding-bottom:2.5mm;border-bottom:2px solid var(--rule-2)}
+h3{font-size:13pt;font-weight:600;margin:5mm 0 2mm}
+h4{font-size:10.5pt;font-weight:600;margin:3mm 0 1mm}
+p{margin:0 0 2.5mm}
+section{padding:14mm 15mm 14mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.page{page-break-before:always}
+.kicker{font:600 8pt var(--serif);text-transform:uppercase;letter-spacing:.14em;color:var(--terra);margin-bottom:2mm}
+code,.mono{font-family:var(--mono);font-size:8.4pt}
+code{background:var(--paper-2);padding:.3mm 1.2mm;border-radius:2px}
+pre{font:8.3pt/1.45 var(--mono);background:var(--ink);color:#F3E9DA;padding:3mm 4mm;margin:1.5mm 0 3mm;border-radius:3px;white-space:pre-wrap;page-break-inside:avoid}
+pre .c{color:#C9B49A}
+table{border-collapse:collapse;width:100%;margin:2mm 0 4mm;font-size:9pt}
+th{font:600 8.4pt var(--serif);text-align:left;color:var(--ink);border-bottom:2px solid var(--rule-2);padding:1.6mm 2mm}
+td{border-bottom:1px solid var(--rule);padding:1.6mm 2mm;vertical-align:top}
+tr{page-break-inside:avoid}
+.muted{color:var(--muted)}
+.tag{display:inline-block;font:600 7.4pt var(--serif);letter-spacing:.04em;padding:.4mm 2mm;border-radius:10px;color:#fff;white-space:nowrap}
+.t-irfan{background:var(--terra)} .t-uwais{background:var(--olive)} .t-alvin{background:var(--clay)} .t-gabriel{background:var(--ochre)} .t-muhaimin{background:var(--ink-2)} .t-all{background:var(--muted)}
+.seq{background:var(--terra-2)} .par{background:var(--olive-2)} .sync{background:var(--ochre)}
+.callout{border-left:3px solid var(--terra);background:var(--sheet);padding:3mm 4mm;margin:3mm 0;page-break-inside:avoid}
+.callout.olive{border-color:var(--olive)} .callout.ink{border-color:var(--ink)}
+.callout h4{margin-top:0}
+.gate{border:1.5px solid var(--terra);background:#F9E9DF;padding:2.5mm 4mm;margin:3mm 0;page-break-inside:avoid}
+.gate b{color:var(--terra-2)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.step{display:grid;grid-template-columns:8mm 1fr;gap:2mm;margin:2mm 0;page-break-inside:avoid}
+.step .n{font:600 13pt var(--display);color:var(--terra);line-height:1.2}
+.phase{page-break-inside:auto;margin-bottom:4mm}
+.phasehead{display:flex;justify-content:space-between;align-items:baseline;gap:4mm;border-bottom:2px solid var(--rule-2);padding-bottom:2mm;margin-bottom:3mm}
+.phasehead h2{border:0;margin:0;padding:0}
+.meta{font-size:8.6pt;color:var(--muted);text-align:right}
+.done{background:var(--paper-2);padding:2mm 4mm;margin:2mm 0 1mm;font-size:9.2pt;page-break-inside:avoid}
+.done b{color:var(--olive-2)}
+ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.6mm 0}
+.check li{list-style:none;position:relative;padding-left:1mm} .check li:before{content:"☐";position:absolute;left:-5mm;color:var(--terra)}
+
+/* cover */
+.cover{height:296mm;padding:18mm 17mm 16mm !important;display:flex;flex-direction:column;justify-content:space-between;padding:6mm 2mm}
+.cover h1{font-size:40pt;font-weight:600;line-height:1.02;letter-spacing:-0.025em;margin:6mm 0 5mm}
+.cover h1 em{font-style:italic;color:var(--terra)}
+.cover .lede{font-size:13pt;line-height:1.45;color:var(--ink-2);max-width:150mm}
+.cover .band{background:var(--ink);color:#F3E9DA;padding:5mm 6mm;display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.cover .band b{font:600 18pt var(--display);color:#fff;display:block}
+.cover .band span{font-size:8.5pt;color:#C9B49A;text-transform:uppercase;letter-spacing:.1em}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin-top:4mm}
+.team div{border-top:2px solid var(--rule-2);padding-top:2mm;font-size:9pt}
+.team b{font-family:var(--display);font-size:11pt;display:block}
+
+/* swimlane */
+.lane{display:grid;grid-template-columns:24mm repeat(8,1fr);gap:1.2mm;font-size:7.6pt;margin:3mm 0 2mm}
+.lane .h{font:600 7.6pt var(--serif);color:var(--muted);text-align:center;padding-bottom:1mm;border-bottom:1.5px solid var(--rule-2)}
+.lane .who{font:600 9pt var(--display);display:flex;align-items:center}
+.lane .c{min-height:9mm;border-radius:2px;padding:1.2mm 1.5mm;line-height:1.25}
+.lane .on{color:#fff}
+.lane .off{background:var(--paper-2)}
+.legend{font-size:8.4pt;color:var(--muted)}
+.legend .tag{margin-right:1mm}
+.toc td:first-child{font-family:var(--display);font-weight:600;color:var(--terra);width:12mm}
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<section class="cover">
+  <div>
+    <div class="kicker">ICT3113 Performance Testing &amp; Optimisation · Group P2-9</div>
+    <h1>Assignment 2,<br><em>step by step</em> — who does what, and when</h1>
+    <p class="lede">The cascade, the rule, the predictions and every script are already written and committed. What is left is measurement on our Assignment 1 machines, then analysis and the deck. This guide puts it in order: who acts, what they type, what "done" looks like, and who they hand over to.</p>
+    <div class="team">
+      <div><b>Irfan</b>M1 · Machine A<br><span class="tag t-irfan">service + Ollama</span></div>
+      <div><b>Uwais</b>M4 · Machine B<br><span class="tag t-uwais">JMeter</span></div>
+      <div><b>Alvin</b>M2 · repo + analysis<br><span class="tag t-alvin">owner</span></div>
+      <div><b>Gabriel</b>M3 · accuracy check<br><span class="tag t-gabriel">verifier</span></div>
+      <div><b>Muhaimin</b>M5 · deck + submit<br><span class="tag t-muhaimin">defence</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="band">
+      <div><span>Deadline</span><b>Fri 27 Nov, 23:59</b>xSiTe · Group09_A2.pptx</div>
+      <div><span>Machine time</span><b>≈ 10 hours</b>7 h of it overnight</div>
+      <div><span>Repository</span><b style="font-size:11.5pt">AlvinKoh1/<br>ICT3113-Assignment2</b>private · full A1 history</div>
+    </div>
+    <p class="muted" style="margin-top:4mm;font-size:8.6pt">Source of truth for commands: <span class="mono">docs/a2/RUNBOOK.md</span>. If this guide and the runbook ever disagree, the runbook wins — tell Alvin.</p>
+  </div>
+</section>
+
+<!-- ======================= OVERVIEW ======================= -->
+<section class="page">
+  <div class="kicker">Read this page first</div>
+  <h2>The whole job on one page</h2>
+  <p>Eight phases. Some are one person working alone; some need two people at the same time; some can run alongside others. The bars below are the order. A phase cannot start before the phases it waits for have <b>pushed</b> their results to GitHub.</p>
+
+  <div class="lane">
+    <div></div>
+    <div class="h">0 · Sign-off</div><div class="h">1 · Memory</div><div class="h">2 · Accuracy</div><div class="h">3 · Calibrate</div>
+    <div class="h">4 · Speed</div><div class="h">5 · Analyse</div><div class="h">6 · Deck</div><div class="h">7 · Review + submit</div>
+
+    <div class="who">Irfan</div>
+    <div class="c on t-irfan">read + ✓</div><div class="c on t-irfan">rebuild, preflight, memory check</div><div class="c on t-irfan">run cascade on 87 tickets</div><div class="c on t-irfan">Machine A side</div>
+    <div class="c on t-irfan">Machine A side, overnight</div><div class="c off"></div><div class="c off"></div><div class="c on t-irfan">check slides 2–3</div>
+
+    <div class="who">Uwais</div>
+    <div class="c on t-uwais">read + ✓</div><div class="c on t-uwais">prep Machine B</div><div class="c on t-uwais">prep Machine B</div><div class="c on t-uwais">Machine B side</div>
+    <div class="c on t-uwais">Machine B side, overnight</div><div class="c off"></div><div class="c off"></div><div class="c on t-uwais">check slide 5</div>
+
+    <div class="who">Alvin</div>
+    <div class="c on t-alvin">invite team, sign rule</div><div class="c off"></div><div class="c off"></div><div class="c off"></div>
+    <div class="c off"></div><div class="c on t-alvin">analyse + reconcile</div><div class="c on t-alvin">support</div><div class="c on t-alvin">check slide 6</div>
+
+    <div class="who">Gabriel</div>
+    <div class="c on t-gabriel">sign rule + tuning</div><div class="c off"></div><div class="c off"></div><div class="c on t-gabriel">verify accuracy</div>
+    <div class="c on t-gabriel">verify accuracy</div><div class="c off"></div><div class="c on t-gabriel">accuracy misses</div><div class="c on t-gabriel">check slide 4</div>
+
+    <div class="who">Muhaimin</div>
+    <div class="c on t-muhaimin">sign predictions</div><div class="c off"></div><div class="c off"></div><div class="c off"></div>
+    <div class="c off"></div><div class="c off"></div><div class="c on t-muhaimin">prediction account, build deck</div><div class="c on t-muhaimin">check 7–8, submit</div>
+  </div>
+
+  <table style="font-size:8.6pt">
+    <tr><th>Phase</th><th>Who</th><th>Turn type</th><th>Waits for</th><th>Time</th><th>Target date</th></tr>
+    <tr><td><b>0</b> Sign-off &amp; access</td><td>Everyone</td><td><span class="tag par">parallel</span></td><td>—</td><td>30 min each</td><td>Thu 12 Nov</td></tr>
+    <tr><td><b>1</b> Memory check</td><td>Irfan</td><td><span class="tag seq">one person</span></td><td>0 (all five sign-offs)</td><td>≈ 45 min</td><td>Fri 13 Nov</td></tr>
+    <tr><td><b>2</b> Accuracy test</td><td>Irfan (Uwais preps B meanwhile)</td><td><span class="tag seq">one person</span></td><td>1 = FIT</td><td>≈ 2 h</td><td>Fri 13 Nov</td></tr>
+    <tr><td><b>3</b> S calibration</td><td>Irfan + Uwais</td><td><span class="tag sync">together, live</span></td><td>2 pushed</td><td>≈ 15 min</td><td>Sat 14 Nov, evening</td></tr>
+    <tr><td><b>4</b> Speed test (9 runs)</td><td>Irfan + Uwais</td><td><span class="tag sync">together, overnight</span></td><td>3 pushed</td><td>≈ 7 h</td><td>Sat 14 → Sun 15 Nov</td></tr>
+    <tr><td><b>2b</b> Verify accuracy</td><td>Gabriel</td><td><span class="tag par">parallel with 3–4</span></td><td>2 pushed</td><td>≈ 1 h</td><td>by Sun 15 Nov</td></tr>
+    <tr><td><b>5</b> Analysis &amp; reconcile</td><td>Alvin</td><td><span class="tag seq">one person</span></td><td>4 pushed by both</td><td>≈ 2 h</td><td>Tue 17 Nov</td></tr>
+    <tr><td><b>6</b> Prediction account &amp; deck</td><td>Muhaimin (+ Gabriel)</td><td><span class="tag seq">one person</span>, Gabriel feeds in</td><td>5 pushed</td><td>≈ 3 h</td><td>Thu 19 Nov</td></tr>
+    <tr><td><b>7</b> Review &amp; submit</td><td>Everyone → Muhaimin submits</td><td><span class="tag par">parallel</span>, then one submit</td><td>6 pushed</td><td>30 min each</td><td>review by Mon 23, submit by Wed 25 Nov</td></tr>
+  </table>
+  <p class="legend"><span class="tag seq">one person</span> nobody else touches that part until it is pushed &nbsp; <span class="tag sync">together, live</span> both on call at the same time; scripts hand over automatically &nbsp; <span class="tag par">parallel</span> independent, any order</p>
+  <p style="font-size:8.8pt;margin-top:2mm"><b style="color:var(--terra-2)">Why the dates leave a gap:</b> phase 4 is the one that can go wrong (network drop, a laptop sleeping, Windows Update). Sun 15 – Mon 16 Nov is held as the redo window; a failed run is re-run under a new tag and nothing else moves.</p>
+</section>
+
+<!-- ======================= RULES ======================= -->
+<section class="page">
+  <div class="kicker">Before anyone types a command</div>
+  <h2>Six rules that protect our marks</h2>
+  <table>
+    <tr><th style="width:8mm">#</th><th>Rule</th><th>Why</th></tr>
+    <tr><td>1</td><td><b>Same machines, same limits.</b> Machine A stays Irfan's PC with the Ollama container at 4 CPUs / 8 GiB; Machine B stays Uwais's laptop. Nobody changes <span class="mono">.env</span>, <span class="mono">.wslconfig</span> or Docker Desktop resources.</td><td>The brief forbids extra compute or memory, and any change between configurations voids the comparison.</td></tr>
+    <tr><td>2</td><td><b>Never edit or delete a result file.</b> A bad run is kept and redone under a new tag (e.g. <span class="mono">run3b</span>) with a note in <span class="mono">results/a2/reconcile_notes.md</span>.</td><td>Every number on slides 4–7 must trace to a raw <span class="mono">.jtl</span> or log line. Fabricated or unreconcilable figures are an academic-integrity case.</td></tr>
+    <tr><td>3</td><td><b>Don't change the rule, the predictions or the split.</b> Cut-offs stay at 400 and 500 characters. Predictions are not revised; we explain misses instead.</td><td>The commit history proves they came before the measurements. Marks go for specific predictions and the analysis of misses, not for being right.</td></tr>
+    <tr><td>4</td><td><b>Pull before you start, push when you finish.</b> <span class="mono">git pull --rebase</span> first, then commit only your own files, then <span class="mono">git push</span>. Post the hand-off message in the group chat.</td><td>Phases wait on each other through GitHub. If it isn't pushed, the next person can't start.</td></tr>
+    <tr><td>5</td><td><b>Machines A and B stay awake and wired</b> during phases 1–4: sleep off, Windows Update paused, Ethernet not Wi-Fi, no games or Chrome on Machine A.</td><td>A1 lost a run to a 2-minute network drop, and background load on Machine A shows up directly as latency.</td></tr>
+    <tr><td>6</td><td><b>If a script says ABORT, stop.</b> Don't work round it. Screenshot it, post it, wait for Alvin.</td><td>Aborts guard the conditions the brief sets (both models loaded, digests unchanged, settings unchanged).</td></tr>
+  </table>
+
+  <h3>Getting the repository (everyone, once)</h3>
+  <p>The new repo is <b>private</b> and carries the full Assignment 1 history, so the commit dates of the split, limits and predictions are preserved. Accept the GitHub invite from <b>AlvinKoh1</b> first.</p>
+<pre><span class="c"># Machine A (Irfan, inside WSL) and Machine B (Uwais, Git Bash) — and anyone else</span>
+git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
+cd ICT3113-Assignment2
+git log --oneline -6      <span class="c"># must show "A2 Steps 2-3: escalation rule, prediction record ..."</span></pre>
+  <div class="callout olive">
+    <h4>Irfan: your existing Docker volumes are reused</h4>
+    <span class="mono">docker-compose.yml</span> now pins the project name to <span class="mono">ict3113-assignment1</span>, so a clone in a new folder still uses the <b>same</b> <span class="mono">ollama-models</span> volume with the pinned digests. Do <b>not</b> run <span class="mono">docker compose down -v</span> and do not <span class="mono">ollama pull</span> anything; the preflight in phase 1 checks every digest against <span class="mono">docs/model_pins.md</span>.
+  </div>
+</section>
+
+<!-- ======================= PHASE 0 ======================= -->
+<section class="page phase">
+  <div class="phasehead"><div><div class="kicker">Phase 0 · everyone · parallel</div><h2>Sign off before anything runs</h2></div>
+  <div class="meta">Waits for: nothing<br>Target: Thu 12 Nov<br>≈ 30 min each</div></div>
+  <p>Nobody measures until all five have replied "signed" in the chat. Each of you reads the files for your role and checks they make sense. If you disagree, say so <b>now</b>: after phase 1 starts, the rule and predictions are frozen.</p>
+  <table>
+    <tr><th>Who</th><th>Reads</th><th>Checks</th></tr>
+    <tr><td><span class="tag t-alvin">Alvin</span></td><td>Everything; GitHub settings</td><td>Repo created and pushed; invites sent to all four; branch <span class="mono">main</span> is the A2 code.</td></tr>
+    <tr><td><span class="tag t-gabriel">Gabriel</span></td><td><span class="mono">docs/a2/escalation_rule.md</span>, <span class="mono">docs/a2/tuning_analysis.md</span>, <span class="mono">golden/a2_split.csv</span></td><td>Rule reads clearly enough that another team could implement it; split is odd/even positions of the golden set; only tuning rows were used to choose the rule.</td></tr>
+    <tr><td><span class="tag t-muhaimin">Muhaimin</span></td><td><span class="mono">docs/a2/prediction_record.md</span>, <span class="mono">docs/a2/limits.json</span></td><td>Every prediction is specific enough to be shown wrong (numbers, not "faster"); covers fastest config, escalation / accuracy / median latency per setting, categories that lose most.</td></tr>
+    <tr><td><span class="tag t-irfan">Irfan</span></td><td><span class="mono">docs/a2/RUNBOOK.md</span> §2–5, <span class="mono">tools/a2_machineA.sh</span></td><td>Machine A is as in A1 (Docker Desktop, WSL 12 GB, Ollama 0.5.7 container 4 CPU / 8 GiB). Enough free disk for logs.</td></tr>
+    <tr><td><span class="tag t-uwais">Uwais</span></td><td><span class="mono">jmeter/a2_machineB.sh</span>, <span class="mono">jmeter/a2_speed.jmx</span></td><td>JMeter 5.6.3 + Java 21 still installed; Tailscale reaches <span class="mono">100.88.74.36</span>; <span class="mono">python3</span> works in Git Bash.</td></tr>
+  </table>
+  <div class="done"><b>Done when</b> all five have posted "signed — &lt;name&gt;" in the group chat.</div>
+  <div class="gate"><b>Gate →</b> Irfan may start phase 1 only after the fifth "signed".</div>
+
+  <h3>What each sign-off protects</h3>
+  <div class="cols">
+    <div class="callout ink"><h4>Design · 6 %</h4>Rule reproducible from the description, two settings, memory check reported, log shows which model answered. Gabriel's sign-off covers the first two.</div>
+    <div class="callout ink"><h4>Measurement · 7 %</h4>Limits from the test set, predictions committed before testing, three open-loop runs per configuration, escalation from the logs, everything reconciles. Muhaimin's sign-off covers the predictions.</div>
+  </div>
+</section>
+
+<!-- ======================= PHASE 1 ======================= -->
+<section class="page phase">
+  <div class="phasehead"><div><div class="kicker">Phase 1 · Irfan alone · Machine A</div><h2>Rebuild, preflight, memory check</h2></div>
+  <div class="meta">Waits for: phase 0<br>Target: Fri 13 Nov<br>≈ 45 min</div></div>
+  <p>This is the first Assignment 2 measurement. It answers the question the brief says to settle before anything else: can <b>llama3.2:3b</b> and <b>qwen2.5:7b</b> stay loaded together in the unchanged 8 GiB container?</p>
+  <div class="step"><div class="n">1</div><div><b>Start the stack on the new code.</b>
+<pre>cd ~/ICT3113-Assignment2
+git pull --rebase
+docker compose up -d --build</pre></div></div>
+  <div class="step"><div class="n">2</div><div><b>Preflight.</b> Records versions, digests and Ollama settings. The last line must say <span class="mono">verdict: OK</span>.
+<pre>tools/a2_preflight.sh initial</pre></div></div>
+  <div class="step"><div class="n">3</div><div><b>Memory check</b> (≈ 15 min: restarts Ollama, sends 10 tickets alternating 3b / 7b).
+<pre>tools/a2_memory_check.sh</pre>
+Read the last block: <span class="mono">## VERDICT: FIT</span> or <span class="mono">DOES NOT FIT</span>, plus the reasons.</div></div>
+  <div class="step"><div class="n">4</div><div><b>Commit and push.</b>
+<pre>git add results/a2/memory results/a2/env results/logs/a2_requests.jsonl
+git commit -m "A2 memory check: 3b + 7b"
+git push</pre></div></div>
+  <table>
+    <tr><th>If the verdict is…</th><th>Then</th></tr>
+    <tr><td><b>FIT</b></td><td>Go straight on to phase 2. Post: <i>"Phase 1 done — FIT, pushed."</i></td></tr>
+    <tr><td><b>DOES NOT FIT</b></td><td>Run <span class="mono">SMALL=llama3.2:1b tools/a2_memory_check.sh</span>, push it, and post the result. From now on <b>every</b> Machine A command is prefixed with <span class="mono">SMALL=llama3.2:1b</span> (fallback pair, rule §5). Tell Alvin; slide 2 changes.</td></tr>
+    <tr><td><b>Both fail</b></td><td>Cascade not feasible on this machine. Keep the <span class="mono">ollama ps</span> evidence, skip phase 2's cascade runs, and run phases 3–4 with <span class="mono">top7b</span> only. Tell everyone.</td></tr>
+  </table>
+  <div class="done"><b>Done when</b> <span class="mono">results/a2/memory/memory_check_*.json</span> is on GitHub and the verdict is posted.</div>
+  <div class="callout olive"><h4>Meanwhile — Uwais (parallel)</h4>Prepare Machine B for phase 3: <span class="mono">git pull</span>, <span class="mono">jmeter --version</span> (5.6.3), <span class="mono">ping -n 20 100.88.74.36</span> (no loss), set power plan to never sleep, pause Windows Update, plug in Ethernet. Nothing is sent to Machine A yet.</div>
+</section>
+
+<!-- ======================= PHASE 2 ======================= -->
+<section class="page phase">
+  <div class="phasehead"><div><div class="kicker">Phase 2 · Irfan alone · Machine A</div><h2>Accuracy test of the cascade</h2></div>
+  <div class="meta">Waits for: phase 1 = FIT<br>Target: Fri 13 Nov<br>≈ 2 h, unattended</div></div>
+  <p>Runs all 87 test-set tickets through <span class="mono">POST /tickets</span> once for each setting (T = 400, then T = 500), one at a time. Single models are <b>not</b> re-run: their Assignment 1 records are reused for the test rows, which the brief allows because digest, prompt, Ollama version and machine are unchanged.</p>
+  <div class="step"><div class="n">1</div><div><b>Run it.</b> Each setting restarts Ollama, warms up both models, checks <span class="mono">ollama ps</span>, then scores.
+<pre>tools/a2_accuracy_all.sh                    <span class="c"># cascade400 + cascade500, test set</span>
+<span class="c"># optional, comparison only (not used for pass/fail, +2 h):</span>
+SETS="tune" tools/a2_accuracy_all.sh</pre></div></div>
+  <div class="step"><div class="n">2</div><div><b>Read the summary</b> printed at the end of each setting, e.g. <span class="mono">cascade500 on test: 67/87 = 77.0 %</span>, escalation and <span class="mono">limits: PASS</span> / <span class="mono">FAIL [...]</span>. Do <b>not</b> change anything because of it.</div></div>
+  <div class="step"><div class="n">3</div><div><b>Commit and push.</b>
+<pre>git add results/a2/accuracy results/a2/env results/logs/a2_requests.jsonl
+git commit -m "A2 accuracy test: cascade T=400 and T=500 on the test set"
+git push</pre></div></div>
+  <div class="done"><b>Done when</b> <span class="mono">results/a2/accuracy/cascade400_test.json</span> and <span class="mono">cascade500_test.json</span> are pushed. Post: <i>"Phase 2 done — T400 x/87, T500 y/87, pushed."</i></div>
+  <div class="gate"><b>Gate →</b> Unlocks phase 3 (Irfan + Uwais) <b>and</b> phase 2b (Gabriel). These two can then run at the same time.</div>
+
+  <h3>Phase 2b · Gabriel · parallel with phases 3–4</h3>
+  <p>An independent check of the accuracy numbers before they go on slide 4. Gabriel doesn't need Machine A — just a fresh pull.</p>
+  <ul class="check">
+    <li>Open <span class="mono">results/a2/accuracy/cascade500_test_predictions.csv</span>. Count correct rows by hand for two categories; they must match the JSON.</li>
+    <li>Every row has <span class="mono">in_log = True</span> and a <span class="mono">final_model</span>. <span class="mono">escalated = True</span> exactly when <span class="mono">chars &gt; 500</span> (or when the route says <span class="mono">unparsed</span>).</li>
+    <li>Compare against <span class="mono">docs/a2/limits.json</span>: which categories pass, which fail, by how many tickets.</li>
+    <li>Note which categories lost tickets versus 7b alone and why (look at the <span class="mono">small_category</span> column). This becomes your input to phase 6.</li>
+  </ul>
+  <div class="done"><b>Done when</b> Gabriel posts "accuracy verified" (or the mismatch), and pushes notes to <span class="mono">docs/a2/accuracy_notes.md</span>.</div>
+</section>
+
+<!-- ======================= PHASE 3 + 4 ======================= -->
+<section class="page phase">
+  <div class="phasehead"><div><div class="kicker">Phases 3 + 4 · Irfan and Uwais together</div><h2>Calibrate S, then the overnight speed test</h2></div>
+  <div class="meta">Waits for: phase 2 pushed<br>Target: Sat 14 → Sun 15 Nov<br>15 min + ≈ 7 h</div></div>
+  <div class="callout"><h4>How the two machines take turns</h4>
+  You don't coordinate by hand. Machine A restarts Ollama, warms up, checks <span class="mono">ollama ps</span>, then sets <span class="mono">/healthz</span> to <span class="mono">ready-&lt;run&gt;</span>. Machine B waits for that, runs JMeter, then calls <span class="mono">GET /stats</span>, which tells Machine A the run is over. <b>Start both scripts within a few minutes of each other and leave them alone.</b> Either side waits indefinitely for the other.</div>
+
+  <h3>Phase 3 — S calibration (both on call, ≈ 15 min)</h3>
+  <table>
+    <tr><th style="width:50%">Irfan · Machine A (start first)</th><th>Uwais · Machine B</th></tr>
+    <tr><td><pre>git pull --rebase
+tools/a2_machineA.sh calib</pre></td><td><pre>git pull --rebase
+jmeter/a2_calibrate.sh 100.88.74.36</pre></td></tr>
+    <tr><td>Waits until Uwais's 3 tickets are done, then prints <span class="mono">calibration done</span>.</td><td>Prints <span class="mono">plan.json</span>: S, rate per minute, run length (≈ 35 min), timeout, pause. Then:
+<pre>git add results/a2/calib
+git commit -m "A2 S calibration"
+git push</pre></td></tr>
+  </table>
+  <div class="gate"><b>Gate →</b> <span class="mono">results/a2/calib/plan.json</span> must be pushed <b>before</b> the first speed run. Irfan then does <span class="mono">git pull --rebase</span> too.</div>
+
+  <h3>Phase 4 — speed test, 3 configurations × 3 runs (overnight)</h3>
+  <table>
+    <tr><th style="width:50%">Irfan · Machine A</th><th>Uwais · Machine B</th></tr>
+    <tr><td><pre>tools/a2_machineA.sh top7b cascade400 cascade500</pre></td><td><pre>jmeter/a2_machineB.sh 100.88.74.36 top7b cascade400 cascade500</pre></td></tr>
+    <tr><td>Log: <span class="mono">results/a2/env/machineA.log</span> — one READY and one DONE line per run, 9 of each.</td><td>Log: <span class="mono">results/a2/runs/machineB.log</span> — start/end per run with sample and sent counts.</td></tr>
+  </table>
+  <p>Order of runs: 7b alone ×3, cascade T=400 ×3, cascade T=500 ×3. Each run ≈ 35 min of arrivals + ≈ 7 min pause + ≈ 3 min restart/warm-up. Check in before bed and after waking; nothing else needs doing.</p>
+  <h4>When it finishes — both push (different files, so no conflict)</h4>
+  <div class="cols">
+<pre><span class="c"># Uwais (Machine B)</span>
+git pull --rebase
+git add results/a2/jtl results/a2/runs
+git commit -m "A2 speed test: jtl + run files (Machine B)"
+git push</pre>
+<pre><span class="c"># Irfan (Machine A)</span>
+git pull --rebase
+git add results/a2/env results/a2/runs results/logs/a2_requests.jsonl
+git commit -m "A2 speed test: service log + env (Machine A)"
+git push</pre>
+  </div>
+  <table>
+    <tr><th>Something went wrong</th><th>What to do</th></tr>
+    <tr><td>Network drop / laptop slept mid-run</td><td>Let the remaining runs finish. Keep every file. Redo only the hit run on Sun/Mon, both sides with the same config and <span class="mono">RUN_LIST=3b</span> (for run 3), e.g. <span class="mono">RUN_LIST=3b tools/a2_machineA.sh cascade500</span> and <span class="mono">RUN_LIST=3b jmeter/a2_machineB.sh 100.88.74.36 cascade500</span>. The analysis uses run3b in place of run3; the original stays as evidence. Write what happened in <span class="mono">results/a2/reconcile_notes.md</span>.</td></tr>
+    <tr><td>Machine A prints <span class="mono">ABORT: ollama ps does not list …</span></td><td>Both models were not resident. Stop both scripts, screenshot, tell Alvin. Do not start the run anyway.</td></tr>
+    <tr><td>Machine B waits forever at <span class="mono">waiting for Machine A</span></td><td>Check Machine A's terminal. The handshake only needs <span class="mono">curl http://100.88.74.36:8000/healthz</span> to work from B.</td></tr>
+  </table>
+  <div class="done"><b>Done when</b> both pushes are on GitHub and the logs show 9 DONE lines. Post: <i>"Phase 4 done, 9/9 runs, pushed by A and B."</i></div>
+</section>
+
+<!-- ======================= PHASE 5-7 ======================= -->
+<section class="page phase">
+  <div class="phasehead"><div><div class="kicker">Phase 5 · Alvin alone</div><h2>Analysis and reconciliation</h2></div>
+  <div class="meta">Waits for: phase 4 (both pushes)<br>Target: Tue 17 Nov · ≈ 2 h</div></div>
+<pre>git pull --rebase
+python3 tools/a2_analyze_speed.py           <span class="c"># -> results/a2/speed/summary.md + .json</span>
+pip install python-pptx matplotlib
+python3 deck/build_deck_a2.py               <span class="c"># first full build, to see what is still PENDING</span></pre>
+  <ul class="check">
+    <li>Every run in <span class="mono">summary.md</span> says <b>Reconciled yes</b>. For each <b>NO</b>: find why (unfinished requests, reload, sent ≠ recorded) and write it in <span class="mono">results/a2/reconcile_notes.md</span>.</li>
+    <li>Spot-check one p50 by hand: sort the <span class="mono">elapsed</span> column of one <span class="mono">.jtl</span>, take the middle value.</li>
+    <li>Escalation under load vs. on the test set — explain any gap larger than 10 points (different tickets).</li>
+    <li>Push <span class="mono">results/a2/speed</span>, the notes and the rebuilt deck. Post: <i>"Phase 5 done."</i></li>
+  </ul>
+
+  <div class="phasehead" style="margin-top:6mm"><div><div class="kicker">Phase 6 · Muhaimin, with Gabriel's notes</div><h2>Prediction account and the deck</h2></div>
+  <div class="meta">Waits for: phase 5 + 2b<br>Target: Thu 19 Nov · ≈ 3 h</div></div>
+  <ul class="check">
+    <li>Write <span class="mono">docs/a2/prediction_account.md</span>: for each WRONG row on slide 7, the predicted value, the measured value and the reason, citing the file that shows it. Gabriel supplies the accuracy and category reasons from phase 2b.</li>
+    <li>Copy <span class="mono">deck/a2_text.example.json</span> to <span class="mono">deck/a2_text.json</span>; put 3–5 short bullets in <span class="mono">"prediction_misses"</span> and one defence line in <span class="mono">"recommendation_extra"</span>.</li>
+    <li>Rebuild: <span class="mono">python3 deck/build_deck_a2.py</span>. The red DRAFT banner on slide 1 must be gone (nothing pending).</li>
+    <li>Push. Post: <i>"Deck v1 ready for review."</i></li>
+  </ul>
+
+  <div class="phasehead" style="margin-top:6mm"><div><div class="kicker">Phase 7 · everyone, then Muhaimin submits</div><h2>Review and submit</h2></div>
+  <div class="meta">Waits for: phase 6<br>Review by Mon 23 · submit by Wed 25 Nov</div></div>
+  <table>
+    <tr><th>Reviewer</th><th>Slides</th><th>Check one number against the raw file</th></tr>
+    <tr><td><span class="tag t-irfan">Irfan</span></td><td>2, 3</td><td>Memory verdict vs <span class="mono">results/a2/memory/*.txt</span>; Ollama settings vs <span class="mono">results/a2/env/preflight_*.txt</span></td></tr>
+    <tr><td><span class="tag t-gabriel">Gabriel</span></td><td>4</td><td>One category count vs <span class="mono">*_test_predictions.csv</span></td></tr>
+    <tr><td><span class="tag t-uwais">Uwais</span></td><td>5</td><td>Sent / done for one run vs <span class="mono">.jmeter.log</span> (A2SENT lines) and <span class="mono">.jtl</span></td></tr>
+    <tr><td><span class="tag t-alvin">Alvin</span></td><td>6</td><td>Each point's p50 vs <span class="mono">results/a2/speed/summary.json</span></td></tr>
+    <tr><td><span class="tag t-muhaimin">Muhaimin</span></td><td>1, 7, 8</td><td>Limits vs <span class="mono">docs/a2/limits.json</span>; recommendation follows from slides 4–6</td></tr>
+  </table>
+  <div class="callout"><h4>Submission (Muhaimin)</h4>
+  <b>xSiTe, by Fri 27 Nov 23:59</b> (late = −15 % per day; aim for Wed 25). Upload <span class="mono">Group09_A2.pptx</span> (8 slides max) plus the supporting files: <span class="mono">docs/a2/prediction_record.md</span>, <span class="mono">docs/a2/escalation_rule.md</span>, <span class="mono">data/a2_speed_rows.csv</span>. If xSiTe only takes one file, export those three as PDFs. Post the submission receipt in the chat.</div>
+</section>
+
+<!-- ======================= PER PERSON ======================= -->
+<section class="page">
+  <div class="kicker">Tear-off checklists</div>
+  <h2>Your list, and nothing else</h2>
+  <div class="cols">
+    <div class="callout" style="border-color:var(--terra)"><h4><span class="tag t-irfan">Irfan · M1 · Machine A</span></h4>
+      <ul class="check">
+        <li>P0 · Read runbook §2–5; post "signed"</li>
+        <li>P0 · Clone the new repo in WSL; don't touch volumes</li>
+        <li>P1 · <span class="mono">up --build</span>, preflight OK, memory check, push</li>
+        <li>P2 · <span class="mono">a2_accuracy_all.sh</span>, push</li>
+        <li>P3 · <span class="mono">a2_machineA.sh calib</span> with Uwais</li>
+        <li>P4 · <span class="mono">a2_machineA.sh top7b cascade400 cascade500</span> overnight; push log + env</li>
+        <li>P4 · Redo window Sun–Mon if needed</li>
+        <li>P7 · Review slides 2–3</li>
+      </ul></div>
+    <div class="callout olive"><h4><span class="tag t-uwais">Uwais · M4 · Machine B</span></h4>
+      <ul class="check">
+        <li>P0 · Read machineB script + JMX; post "signed"</li>
+        <li>P1–2 · Prep Machine B: JMeter 5.6.3, ping, no sleep, Ethernet</li>
+        <li>P3 · <span class="mono">a2_calibrate.sh 100.88.74.36</span>; push <span class="mono">results/a2/calib</span></li>
+        <li>P4 · <span class="mono">a2_machineB.sh … top7b cascade400 cascade500</span>; push jtl + runs</li>
+        <li>P4 · Redo window Sun–Mon if needed</li>
+        <li>P7 · Review slide 5</li>
+      </ul></div>
+    <div class="callout" style="border-color:var(--clay)"><h4><span class="tag t-alvin">Alvin · M2 · repo + analysis</span></h4>
+      <ul class="check">
+        <li>P0 · Invite Irfan, Uwais, Gabriel, Muhaimin to the repo</li>
+        <li>P0 · Answer questions; first point of contact for any ABORT</li>
+        <li>P5 · <span class="mono">a2_analyze_speed.py</span>, reconcile every run, notes, push</li>
+        <li>P6 · Help Muhaimin with the deck build</li>
+        <li>P7 · Review slide 6</li>
+      </ul></div>
+    <div class="callout" style="border-color:var(--ochre)"><h4><span class="tag t-gabriel">Gabriel · M3 · accuracy</span></h4>
+      <ul class="check">
+        <li>P0 · Sign off rule, tuning analysis, split</li>
+        <li>P2b · Verify accuracy files by hand; <span class="mono">accuracy_notes.md</span>, push</li>
+        <li>P6 · Give Muhaimin the accuracy / category reasons</li>
+        <li>P7 · Review slide 4</li>
+      </ul></div>
+    <div class="callout ink"><h4><span class="tag t-muhaimin">Muhaimin · M5 · deck + defence</span></h4>
+      <ul class="check">
+        <li>P0 · Sign off prediction record + limits</li>
+        <li>P6 · <span class="mono">prediction_account.md</span>, <span class="mono">a2_text.json</span>, rebuild deck, push</li>
+        <li>P7 · Review slides 1, 7, 8; collect everyone's OK</li>
+        <li>P7 · Submit on xSiTe; post receipt</li>
+      </ul></div>
+    <div class="callout" style="border-color:var(--muted)"><h4>Hand-off messages (copy into the chat)</h4>
+      <ul>
+        <li><i>"Phase 1 done — FIT, pushed."</i></li>
+        <li><i>"Phase 2 done — T400 x/87, T500 y/87, pushed."</i></li>
+        <li><i>"Calibration pushed — S = __ s, rate __/min."</i></li>
+        <li><i>"Phase 4 done, 9/9 runs, pushed by A and B."</i></li>
+        <li><i>"Phase 5 done — all reconciled / N notes."</i></li>
+        <li><i>"Deck v1 ready for review."</i></li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- ======================= APPENDIX ======================= -->
+<section class="page">
+  <div class="kicker">Appendix</div>
+  <h2>What is already done, and where things live</h2>
+  <table>
+    <tr><th>Already committed</th><th>File</th><th>Result</th></tr>
+    <tr><td>Golden split (committed first)</td><td class="mono">golden/a2_split.csv</td><td>88 tuning (odd positions) / 87 test (even)</td></tr>
+    <tr><td>Accuracy limits</td><td class="mono">docs/a2/limits.json</td><td>7b on test 68/87 = 78.2 % → overall ≥ 68.2 % (60/87); per category 7b − 15 points</td></tr>
+    <tr><td>Single models on the test set</td><td class="mono">results/a2/accuracy/single_*</td><td>Only qwen2.5:7b passes (0.5b 13.8 %, 1b 21.8 %, 3b 44.8 %)</td></tr>
+    <tr><td>Rule chosen on tuning set only</td><td class="mono">docs/a2/tuning_analysis.md</td><td>Length rule 3b → 7b; T = 400 and 500</td></tr>
+    <tr><td>Escalation rule (supporting file)</td><td class="mono">docs/a2/escalation_rule.md</td><td>Full rule, settings, memory fallback</td></tr>
+    <tr><td>Predictions (supporting file)</td><td class="mono">docs/a2/prediction_record.md</td><td>T=500 fastest, ≈ 10 % p50 gain, within run spread</td></tr>
+    <tr><td>Speed workload (supporting file)</td><td class="mono">data/a2_speed_rows.csv</td><td>40 non-golden rows, fixed order</td></tr>
+    <tr><td>Cascade in the service</td><td class="mono">service/app/cascade.py</td><td>Caller sees one category; log records model + escalation</td></tr>
+  </table>
+  <h3>Where results land</h3>
+  <table>
+    <tr><th>Folder</th><th>Written by</th><th>Holds</th></tr>
+    <tr><td class="mono">results/a2/memory/</td><td>Irfan · P1</td><td>memory check transcript, sends, verdict</td></tr>
+    <tr><td class="mono">results/a2/env/</td><td>Irfan · P1–4</td><td>preflight records, Machine A switch log</td></tr>
+    <tr><td class="mono">results/a2/accuracy/</td><td>Irfan · P2</td><td>cascade test-set scores, per-ticket predictions</td></tr>
+    <tr><td class="mono">results/a2/calib/</td><td>Uwais · P3</td><td>S timings, run plan</td></tr>
+    <tr><td class="mono">results/a2/jtl/</td><td>Uwais · P4</td><td>raw JMeter .jtl + JMeter logs (A2SENT lines)</td></tr>
+    <tr><td class="mono">results/a2/runs/</td><td>both · P4</td><td>/stats before/after, healthz, ollama ps, docker stats</td></tr>
+    <tr><td class="mono">results/logs/a2_requests.jsonl</td><td>service · P1–4</td><td>one line per request: final_model, escalated, route, timings</td></tr>
+    <tr><td class="mono">results/a2/speed/</td><td>Alvin · P5</td><td>per-run and per-config summary</td></tr>
+    <tr><td class="mono">deck/Group09_A2.pptx</td><td>Muhaimin · P6</td><td>the 8 slides (built, never hand-typed numbers)</td></tr>
+  </table>
+  <div class="callout olive"><h4>The 8 slides the brief asks for — all generated</h4>
+  1 Cover + limits · 2 Cascade design + memory check · 3 Environment &amp; method · 4 Accuracy · 5 Speed · 6 Trade-off chart · 7 Predictions vs outcomes + recommendation · 8 Limitations, references, AI declaration.</div>
+</section>
+
+</body>
+</html>

@@ -99,11 +99,14 @@ def spread(vals):
 
 def main() -> int:
     tags = sorted(p.stem for p in JTL_DIR.glob("a2_*_run*.jtl"))
-    by_cfg = defaultdict(list)
+    by_cfg = defaultdict(dict)   # config -> run number -> tag; a redo (run3b) replaces run3
     for t in tags:
-        m = re.match(r"a2_(.+)_run(\d+)$", t)
+        m = re.match(r"a2_(.+)_run(\d+)([a-z]?)$", t)
         if m:
-            by_cfg[m.group(1)].append(t)
+            cur = by_cfg[m.group(1)].get(m.group(2))
+            if cur is None or t > cur:
+                by_cfg[m.group(1)][m.group(2)] = t
+    by_cfg = {c: sorted(d.values()) for c, d in by_cfg.items()}
     want = sys.argv[1:] or sorted(by_cfg)
     logs_by_run = defaultdict(list)
     for r in iter_log(LOG):

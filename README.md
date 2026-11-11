@@ -17,7 +17,7 @@
 > | `results/a2/` | all A2 evidence (`.jtl`, run files, accuracy, memory, env); service log `results/logs/a2_requests.jsonl` |
 
 **Group P2-9** · team number **9** → dataset rows **9000–9999**
-Repo: https://github.com/gemokay/ICT3113-Assignment1
+Repo (A2): https://github.com/AlvinKoh1/ICT3113-Assignment2 · A1: https://github.com/gemokay/ICT3113-Assignment1
 
 > **Status 6 Oct (merged from `alvin/continue`):** the team's step-by-step guide to everything left is in
 > `docs/REMAINING_WORK.pdf` (source `docs/remaining_work.html`). Changes on this branch:

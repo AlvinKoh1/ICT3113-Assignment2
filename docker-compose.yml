@@ -1,3 +1,8 @@
+# Project name pinned to the Assignment 1 one, whatever folder this is cloned
+# into, so Machine A reuses the existing ollama-models volume (the pinned
+# digests in docs/model_pins.md) instead of creating an empty one.
+name: ict3113-assignment1
+
 services:
   ollama:
     image: ollama/ollama:0.5.7
