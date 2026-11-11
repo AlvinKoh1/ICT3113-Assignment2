@@ -1,0 +1,75 @@
+{
+  "top_model": "qwen2.5:7b",
+  "source": "results/accuracy/predictions_qwen2.5_7b.csv (Assignment 1 records), test rows of golden/a2_split.csv",
+  "test_n": 87,
+  "top_correct": 68,
+  "top_test_pct": 78.16091954022988,
+  "overall_limit_pct": 68.16091954022988,
+  "top_category_pct": {
+    "Credit reporting": 84.21052631578947,
+    "Debt collection": 90.0,
+    "Mortgage": 100.0,
+    "Credit card": 75.0,
+    "Bank account or service": 70.0,
+    "Consumer loan": 66.66666666666666,
+    "Money transfer or service": 54.54545454545454
+  },
+  "top_category_counts": {
+    "Credit reporting": [
+      16,
+      19
+    ],
+    "Debt collection": [
+      9,
+      10
+    ],
+    "Mortgage": [
+      13,
+      13
+    ],
+    "Credit card": [
+      9,
+      12
+    ],
+    "Bank account or service": [
+      7,
+      10
+    ],
+    "Consumer loan": [
+      8,
+      12
+    ],
+    "Money transfer or service": [
+      6,
+      11
+    ]
+  },
+  "category_limit_pct": {
+    "Credit reporting": 69.21052631578947,
+    "Debt collection": 75.0,
+    "Mortgage": 85.0,
+    "Credit card": 60.0,
+    "Bank account or service": 55.0,
+    "Consumer loan": 51.66666666666666,
+    "Money transfer or service": 39.54545454545454
+  },
+  "small_categories": [
+    "Debt collection",
+    "Mortgage",
+    "Credit card",
+    "Bank account or service",
+    "Consumer loan",
+    "Money transfer or service"
+  ],
+  "small_category_rule": "n <= 13: two tickets are worth more than the 15-point margin",
+  "overall_min_correct": 60,
+  "category_min_correct": {
+    "Credit reporting": 14,
+    "Debt collection": 8,
+    "Mortgage": 12,
+    "Credit card": 8,
+    "Bank account or service": 6,
+    "Consumer loan": 7,
+    "Money transfer or service": 5
+  }
+}
