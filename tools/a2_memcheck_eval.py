@@ -1,0 +1,111 @@
+#!/usr/bin/env python3
+"""Verdict for tools/a2_memory_check.sh (see that script for the criteria)."""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import statistics as st
+from pathlib import Path
+
+from a2_common import ROOT, iter_log
+
+
+def prefill_rate(r, prefix=""):
+    n, ms = r.get(f"{prefix}prompt_eval_count"), r.get(f"{prefix}ollama_prompt_eval_ms")
+    return n / ms * 1000 if n and ms else None
+
+
+def a1_rate(model):
+    """Median prompt-eval tokens/s of the model in its Assignment 1 accuracy run (sequential, alone)."""
+    v = [prefill_rate(r) for r in iter_log(ROOT / "results/logs/requests.jsonl")
+         if r.get("endpoint") == "POST /tickets" and r.get("model") == model
+         and str(r.get("run_id", "")).startswith("accuracy_") and r.get("status") == 200]
+    v = [x for x in v if x]
+    return st.median(v) if v else None
+
+
+def kv(block):
+    return {k: int(v) for k, v in (ln.split() for ln in block.strip().splitlines())}
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run-id", required=True)
+    ap.add_argument("--small", required=True)
+    ap.add_argument("--large", required=True)
+    ap.add_argument("--sends", required=True)
+    ap.add_argument("--cgroup-log", required=True)
+    ap.add_argument("--json-out", required=True)
+    a = ap.parse_args()
+
+    logs = [r for r in iter_log(ROOT / "results/logs/a2_requests.jsonl")
+            if r.get("run_id") == a.run_id and r.get("endpoint") == "POST /tickets"]
+    sends = json.loads(Path(a.sends).read_text(encoding="utf-8"))["tickets"]
+    checks, notes = {}, []
+
+    # 1. both models listed after every ticket from the 2nd on
+    listed = [all(re.search(rf"^{re.escape(m)}\s", s.get("ollama_ps") or "", re.M) for m in (a.small, a.large))
+              for s in sends[1:]]
+    checks["both_listed_after_each_ticket"] = bool(listed) and all(listed)
+    notes.append(f"`ollama ps` listed both models after {sum(listed)}/{len(listed)} tickets (from the 2nd on)")
+
+    # 2. no reload after each model's first call; collect prefill speeds
+    seen, reloads, per_model = set(), [], {a.small: [], a.large: []}
+    for r in logs:
+        for pfx, m in (("small_", a.small), ("large_", a.large)):
+            load = r.get(f"{pfx}ollama_load_ms")
+            if load is None:
+                continue
+            first = m not in seen
+            if not first and load > 1000:
+                reloads.append((r.get("row_id"), m, load))
+            seen.add(m)
+            rate = prefill_rate(r, pfx)
+            if rate and not first:
+                per_model[m].append(rate)
+    checks["no_reload"] = not reloads and len(seen) == 2
+    notes.append(f"reloads after first load: {reloads or 'none'}; models called: {sorted(seen)}")
+
+    # 3. OOM counters unchanged
+    txt = Path(a.cgroup_log).read_text(encoding="utf-8", errors="replace")
+    ev = re.findall(r"--- memory\.events\n((?:\w+ \d+\n)+)", txt)
+    if len(ev) >= 2:
+        b, e = kv(ev[0]), kv(ev[-1])
+        moved = {k: e.get(k, 0) - b.get(k, 0) for k in set(b) | set(e) if e.get(k, 0) != b.get(k, 0)}
+        checks["no_oom"] = not any(k in moved for k in ("oom", "oom_kill"))
+        notes.append(f"cgroup memory.events change: {moved or 'none'}")
+    else:
+        checks["no_oom"] = None
+        notes.append("cgroup memory.events not readable -- check `docker events --filter event=oom` by hand")
+    peak = re.findall(r"--- memory\.peak\n(\d+)", txt)
+    cur = re.findall(r"--- memory\.current\n(\d+)", txt)
+    mx = re.findall(r"--- memory\.max\n(\S+)", txt)
+
+    # 4. prefill speed vs Assignment 1 (paging would show up as a slowdown)
+    speed = {}
+    for m, v in per_model.items():
+        ref, med = a1_rate(m), (st.median(v) if v else None)
+        speed[m] = {"memcheck_tok_s": med, "a1_tok_s": ref, "ratio": (med / ref) if med and ref else None, "n": len(v)}
+    checks["no_slowdown"] = all(s["ratio"] is None or s["ratio"] >= 0.7 for s in speed.values())
+    notes.append("prefill tok/s, memory check vs A1 sequential: " + ", ".join(
+        f"{m} {s['memcheck_tok_s'] and round(s['memcheck_tok_s'], 1)} vs {s['a1_tok_s'] and round(s['a1_tok_s'], 1)}"
+        for m, s in speed.items()))
+    checks["no_errors"] = not [r for r in logs if r.get("status") != 200]
+
+    fit = checks["both_listed_after_each_ticket"] and all(v is not False for v in checks.values())
+    out = {"pair": [a.small, a.large], "verdict": "FIT" if fit else "DOES NOT FIT", "checks": checks,
+           "notes": notes, "prefill": speed, "cgroup_memory_max": mx[-1] if mx else None,
+           "cgroup_memory_current_end": int(cur[-1]) if cur else None,
+           "cgroup_memory_peak": int(peak[-1]) if peak else None, "tickets_logged": len(logs)}
+    Path(a.json_out).write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
+    print("\n## VERDICT:", out["verdict"])
+    for n in notes:
+        print(" -", n)
+    for k, v in checks.items():
+        print(f"   {k}: {v}")
+    return 0 if fit else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

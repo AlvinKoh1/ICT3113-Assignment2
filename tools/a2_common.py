@@ -8,12 +8,14 @@ from __future__ import annotations
 import csv
 import json
 import math
+import os
 from pathlib import Path
 
 csv.field_size_limit(10 ** 9)
 
 ROOT = Path(__file__).resolve().parents[1]
-A2 = ROOT / "results" / "a2"
+# A2_RESULTS lets a dry run write somewhere other than the evidence folder.
+A2 = Path(os.getenv("A2_RESULTS", str(ROOT / "results" / "a2")))
 DOCS_A2 = ROOT / "docs" / "a2"
 
 CATS = ["Credit reporting", "Debt collection", "Mortgage", "Credit card",

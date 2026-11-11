@@ -1,4 +1,20 @@
-# ICT3113 Assignment 1 — Ticket Triage Service
+# ICT3113 Assignment 1 & 2 — Ticket Triage Service
+
+> **Assignment 2 (due Fri 27 Nov, 23:59): start at [`docs/a2/RUNBOOK.md`](docs/a2/RUNBOOK.md).**
+> Cascade `llama3.2:3b` → `qwen2.5:7b` by ticket length (T = 400 and 500 chars), inside `POST /tickets`
+> (`service/app/cascade.py`, rule in `docs/a2/escalation_rule.md`). Golden split, limits, tuning analysis and the
+> prediction record are committed before any A2 measurement. Deck: `python3 deck/build_deck_a2.py` → `deck/Group09_A2.pptx`.
+>
+> | A2 file | What |
+> |---|---|
+> | `golden/a2_split.csv` | tuning (odd positions) / test (even) split |
+> | `docs/a2/limits.json` | overall + per-category accuracy limits from 7b's test-set score |
+> | `docs/a2/tuning_analysis.md` | every candidate rule replayed on the tuning set; why the length rule |
+> | `docs/a2/escalation_rule.md` | the rule, settings, memory fallback (supporting file) |
+> | `docs/a2/prediction_record.md` | predictions, committed before testing (supporting file) |
+> | `data/a2_speed_rows.csv` | speed-test workload rows, fixed order (supporting file) |
+> | `tools/a2_*.py, tools/a2_*.sh, jmeter/a2_*` | memory check, accuracy, S calibration, speed runs, analysis |
+> | `results/a2/` | all A2 evidence (`.jtl`, run files, accuracy, memory, env); service log `results/logs/a2_requests.jsonl` |
 
 **Group P2-9** · team number **9** → dataset rows **9000–9999**
 Repo: https://github.com/gemokay/ICT3113-Assignment1

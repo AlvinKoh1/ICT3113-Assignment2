@@ -1,0 +1,150 @@
+{
+  "fits": {
+    "llama3.2:3b": {
+      "a": 1.9868483236651162,
+      "b": 0.0180517377002894,
+      "r2": 0.9411546946414837
+    },
+    "qwen2.5:7b": {
+      "a": 4.720200187481517,
+      "b": 0.038463246440118906,
+      "r2": 0.9584559369309655
+    }
+  },
+  "S_pred_s": 34.644605917894026,
+  "rate_per_min": 0.8659356689205382,
+  "duration_min": 35.0,
+  "queue_model_check_a1_7b_1pm": {
+    "predicted_p50": 53.409522465289825,
+    "measured_p50": 70.0,
+    "predicted_p95": 202.18943038135487,
+    "measured_p95": 150.6
+  },
+  "configs": {
+    "top7b": {
+      "mean_service_s": 38.735172176800674,
+      "median_service_s": 35.47156571635658,
+      "utilisation": 0.5590361204945018,
+      "p50_median": 64.7135958890511,
+      "p50_q10": 50.33000850056201,
+      "p50_q90": 91.35288968234306,
+      "p95_pooled": 226.18352737182695
+    },
+    "cascade400": {
+      "mean_service_s": 37.42042927233527,
+      "median_service_s": 35.47156571635658,
+      "utilisation": 0.5400614075538888,
+      "p50_median": 61.415025440216795,
+      "p50_q10": 48.42682906380104,
+      "p50_q90": 85.26451227914285,
+      "p95_pooled": 215.45411720662244,
+      "esc_frac_load": 0.85,
+      "esc_frac_tune": 0.8068181818181818,
+      "tune_correct": 59,
+      "tune_acc": 0.6704545454545454,
+      "tune_per_category": {
+        "Credit reporting": [
+          16,
+          21
+        ],
+        "Debt collection": [
+          7,
+          10
+        ],
+        "Mortgage": [
+          8,
+          9
+        ],
+        "Credit card": [
+          6,
+          12
+        ],
+        "Bank account or service": [
+          10,
+          11
+        ],
+        "Consumer loan": [
+          7,
+          10
+        ],
+        "Money transfer or service": [
+          5,
+          15
+        ]
+      }
+    },
+    "cascade500": {
+      "mean_service_s": 36.238781947031214,
+      "median_service_s": 35.47156571635658,
+      "utilisation": 0.5230075647694666,
+      "p50_median": 58.134414985313185,
+      "p50_q10": 44.825877844989506,
+      "p50_q90": 76.51076683133796,
+      "p95_pooled": 206.88653141855906,
+      "esc_frac_load": 0.75,
+      "esc_frac_tune": 0.7272727272727273,
+      "tune_correct": 59,
+      "tune_acc": 0.6704545454545454,
+      "tune_per_category": {
+        "Credit reporting": [
+          15,
+          21
+        ],
+        "Debt collection": [
+          7,
+          10
+        ],
+        "Mortgage": [
+          8,
+          9
+        ],
+        "Credit card": [
+          6,
+          12
+        ],
+        "Bank account or service": [
+          10,
+          11
+        ],
+        "Consumer loan": [
+          8,
+          10
+        ],
+        "Money transfer or service": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  "tune_reference": {
+    "Credit reporting": [
+      18,
+      21
+    ],
+    "Debt collection": [
+      8,
+      10
+    ],
+    "Mortgage": [
+      7,
+      9
+    ],
+    "Credit card": [
+      5,
+      12
+    ],
+    "Bank account or service": [
+      10,
+      11
+    ],
+    "Consumer loan": [
+      6,
+      10
+    ],
+    "Money transfer or service": [
+      6,
+      15
+    ]
+  }
+}

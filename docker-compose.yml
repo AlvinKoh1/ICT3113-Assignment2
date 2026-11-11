@@ -12,6 +12,11 @@ services:
       # defaults for the baseline; record whatever values you observe in
       # `docker logs triage-ollama` in your test environment description.
       - OLLAMA_KEEP_ALIVE=30m
+      # Assignment 2: parallelism pinned to the value Ollama chose automatically
+      # in Assignment 1 (--parallel 4), so it cannot silently change when a
+      # second model is loaded. Held constant for EVERY A2 configuration.
+      # Threads (auto = 10) and num_ctx (2048, set per request) are unchanged.
+      - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL:-4}
     deploy:
       resources:
         limits:
@@ -35,7 +40,12 @@ services:
       - OLLAMA_TEMPERATURE=0
       - RUN_ID=${RUN_ID:-adhoc}
       - DB_PATH=/data/tickets.db
-      - LOG_PATH=/logs/requests.jsonl
+      - LOG_PATH=${LOG_PATH:-/logs/requests.jsonl}
+      # Assignment 2 configuration under test (service/app/config.py)
+      - TRIAGE_MODE=${TRIAGE_MODE:-single}
+      - CASCADE_SMALL_MODEL=${CASCADE_SMALL_MODEL:-llama3.2:3b}
+      - CASCADE_LARGE_MODEL=${CASCADE_LARGE_MODEL:-qwen2.5:7b}
+      - CASCADE_MAX_CHARS=${CASCADE_MAX_CHARS:-500}
     volumes:
       - triage-data:/data
       # Logs land on the host so they can be committed with the .jtl files.

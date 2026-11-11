@@ -36,6 +36,21 @@ OLLAMA_NUM_PREDICT = int(os.getenv("OLLAMA_NUM_PREDICT", "16"))
 # Context window. Narratives in the extract cap at 2000 chars (~550 tokens).
 OLLAMA_NUM_CTX = int(os.getenv("OLLAMA_NUM_CTX", "2048"))
 
+# --- Assignment 2: configuration under test ---------------------------------
+# TRIAGE_MODE=single  -> every ticket goes to OLLAMA_MODEL (the Assignment 1 path, unchanged).
+# TRIAGE_MODE=cascade -> length rule in app/cascade.py (docs/a2/escalation_rule.md).
+TRIAGE_MODE = os.getenv("TRIAGE_MODE", "single").strip().lower()
+CASCADE_SMALL_MODEL = os.getenv("CASCADE_SMALL_MODEL", "llama3.2:3b")
+CASCADE_LARGE_MODEL = os.getenv("CASCADE_LARGE_MODEL", "qwen2.5:7b")
+CASCADE_MAX_CHARS = int(os.getenv("CASCADE_MAX_CHARS", "500"))
+# Name returned in the "model" field of POST /tickets. In cascade mode it names
+# the configuration, never the model that answered, so the caller cannot tell.
+CONFIG_ID = os.getenv("CONFIG_ID") or (
+    f"cascade-{CASCADE_SMALL_MODEL}-{CASCADE_LARGE_MODEL}-le{CASCADE_MAX_CHARS}"
+    if TRIAGE_MODE == "cascade" else f"single-{OLLAMA_MODEL}")
+if TRIAGE_MODE not in ("single", "cascade"):
+    raise ValueError(f"TRIAGE_MODE must be single or cascade, not {TRIAGE_MODE!r}")
+
 # --- Storage --------------------------------------------------------------
 DB_PATH = os.getenv("DB_PATH", "/data/tickets.db")
 

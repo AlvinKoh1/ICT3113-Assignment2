@@ -1,4 +1,8 @@
-"""Ticket Triage Service -- Assignment 1 baseline.
+"""Ticket Triage Service -- Assignment 1 baseline + Assignment 2 cascade.
+
+Assignment 2 change (the only one): POST /tickets can run a two-model cascade
+(TRIAGE_MODE=cascade, see app/cascade.py and docs/a2/escalation_rule.md). With
+TRIAGE_MODE=single (the default) the code path is the Assignment 1 one.
 
 BASELINE CONTRACT (do not "improve" this before Assignment 2):
   * POST /tickets is SYNCHRONOUS -- it does not return until Ollama has
@@ -18,9 +22,9 @@ from fastapi import FastAPI, Header, Query, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
-from . import classifier, config, db, logging_setup
+from . import cascade, classifier, config, db, logging_setup
 
-app = FastAPI(title="Ticket Triage Service", version="1.0.0-baseline")
+app = FastAPI(title="Ticket Triage Service", version="2.0.0-a2")
 
 
 @app.on_event("startup")
@@ -70,7 +74,11 @@ def create_ticket(
     load tests should leave it unset and pin the model via OLLAMA_MODEL.
     """
     request_id = str(uuid.uuid4())
+    use_cascade = config.TRIAGE_MODE == "cascade" and not x_model
     model = x_model or config.OLLAMA_MODEL
+    # What the caller (and GET /search) sees as "model": the model in single
+    # mode, the configuration name in cascade mode -- never the answering model.
+    public_model = config.CONFIG_ID if use_cascade else model
     received_at = _now_iso()
     t0 = time.perf_counter()
 
@@ -78,7 +86,8 @@ def create_ticket(
         "ts": received_at,
         "request_id": request_id,
         "endpoint": "POST /tickets",
-        "model": model,
+        "config": public_model if use_cascade else f"single-{model}",
+        "model": model if not use_cascade else None,
         "prompt_version": classifier.PROMPT_VERSION,
         "row_id": ticket.row_id,
         "narrative_chars": len(ticket.narrative),
@@ -87,7 +96,19 @@ def create_ticket(
     }
 
     try:
-        category, raw, metrics = classifier.classify(ticket.narrative, model)
+        if use_cascade:
+            fields: dict = {}
+            try:
+                category, raw, fields = cascade.classify(ticket.narrative)
+            except Exception:
+                record.update({"mode": "cascade", "route_at_failure": cascade.route(ticket.narrative)})
+                raise
+            record.update(fields)
+            record["model"] = fields["final_model"]
+            metrics = {}
+        else:
+            category, raw, metrics = classifier.classify(ticket.narrative, model)
+            record.update({"mode": "single", "final_model": model, "escalated": False})
     except Exception as exc:
         latency_ms = (time.perf_counter() - t0) * 1000
         record.update({
@@ -108,7 +129,7 @@ def create_ticket(
         narrative=ticket.narrative,
         category=category,
         raw_completion=raw,
-        model=model,
+        model=public_model,
         latency_ms=latency_ms,
         created_at=received_at,
     )
@@ -128,7 +149,7 @@ def create_ticket(
         "ticket_id": ticket_id,
         "request_id": request_id,
         "category": category,
-        "model": model,
+        "model": public_model,
         "latency_ms": round(latency_ms, 2),
     }
 
@@ -190,4 +211,5 @@ def healthz():
     """Readiness probe. Not part of the client-facing specification; used by
     docker compose and by the test scripts to wait for a warm backend."""
     return {"service": "ok", "ollama": classifier.backend_ready(),
-            "model": config.OLLAMA_MODEL, "run_id": config.RUN_ID}
+            "model": config.OLLAMA_MODEL, "mode": config.TRIAGE_MODE,
+            "config": config.CONFIG_ID, "run_id": config.RUN_ID}

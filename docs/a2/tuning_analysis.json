@@ -1,0 +1,1413 @@
+{
+  "reference": {
+    "correct": 60,
+    "n": 88,
+    "acc": 0.6818181818181818,
+    "escalated": 88,
+    "esc_frac": 1.0,
+    "mean_s": 37.901306477272726,
+    "median_s": 35.17388,
+    "per_category": {
+      "Credit reporting": [
+        18,
+        21
+      ],
+      "Debt collection": [
+        8,
+        10
+      ],
+      "Mortgage": [
+        7,
+        9
+      ],
+      "Credit card": [
+        5,
+        12
+      ],
+      "Bank account or service": [
+        10,
+        11
+      ],
+      "Consumer loan": [
+        6,
+        10
+      ],
+      "Money transfer or service": [
+        6,
+        15
+      ]
+    }
+  },
+  "families": {
+    "category": {
+      "llama3.2:3b": {
+        "correct": 61,
+        "n": 88,
+        "acc": 0.6931818181818182,
+        "escalated": 58,
+        "esc_frac": 0.6590909090909091,
+        "mean_s": 44.05892284090909,
+        "median_s": 32.840334999999996,
+        "worst_gap_pts": -14.28571428571428,
+        "worst_cat": "Credit reporting",
+        "passes_tune": true,
+        "faster_than_large": false,
+        "accept": [
+          "Debt collection",
+          "Mortgage",
+          "Credit card",
+          "Consumer loan",
+          "Money transfer or service"
+        ],
+        "per_category": {
+          "Credit reporting": [
+            15,
+            21
+          ],
+          "Debt collection": [
+            7,
+            10
+          ],
+          "Mortgage": [
+            8,
+            9
+          ],
+          "Credit card": [
+            7,
+            12
+          ],
+          "Bank account or service": [
+            10,
+            11
+          ],
+          "Consumer loan": [
+            8,
+            10
+          ],
+          "Money transfer or service": [
+            6,
+            15
+          ]
+        }
+      },
+      "llama3.2:1b": {
+        "correct": 60,
+        "n": 88,
+        "acc": 0.6818181818181818,
+        "escalated": 88,
+        "esc_frac": 1.0,
+        "mean_s": 44.02611715909091,
+        "median_s": 41.01752499999999,
+        "worst_gap_pts": 0.0,
+        "worst_cat": "Bank account or service",
+        "passes_tune": true,
+        "faster_than_large": false,
+        "accept": [],
+        "per_category": {
+          "Credit reporting": [
+            18,
+            21
+          ],
+          "Debt collection": [
+            8,
+            10
+          ],
+          "Mortgage": [
+            7,
+            9
+          ],
+          "Credit card": [
+            5,
+            12
+          ],
+          "Bank account or service": [
+            10,
+            11
+          ],
+          "Consumer loan": [
+            6,
+            10
+          ],
+          "Money transfer or service": [
+            6,
+            15
+          ]
+        }
+      },
+      "qwen2.5:0.5b": {
+        "correct": 60,
+        "n": 88,
+        "acc": 0.6818181818181818,
+        "escalated": 87,
+        "esc_frac": 0.9886363636363636,
+        "mean_s": 40.62196977272727,
+        "median_s": 37.90385499999999,
+        "worst_gap_pts": 0.0,
+        "worst_cat": "Bank account or service",
+        "passes_tune": true,
+        "faster_than_large": false,
+        "accept": [
+          "Bank account or service"
+        ],
+        "per_category": {
+          "Credit reporting": [
+            18,
+            21
+          ],
+          "Debt collection": [
+            8,
+            10
+          ],
+          "Mortgage": [
+            7,
+            9
+          ],
+          "Credit card": [
+            5,
+            12
+          ],
+          "Bank account or service": [
+            10,
+            11
+          ],
+          "Consumer loan": [
+            6,
+            10
+          ],
+          "Money transfer or service": [
+            6,
+            15
+          ]
+        }
+      }
+    },
+    "length": {
+      "llama3.2:3b": {
+        "300": {
+          "correct": 59,
+          "n": 88,
+          "acc": 0.6704545454545454,
+          "escalated": 82,
+          "esc_frac": 0.9318181818181818,
+          "mean_s": 37.348912840909094,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              18,
+              21
+            ],
+            "Debt collection": [
+              8,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              6,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -6.6666666666666705,
+          "worst_cat": "Money transfer or service",
+          "passes_tune": true,
+          "faster_than_large": true
+        },
+        "400": {
+          "correct": 59,
+          "n": 88,
+          "acc": 0.6704545454545454,
+          "escalated": 71,
+          "esc_frac": 0.8068181818181818,
+          "mean_s": 36.29194784090909,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              16,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              8,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              7,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -10.000000000000009,
+          "worst_cat": "Debt collection",
+          "passes_tune": true,
+          "faster_than_large": true
+        },
+        "450": {
+          "correct": 59,
+          "n": 88,
+          "acc": 0.6704545454545454,
+          "escalated": 68,
+          "esc_frac": 0.7727272727272727,
+          "mean_s": 35.86896227272727,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              16,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              8,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              7,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -10.000000000000009,
+          "worst_cat": "Debt collection",
+          "passes_tune": true,
+          "faster_than_large": true
+        },
+        "500": {
+          "correct": 59,
+          "n": 88,
+          "acc": 0.6704545454545454,
+          "escalated": 64,
+          "esc_frac": 0.7272727272727273,
+          "mean_s": 35.19909125,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              15,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              8,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -14.28571428571428,
+          "worst_cat": "Credit reporting",
+          "passes_tune": true,
+          "faster_than_large": true
+        },
+        "550": {
+          "correct": 57,
+          "n": 88,
+          "acc": 0.6477272727272727,
+          "escalated": 60,
+          "esc_frac": 0.6818181818181818,
+          "mean_s": 34.609592613636366,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              13,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              8,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -23.809523809523803,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "600": {
+          "correct": 55,
+          "n": 88,
+          "acc": 0.625,
+          "escalated": 56,
+          "esc_frac": 0.6363636363636364,
+          "mean_s": 34.010822499999996,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              12,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              8,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              4,
+              15
+            ]
+          },
+          "worst_gap_pts": -28.57142857142857,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "700": {
+          "correct": 53,
+          "n": 88,
+          "acc": 0.6022727272727273,
+          "escalated": 49,
+          "esc_frac": 0.5568181818181818,
+          "mean_s": 32.75271090909091,
+          "median_s": 34.01537999999999,
+          "per_category": {
+            "Credit reporting": [
+              11,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              8,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              3,
+              15
+            ]
+          },
+          "worst_gap_pts": -33.33333333333333,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "800": {
+          "correct": 51,
+          "n": 88,
+          "acc": 0.5795454545454546,
+          "escalated": 40,
+          "esc_frac": 0.45454545454545453,
+          "mean_s": 30.72710943181818,
+          "median_s": 17.278935,
+          "per_category": {
+            "Credit reporting": [
+              11,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              2,
+              15
+            ]
+          },
+          "worst_gap_pts": -33.33333333333333,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "1000": {
+          "correct": 48,
+          "n": 88,
+          "acc": 0.5454545454545454,
+          "escalated": 30,
+          "esc_frac": 0.3409090909090909,
+          "mean_s": 28.437668863636365,
+          "median_s": 16.722455,
+          "per_category": {
+            "Credit reporting": [
+              9,
+              21
+            ],
+            "Debt collection": [
+              6,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              6,
+              12
+            ],
+            "Bank account or service": [
+              10,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              2,
+              15
+            ]
+          },
+          "worst_gap_pts": -42.857142857142854,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        }
+      },
+      "llama3.2:1b": {
+        "300": {
+          "correct": 58,
+          "n": 88,
+          "acc": 0.6590909090909091,
+          "escalated": 82,
+          "esc_frac": 0.9318181818181818,
+          "mean_s": 37.07055397727272,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              19,
+              21
+            ],
+            "Debt collection": [
+              8,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              7,
+              11
+            ],
+            "Consumer loan": [
+              6,
+              10
+            ],
+            "Money transfer or service": [
+              6,
+              15
+            ]
+          },
+          "worst_gap_pts": -27.27272727272727,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "400": {
+          "correct": 56,
+          "n": 88,
+          "acc": 0.6363636363636364,
+          "escalated": 71,
+          "esc_frac": 0.8068181818181818,
+          "mean_s": 35.368573863636364,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              19,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              6,
+              11
+            ],
+            "Consumer loan": [
+              6,
+              10
+            ],
+            "Money transfer or service": [
+              6,
+              15
+            ]
+          },
+          "worst_gap_pts": -36.36363636363637,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "450": {
+          "correct": 54,
+          "n": 88,
+          "acc": 0.6136363636363636,
+          "escalated": 68,
+          "esc_frac": 0.7727272727272727,
+          "mean_s": 34.698072159090906,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              19,
+              21
+            ],
+            "Debt collection": [
+              6,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              6,
+              11
+            ],
+            "Consumer loan": [
+              5,
+              10
+            ],
+            "Money transfer or service": [
+              6,
+              15
+            ]
+          },
+          "worst_gap_pts": -36.36363636363637,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "500": {
+          "correct": 52,
+          "n": 88,
+          "acc": 0.5909090909090909,
+          "escalated": 64,
+          "esc_frac": 0.7272727272727273,
+          "mean_s": 33.74991602272727,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              18,
+              21
+            ],
+            "Debt collection": [
+              6,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              4,
+              12
+            ],
+            "Bank account or service": [
+              6,
+              11
+            ],
+            "Consumer loan": [
+              5,
+              10
+            ],
+            "Money transfer or service": [
+              6,
+              15
+            ]
+          },
+          "worst_gap_pts": -36.36363636363637,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "550": {
+          "correct": 49,
+          "n": 88,
+          "acc": 0.5568181818181818,
+          "escalated": 60,
+          "esc_frac": 0.6818181818181818,
+          "mean_s": 32.779005454545455,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              17,
+              21
+            ],
+            "Debt collection": [
+              5,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              3,
+              12
+            ],
+            "Bank account or service": [
+              6,
+              11
+            ],
+            "Consumer loan": [
+              5,
+              10
+            ],
+            "Money transfer or service": [
+              6,
+              15
+            ]
+          },
+          "worst_gap_pts": -36.36363636363637,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "600": {
+          "correct": 46,
+          "n": 88,
+          "acc": 0.5227272727272727,
+          "escalated": 56,
+          "esc_frac": 0.6363636363636364,
+          "mean_s": 31.854482613636364,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              16,
+              21
+            ],
+            "Debt collection": [
+              5,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              3,
+              12
+            ],
+            "Bank account or service": [
+              6,
+              11
+            ],
+            "Consumer loan": [
+              3,
+              10
+            ],
+            "Money transfer or service": [
+              6,
+              15
+            ]
+          },
+          "worst_gap_pts": -36.36363636363637,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "700": {
+          "correct": 44,
+          "n": 88,
+          "acc": 0.5,
+          "escalated": 49,
+          "esc_frac": 0.5568181818181818,
+          "mean_s": 29.831150454545455,
+          "median_s": 34.01537999999999,
+          "per_category": {
+            "Credit reporting": [
+              15,
+              21
+            ],
+            "Debt collection": [
+              5,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              2,
+              12
+            ],
+            "Bank account or service": [
+              5,
+              11
+            ],
+            "Consumer loan": [
+              3,
+              10
+            ],
+            "Money transfer or service": [
+              7,
+              15
+            ]
+          },
+          "worst_gap_pts": -45.45454545454545,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "800": {
+          "correct": 38,
+          "n": 88,
+          "acc": 0.4318181818181818,
+          "escalated": 40,
+          "esc_frac": 0.45454545454545453,
+          "mean_s": 26.750034431818182,
+          "median_s": 6.87096,
+          "per_category": {
+            "Credit reporting": [
+              15,
+              21
+            ],
+            "Debt collection": [
+              4,
+              10
+            ],
+            "Mortgage": [
+              5,
+              9
+            ],
+            "Credit card": [
+              1,
+              12
+            ],
+            "Bank account or service": [
+              4,
+              11
+            ],
+            "Consumer loan": [
+              1,
+              10
+            ],
+            "Money transfer or service": [
+              8,
+              15
+            ]
+          },
+          "worst_gap_pts": -54.54545454545454,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "1000": {
+          "correct": 35,
+          "n": 88,
+          "acc": 0.3977272727272727,
+          "escalated": 30,
+          "esc_frac": 0.3409090909090909,
+          "mean_s": 23.135732045454546,
+          "median_s": 5.820895,
+          "per_category": {
+            "Credit reporting": [
+              14,
+              21
+            ],
+            "Debt collection": [
+              3,
+              10
+            ],
+            "Mortgage": [
+              5,
+              9
+            ],
+            "Credit card": [
+              1,
+              12
+            ],
+            "Bank account or service": [
+              4,
+              11
+            ],
+            "Consumer loan": [
+              0,
+              10
+            ],
+            "Money transfer or service": [
+              8,
+              15
+            ]
+          },
+          "worst_gap_pts": -60.0,
+          "worst_cat": "Consumer loan",
+          "passes_tune": false,
+          "faster_than_large": true
+        }
+      },
+      "qwen2.5:0.5b": {
+        "300": {
+          "correct": 57,
+          "n": 88,
+          "acc": 0.6477272727272727,
+          "escalated": 82,
+          "esc_frac": 0.9318181818181818,
+          "mean_s": 36.979083068181815,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              18,
+              21
+            ],
+            "Debt collection": [
+              8,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              8,
+              11
+            ],
+            "Consumer loan": [
+              6,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -18.181818181818176,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "400": {
+          "correct": 53,
+          "n": 88,
+          "acc": 0.6022727272727273,
+          "escalated": 71,
+          "esc_frac": 0.8068181818181818,
+          "mean_s": 35.06427534090909,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              15,
+              21
+            ],
+            "Debt collection": [
+              7,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              7,
+              11
+            ],
+            "Consumer loan": [
+              7,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -27.27272727272727,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "450": {
+          "correct": 52,
+          "n": 88,
+          "acc": 0.5909090909090909,
+          "escalated": 68,
+          "esc_frac": 0.7727272727272727,
+          "mean_s": 34.33390556818182,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              15,
+              21
+            ],
+            "Debt collection": [
+              6,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              5,
+              12
+            ],
+            "Bank account or service": [
+              7,
+              11
+            ],
+            "Consumer loan": [
+              7,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -27.27272727272727,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "500": {
+          "correct": 51,
+          "n": 88,
+          "acc": 0.5795454545454546,
+          "escalated": 64,
+          "esc_frac": 0.7272727272727273,
+          "mean_s": 33.247088522727275,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              14,
+              21
+            ],
+            "Debt collection": [
+              6,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              4,
+              12
+            ],
+            "Bank account or service": [
+              7,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -27.27272727272727,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "550": {
+          "correct": 47,
+          "n": 88,
+          "acc": 0.5340909090909091,
+          "escalated": 60,
+          "esc_frac": 0.6818181818181818,
+          "mean_s": 32.21503534090909,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              12,
+              21
+            ],
+            "Debt collection": [
+              5,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              3,
+              12
+            ],
+            "Bank account or service": [
+              7,
+              11
+            ],
+            "Consumer loan": [
+              8,
+              10
+            ],
+            "Money transfer or service": [
+              5,
+              15
+            ]
+          },
+          "worst_gap_pts": -30.000000000000004,
+          "worst_cat": "Debt collection",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "600": {
+          "correct": 44,
+          "n": 88,
+          "acc": 0.5,
+          "escalated": 56,
+          "esc_frac": 0.6363636363636364,
+          "mean_s": 31.19444261363636,
+          "median_s": 35.17388,
+          "per_category": {
+            "Credit reporting": [
+              11,
+              21
+            ],
+            "Debt collection": [
+              5,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              3,
+              12
+            ],
+            "Bank account or service": [
+              7,
+              11
+            ],
+            "Consumer loan": [
+              7,
+              10
+            ],
+            "Money transfer or service": [
+              4,
+              15
+            ]
+          },
+          "worst_gap_pts": -33.33333333333333,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "700": {
+          "correct": 39,
+          "n": 88,
+          "acc": 0.4431818181818182,
+          "escalated": 49,
+          "esc_frac": 0.5568181818181818,
+          "mean_s": 29.01213693181818,
+          "median_s": 34.01537999999999,
+          "per_category": {
+            "Credit reporting": [
+              9,
+              21
+            ],
+            "Debt collection": [
+              5,
+              10
+            ],
+            "Mortgage": [
+              7,
+              9
+            ],
+            "Credit card": [
+              2,
+              12
+            ],
+            "Bank account or service": [
+              6,
+              11
+            ],
+            "Consumer loan": [
+              7,
+              10
+            ],
+            "Money transfer or service": [
+              3,
+              15
+            ]
+          },
+          "worst_gap_pts": -42.857142857142854,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "800": {
+          "correct": 32,
+          "n": 88,
+          "acc": 0.36363636363636365,
+          "escalated": 40,
+          "esc_frac": 0.45454545454545453,
+          "mean_s": 25.583699886363636,
+          "median_s": 3.297905,
+          "per_category": {
+            "Credit reporting": [
+              9,
+              21
+            ],
+            "Debt collection": [
+              4,
+              10
+            ],
+            "Mortgage": [
+              5,
+              9
+            ],
+            "Credit card": [
+              1,
+              12
+            ],
+            "Bank account or service": [
+              5,
+              11
+            ],
+            "Consumer loan": [
+              6,
+              10
+            ],
+            "Money transfer or service": [
+              2,
+              15
+            ]
+          },
+          "worst_gap_pts": -45.45454545454545,
+          "worst_cat": "Bank account or service",
+          "passes_tune": false,
+          "faster_than_large": true
+        },
+        "1000": {
+          "correct": 26,
+          "n": 88,
+          "acc": 0.29545454545454547,
+          "escalated": 30,
+          "esc_frac": 0.3409090909090909,
+          "mean_s": 21.592088863636363,
+          "median_s": 2.60165,
+          "per_category": {
+            "Credit reporting": [
+              5,
+              21
+            ],
+            "Debt collection": [
+              3,
+              10
+            ],
+            "Mortgage": [
+              5,
+              9
+            ],
+            "Credit card": [
+              1,
+              12
+            ],
+            "Bank account or service": [
+              5,
+              11
+            ],
+            "Consumer loan": [
+              6,
+              10
+            ],
+            "Money transfer or service": [
+              1,
+              15
+            ]
+          },
+          "worst_gap_pts": -61.904761904761905,
+          "worst_cat": "Credit reporting",
+          "passes_tune": false,
+          "faster_than_large": true
+        }
+      }
+    }
+  },
+  "length_buckets": [
+    {
+      "lo": 0,
+      "hi": 300,
+      "n": 6,
+      "3b": 3,
+      "7b": 4
+    },
+    {
+      "lo": 300,
+      "hi": 400,
+      "n": 11,
+      "3b": 5,
+      "7b": 5
+    },
+    {
+      "lo": 400,
+      "hi": 500,
+      "n": 7,
+      "3b": 4,
+      "7b": 4
+    },
+    {
+      "lo": 500,
+      "hi": 700,
+      "n": 15,
+      "3b": 7,
+      "7b": 13
+    },
+    {
+      "lo": 700,
+      "hi": 1000,
+      "n": 19,
+      "3b": 10,
+      "7b": 15
+    },
+    {
+      "lo": 1000,
+      "hi": 1500,
+      "n": 18,
+      "3b": 6,
+      "7b": 11
+    },
+    {
+      "lo": 1500,
+      "hi": 99999,
+      "n": 12,
+      "3b": 4,
+      "7b": 8
+    }
+  ],
+  "chosen": {
+    "small": "llama3.2:3b",
+    "large": "qwen2.5:7b",
+    "settings": [
+      400,
+      500
+    ]
+  }
+}

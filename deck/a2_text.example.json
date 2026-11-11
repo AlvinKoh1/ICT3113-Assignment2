@@ -1,0 +1,9 @@
+{
+  "_how": "Copy to deck/a2_text.json after the results are in. Every key is optional; a missing key falls back to the text the builder derives from the data. '**Lead** rest' renders Lead in bold.",
+  "prediction_misses": [
+    "**<claim>:** predicted <x>, measured <y> — because <reason, with the number from the log/.jtl that shows it>."
+  ],
+  "recommendation_extra": [
+    "**Defence:** <one line answering the obvious objection, e.g. why a 5 % gain inside run-to-run spread is or is not worth deploying>."
+  ]
+}
