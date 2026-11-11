@@ -17,6 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 # A2_RESULTS lets a dry run write somewhere other than the evidence folder.
 A2 = Path(os.getenv("A2_RESULTS", str(ROOT / "results" / "a2")))
 DOCS_A2 = ROOT / "docs" / "a2"
+# Generated write-ups (accuracy notes, prediction account, deck text) can be redirected for dry runs.
+DOCS_OUT = Path(os.getenv("A2_DOCS_OUT", str(DOCS_A2)))
+DECK_TEXT = Path(os.getenv("A2_DECK_TEXT", str(ROOT / "deck" / "a2_text.json")))
+A2_LOG = Path(os.getenv("A2_LOG", str(ROOT / "results" / "logs" / "a2_requests.jsonl")))
 
 CATS = ["Credit reporting", "Debt collection", "Mortgage", "Credit card",
         "Bank account or service", "Consumer loan", "Money transfer or service"]

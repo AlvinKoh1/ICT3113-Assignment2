@@ -47,7 +47,7 @@ PENDING_ITEMS: list[str] = []
 
 # ------------------------------------------------------------------ data
 team = jload(DECK / "team_a2.json") or jload(DECK / "team.json") or {}
-txt = jload(DECK / "a2_text.json") or {}
+txt = jload(os.getenv("A2_DECK_TEXT", str(DECK / "a2_text.json"))) or {}
 limits = jload(DOCS_A2 / "limits.json")
 tuning = jload(DOCS_A2 / "tuning_analysis.json")
 pred = jload(DOCS_A2 / "prediction_inputs.json")
@@ -633,7 +633,7 @@ table(s, 0.3, 1.35, 6.9, prow, ["Claim", "Predicted", "Measured", "Verdict"], si
 text(s, 0.3, 6.78, 6.9, 0.3, "Verdict tolerances: latency ±15%, escalation ±5 points, accuracy ±2 tickets, S ±15%.", 8.5)
 why = txt.get("prediction_misses") or ["Where and why the predictions missed: write in deck/a2_text.json → \"prediction_misses\" "
                                        "after reading results (docs/a2/prediction_account.md)."]
-card(s, 7.4, 5.0, 5.6, 2.05, "Why they differed", why, AMBER, 9.5)
+card(s, 7.4, 4.25, 5.6, 2.8, "Why they differed (full account: docs/a2/prediction_account.md)", why, AMBER, 9)
 if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
     top = acc["top7b"]; rec = acc[recommended]
     gain = (p50("top7b")["mean"] - p50(recommended)["mean"]) / p50("top7b")["mean"] * 100 if recommended != "top7b" else 0
@@ -669,9 +669,9 @@ if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
     if rng_overlap:
         lines.append("Caveat: the per-run p50 ranges overlap; the gain holds in the mean of 3 runs but is not larger than run-to-run spread.")
     lines += txt.get("recommendation_extra", [])
-    card(s, 7.4, 1.35, 5.6, 3.5, "Recommendation and defence", lines, GREEN, 10)
+    card(s, 7.4, 1.35, 5.6, 2.75, "Recommendation and defence", lines, GREEN, 9.5)
 else:
-    pending(s, 7.4, 1.35, 5.6, 2.0, "recommendation (needs both accuracy and all 9 speed runs)",
+    pending(s, 7.4, 1.35, 5.6, 2.6, "recommendation (needs both accuracy and all 9 speed runs)",
             "tools/a2_analyze_speed.py; python3 deck/build_deck_a2.py")
 footer(s, "docs/a2/prediction_record.md · docs/a2/prediction_inputs.json · results/a2/speed/summary.json · results/a2/accuracy/ · results/logs/a2_requests.jsonl")
 

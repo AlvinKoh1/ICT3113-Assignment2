@@ -71,18 +71,26 @@ If a run is hit by a test-side fault (network drop, laptop sleep): **keep the fi
 
 Commit `results/a2/jtl`, `results/a2/runs`, `results/a2/env`, `results/logs/a2_requests.jsonl`.
 
-## 6. Analysis and deck (any machine with Python)
+## 6. Finish: analysis, checks, prediction account, deck (one command, any machine with Python)
 
 ```bash
-python3 tools/a2_analyze_speed.py                 # -> results/a2/speed/summary.md / .json
-pip install python-pptx matplotlib
-python3 deck/build_deck_a2.py                     # -> deck/Group09_A2.pptx (8 slides)
+git pull
+tools/a2_finish.sh
 ```
 
-* Read `results/a2/speed/summary.md`: every run must say `Reconciled yes`. Any `NO` → explain it (unfinished requests, reload, etc.) in `results/a2/reconcile_notes.md` before using the number.
-* Write `docs/a2/prediction_account.md` (where each prediction was wrong and why) and put a 3–5 bullet version in `deck/a2_text.json` under `"prediction_misses"` (template: `deck/a2_text.example.json`). Rebuild the deck.
-* The deck's DRAFT banner disappears when nothing is pending. Open it, read every slide, and check one number per slide by hand against the raw `.jtl` / log.
-* Save as `Group09_A2.pptx`; submit with the supporting files: `docs/a2/prediction_record.md`, `docs/a2/escalation_rule.md`, `data/a2_speed_rows.csv`.
+It runs, in order, and stops nothing on the way so every problem is listed at once:
+
+| Step | Script | Writes |
+|---|---|---|
+| Speed analysis | `tools/a2_analyze_speed.py` | `results/a2/speed/summary.md`, `.json` |
+| Accuracy-file check (the hand check, automated) | `tools/a2_verify_accuracy.py` | `docs/a2/accuracy_notes.md` |
+| Prediction account + slide 7 text | `tools/a2_prediction_account.py` | `docs/a2/prediction_account.md`, `deck/a2_text.json` |
+| Deck | `deck/build_deck_a2.py` | `deck/Group09_A2.pptx` |
+| Raw-file cross-check of every figure, deck has nothing PENDING | `tools/a2_crosscheck.py` | `results/a2/crosscheck.md` |
+
+* Every run in `summary.md` must say `Reconciled yes`. A `NO` is explained in `results/a2/reconcile_notes.md` (cause from the `.jtl`, JMeter log and service log), then `tools/a2_finish.sh` is run again.
+* Read `accuracy_notes.md`, `prediction_account.md`, `crosscheck.md` and the deck. The generated reasons can be edited by hand after the last run (re-running overwrites them).
+* Commit `results/a2 docs/a2 deck`. Submit `Group09_A2.pptx` with the supporting files `docs/a2/prediction_record.md`, `docs/a2/escalation_rule.md`, `data/a2_speed_rows.csv`.
 
 ## Things that void a result
 
