@@ -142,7 +142,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </div>
   <div class="flow">
     <div class="row"><div class="when">Thu 12 Nov</div><div class="lane"><b>Everyone signs off, in parallel.</b> Gabriel reads the rule and tuning analysis, Muhaimin the prediction record, Irfan and Uwais their scripts. Each posts "signed — &lt;name&gt;". Alvin sends the repo invites.</div></div>
-    <div class="row"><div class="when">Fri 13, evening</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh 100.88.74.36</code>, in either order. No need to be online at the same time.</div></div>
+    <div class="row"><div class="when">Fri 13, evening</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh 100.88.74.36</code>, in either order. You two don't need to be at your computers together, but <b>both machines must be on and connected over Tailscale all night</b>: the scripts talk to each other through the service on Machine A.</div></div>
     <div class="row"><div class="when">Fri 13 night →<br>Sat 14 morning</div><div class="lane"><b>The machines, unattended (about 10 h):</b> memory check, then the cascade accuracy test, then S calibration, then the 9 speed runs. Each stage commits and pushes its own results. If 3b + 7b don't fit, the script falls back to 1b + 7b, or to 7b alone, by itself.</div></div>
     <div class="row"><div class="when">Sat 14 – Mon 16</div><div class="lane"><b>Redo window.</b> If either machine says STOPPED (power cut, network drop), re-run the same command: it skips everything already done.</div></div>
     <div class="row"><div class="when">Tue 17 Nov</div><div class="lane"><b>Alvin:</b> <code>tools/a2_finish.sh</code>: analysis, accuracy check, prediction account, deck and raw-file cross-check in one run (about 5 min). Commit.</div></div>
@@ -167,7 +167,7 @@ cd ICT3113-Assignment2</code></pre>
       <p>Before you start: sleep set to "never", plugged in, wired, Windows Update paused, games and browsers closed.</p>
       <pre><code>git pull
 tools/a2_machineA_all.sh</code></pre>
-      <p>It rebuilds the service, runs the preflight and the memory check, the accuracy test, its side of the calibration and the 9 speed runs, and commits and pushes after each stage. About 10 hours. Uwais can start his side before or after you.</p>
+      <p>It rebuilds the service, runs the preflight and the memory check, the accuracy test, its side of the calibration and the 9 speed runs, and commits and pushes after each stage. About 10 hours. Uwais can start his side before or after you; his laptop must also stay on and on Tailscale all night, because the two scripts hand over to each other through your service at <code>100.88.74.36:8000</code>.</p>
     </div></li>
     <li><div>
       <h3>Only if it says STOPPED</h3>
@@ -233,11 +233,11 @@ cd ICT3113-Assignment2</code></pre>
     </div></li>
     <li><div>
       <h3>Start one command, then leave the laptop on</h3>
-      <p class="needs">Needs: <b>all five "signed"</b>. Irfan does not need to have started yet.</p>
+      <p class="needs">Needs: <b>all five "signed"</b>. Irfan does not need to have started yet: the script waits until his service answers.</p>
       <p>Before you start: power plan "never sleep", plugged in, Ethernet, Windows Update paused.</p>
       <pre><code>git pull
 jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
-      <p>It checks JMeter and Python, waits for Machine A, measures S when Machine A is ready, runs its side of the 9 speed runs, and commits and pushes. About 10 hours, most of it waiting.</p>
+      <p>It checks JMeter and Python, waits for Machine A, measures S when Machine A is ready, runs its side of the 9 speed runs, and commits and pushes. About 10 hours, most of it waiting. Keep the laptop on Tailscale the whole time: it watches Machine A's <code>/healthz</code> for "ready" and reports each finished run back through <code>/stats</code>.</p>
     </div></li>
     <li><div>
       <h3>Only if it says STOPPED</h3>
