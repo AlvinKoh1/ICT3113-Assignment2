@@ -1,80 +1,89 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>ICT3113 A2 Team Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F6EFE3; --paper-2:#EFE4D2; --paper-3:#E6D7BF; --sheet:#FBF7F0;
-  --ink:#2B2420; --ink-2:#4A3F37; --muted:#7A6A5C; --rule:#DCCDB8; --rule-2:#3A302A;
-  --terra:#B4532A; --terra-2:#8E3F1F; --olive:#6B7A3A; --olive-2:#4F5A2A; --ochre:#C08A2B; --clay:#9A6B54;
-  --serif:"Source Serif 4", Georgia, serif; --display:"Fraunces", Georgia, serif; --mono:"JetBrains Mono", Consolas, monospace;
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-2:#F5F4EE; --border:#E3E0D5; --border-2:#C9C5B8;
+  --ink:#141413; --ink-2:#3D3D3A; --muted:#73726C;
+  --clay:#D97757; --clay-2:#C15F3C; --clay-tint:#F6E7E0;
+  --p-irfan:#C15F3C; --p-uwais:#5E7A54; --p-alvin:#6A6FA8; --p-gabriel:#B8862E; --p-muhaimin:#3D3D3A;
+  --t-irfan:#F6E7E0; --t-uwais:#E6ECE1; --t-alvin:#E7E8F2; --t-gabriel:#F4EBD8; --t-muhaimin:#E6E5E0;
+  --serif:"Source Serif 4", Georgia, serif; --sans:"Inter", "Segoe UI", system-ui, sans-serif; --mono:"JetBrains Mono", Consolas, monospace;
 }
 @page{ size:A4; margin:0 }
 *{box-sizing:border-box}
 html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
-body{margin:0;background:var(--paper);color:var(--ink);font:10.2pt/1.5 var(--serif);}
-h1,h2,h3,h4{font-family:var(--display);color:var(--ink);margin:0;letter-spacing:-0.01em}
-h2{font-size:21pt;font-weight:600;line-height:1.1;margin:0 0 4mm;padding-bottom:2.5mm;border-bottom:2px solid var(--rule-2)}
-h3{font-size:13pt;font-weight:600;margin:5mm 0 2mm}
-h4{font-size:10.5pt;font-weight:600;margin:3mm 0 1mm}
-p{margin:0 0 2.5mm}
-section{padding:14mm 15mm 14mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+body{margin:0;background:var(--bg);color:var(--ink);font:9.4pt/1.55 var(--sans);}
+section{padding:15mm 16mm 14mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .page{page-break-before:always}
-.kicker{font:600 8pt var(--serif);text-transform:uppercase;letter-spacing:.14em;color:var(--terra);margin-bottom:2mm}
-code,.mono{font-family:var(--mono);font-size:8.4pt}
-code{background:var(--paper-2);padding:.3mm 1.2mm;border-radius:2px}
-pre{font:8.3pt/1.45 var(--mono);background:var(--ink);color:#F3E9DA;padding:3mm 4mm;margin:1.5mm 0 3mm;border-radius:3px;white-space:pre-wrap;page-break-inside:avoid}
-pre .c{color:#C9B49A}
-table{border-collapse:collapse;width:100%;margin:2mm 0 4mm;font-size:9pt}
-th{font:600 8.4pt var(--serif);text-align:left;color:var(--ink);border-bottom:2px solid var(--rule-2);padding:1.6mm 2mm}
-td{border-bottom:1px solid var(--rule);padding:1.6mm 2mm;vertical-align:top}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);margin:0;font-weight:500;letter-spacing:-0.01em}
+h2{font-size:20pt;line-height:1.15;margin:0 0 4mm;padding-bottom:3mm;border-bottom:1px solid var(--border)}
+h3{font-size:12.5pt;margin:6mm 0 2mm}
+h4{font:600 9.6pt var(--sans);margin:2.5mm 0 1mm}
+p{margin:0 0 2.5mm}
+b{font-weight:600}
+.kicker{font:600 7.4pt var(--sans);text-transform:uppercase;letter-spacing:.12em;color:var(--clay-2);margin-bottom:2mm}
+code,.mono{font-family:var(--mono);font-size:8pt}
+pre{font:8pt/1.55 var(--mono);background:var(--surface);color:var(--ink);border:1px solid var(--border);padding:3mm 4mm;margin:1.5mm 0 3mm;border-radius:6px;white-space:pre-wrap;page-break-inside:avoid}
+pre .c{color:var(--muted)}
+table{border-collapse:collapse;width:100%;margin:2mm 0 4mm;font-size:8.6pt}
+th{font:600 7.4pt var(--sans);text-transform:uppercase;letter-spacing:.06em;text-align:left;color:var(--muted);border-bottom:1px solid var(--border-2);padding:1.8mm 2mm}
+td{border-bottom:1px solid var(--border);padding:1.8mm 2mm;vertical-align:top}
 tr{page-break-inside:avoid}
 .muted{color:var(--muted)}
-.tag{display:inline-block;font:600 7.4pt var(--serif);letter-spacing:.04em;padding:.4mm 2mm;border-radius:10px;color:#fff;white-space:nowrap}
-.t-irfan{background:var(--terra)} .t-uwais{background:var(--olive)} .t-alvin{background:var(--clay)} .t-gabriel{background:var(--ochre)} .t-muhaimin{background:var(--ink-2)} .t-all{background:var(--muted)}
-.seq{background:var(--terra-2)} .par{background:var(--olive-2)} .sync{background:var(--ochre)}
-.callout{border-left:3px solid var(--terra);background:var(--sheet);padding:3mm 4mm;margin:3mm 0;page-break-inside:avoid}
-.callout.olive{border-color:var(--olive)} .callout.ink{border-color:var(--ink)}
+.tag{display:inline-block;font:600 7pt var(--sans);letter-spacing:.02em;padding:.5mm 2.2mm;border-radius:20px;white-space:nowrap;border:1px solid transparent}
+.t-irfan{background:var(--t-irfan);color:var(--p-irfan)} .t-uwais{background:var(--t-uwais);color:var(--p-uwais)}
+.t-alvin{background:var(--t-alvin);color:var(--p-alvin)} .t-gabriel{background:var(--t-gabriel);color:var(--p-gabriel)}
+.t-muhaimin{background:var(--t-muhaimin);color:var(--p-muhaimin)} .t-all{background:var(--surface);color:var(--muted)}
+.seq{background:var(--ink);color:#fff} .sync{background:var(--clay);color:#fff} .par{background:transparent;color:var(--ink-2);border-color:var(--border-2)}
+.callout{border:1px solid var(--border);background:var(--surface-2);border-radius:8px;padding:3.2mm 4.2mm;margin:3mm 0;page-break-inside:avoid}
 .callout h4{margin-top:0}
-.gate{border:1.5px solid var(--terra);background:#F9E9DF;padding:2.5mm 4mm;margin:3mm 0;page-break-inside:avoid}
-.gate b{color:var(--terra-2)}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
-.step{display:grid;grid-template-columns:8mm 1fr;gap:2mm;margin:2mm 0;page-break-inside:avoid}
-.step .n{font:600 13pt var(--display);color:var(--terra);line-height:1.2}
-.phase{page-break-inside:auto;margin-bottom:4mm}
-.phasehead{display:flex;justify-content:space-between;align-items:baseline;gap:4mm;border-bottom:2px solid var(--rule-2);padding-bottom:2mm;margin-bottom:3mm}
+.gate{border:1px solid #EBC3B2;background:var(--clay-tint);border-radius:8px;padding:2.6mm 4.2mm;margin:3mm 0;page-break-inside:avoid}
+.gate b{color:var(--clay-2)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.step{display:grid;grid-template-columns:8mm 1fr;gap:2mm;margin:2.5mm 0;page-break-inside:avoid}
+.step .n{font:600 8.6pt var(--sans);color:#fff;background:var(--clay);width:5.6mm;height:5.6mm;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.2mm}
+.phase{margin-bottom:4mm}
+.phasehead{display:flex;justify-content:space-between;align-items:flex-end;gap:4mm;border-bottom:1px solid var(--border);padding-bottom:3mm;margin-bottom:3.5mm}
 .phasehead h2{border:0;margin:0;padding:0}
-.meta{font-size:8.6pt;color:var(--muted);text-align:right}
-.done{background:var(--paper-2);padding:2mm 4mm;margin:2mm 0 1mm;font-size:9.2pt;page-break-inside:avoid}
-.done b{color:var(--olive-2)}
-ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.6mm 0}
-.check li{list-style:none;position:relative;padding-left:1mm} .check li:before{content:"☐";position:absolute;left:-5mm;color:var(--terra)}
+.meta{font-size:8pt;color:var(--muted);text-align:right;line-height:1.5}
+.done{border-left:2px solid var(--p-uwais);padding:1.5mm 4mm;margin:3mm 0 1mm;font-size:8.8pt;page-break-inside:avoid}
+.done b{color:var(--p-uwais)}
+ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.8mm 0}
+.check li{list-style:none;position:relative;padding-left:1mm}
+.check li:before{content:"";position:absolute;left:-5mm;top:1.2mm;width:2.6mm;height:2.6mm;border:1px solid var(--border-2);border-radius:2px;background:#fff}
 
 /* cover */
-.cover{height:296mm;padding:18mm 17mm 16mm !important;display:flex;flex-direction:column;justify-content:space-between;padding:6mm 2mm}
-.cover h1{font-size:40pt;font-weight:600;line-height:1.02;letter-spacing:-0.025em;margin:6mm 0 5mm}
-.cover h1 em{font-style:italic;color:var(--terra)}
-.cover .lede{font-size:13pt;line-height:1.45;color:var(--ink-2);max-width:150mm}
-.cover .band{background:var(--ink);color:#F3E9DA;padding:5mm 6mm;display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
-.cover .band b{font:600 18pt var(--display);color:#fff;display:block}
-.cover .band span{font-size:8.5pt;color:#C9B49A;text-transform:uppercase;letter-spacing:.1em}
-.team{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin-top:4mm}
-.team div{border-top:2px solid var(--rule-2);padding-top:2mm;font-size:9pt}
-.team b{font-family:var(--display);font-size:11pt;display:block}
+.cover{height:296mm;display:flex;flex-direction:column;justify-content:space-between;padding:22mm 20mm 18mm !important}
+.cover .mark{width:10mm;height:10mm;border-radius:50%;background:var(--clay);margin-bottom:10mm}
+.cover h1{font-size:36pt;line-height:1.08;letter-spacing:-0.02em;margin:5mm 0 6mm;font-weight:500}
+.cover h1 em{font-style:italic;color:var(--clay-2)}
+.cover .lede{font-size:11.5pt;line-height:1.6;color:var(--ink-2);max-width:145mm}
+.cover .band{border-top:1px solid var(--border-2);border-bottom:1px solid var(--border);padding:5mm 0;display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.cover .band b{font:500 16pt var(--serif);color:var(--ink);display:block;margin:1mm 0}
+.cover .band span{font:600 7pt var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.cover .band div{font-size:8.6pt;color:var(--ink-2)}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;margin-top:10mm}
+.team div{border-top:1px solid var(--border-2);padding-top:2.5mm;font-size:8.4pt;color:var(--ink-2)}
+.team b{font:500 11.5pt var(--serif);display:block;color:var(--ink);margin-bottom:.5mm}
+.team .tag{margin-top:1.5mm}
 
 /* swimlane */
-.lane{display:grid;grid-template-columns:24mm repeat(8,1fr);gap:1.2mm;font-size:7.6pt;margin:3mm 0 2mm}
-.lane .h{font:600 7.6pt var(--serif);color:var(--muted);text-align:center;padding-bottom:1mm;border-bottom:1.5px solid var(--rule-2)}
-.lane .who{font:600 9pt var(--display);display:flex;align-items:center}
-.lane .c{min-height:9mm;border-radius:2px;padding:1.2mm 1.5mm;line-height:1.25}
-.lane .on{color:#fff}
-.lane .off{background:var(--paper-2)}
-.legend{font-size:8.4pt;color:var(--muted)}
+.lane{display:grid;grid-template-columns:22mm repeat(8,1fr);gap:1.2mm;font-size:7.2pt;margin:4mm 0 3mm}
+.lane .h{font:600 6.6pt var(--sans);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:center;padding-bottom:1.2mm;border-bottom:1px solid var(--border-2)}
+.lane .who{font:500 9.5pt var(--serif);display:flex;align-items:center}
+.lane .c{min-height:9mm;border-radius:5px;padding:1.3mm 1.6mm;line-height:1.3}
+.lane .on{font-weight:500}
+.lane .on.t-irfan{border-left:2px solid var(--p-irfan)} .lane .on.t-uwais{border-left:2px solid var(--p-uwais)}
+.lane .on.t-alvin{border-left:2px solid var(--p-alvin)} .lane .on.t-gabriel{border-left:2px solid var(--p-gabriel)}
+.lane .on.t-muhaimin{border-left:2px solid var(--p-muhaimin)}
+.lane .off{background:transparent;border:1px dashed var(--border)}
+.legend{font-size:8pt;color:var(--muted)}
 .legend .tag{margin-right:1mm}
-.toc td:first-child{font-family:var(--display);font-weight:600;color:var(--terra);width:12mm}
 </style>
 </head>
 <body>
@@ -82,6 +91,7 @@ ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.6mm 0}
 <!-- ======================= COVER ======================= -->
 <section class="cover">
   <div>
+    <div class="mark"></div>
     <div class="kicker">ICT3113 Performance Testing &amp; Optimisation · Group P2-9</div>
     <h1>Assignment 2,<br><em>step by step</em> — who does what, and when</h1>
     <p class="lede">The cascade, the rule, the predictions and every script are already written and committed. What is left is measurement on our Assignment 1 machines, then analysis and the deck. This guide puts it in order: who acts, what they type, what "done" looks like, and who they hand over to.</p>
@@ -97,7 +107,7 @@ ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.6mm 0}
     <div class="band">
       <div><span>Deadline</span><b>Fri 27 Nov, 23:59</b>xSiTe · Group09_A2.pptx</div>
       <div><span>Machine time</span><b>≈ 10 hours</b>7 h of it overnight</div>
-      <div><span>Repository</span><b style="font-size:11.5pt">AlvinKoh1/<br>ICT3113-Assignment2</b>private · full A1 history</div>
+      <div><span>Repository</span><b style="font-size:11pt;white-space:nowrap">AlvinKoh1/ICT3113-Assignment2</b>private · full A1 history</div>
     </div>
     <p class="muted" style="margin-top:4mm;font-size:8.6pt">Source of truth for commands: <span class="mono">docs/a2/RUNBOOK.md</span>. If this guide and the runbook ever disagree, the runbook wins — tell Alvin.</p>
   </div>
@@ -148,7 +158,7 @@ ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.6mm 0}
     <tr><td><b>7</b> Review &amp; submit</td><td>Everyone → Muhaimin submits</td><td><span class="tag par">parallel</span>, then one submit</td><td>6 pushed</td><td>30 min each</td><td>review by Mon 23, submit by Wed 25 Nov</td></tr>
   </table>
   <p class="legend"><span class="tag seq">one person</span> nobody else touches that part until it is pushed &nbsp; <span class="tag sync">together, live</span> both on call at the same time; scripts hand over automatically &nbsp; <span class="tag par">parallel</span> independent, any order</p>
-  <p style="font-size:8.8pt;margin-top:2mm"><b style="color:var(--terra-2)">Why the dates leave a gap:</b> phase 4 is the one that can go wrong (network drop, a laptop sleeping, Windows Update). Sun 15 – Mon 16 Nov is held as the redo window; a failed run is re-run under a new tag and nothing else moves.</p>
+  <p style="font-size:8.8pt;margin-top:2mm"><b style="color:var(--clay-2)">Why the dates leave a gap:</b> phase 4 is the one that can go wrong (network drop, a laptop sleeping, Windows Update). Sun 15 – Mon 16 Nov is held as the redo window; a failed run is re-run under a new tag and nothing else moves.</p>
 </section>
 
 <!-- ======================= RULES ======================= -->
@@ -171,7 +181,7 @@ ul{margin:1mm 0 3mm;padding-left:5mm} li{margin:.6mm 0}
 git clone https://github.com/AlvinKoh1/ICT3113-Assignment2.git
 cd ICT3113-Assignment2
 git log --oneline -6      <span class="c"># must show "A2 Steps 2-3: escalation rule, prediction record ..."</span></pre>
-  <div class="callout olive">
+  <div class="callout">
     <h4>Irfan: your existing Docker volumes are reused</h4>
     <span class="mono">docker-compose.yml</span> now pins the project name to <span class="mono">ict3113-assignment1</span>, so a clone in a new folder still uses the <b>same</b> <span class="mono">ollama-models</span> volume with the pinned digests. Do <b>not</b> run <span class="mono">docker compose down -v</span> and do not <span class="mono">ollama pull</span> anything; the preflight in phase 1 checks every digest against <span class="mono">docs/model_pins.md</span>.
   </div>
@@ -195,8 +205,8 @@ git log --oneline -6      <span class="c"># must show "A2 Steps 2-3: escalation 
 
   <h3>What each sign-off protects</h3>
   <div class="cols">
-    <div class="callout ink"><h4>Design · 6 %</h4>Rule reproducible from the description, two settings, memory check reported, log shows which model answered. Gabriel's sign-off covers the first two.</div>
-    <div class="callout ink"><h4>Measurement · 7 %</h4>Limits from the test set, predictions committed before testing, three open-loop runs per configuration, escalation from the logs, everything reconciles. Muhaimin's sign-off covers the predictions.</div>
+    <div class="callout"><h4>Design · 6 %</h4>Rule reproducible from the description, two settings, memory check reported, log shows which model answered. Gabriel's sign-off covers the first two.</div>
+    <div class="callout"><h4>Measurement · 7 %</h4>Limits from the test set, predictions committed before testing, three open-loop runs per configuration, escalation from the logs, everything reconciles. Muhaimin's sign-off covers the predictions.</div>
   </div>
 </section>
 
@@ -225,7 +235,7 @@ git push</pre></div></div>
     <tr><td><b>Both fail</b></td><td>Cascade not feasible on this machine. Keep the <span class="mono">ollama ps</span> evidence, skip phase 2's cascade runs, and run phases 3–4 with <span class="mono">top7b</span> only. Tell everyone.</td></tr>
   </table>
   <div class="done"><b>Done when</b> <span class="mono">results/a2/memory/memory_check_*.json</span> is on GitHub and the verdict is posted.</div>
-  <div class="callout olive"><h4>Meanwhile — Uwais (parallel)</h4>Prepare Machine B for phase 3: <span class="mono">git pull</span>, <span class="mono">jmeter --version</span> (5.6.3), <span class="mono">ping -n 20 100.88.74.36</span> (no loss), set power plan to never sleep, pause Windows Update, plug in Ethernet. Nothing is sent to Machine A yet.</div>
+  <div class="callout"><h4>Meanwhile — Uwais (parallel)</h4>Prepare Machine B for phase 3: <span class="mono">git pull</span>, <span class="mono">jmeter --version</span> (5.6.3), <span class="mono">ping -n 20 100.88.74.36</span> (no loss), set power plan to never sleep, pause Windows Update, plug in Ethernet. Nothing is sent to Machine A yet.</div>
 </section>
 
 <!-- ======================= PHASE 2 ======================= -->
@@ -348,7 +358,7 @@ python3 deck/build_deck_a2.py               <span class="c"># first full build, 
   <div class="kicker">Tear-off checklists</div>
   <h2>Your list, and nothing else</h2>
   <div class="cols">
-    <div class="callout" style="border-color:var(--terra)"><h4><span class="tag t-irfan">Irfan · M1 · Machine A</span></h4>
+    <div class="callout"><h4><span class="tag t-irfan">Irfan · M1 · Machine A</span></h4>
       <ul class="check">
         <li>P0 · Read runbook §2–5; post "signed"</li>
         <li>P0 · Clone the new repo in WSL; don't touch volumes</li>
@@ -359,7 +369,7 @@ python3 deck/build_deck_a2.py               <span class="c"># first full build, 
         <li>P4 · Redo window Sun–Mon if needed</li>
         <li>P7 · Review slides 2–3</li>
       </ul></div>
-    <div class="callout olive"><h4><span class="tag t-uwais">Uwais · M4 · Machine B</span></h4>
+    <div class="callout"><h4><span class="tag t-uwais">Uwais · M4 · Machine B</span></h4>
       <ul class="check">
         <li>P0 · Read machineB script + JMX; post "signed"</li>
         <li>P1–2 · Prep Machine B: JMeter 5.6.3, ping, no sleep, Ethernet</li>
@@ -368,7 +378,7 @@ python3 deck/build_deck_a2.py               <span class="c"># first full build, 
         <li>P4 · Redo window Sun–Mon if needed</li>
         <li>P7 · Review slide 5</li>
       </ul></div>
-    <div class="callout" style="border-color:var(--clay)"><h4><span class="tag t-alvin">Alvin · M2 · repo + analysis</span></h4>
+    <div class="callout"><h4><span class="tag t-alvin">Alvin · M2 · repo + analysis</span></h4>
       <ul class="check">
         <li>P0 · Invite Irfan, Uwais, Gabriel, Muhaimin to the repo</li>
         <li>P0 · Answer questions; first point of contact for any ABORT</li>
@@ -376,21 +386,21 @@ python3 deck/build_deck_a2.py               <span class="c"># first full build, 
         <li>P6 · Help Muhaimin with the deck build</li>
         <li>P7 · Review slide 6</li>
       </ul></div>
-    <div class="callout" style="border-color:var(--ochre)"><h4><span class="tag t-gabriel">Gabriel · M3 · accuracy</span></h4>
+    <div class="callout"><h4><span class="tag t-gabriel">Gabriel · M3 · accuracy</span></h4>
       <ul class="check">
         <li>P0 · Sign off rule, tuning analysis, split</li>
         <li>P2b · Verify accuracy files by hand; <span class="mono">accuracy_notes.md</span>, push</li>
         <li>P6 · Give Muhaimin the accuracy / category reasons</li>
         <li>P7 · Review slide 4</li>
       </ul></div>
-    <div class="callout ink"><h4><span class="tag t-muhaimin">Muhaimin · M5 · deck + defence</span></h4>
+    <div class="callout"><h4><span class="tag t-muhaimin">Muhaimin · M5 · deck + defence</span></h4>
       <ul class="check">
         <li>P0 · Sign off prediction record + limits</li>
         <li>P6 · <span class="mono">prediction_account.md</span>, <span class="mono">a2_text.json</span>, rebuild deck, push</li>
         <li>P7 · Review slides 1, 7, 8; collect everyone's OK</li>
         <li>P7 · Submit on xSiTe; post receipt</li>
       </ul></div>
-    <div class="callout" style="border-color:var(--muted)"><h4>Hand-off messages (copy into the chat)</h4>
+    <div class="callout"><h4>Hand-off messages (copy into the chat)</h4>
       <ul>
         <li><i>"Phase 1 done — FIT, pushed."</i></li>
         <li><i>"Phase 2 done — T400 x/87, T500 y/87, pushed."</i></li>
@@ -430,7 +440,7 @@ python3 deck/build_deck_a2.py               <span class="c"># first full build, 
     <tr><td class="mono">results/a2/speed/</td><td>Alvin · P5</td><td>per-run and per-config summary</td></tr>
     <tr><td class="mono">deck/Group09_A2.pptx</td><td>Muhaimin · P6</td><td>the 8 slides (built, never hand-typed numbers)</td></tr>
   </table>
-  <div class="callout olive"><h4>The 8 slides the brief asks for — all generated</h4>
+  <div class="callout"><h4>The 8 slides the brief asks for — all generated</h4>
   1 Cover + limits · 2 Cascade design + memory check · 3 Environment &amp; method · 4 Accuracy · 5 Speed · 6 Trade-off chart · 7 Predictions vs outcomes + recommendation · 8 Limitations, references, AI declaration.</div>
 </section>
 
