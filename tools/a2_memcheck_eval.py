@@ -25,6 +25,22 @@ def a1_rate(model):
     return st.median(v) if v else None
 
 
+def same_machine_rate(model):
+    """Median prompt-eval tokens/s of the model alone in its A2 single-model accuracy run on THIS
+    machine (tools/a2_accuracy_all.sh single-<tag>, run before the memory check). The A1 rate
+    was measured on a different CPU (docs/a2/machine_change.md), so it is only the fallback."""
+    v = [prefill_rate(r) for r in iter_log(ROOT / "results/logs/a2_requests.jsonl")
+         if r.get("endpoint") == "POST /tickets" and r.get("model") == model
+         and r.get("run_id") == f"a2acc_single-{model}_test" and r.get("status") == 200]
+    v = [x for x in v if x]
+    return st.median(v) if v else None
+
+
+def reference_rate(model):
+    r = same_machine_rate(model)
+    return (r, "A2 single-model run, this machine") if r else (a1_rate(model), "A1 accuracy run (different machine)")
+
+
 def kv(block):
     return {k: int(v) for k, v in (ln.split() for ln in block.strip().splitlines())}
 
@@ -82,14 +98,15 @@ def main() -> int:
     cur = re.findall(r"--- memory\.current\n(\d+)", txt)
     mx = re.findall(r"--- memory\.max\n(\S+)", txt)
 
-    # 4. prefill speed vs Assignment 1 (paging would show up as a slowdown)
+    # 4. prefill speed vs the model running alone (paging would show up as a slowdown)
     speed = {}
     for m, v in per_model.items():
-        ref, med = a1_rate(m), (st.median(v) if v else None)
-        speed[m] = {"memcheck_tok_s": med, "a1_tok_s": ref, "ratio": (med / ref) if med and ref else None, "n": len(v)}
+        (ref, ref_src), med = reference_rate(m), (st.median(v) if v else None)
+        speed[m] = {"memcheck_tok_s": med, "ref_tok_s": ref, "ref_source": ref_src, "a1_tok_s": a1_rate(m),
+                    "ratio": (med / ref) if med and ref else None, "n": len(v)}
     checks["no_slowdown"] = all(s["ratio"] is None or s["ratio"] >= 0.7 for s in speed.values())
-    notes.append("prefill tok/s, memory check vs A1 sequential: " + ", ".join(
-        f"{m} {s['memcheck_tok_s'] and round(s['memcheck_tok_s'], 1)} vs {s['a1_tok_s'] and round(s['a1_tok_s'], 1)}"
+    notes.append("prefill tok/s, memory check vs the same model alone: " + ", ".join(
+        f"{m} {s['memcheck_tok_s'] and round(s['memcheck_tok_s'], 1)} vs {s['ref_tok_s'] and round(s['ref_tok_s'], 1)} ({s['ref_source']})"
         for m, s in speed.items()))
     checks["no_errors"] = not [r for r in logs if r.get("status") != 200]
 

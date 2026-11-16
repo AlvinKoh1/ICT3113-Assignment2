@@ -18,7 +18,8 @@ from __future__ import annotations
 import json
 import statistics as st
 
-from a2_common import (A2, A2_LOG, CATS, DECK_TEXT, DOCS_A2, DOCS_OUT, ROOT, SHORT, iter_log, jload, read_csv)
+from a2_common import (A2, A2_LOG, CATS, DECK_TEXT, DOCS_A2, DOCS_OUT, MACHINE, ROOT, SHORT, check_limits, iter_log,
+                       jload, read_csv)
 
 # Claims in docs/a2/prediction_record.md that are not in prediction_inputs.json.
 REC = {"memory": "FIT", "fastest": "cascade500", "acc_correct": 67, "esc_test": {"cascade400": 0.81, "cascade500": 0.73},
@@ -33,6 +34,12 @@ def load():
     d["runs"] = {c: jload(A2 / "speed" / f"{c}.json") for c in d["speed"]}
     d["acc"] = {c: jload(A2 / "accuracy" / f"{c}_test.json") for c in CASC}
     d["acc"]["top7b"] = jload(A2 / "accuracy" / "single_qwen2.5_7b_test.json")
+    # Re-check every configuration against the CURRENT limits (after the machine change they come
+    # from the A2 machine's 7b run), so a verdict stored with an earlier limits.json is never used.
+    if d["limits"]:
+        for a in d["acc"].values():
+            if a:
+                a["limits"] = check_limits(a, d["limits"])
     m1 = next((jload(p) for p in sorted((A2 / "memory").glob("memory_check_llama3.2_1b*.json"))
                if not p.name.endswith(".sends.json")), None)
     d["mem1"] = m1
@@ -99,7 +106,10 @@ def main() -> int:
             ch = st.median(int(r["chars"]) for r in calib)
             ratio = S / fit_time(pred, "qwen2.5:7b", ch)
             why = (f"The three calibration tickets ({ch:.0f} chars) took {ratio:.2f}× the time the Assignment 1 length fit gives "
-                   f"({fit_time(pred, 'qwen2.5:7b', ch):.1f} s); Machine A ran {'slower' if ratio > 1 else 'faster'} than in the A1 accuracy run.")
+                   f"({fit_time(pred, 'qwen2.5:7b', ch):.1f} s); Machine A ran {'slower' if ratio > 1 else 'faster'} than in the A1 accuracy run"
+                   + (f", because A2 ran on a different PC ({MACHINE['machine_a']['short']} instead of the A1 i9-10900K, same 4-CPU / 8 GiB "
+                      f"Ollama container; docs/a2/machine_change.md). The prediction was made from A1 timings before the machine changed."
+                      if MACHINE and MACHINE.get("changed_from_a1") else "."))
         add("S, middle of three 7b tickets", f"{pred['S_pred_s']:.0f} s", S and f"{S:.1f} s", S and abs(S - pred["S_pred_s"]) <= 0.15 * pred["S_pred_s"],
             why, "results/a2/calib/S.json")
 

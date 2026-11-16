@@ -17,7 +17,7 @@ from __future__ import annotations
 import sys
 from collections import Counter
 
-from a2_common import A2, CATS, DOCS_A2, DOCS_OUT, SHORT, golden, jload, read_csv, split_rows
+from a2_common import A2, CATS, DOCS_A2, DOCS_OUT, SHORT, golden, jload, read_csv, singles_source, split_rows
 
 CASCADES = {"cascade400": 400, "cascade500": 500}
 
@@ -78,10 +78,21 @@ def main() -> int:
                   + (f", mostly answered as {', '.join(f'{SHORT.get(k, k)} ×{v}' for k, v in answered.most_common(3))}." if kept_wrong else "."),
                   f"Categories that lost tickets against 7b alone: {', '.join(lost) or 'none'}.", "",
                   ("**Checks: all passed.**" if not issues else "**Problems:**\n" + "\n".join(f"- {i}" for i in issues)), ""]
+    rerun = singles_source(limits) == "a2_rerun"
+    src_label = "re-run on the A2 machine" if rerun else "A1 records"
+    configs = [(f"{m} alone ({src_label})", A2 / "accuracy" / f"single_{m.replace(':', '_')}_test.json")
+               for m in ("qwen2.5:0.5b", "llama3.2:1b", "llama3.2:3b", "qwen2.5:7b")]
+    if rerun and limits.get("a1_records_comparison"):
+        # The machine changed (docs/a2/machine_change.md): show how far the re-run moved from the A1 records.
+        lines += ["## Single models: A2 machine re-run vs Assignment 1 records (test set)", "",
+                  f"The limits come from the re-run ({limits['source']}). The A1 records are shown for comparison only.", "",
+                  "| Model | Re-run (A2 machine) | A1 records | Answers that differ |", "|---|---|---|---|"]
+        for m, c in limits["a1_records_comparison"].items():
+            lines.append(f"| {m} | {c['a2_correct']}/{limits['test_n']} | {c['a1_records_correct']}/{limits['test_n']} | "
+                         f"{c['answers_changed']}" + (f" (rows {', '.join(c['changed_rows'][:8])}{'…' if len(c['changed_rows']) > 8 else ''})" if c['changed_rows'] else "") + " |")
+        lines.append("")
     # Confusion matrix for every configuration (brief, Step 4: "and a confusion matrix").
     lines += ["## Confusion matrices, every configuration (test set; rows = golden, columns = predicted)", ""]
-    configs = [(f"{m} alone (A1 records)", A2 / "accuracy" / f"single_{m.replace(':', '_')}_test.json")
-               for m in ("qwen2.5:0.5b", "llama3.2:1b", "llama3.2:3b", "qwen2.5:7b")]
     configs += [(f"cascade T={T}", A2 / "accuracy" / f"{c}_test.json") for c, T in CASCADES.items()]
     cols = CATS + ["UNPARSED"]
     for name, path in configs:

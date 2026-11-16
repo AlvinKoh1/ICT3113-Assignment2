@@ -79,6 +79,36 @@ def a1_predictions(model: str) -> dict[str, dict]:
     return {r["row"]: r for r in read_csv(ROOT / "results" / "accuracy" / f"predictions_{safe(model)}.csv")}
 
 
+# --- Machine change (docs/a2/machine_change.md) ------------------------------
+# The Assignment 1 Machine A (i9-10900K) was not available for Assignment 2, so
+# A2 runs on a different PC with the same container limits, Ollama build,
+# settings and model digests. Step 4 only allows reusing A1 single-model
+# records on the SAME machine, so every single model is re-run on the test set
+# on the A2 machine (tools/a2_accuracy_all.sh single-<tag>) and the limits are
+# derived from that 7b run (tools/a2_limits.py --source a2).
+MACHINE = jload(DOCS_A2 / "machine_a2.json")
+
+
+def single_config(model: str) -> str:
+    """Config name of a single model in the A2 accuracy test (tools/a2_config.sh)."""
+    return f"single-{model}"
+
+
+def a2_single_predictions_path(model: str) -> Path:
+    """Per-ticket file of a single model's A2 test-set accuracy run on the A2 machine."""
+    return A2 / "accuracy" / f"{safe(single_config(model))}_test_predictions.csv"
+
+
+def a2_single_predictions(model: str) -> dict[str, dict]:
+    """A2 test-set accuracy-run records for one model (re-run on the A2 machine), keyed by row."""
+    return {r["row"]: r for r in read_csv(a2_single_predictions_path(model))}
+
+
+def singles_source(limits: dict | None) -> str:
+    """'a2_rerun' if the single-model scores and limits come from the A2 machine, else 'a1_records'."""
+    return (limits or {}).get("source_kind", "a1_records")
+
+
 def score(pred: dict[str, str], rows: list[str], gold: dict[str, dict] | None = None) -> dict:
     """Overall + per-category accuracy (recall) with counts, and a confusion matrix.
 
