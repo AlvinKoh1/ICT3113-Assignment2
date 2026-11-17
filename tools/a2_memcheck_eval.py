@@ -25,20 +25,42 @@ def a1_rate(model):
     return st.median(v) if v else None
 
 
-def same_machine_rate(model):
-    """Median prompt-eval tokens/s of the model alone in its A2 single-model accuracy run on THIS
-    machine (tools/a2_accuracy_all.sh single-<tag>, run before the memory check). The A1 rate
-    was measured on a different CPU (docs/a2/machine_change.md), so it is only the fallback."""
-    v = [prefill_rate(r) for r in iter_log(ROOT / "results/logs/a2_requests.jsonl")
-         if r.get("endpoint") == "POST /tickets" and r.get("model") == model
-         and r.get("run_id") == f"a2acc_single-{model}_test" and r.get("status") == 200]
-    v = [x for x in v if x]
-    return st.median(v) if v else None
+def banded_median(pairs, lo=None, hi=None, min_n=5):
+    """Median rate over (prompt tokens, rate) pairs whose token count lies in [lo, hi].
+
+    Prompt-eval tokens/s depends on prompt length (A1 records: short tickets prefill ~1.4x
+    faster per token than long ones), and the memory check sends only SHORT tickets to the
+    small model and only LONG ones to the large model. Comparing with the model's median over
+    all lengths would bias the ratio (7b: ~0.82 before any paging, against a 0.7 cut-off), so
+    the reference uses the same token range. Falls back to all lengths if fewer than min_n match."""
+    pairs = [(n, x) for n, x in pairs if x]
+    band = [x for n, x in pairs if lo is not None and lo <= n <= hi]
+    if len(band) >= min_n:
+        return st.median(band), f"{len(band)} tickets of {lo}-{hi} prompt tokens"
+    return (st.median(x for _, x in pairs), f"all {len(pairs)} tickets (too few in {lo}-{hi} tokens)") if pairs else (None, "")
 
 
-def reference_rate(model):
-    r = same_machine_rate(model)
-    return (r, "A2 single-model run, this machine") if r else (a1_rate(model), "A1 accuracy run (different machine)")
+def same_machine_pairs(model):
+    """(prompt tokens, prompt-eval tokens/s) of the model alone in its A2 single-model accuracy run
+    on THIS machine (tools/a2_accuracy_all.sh single-<tag>, run before the memory check). The A1
+    rate was measured on a different CPU (docs/a2/machine_change.md), so it is only the fallback."""
+    return [(r.get("prompt_eval_count") or 0, prefill_rate(r)) for r in iter_log(ROOT / "results/logs/a2_requests.jsonl")
+            if r.get("endpoint") == "POST /tickets" and r.get("model") == model
+            and r.get("run_id") == f"a2acc_single-{model}_test" and r.get("status") == 200]
+
+
+def a1_pairs(model):
+    return [(r.get("prompt_eval_count") or 0, prefill_rate(r)) for r in iter_log(ROOT / "results/logs/requests.jsonl")
+            if r.get("endpoint") == "POST /tickets" and r.get("model") == model
+            and str(r.get("run_id", "")).startswith("accuracy_") and r.get("status") == 200]
+
+
+def reference_rate(model, lo=None, hi=None):
+    r, how = banded_median(same_machine_pairs(model), lo, hi)
+    if r:
+        return r, f"A2 single-model run, this machine; {how}"
+    r, how = banded_median(a1_pairs(model), lo, hi)
+    return r, f"A1 accuracy run (different machine); {how}"
 
 
 def kv(block):
@@ -79,7 +101,7 @@ def main() -> int:
             seen.add(m)
             rate = prefill_rate(r, pfx)
             if rate and not first:
-                per_model[m].append(rate)
+                per_model[m].append((r.get(f"{pfx}prompt_eval_count") or 0, rate))
     checks["no_reload"] = not reloads and len(seen) == 2
     notes.append(f"reloads after first load: {reloads or 'none'}; models called: {sorted(seen)}")
 
@@ -100,9 +122,11 @@ def main() -> int:
 
     # 4. prefill speed vs the model running alone (paging would show up as a slowdown)
     speed = {}
-    for m, v in per_model.items():
-        (ref, ref_src), med = reference_rate(m), (st.median(v) if v else None)
-        speed[m] = {"memcheck_tok_s": med, "ref_tok_s": ref, "ref_source": ref_src, "a1_tok_s": a1_rate(m),
+    for m, pv in per_model.items():
+        v = [x for _, x in pv]
+        lo, hi = (min(n for n, _ in pv), max(n for n, _ in pv)) if pv else (None, None)
+        (ref, ref_src), med = reference_rate(m, lo, hi), (st.median(v) if v else None)
+        speed[m] = {"memcheck_tok_s": med, "ref_tok_s": ref, "ref_source": ref_src, "a1_tok_s": a1_rate(m), "prompt_tokens": [lo, hi],
                     "ratio": (med / ref) if med and ref else None, "n": len(v)}
     checks["no_slowdown"] = all(s["ratio"] is None or s["ratio"] >= 0.7 for s in speed.values())
     notes.append("prefill tok/s, memory check vs the same model alone: " + ", ".join(
