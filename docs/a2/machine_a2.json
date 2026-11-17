@@ -1,0 +1,31 @@
+{
+  "changed_from_a1": true,
+  "reason": "The Assignment 1 Machine A (Irfan's i9-10900K PC) was no longer available to the team for Assignment 2.",
+  "a1_machine": "Intel Core i9-10900K (10C/20T), 48 GB DDR4, WSL 2 VM capped at 12 GB, Docker Engine 29.8.2, RTX 3090 present but not used",
+  "machine_a": {
+    "owner": "Irfan",
+    "board": "Gigabyte B650M GAMING WIFI (custom desktop)",
+    "cpu": "AMD Ryzen 7 7700",
+    "cores_threads": "8 cores / 16 threads",
+    "ram": "32 GB",
+    "wsl_vm": "WSL 2 default (no .wslconfig): ~15.2 GiB visible to Docker",
+    "os": "Windows 11 IoT Enterprise LTSC 2024 (10.0.26100), WSL 2, Ubuntu 24.04",
+    "docker": "Docker Desktop, Engine 29.9.3",
+    "disk": "Lexar NQ710 2 TB NVMe SSD",
+    "gpu": "NVIDIA GeForce RTX 4070 present but not used: no GPU is mapped into the Ollama container (Ollama log: library=cpu)",
+    "short": "Ryzen 7 7700 8C/16T, 32 GB"
+  },
+  "unchanged": [
+    "Ollama image ollama/ollama:0.5.7 (reports 0.5.7-0-ga420a45-dirty, the same build as A1)",
+    "Ollama container limits: 4-CPU quota (NanoCpus=4000000000), 8 GiB memory",
+    "Model tags and digests: identical to docs/model_pins.md (checked by tools/a2_preflight.sh)",
+    "Prompt v1, temperature 0, seed 42, num_predict 16, num_ctx 2048, OLLAMA_NUM_PARALLEL=4, keep-alive 30 m",
+    "Machine B (Uwais's laptop), JMeter 5.6.3, Tailscale link"
+  ],
+  "differs": [
+    "CPU and RAM of the host (the container limits are the same)",
+    "Ollama runner threads: 8 (Ollama's default = physical cores of the host) instead of 10 on the A1 machine; recorded once and held constant for every A2 configuration",
+    "Tailscale address of Machine A (a new device on the tailnet)"
+  ],
+  "consequence": "Step 4 allows reusing Assignment 1 single-model accuracy only on the same machine, so all four single models are re-run on the 87 test tickets on this machine, and the limits come from this machine's qwen2.5:7b run (tools/a2_limits.py --source a2). Assignment 1 speed figures were never reused."
+}

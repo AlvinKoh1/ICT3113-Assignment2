@@ -37,7 +37,15 @@ done
 docker exec triage-ollama ollama --version 2>&1 | grep -q '0.5.7' || { echo "FAIL  Ollama version is not 0.5.7" >> "$OUT"; FAIL=1; }
 docker inspect triage-ollama --format '{{.HostConfig.NanoCpus}} {{.HostConfig.Memory}}' | grep -q '^4000000000 8589934592$' \
   || { echo "FAIL  Ollama container limits are not 4 CPUs / 8 GiB" >> "$OUT"; FAIL=1; }
-grep -qi "10900K" /proc/cpuinfo 2>/dev/null || echo "WARN  CPU is not the Assignment 1 i9-10900K: single-model accuracy from A1 can only be reused on the same machine" >> "$OUT"
+# Machine: A2 runs on a different PC from A1 (docs/a2/machine_change.md). Every A2 measurement
+# must come from that one machine, so any other CPU fails; the A1 CPU only warns (original plan).
+if grep -q "Ryzen 7 7700 " /proc/cpuinfo 2>/dev/null; then
+  echo "ok    machine: AMD Ryzen 7 7700, the A2 Machine A (docs/a2/machine_a2.json); single models are re-run here, not reused from A1" >> "$OUT"
+elif grep -qi "10900K" /proc/cpuinfo 2>/dev/null; then
+  echo "WARN  machine: the A1 i9-10900K, but A2 was moved to the Ryzen 7 7700 (docs/a2/machine_change.md); do not mix results from both machines" >> "$OUT"
+else
+  echo "FAIL  machine: CPU is neither the A2 Machine A (Ryzen 7 7700) nor the A1 machine: $(grep -m1 'model name' /proc/cpuinfo 2>/dev/null)" >> "$OUT"; FAIL=1
+fi
 echo "## verdict: $([ $FAIL = 0 ] && echo OK || echo FAIL)" >> "$OUT"
 cat "$OUT"
 exit $FAIL

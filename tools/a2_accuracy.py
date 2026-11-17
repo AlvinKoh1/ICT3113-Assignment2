@@ -24,7 +24,7 @@ import sys
 import time
 import urllib.request
 
-from a2_common import (A2, ROOT, UNPARSED, check_limits, golden, iter_log, jdump, jload, score, split_rows,
+from a2_common import (A2, ROOT, UNPARSED, check_limits, golden, iter_log, jdump, jload, safe, score, split_rows,
                        write_csv, DOCS_A2)
 
 MUST_BE_COMMITTED = ["golden/a2_split.csv", "docs/a2/escalation_rule.md", "docs/a2/prediction_record.md"]
@@ -94,7 +94,9 @@ def main() -> int:
                        "acc": (sum(r["predicted"] == r["gold"] for r in rs) / len(rs)) if rs else None}
     sc.update({
         "config": a.config, "set": a.set, "run_id": run_id, "service": health,
-        "limits": check_limits(sc, limits) if a.set == "test" else None,
+        # Single models are scored against the limits by tools/a2_limits.py --source a2, AFTER the
+        # 7b re-run on this machine has set them; a verdict here would use the previous limits.
+        "limits": check_limits(sc, limits) if a.set == "test" and not a.config.startswith("single-") else None,
         "escalation": {"escalated": part(esc), "not_escalated": part(acc_),
                        "fraction": len(esc) / len(recs) if recs else None,
                        "routes": {k: sum(r["route"] == k for r in recs) for k in sorted({r["route"] for r in recs if r["route"]})},
@@ -104,8 +106,9 @@ def main() -> int:
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
         "unparsed": sum(r["predicted"] == UNPARSED for r in recs),
     })
-    jdump(A2 / "accuracy" / f"{a.config}_{a.set}.json", sc)
-    write_csv(A2 / "accuracy" / f"{a.config}_{a.set}_predictions.csv", recs)
+    # safe(): "single-qwen2.5:7b" -> "single-qwen2.5_7b" (a colon is not allowed in a Windows checkout).
+    jdump(A2 / "accuracy" / f"{safe(a.config)}_{a.set}.json", sc)
+    write_csv(A2 / "accuracy" / f"{safe(a.config)}_{a.set}_predictions.csv", recs)
 
     print(f"\n{a.config} on {a.set}: {sc['correct']}/{sc['n']} = {sc['acc']*100:.1f} %")
     e = sc["escalation"]

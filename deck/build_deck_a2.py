@@ -32,7 +32,8 @@ from pptx.util import Inches, Pt  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
-from a2_common import CATS, SHORT, A2, DOCS_A2, MODELS, TOP_MODEL, iter_log, jload, safe  # noqa: E402
+from a2_common import (CATS, SHORT, A2, DOCS_A2, MACHINE, MODELS, TOP_MODEL, check_limits, iter_log, jload,  # noqa: E402
+                       safe, singles_source, wilson)
 
 DECK = ROOT / "deck"
 BUILD = DECK / "build_a2"
@@ -71,7 +72,13 @@ for c in CASCADES + ["top7b"]:
     if j:
         acc[c] = j
 if "top7b" not in acc and f"single-{TOP_MODEL}" in acc:
-    acc["top7b"] = acc[f"single-{TOP_MODEL}"]          # reused A1 records (allowed by the brief)
+    acc["top7b"] = acc[f"single-{TOP_MODEL}"]          # single-model test-set score (re-run on the A2 machine, or A1 records)
+# Every verdict against the CURRENT limits (after the machine change they come from the A2 machine's 7b run).
+if limits:
+    for _a in acc.values():
+        _a["limits"] = check_limits(_a, limits)
+RERUN = singles_source(limits) == "a2_rerun"          # single models re-run on the A2 machine (docs/a2/machine_change.md)
+MOVED = bool(MACHINE and MACHINE.get("changed_from_a1"))
 tune_acc = {c: jload(A2 / "accuracy" / f"{c}_tune.json") for c in CASCADES}
 
 # ------------------------------------------------------------------ pptx helpers
@@ -340,7 +347,8 @@ if mk:
         lines.append(f"cgroup peak {m['cgroup_memory_peak'] / 2**30:.2f} of {int(m['cgroup_memory_max']) / 2**30:.0f} GiB")
     for mm, v in m.get("prefill", {}).items():
         if v.get("ratio"):
-            lines.append(f"{mm} prefill {v['ratio'] * 100:.0f}% of A1 speed")
+            ref = "its speed alone" if "this machine" in v.get("ref_source", "") else "A1 speed"
+            lines.append(f"{mm} prefill {v['ratio'] * 100:.0f}% of {ref}")
     for k2, m2 in mem.items():
         if k2 != mk:
             lines.append(f"{' + '.join(m2['pair'])}: {m2['verdict']}")
@@ -351,13 +359,25 @@ footer(s, "docs/a2/escalation_rule.md · docs/a2/tuning_analysis.md · service/a
 
 # =================================================================== 3 environment and method
 s = prs.slides.add_slide(BLANK)
-header(s, 3, "Test Environment and Method", "Same machines, same container limits, same Ollama build and settings as Assignment 1; Assignment 2 arrival rate set from S.")
-card(s, 0.35, 1.35, 4.15, 2.6, "Machines (unchanged; A1 slide 7)", [
-    "**Machine A (SUT):** i9-10900K 10C/20T, 48 GB; WSL 2 VM 12 GB; Docker 29.8.2; Ollama 0.5.7 container: 4-CPU quota, 8 GiB, CPU only (RTX 3090 not mapped).",
-    "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21 — a separate machine in another home.",
-    "**Link:** Tailscale direct peer-to-peer, RTT ~9 ms (A1).",
-    "**Ollama settings, recorded once, held constant:** threads 10 (auto), parallel 4, num_ctx 2048, keep-alive 30 m (results/a2/env/preflight_*.txt).",
-], NAVY, 9.5)
+if MOVED:
+    mA = MACHINE["machine_a"]
+    header(s, 3, "Test Environment and Method", "Machine A changed from A1 (the A1 PC was unavailable): same container limits, Ollama build, settings and digests; single models re-measured. Rate set from S.")
+    card(s, 0.35, 1.35, 4.15, 2.6, "Machines (Machine A changed; docs/a2/machine_change.md)", [
+        f"**Machine A (SUT), new:** {mA['cpu']} {mA['cores_threads'].replace(' cores / ', 'C/').replace(' threads', 'T')}, {mA['ram']}; "
+        f"{mA['docker'].replace('Docker Desktop, ', '')}; Ollama 0.5.7 container: 4-CPU quota, 8 GiB, CPU only (RTX 4070 not mapped). "
+        "A1 was an i9-10900K, 48 GB — no longer available to us.",
+        "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21 — a separate machine in another home.",
+        "**Link:** Tailscale between the two homes (direct or relayed: results/a2/env/).",
+        "**Ollama settings, recorded once, held constant:** threads 8 (auto = physical cores; A1: 10), parallel 4, num_ctx 2048, keep-alive 30 m (results/a2/env/preflight_*.txt).",
+    ], NAVY, 9.5)
+else:
+    header(s, 3, "Test Environment and Method", "Same machines, same container limits, same Ollama build and settings as Assignment 1; Assignment 2 arrival rate set from S.")
+    card(s, 0.35, 1.35, 4.15, 2.6, "Machines (unchanged; A1 slide 7)", [
+        "**Machine A (SUT):** i9-10900K 10C/20T, 48 GB; WSL 2 VM 12 GB; Docker 29.8.2; Ollama 0.5.7 container: 4-CPU quota, 8 GiB, CPU only (RTX 3090 not mapped).",
+        "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21 — a separate machine in another home.",
+        "**Link:** Tailscale direct peer-to-peer, RTT ~9 ms (A1).",
+        "**Ollama settings, recorded once, held constant:** threads 10 (auto), parallel 4, num_ctx 2048, keep-alive 30 m (results/a2/env/preflight_*.txt).",
+    ], NAVY, 9.5)
 if plan:
     lines = [f"**S = {plan['S_s']:.1f} s**: middle of {', '.join(f'{t:.1f}' for t in plan['timings_s'])} s on rows "
              f"{', '.join(plan['rows'])} (3 different ~{workload['calib_chars'][0] if workload else ''}-char tickets, qwen2.5:7b, after restart + warm-up).",
@@ -388,13 +408,18 @@ card(s, 6.8, 4.1, 6.2, 2.95, "Changes from Assignment 1", [
     "**Timeouts:** JMeter 10×S (A1: 600 s); pause outlasts it by ≥ 1 min. Service→Ollama timeout raised 300 → 1,200 s per call so JMeter, not the service, decides a request is too slow.",
     "**OLLAMA_NUM_PARALLEL=4** set explicitly — the value Ollama chose automatically in A1 — so it cannot change when two models load.",
     "**Separate log** results/logs/a2_requests.jsonl with final_model / escalated / route per ticket.",
-    "**Single-model accuracy** reused from A1 records, test rows only (same digests, prompt, Ollama 0.5.7, machine).",
+    ("**Machine A changed + single models re-run:** A1 records may only be reused on the same machine, so all four single models were re-run "
+     "on the 87 test tickets on the new Machine A and the limits come from that 7b run (same digests, prompt, Ollama 0.5.7, container limits)."
+     if RERUN else
+     "**Single-model accuracy** reused from A1 records, test rows only (same digests, prompt, Ollama 0.5.7, machine)."),
 ], RED, 9.5)
-footer(s, "docs/test_environment.md (A1) · results/a2/env/ · results/a2/calib/plan.json · docs/a2/workload.json · docs/a2/RUNBOOK.md")
+footer(s, "docs/test_environment.md (A1) · docs/a2/machine_change.md · results/a2/env/ · results/a2/calib/plan.json · docs/a2/workload.json · docs/a2/RUNBOOK.md"
+       if MOVED else "docs/test_environment.md (A1) · results/a2/env/ · results/a2/calib/plan.json · docs/a2/workload.json · docs/a2/RUNBOOK.md")
 
 # =================================================================== 4 accuracy results
 s = prs.slides.add_slide(BLANK)
-header(s, 4, "Accuracy Results (test set, 87 tickets)", "Test set = even positions of the golden set sorted by row (odd = tuning). Counts next to every %; red = below the limit. Singles: A1 records, test rows.")
+header(s, 4, "Accuracy Results (test set, 87 tickets)", "Test set = even positions of the golden set sorted by row (odd = tuning). Counts next to every %; red = below the limit. "
+       + ("Singles: re-run on the A2 Machine A, test rows." if RERUN else "Singles: A1 records, test rows."))
 order = [f"single-{m}" for m in MODELS if m != TOP_MODEL] + ["top7b"] + CASCADES
 rows, colmap = [], {}
 for c in order:
@@ -403,7 +428,7 @@ for c in order:
         rows.append([CFG_LABEL[c], NOT_RUN if INFEASIBLE and c in CASCADES else "PENDING"] + [""] * 9)
         continue
     lim = a.get("limits") or {}
-    r = [CFG_LABEL[c] + (" (A1 rec.)" if c.startswith("single") or (c == "top7b" and "source" in a) else ""),
+    r = [CFG_LABEL[c] + ((" (A1 rec.)" if not RERUN else "") if c.startswith("single") or (c == "top7b" and "source" in a) else ""),
          f"{a['correct']}/{a['n']} {a['acc'] * 100:.1f}%"]
     for cat in CATS:
         pc = a["per_category"][cat]
@@ -481,7 +506,8 @@ if cm_cfgs:
         ratio = Inches(2.85) / pic.height
         pic.height, pic.width = Inches(2.85), int(pic.width * ratio)
 text(s, 0.3, 6.95 - 0.1, 6.1, 0.3, "* n ≤ 13: one ticket = 7.7–10 points, so these verdicts rest on 1–2 tickets. Confusion matrices for every configuration: docs/a2/accuracy_notes.md.", 9)
-footer(s, "results/a2/accuracy/*_test.json, *_predictions.csv (cascade; log results/logs/a2_requests.jsonl) · results/a2/accuracy/single_*_test.json (A1 records)")
+footer(s, "results/a2/accuracy/*_test.json, *_predictions.csv (cascade; log results/logs/a2_requests.jsonl) · results/a2/accuracy/single_*_test.json ("
+       + ("re-run: single-*_test_predictions.csv" if RERUN else "A1 records") + ")")
 
 # =================================================================== 5 speed results
 s = prs.slides.add_slide(BLANK)
@@ -704,8 +730,11 @@ footer(s, "docs/a2/prediction_record.md · docs/a2/prediction_inputs.json · res
 s = prs.slides.add_slide(BLANK)
 header(s, 8, "Limitations · References · AI Declaration")
 lim = txt.get("limitations") or [
-    "**Sample size:** 87 test tickets (one ticket = 1.1 points overall); six of seven categories have 10–13 tickets, so per-category verdicts rest on one or two tickets. Wilson 95% CI for 7b's 78.2% is 68–86%.",
+    "**Sample size:** 87 test tickets (one ticket = 1.1 points overall); six of seven categories have 10–13 tickets, so per-category verdicts rest on one or two tickets. "
+    + (f"Wilson 95% CI for 7b's {limits['top_test_pct']:.1f}% is {wilson(limits['top_correct'], limits['test_n'])[0] * 100:.0f}–{wilson(limits['top_correct'], limits['test_n'])[1] * 100:.0f}%." if limits else ""),
     "**Seen tickets:** every model already ran on the whole golden set in A1; the test half is not new data — it only keeps the rule from being tuned on the tickets it is scored on.",
+    *(["**Different machine from A1:** the A1 PC was unavailable, so Machine A is a " + MACHINE["machine_a"]["short"] + " (A1: i9-10900K) with the same 4-CPU / 8 GiB "
+       "container. A2 figures compare configurations on this machine only; the rule and predictions were built from A1 timings and records."] if MOVED else []),
     "**One machine, one rate:** results hold for Machine A's 4-CPU / 8 GiB Ollama container at one arrival rate. "
     + (f"Our rate {plan['rate_per_min']:.2f}/min is below the client's A1 peak of 1.0/min, so this compares configurations but does not show the recommended one carries the peak." if plan and plan["rate_per_min"] < 1.0
        else "Compare the test rate with the A1 peak (1.0/min) here."),
@@ -725,7 +754,7 @@ refs = [
 ]
 card(s, 6.95, 1.1, 6.05, 3.2, "References and model licences", refs, NAVY, 9)
 ai = txt.get("ai_declaration") or [
-    "An AI assistant (Claude) proposed the length rule and its two settings from a tuning-set replay of our A1 records, drafted the prediction record, and wrote the cascade code, all test and analysis scripts, this deck generator and the first draft of the prediction account.",
+    "An AI assistant (Claude) proposed the length rule and its two settings from a tuning-set replay of our A1 records, drafted the prediction record, and wrote the cascade code, all test and analysis scripts, this deck generator and the first draft of the prediction account; after the machine change it also adapted the tooling (single-model re-run on the new Machine A, limits from that run).",
     "The team reviewed and signed off the rule and predictions before any measurement, ran every test on Machines A and B, checked figures against the raw .jtl and log files, and is responsible for the recommendation.",
 ]
 card(s, 6.95, 4.45, 6.05, 2.6, "AI declaration", ai, TEAL, 9.5)

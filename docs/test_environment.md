@@ -1,5 +1,7 @@
 # Test Environment — ICT3113 Group P2-9
 
+> **Assignment 2:** this page describes the Assignment 1 machines. For A2, **Machine A changed** (the i9-10900K below was no longer available): it is now an AMD Ryzen 7 7700 (8C/16T, 32 GB) running the same Ollama 0.5.7 container (4 CPUs, 8 GiB), settings and model digests. Machine B is unchanged. Side-by-side comparison and consequences: `docs/a2/machine_change.md`; machine facts: `docs/a2/machine_a2.json`; recorded settings per run: `results/a2/env/preflight_*.txt`.
+
 Slide 7. Fill from the actual machines. Commands to get each figure are given.
 
 ---

@@ -1,20 +1,22 @@
 # Assignment 2 runbook — Group P2-9
 
-Everything below runs on the **Assignment 1 machines, unchanged**: Machine A (Irfan's PC, service + Ollama, WSL 2) and Machine B (Uwais's laptop, JMeter, Git Bash). Nothing in this list may be skipped or reordered; the order is what the brief marks.
+> **Machine A changed (16 Nov, before any A2 measurement).** The A1 Machine A (i9-10900K, `100.88.74.36`) is no longer available, so Machine A is now Irfan's Ryzen 7 7700 PC, with the same Ollama 0.5.7 container (4 CPUs, 8 GiB), settings and model digests. Because Step 4 only allows reusing A1 single-model records on the same machine, **all four single models are re-run on the test set on the new Machine A, and the limits are recomputed from that 7b run** (new §2a). The split, rule, cut-offs and predictions are unchanged. Full record: `docs/a2/machine_change.md`. Machine B is unchanged but must use the new Machine A Tailscale address wherever this runbook says `<machine-A-tailscale-ip>`.
 
-Budget: ~1 h set-up and memory check, ~2 h accuracy, ~15 min calibration, **~7 h speed test** (9 runs × ~45 min). Run the speed test overnight. Deadline: **Fri 27 Nov 2026, 23:59** (`Group09_A2.pptx` on xSiTe).
+Everything below runs on Machine A (Irfan's PC, service + Ollama, WSL 2) and Machine B (Uwais's laptop, JMeter, Git Bash). Nothing in this list may be skipped or reordered; the order is what the brief marks.
+
+Budget: ~1 h set-up and memory check, ~2 h single-model accuracy, ~2 h cascade accuracy, ~15 min calibration, **~7 h speed test** (9 runs × ~45 min). Run the speed test overnight. Deadline: **Fri 27 Nov 2026, 23:59** (`Group09_A2.pptx` on xSiTe).
 
 ## 0. Already done and committed (do not redo)
 
 | Commit | What |
 |---|---|
 | 1 | `golden/a2_split.csv` — odd positions = tuning (88), even = test (87). Committed first. |
-| 2 | `docs/a2/limits.json` — 7b test set 68/87 = 78.2 % → overall limit 68.2 % (≥ 60/87); per-category limits. Single-model test-set scores from A1 records. |
+| 2 | `docs/a2/limits.json` — 7b test set 68/87 = 78.2 % → overall limit 68.2 % (≥ 60/87); per-category limits. Single-model test-set scores from A1 records. **Superseded by the machine change:** §2a recomputes both from the new Machine A's re-run. |
 | 3 | Escalation rule, prediction record, tuning analysis, speed-test row list, cascade code, all A2 tooling. **Must be on `main` before step 2 below.** |
 
 ## The short version: one command per machine
 
-Everyone signed off the split, rule and predictions on Wed 11 Nov (group chat), so they are frozen. Irfan and Uwais now each start one command, in either order, and leave the machines on for one night (about 10 h). Each stage commits and pushes its own results; re-running the same command after an interruption resumes where it stopped.
+Everyone signed off the split, rule and predictions on Wed 11 Nov (group chat), so they are frozen. Irfan and Uwais now each start one command, in either order, and leave the machines on for one night (about 12 h). Each stage commits and pushes its own results; re-running the same command after an interruption resumes where it stopped.
 
 ```bash
 # Machine A (Irfan, WSL; clone in ~, not under /mnt/c)
@@ -22,10 +24,10 @@ cd ~/ICT3113-Assignment2 && git pull && tools/a2_machineA_all.sh
 ```
 ```bash
 # Machine B (Uwais, Git Bash)
-git pull && jmeter/a2_machineB_all.sh 100.88.74.36
+git pull && jmeter/a2_machineB_all.sh <machine-A-tailscale-ip>
 ```
 
-Both need the GitHub invite accepted first (push access). Machine A runs §2–§5 below in order (memory check with the pre-declared fallback, accuracy test, calibration, speed test); Machine B waits for it at each step, measures S, and runs its side of the speed test. If no model pair fits in memory, Machine A runs 7b alone and tells Machine B to skip the cascade runs. Then anyone runs §6 (`tools/a2_finish.sh`). The sections below are the same steps one at a time, for reruns and troubleshooting.
+Both need the GitHub invite accepted first (push access). Machine A runs §2–§5 below in order (preflight, single-model accuracy re-run and limits, memory check with the pre-declared fallback, cascade accuracy test, calibration, speed test); Machine B waits for it at each step, measures S, and runs its side of the speed test. If no model pair fits in memory, Machine A runs 7b alone and tells Machine B to skip the cascade runs. Then anyone runs §6 (`tools/a2_finish.sh`). The sections below are the same steps one at a time, for reruns and troubleshooting.
 
 ## 1. Before anything (both machines)
 
@@ -36,34 +38,52 @@ git log --oneline -5            # the prediction-record commit must be there
 
 Machine A: `cp .env.example .env` if missing; `.env` must still say `OLLAMA_CPUS=4`, `OLLAMA_MEM=8g`. Do **not** change Docker Desktop / WSL memory or CPU. Same power settings as A1 (sleep off, Windows Update paused).
 
-## 2. Machine A — rebuild, preflight, memory check (Step 2) — FIRST MEASUREMENT
+## 2. Machine A — rebuild, preflight
 
 ```bash
 docker compose up -d --build                     # rebuilds the service with the cascade code
-tools/a2_preflight.sh initial                    # versions, digests, Ollama settings; must end "verdict: OK"
+tools/a2_preflight.sh initial                    # versions, digests, Ollama settings, machine; must end "verdict: OK"
+```
+
+## 2a. Machine A — single-model accuracy on the new machine, then the limits (Steps 1 and 4) — ~2 h
+
+Needed because Machine A changed (`docs/a2/machine_change.md`). 7b first: its run sets the limits.
+
+```bash
+tools/a2_accuracy_all.sh single-qwen2.5:7b single-llama3.2:3b single-llama3.2:1b single-qwen2.5:0.5b
+python3 tools/a2_limits.py --source a2           # limits from THIS machine's 7b run; A1 records kept for comparison
+```
+
+Writes `results/a2/accuracy/single-<model>_test.json` / `_test_predictions.csv` (the raw runs), `single_<model>_test.json` (scored against the new limits) and `docs/a2/limits.json`. If `a2_limits.py` prints a WARNING that another single model now passes both limits, that model must also be speed-tested (tell Alvin). Commit `results/a2/accuracy docs/a2/limits.json results/logs/a2_requests.jsonl` **before** §2b.
+
+## 2b. Machine A — memory check (Step 2)
+
+```bash
 tools/a2_memory_check.sh                         # llama3.2:3b + qwen2.5:7b together
 ```
+
+The slowdown criterion compares each model's prompt-eval speed with its own §2a run on this machine.
 
 * `VERDICT: FIT` → continue with this pair.
 * `DOES NOT FIT` → run `SMALL=llama3.2:1b tools/a2_memory_check.sh`, and from here on prefix **every** Machine A command with `SMALL=llama3.2:1b` (fallback in `docs/a2/escalation_rule.md` §5). If that also fails, the cascade is not feasible: keep the `ollama ps` evidence, skip to step 5 for `top7b` only, and say so on slide 2.
 
 Commit: `git add results/a2/memory results/a2/env results/logs/a2_requests.jsonl && git commit -m "A2 memory check"`
 
-## 3. Machine A — accuracy test (Step 4, first half) — ~2 h
+## 3. Machine A — cascade accuracy test (Step 4, first half) — ~2 h
 
 ```bash
 tools/a2_accuracy_all.sh                          # cascade400 + cascade500 on the 87 test tickets
 # optional, comparison only:  SETS="tune" tools/a2_accuracy_all.sh
 ```
 
-Single models are not re-run (A1 records reused, test rows only — `results/a2/accuracy/single_*_test.json`); the preflight files are the evidence that digest, prompt, Ollama version and machine are unchanged.
+Single models were re-run in §2a on this machine (A1 records are no longer reused, because the machine changed); the preflight files are the evidence that digests, prompt, Ollama version, container limits and settings are unchanged between configurations.
 
 Commit `results/a2/accuracy`, `results/logs/a2_requests.jsonl`.
 
 ## 4. S calibration (both machines) — ~10 min
 
 Machine A: `tools/a2_machineA.sh calib`
-Machine B: `jmeter/a2_calibrate.sh 100.88.74.36`
+Machine B: `jmeter/a2_calibrate.sh <machine-A-tailscale-ip>`
 
 Writes `results/a2/calib/S.json` (three timings + rows) and `plan.json` (rate = 60/(2S) per min, run = S min (≥ 5), timeout = max(10S, 300 s), pause = timeout + 60 s rounded up). Commit `results/a2/calib` **before** the first speed run.
 
@@ -77,7 +97,7 @@ tools/a2_machineA.sh top7b cascade400 cascade500
 ```
 Machine B:
 ```bash
-jmeter/a2_machineB.sh 100.88.74.36 top7b cascade400 cascade500
+jmeter/a2_machineB.sh <machine-A-tailscale-ip> top7b cascade400 cascade500
 ```
 
 Per run, Machine A restarts Ollama, warms up with the same three tickets, checks `ollama ps` lists every model of the configuration (both for the cascade), then sets `/healthz` to `ready-<tag>`; Machine B calls `GET /stats`, runs JMeter at the planned rate for S minutes with the pause, calls `GET /stats` again. Only configurations that pass both accuracy limits are speed-tested, plus the cascade in all cases — so `top7b cascade400 cascade500` is the complete list (no other single model passes).

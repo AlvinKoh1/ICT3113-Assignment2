@@ -13,7 +13,9 @@
 #   * `ollama ps` lists BOTH models after every ticket from the 2nd onwards,
 #   * no ticket after each model's first call shows a reload (ollama_load_ms > 1 s),
 #   * the cgroup oom / oom_kill counters do not move,
-#   * prompt-eval speed stays >= 70 % of each model's Assignment 1 sequential speed
+#   * prompt-eval speed stays >= 70 % of the same model running alone on THIS machine
+#     (its A2 single-model accuracy run; the A1 run is only the fallback, different CPU)
+#     on tickets of the same prompt length (tok/s falls as prompts get longer),
 #     (a slowdown would mean the weights are being paged out and back in),
 #   * no request fails.
 # Output: results/a2/memory/memory_check_<small>+<large>.txt / .json / .sends.json

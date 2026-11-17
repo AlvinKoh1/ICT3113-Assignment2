@@ -3,7 +3,7 @@
 # Machine A runs tools/a2_machineA.sh with the same configs and runs at the same time.
 #
 #   jmeter/a2_machineB.sh <service-host> <config...> [runs]
-#   e.g. jmeter/a2_machineB.sh 100.88.74.36 top7b cascade400 cascade500
+#   e.g. jmeter/a2_machineB.sh <machine-A-tailscale-ip> top7b cascade400 cascade500
 #
 # Reads the rate / run length / timeout / pause from results/a2/calib/plan.json
 # (jmeter/a2_calibrate.sh), so every configuration runs under identical conditions.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Machine B, everything in ONE command (Uwais). Start it, leave the laptop on.
 #
-#   jmeter/a2_machineB_all.sh 100.88.74.36
+#   jmeter/a2_machineB_all.sh <machine-A-tailscale-ip>     (the A2 Machine A: docs/a2/machine_change.md)
 #
 # Can be started before Machine A: it waits for Machine A at every step.
 #   1. self-check: JMeter 5.6.x, Python, the service address answers (waits if Machine A is still starting)
@@ -12,7 +12,8 @@
 set -uo pipefail
 # First Python that actually runs (on Windows "python3" can be the Microsoft Store placeholder).
 PY=""; for c in python3 python py; do command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys" >/dev/null 2>&1 && { PY="$c"; break; }; done
-HOST="${1:-100.88.74.36}"
+# No default: Machine A changed for A2 (the A1 address 100.88.74.36 is gone), so the address is always given.
+HOST="${1:?usage: jmeter/a2_machineB_all.sh <machine-A-tailscale-ip>}"
 PORT="${PORT:-8000}"
 cd "$(dirname "$0")/.."
 mkdir -p results/a2/runs
@@ -40,7 +41,7 @@ say "     Reminder: power plan 'never sleep', Windows Update paused, Ethernet, u
 if [ -f results/a2/calib/plan.json ]; then
   say "2/4 calibration already done: $("$PY" -c "import json;p=json.load(open('results/a2/calib/plan.json'));print(f\"S={p['S_s']} s, rate {p['rate_per_min']}/min\")")"
 else
-  say "2/4 S calibration: waiting for Machine A to be ready (after its memory check and accuracy test, ~2.5 h)"
+  say "2/4 S calibration: waiting for Machine A to be ready (after its single-model accuracy re-run, memory check and cascade accuracy test, ~4.5 h)"
   bash jmeter/a2_calibrate.sh "$HOST" > results/a2/runs/calibrate.out 2>&1 || die "calibration failed: see results/a2/runs/calibrate.out"
   say "2/4 $("$PY" -c "import json;p=json.load(open('results/a2/calib/plan.json'));print(f\"S={p['S_s']} s, rate {p['rate_per_min']}/min, {p['duration_min']} min per run\")")"
   tools/a2_push.sh "A2 S calibration (Machine B)" results/a2/calib results/a2/runs || say "WARNING: push failed; committed locally"
