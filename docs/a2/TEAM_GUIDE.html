@@ -109,7 +109,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="eyebrow">ICT3113 Assignment 2 · Group P2-9 · rows 9000–9999</div>
   <h1>What's left, who does it, and in what order</h1>
   <div class="meta">
-    <span>Status as of <b>Thu 12 Nov 2026</b></span>
+    <span>Status as of <b>Tue 17 Nov 2026</b></span>
     <span>Repo <b>github.com/AlvinKoh1/ICT3113-Assignment2</b></span>
     <span class="deadline">Submission <b class="deadline">Fri 27 Nov, 23:59</b></span>
   </div>
@@ -121,14 +121,14 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="tbl"><table>
     <thead><tr><th>Who</th><th>Role</th><th>Hands-on</th><th>Can start</th><th>Still to do</th></tr></thead>
     <tbody>
-      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~30 min</td><td>Now</td><td>Start <b>one command</b> on Machine A, leave the PC on for one night</td></tr>
+      <tr><td><b>Irfan</b> M1</td><td>Service, Machine A</td><td>~30 min</td><td>Now</td><td>Send Uwais the new Tailscale IP; start <b>one command</b> on the new Machine A (Ryzen 7 7700), leave the PC on for one night</td></tr>
       <tr><td><b>Alvin</b> M2</td><td>Repo, tooling, finish</td><td>~1.5 h</td><td>After both machines finish</td><td>Answer any STOPPED message, run <code>tools/a2_finish.sh</code>, check slides 3, 5, 6</td></tr>
       <tr><td><b>Gabriel</b> M3</td><td>Rule and accuracy check</td><td>~45 min</td><td>After Alvin's finish run</td><td>Read the generated accuracy notes; check slides 2 and 4</td></tr>
       <tr><td><b>Uwais</b> M4</td><td>JMeter, Machine B</td><td>~30 min</td><td>Now</td><td>Start <b>one command</b> on Machine B, leave the laptop on for one night</td></tr>
       <tr><td><b>Muhaimin</b> M5</td><td>Predictions, deck lead</td><td>~1 h</td><td>After Alvin's finish run</td><td>Read the generated prediction account and deck; check slides 1, 7, 8; submit</td></tr>
     </tbody>
   </table></div>
-  <p class="small">Hands-on is the time each person spends at the keyboard from here; the two machines also run unattended for about 10 hours on the night they start. The split, limits, escalation rule, prediction record, cascade code, test scripts and the finish step are already in the repo.</p>
+  <p class="small">Hands-on is the time each person spends at the keyboard from here; the two machines also run unattended for about 12 hours on the night they start. The split, limits, escalation rule, prediction record, cascade code, test scripts and the finish step are already in the repo.</p>
 </section>
 
 <section class="order">
@@ -137,16 +137,16 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     <b>Two rules decide the whole schedule.</b>
     <ul class="tight">
       <li><b>The design is frozen.</b> Don't change the split, the escalation rule or the prediction record: the commit history is the evidence they came before any measurement.</li>
-      <li><b>Only one test runs on Machine A at a time.</b> The memory check, accuracy test and speed runs all use Irfan's CPU, so one script runs them one after another: memory, accuracy, calibration, then speed. Nobody else uses Machine A that night.</li>
+      <li><b>Only one test runs on Machine A at a time.</b> The single-model re-run, memory check, accuracy test and speed runs all use Irfan's CPU, so one script runs them one after another: single models, memory, cascade accuracy, calibration, then speed. Nobody else uses Machine A that night.</li>
     </ul>
   </div>
   <div class="flow">
-    <div class="row"><div class="when">Next free evening<br>(by Fri 13)</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh 100.88.74.36</code>, in either order. You two don't need to be at your computers together, but <b>both machines must be on and connected over Tailscale all night</b>: the scripts talk to each other through the service on Machine A.</div></div>
-    <div class="row"><div class="when">That night →<br>next morning</div><div class="lane"><b>The machines, unattended (about 10 h):</b> memory check, then the cascade accuracy test, then S calibration, then the 9 speed runs. Each stage commits and pushes its own results. If 3b + 7b don't fit, the script falls back to 1b + 7b, or to 7b alone, by itself.</div></div>
-    <div class="row"><div class="when">Sat 14 – Mon 16</div><div class="lane"><b>Redo window.</b> If either machine says STOPPED (power cut, network drop), re-run the same command: it skips everything already done.</div></div>
-    <div class="row"><div class="when">Tue 17 Nov</div><div class="lane"><b>Alvin:</b> <code>tools/a2_finish.sh</code>: analysis, accuracy check, prediction account, deck and raw-file cross-check in one run (about 5 min). Commit.</div></div>
-    <div class="row"><div class="when">Wed 18 – Fri 20</div><div class="lane"><b>Gabriel:</b> reads the accuracy notes. <b>Muhaimin:</b> reads the prediction account and the deck, edits wording if needed.</div></div>
-    <div class="row"><div class="when">Mon 23 – Wed 25</div><div class="lane"><b>Everyone:</b> check one number per slide against the raw files. Muhaimin submits <code>Group09_A2.pptx</code> + supporting files well before Fri 27, 23:59.</div></div>
+    <div class="row"><div class="when">Next free evening<br>(by Thu 19)</div><div class="lane gate"><b>START BOTH MACHINES (Irfan and Uwais), then leave them on.</b> Irfan starts <code>tools/a2_machineA_all.sh</code>, Uwais starts <code>jmeter/a2_machineB_all.sh &lt;new-IP&gt;</code> with the Tailscale IP Irfan sends him, in either order. You two don't need to be at your computers together, but <b>both machines must be on and connected over Tailscale all night</b>: the scripts talk to each other through the service on Machine A.</div></div>
+    <div class="row"><div class="when">That night →<br>next morning</div><div class="lane"><b>The machines, unattended (about 12 h):</b> the four single models re-run on the new Machine A and the limits set from its 7b run, then the memory check, then the cascade accuracy test, then S calibration, then the 9 speed runs. Each stage commits and pushes its own results. If 3b + 7b don't fit, the script falls back to 1b + 7b, or to 7b alone, by itself.</div></div>
+    <div class="row"><div class="when">Fri 20 – Sat 21</div><div class="lane"><b>Redo window.</b> If either machine says STOPPED (power cut, network drop), re-run the same command: it skips everything already done.</div></div>
+    <div class="row"><div class="when">Sun 22 Nov</div><div class="lane"><b>Alvin:</b> <code>tools/a2_finish.sh</code>: analysis, accuracy check, prediction account, deck and raw-file cross-check in one run (about 5 min). Commit.</div></div>
+    <div class="row"><div class="when">Mon 23 – Tue 24</div><div class="lane"><b>Gabriel:</b> reads the accuracy notes. <b>Muhaimin:</b> reads the prediction account and the deck, edits wording if needed.</div></div>
+    <div class="row"><div class="when">Wed 25 – Thu 26</div><div class="lane"><b>Everyone:</b> check one number per slide against the raw files. Muhaimin submits <code>Group09_A2.pptx</code> + supporting files well before Fri 27, 23:59.</div></div>
   </div>
 </section>
 
@@ -167,7 +167,7 @@ cd ICT3113-Assignment2</code></pre>
       <pre><code>cd ~/ICT3113-Assignment2
 git pull
 tools/a2_machineA_all.sh</code></pre>
-      <p>It rebuilds the service, runs the preflight and the memory check, the accuracy test, its side of the calibration and the 9 speed runs, and commits and pushes after each stage. About 10 hours. Uwais can start his side before or after you; his laptop must also stay on and on Tailscale all night, because the two scripts hand over to each other through your service at <code>100.88.74.36:8000</code>.</p>
+      <p>It rebuilds the service, runs the preflight, re-runs the four single models on this PC and sets the limits from the 7b run, then the memory check, the cascade accuracy test, its side of the calibration and the 9 speed runs, and commits and pushes after each stage. About 12 hours. Uwais can start his side before or after you; his laptop must also stay on and on Tailscale all night, because the two scripts hand over to each other through your service on port 8000. Send Uwais this PC's Tailscale IP (<code>tailscale ip -4</code>) before he starts.</p>
     </div></li>
     <li><div>
       <h3>Only if it says STOPPED</h3>
@@ -232,8 +232,9 @@ cd ICT3113-Assignment2</code></pre>
       <p class="needs">Irfan does not need to have started yet: the script waits until his service answers.</p>
       <p>Before you start: power plan "never sleep", plugged in, Ethernet, Windows Update paused.</p>
       <pre><code>git pull
-jmeter/a2_machineB_all.sh 100.88.74.36</code></pre>
-      <p>It checks JMeter and Python (<code>python3</code> or <code>python</code>, whichever Git Bash has), waits for Machine A, measures S when Machine A is ready, runs its side of the 9 speed runs, and commits and pushes. About 10 hours, most of it waiting. Keep the laptop on Tailscale the whole time: it watches Machine A's <code>/healthz</code> for "ready" and reports each finished run back through <code>/stats</code>.</p>
+jmeter/a2_machineB_all.sh &lt;new-IP&gt;</code></pre>
+      <p class="needs">Replace <code>&lt;new-IP&gt;</code> with the Tailscale IP Irfan sends you. Machine A moved to a new PC, so the old <code>100.88.74.36</code> no longer works and the script has no default.</p>
+      <p>It checks JMeter and Python (<code>python3</code> or <code>python</code>, whichever Git Bash has), waits for Machine A, measures S when Machine A is ready, runs its side of the 9 speed runs, and commits and pushes. About 12 hours, most of it waiting (Machine A needs about 4.5 h before calibration). Keep the laptop on Tailscale the whole time: it watches Machine A's <code>/healthz</code> for "ready" and reports each finished run back through <code>/stats</code>.</p>
     </div></li>
     <li><div>
       <h3>Only if it says STOPPED</h3>
