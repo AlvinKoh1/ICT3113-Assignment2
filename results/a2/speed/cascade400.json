@@ -1,0 +1,158 @@
+{
+  "config": "cascade400",
+  "runs": [
+    {
+      "tag": "a2_cascade400_run1",
+      "sent": 29,
+      "jtl_samples": 29,
+      "completed": 29,
+      "errored": 0,
+      "unfinished": 0,
+      "timed_out": 0,
+      "never_recorded": 0,
+      "error_rate_pct": 0.0,
+      "error_codes": {},
+      "p50_s": 16.756,
+      "p95_s": 36.95060000000001,
+      "mean_s": 18.70003448275862,
+      "max_s": 42.859,
+      "window_s": 609.35,
+      "throughput_per_s": 0.04759169606958234,
+      "throughput_per_min": 2.8555017641749405,
+      "service_log_lines": 29,
+      "service_log_200": 29,
+      "escalated": 25,
+      "escalation_fraction": 0.8620689655172413,
+      "routes": {
+        "long->large": 25,
+        "short->small:accepted": 4
+      },
+      "max_ollama_load_ms": 333.81,
+      "stats_before": 655,
+      "stats_after": 684,
+      "stored": 29,
+      "reconcile": {
+        "jtl_vs_log": true,
+        "jtl_ok_vs_log_200": true,
+        "stats_delta_vs_log_200": true,
+        "sent_vs_jtl": true,
+        "reload_during_run": false
+      }
+    },
+    {
+      "tag": "a2_cascade400_run2",
+      "sent": 29,
+      "jtl_samples": 29,
+      "completed": 29,
+      "errored": 0,
+      "unfinished": 0,
+      "timed_out": 0,
+      "never_recorded": 0,
+      "error_rate_pct": 0.0,
+      "error_codes": {},
+      "p50_s": 19.338,
+      "p95_s": 42.528600000000004,
+      "mean_s": 19.73958620689655,
+      "max_s": 48.228,
+      "window_s": 600.951,
+      "throughput_per_s": 0.04825684623205553,
+      "throughput_per_min": 2.8954107739233317,
+      "service_log_lines": 29,
+      "service_log_200": 29,
+      "escalated": 25,
+      "escalation_fraction": 0.8620689655172413,
+      "routes": {
+        "long->large": 25,
+        "short->small:accepted": 4
+      },
+      "max_ollama_load_ms": 311.07,
+      "stats_before": 687,
+      "stats_after": 716,
+      "stored": 29,
+      "reconcile": {
+        "jtl_vs_log": true,
+        "jtl_ok_vs_log_200": true,
+        "stats_delta_vs_log_200": true,
+        "sent_vs_jtl": true,
+        "reload_during_run": false
+      }
+    },
+    {
+      "tag": "a2_cascade400_run3",
+      "sent": 29,
+      "jtl_samples": 29,
+      "completed": 29,
+      "errored": 0,
+      "unfinished": 0,
+      "timed_out": 0,
+      "never_recorded": 0,
+      "error_rate_pct": 0.0,
+      "error_codes": {},
+      "p50_s": 12.454,
+      "p95_s": 31.685400000000005,
+      "mean_s": 15.56748275862069,
+      "max_s": 38.2,
+      "window_s": 587.055,
+      "throughput_per_s": 0.049399119332941555,
+      "throughput_per_min": 2.9639471599764935,
+      "service_log_lines": 29,
+      "service_log_200": 29,
+      "escalated": 25,
+      "escalation_fraction": 0.8620689655172413,
+      "routes": {
+        "long->large": 25,
+        "short->small:accepted": 4
+      },
+      "max_ollama_load_ms": 383.66,
+      "stats_before": 719,
+      "stats_after": 748,
+      "stored": 29,
+      "reconcile": {
+        "jtl_vs_log": true,
+        "jtl_ok_vs_log_200": true,
+        "stats_delta_vs_log_200": true,
+        "sent_vs_jtl": true,
+        "reload_during_run": false
+      }
+    }
+  ],
+  "n_runs": 3,
+  "p50_s": {
+    "mean": 16.182666666666666,
+    "sd": 3.477628118895598,
+    "min": 12.454,
+    "max": 19.338,
+    "n": 3
+  },
+  "p95_pooled_s": 38.386900000000004,
+  "p95_pooled_n": 87,
+  "throughput_per_min": {
+    "mean": 2.9049532326915886,
+    "sd": 0.05484883642472996,
+    "min": 2.8555017641749405,
+    "max": 2.9639471599764935,
+    "n": 3
+  },
+  "error_rate_pct": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "min": 0.0,
+    "max": 0.0,
+    "n": 3
+  },
+  "escalation_fraction": {
+    "mean": 0.8620689655172413,
+    "sd": 0.0,
+    "min": 0.8620689655172413,
+    "max": 0.8620689655172413,
+    "n": 3
+  },
+  "escalation_pooled": 0.8620689655172413,
+  "totals": {
+    "sent": 87,
+    "completed": 87,
+    "errored": 0,
+    "unfinished": 0
+  },
+  "all_reconciled": true
+}

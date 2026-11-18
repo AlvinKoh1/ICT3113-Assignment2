@@ -1,0 +1,11 @@
+{
+  "prediction_misses": [
+    "**Fastest configuration within the limits:** cascade T=500 → qwen2.5:7b alone. cascade T=500 failed an accuracy limit, so it could not be recommended whatever its speed",
+    "**Passes both limits, cascade T=500:** yes → no. Fails Credit reporting, Credit card; these categories hold 10–13 test tickets, so one or two…",
+    "**Test accuracy, cascade T=400:** 67/87 → 64/87. Against 7b alone by category: CredRep -2, DebtCol -1, CCard -1",
+    "**Test accuracy, cascade T=500:** 67/87 → 60/87. Against 7b alone by category: CredRep -4, DebtCol -1, Mortg -1, CCard -2"
+  ],
+  "recommendation_extra": [
+    "**Defence:** the cascade was built, measured at both settings and speed-tested; it did not beat qwen2.5:7b alone inside the limits, so the reference stays."
+  ]
+}

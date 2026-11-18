@@ -1,0 +1,155 @@
+{
+  "config": "top7b",
+  "runs": [
+    {
+      "tag": "a2_top7b_run1",
+      "sent": 29,
+      "jtl_samples": 29,
+      "completed": 29,
+      "errored": 0,
+      "unfinished": 0,
+      "timed_out": 0,
+      "never_recorded": 0,
+      "error_rate_pct": 0.0,
+      "error_codes": {},
+      "p50_s": 17.877,
+      "p95_s": 33.747600000000006,
+      "mean_s": 19.535103448275862,
+      "max_s": 38.524,
+      "window_s": 607.701,
+      "throughput_per_s": 0.04772083639816291,
+      "throughput_per_min": 2.8632501838897744,
+      "service_log_lines": 29,
+      "service_log_200": 29,
+      "escalated": 0,
+      "escalation_fraction": 0.0,
+      "routes": {
+        "single": 29
+      },
+      "max_ollama_load_ms": 67.42,
+      "stats_before": 559,
+      "stats_after": 588,
+      "stored": 29,
+      "reconcile": {
+        "jtl_vs_log": true,
+        "jtl_ok_vs_log_200": true,
+        "stats_delta_vs_log_200": true,
+        "sent_vs_jtl": true,
+        "reload_during_run": false
+      }
+    },
+    {
+      "tag": "a2_top7b_run2",
+      "sent": 29,
+      "jtl_samples": 29,
+      "completed": 29,
+      "errored": 0,
+      "unfinished": 0,
+      "timed_out": 0,
+      "never_recorded": 0,
+      "error_rate_pct": 0.0,
+      "error_codes": {},
+      "p50_s": 17.643,
+      "p95_s": 42.2584,
+      "mean_s": 20.382827586206897,
+      "max_s": 48.21,
+      "window_s": 605.182,
+      "throughput_per_s": 0.047919468853997636,
+      "throughput_per_min": 2.875168131239858,
+      "service_log_lines": 29,
+      "service_log_200": 29,
+      "escalated": 0,
+      "escalation_fraction": 0.0,
+      "routes": {
+        "single": 29
+      },
+      "max_ollama_load_ms": 68.14,
+      "stats_before": 591,
+      "stats_after": 620,
+      "stored": 29,
+      "reconcile": {
+        "jtl_vs_log": true,
+        "jtl_ok_vs_log_200": true,
+        "stats_delta_vs_log_200": true,
+        "sent_vs_jtl": true,
+        "reload_during_run": false
+      }
+    },
+    {
+      "tag": "a2_top7b_run3",
+      "sent": 29,
+      "jtl_samples": 29,
+      "completed": 29,
+      "errored": 0,
+      "unfinished": 0,
+      "timed_out": 0,
+      "never_recorded": 0,
+      "error_rate_pct": 0.0,
+      "error_codes": {},
+      "p50_s": 12.867,
+      "p95_s": 30.2496,
+      "mean_s": 16.032206896551724,
+      "max_s": 33.669,
+      "window_s": 587.17,
+      "throughput_per_s": 0.0493894442835976,
+      "throughput_per_min": 2.963366657015856,
+      "service_log_lines": 29,
+      "service_log_200": 29,
+      "escalated": 0,
+      "escalation_fraction": 0.0,
+      "routes": {
+        "single": 29
+      },
+      "max_ollama_load_ms": 68.45,
+      "stats_before": 623,
+      "stats_after": 652,
+      "stored": 29,
+      "reconcile": {
+        "jtl_vs_log": true,
+        "jtl_ok_vs_log_200": true,
+        "stats_delta_vs_log_200": true,
+        "sent_vs_jtl": true,
+        "reload_during_run": false
+      }
+    }
+  ],
+  "n_runs": 3,
+  "p50_s": {
+    "mean": 16.129,
+    "sd": 2.827396682462508,
+    "min": 12.867,
+    "max": 17.877,
+    "n": 3
+  },
+  "p95_pooled_s": 36.61400000000001,
+  "p95_pooled_n": 87,
+  "throughput_per_min": {
+    "mean": 2.9005949907151627,
+    "sd": 0.05468748426179463,
+    "min": 2.8632501838897744,
+    "max": 2.963366657015856,
+    "n": 3
+  },
+  "error_rate_pct": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "min": 0.0,
+    "max": 0.0,
+    "n": 3
+  },
+  "escalation_fraction": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "min": 0.0,
+    "max": 0.0,
+    "n": 3
+  },
+  "escalation_pooled": 0.0,
+  "totals": {
+    "sent": 87,
+    "completed": 87,
+    "errored": 0,
+    "unfinished": 0
+  },
+  "all_reconciled": true
+}

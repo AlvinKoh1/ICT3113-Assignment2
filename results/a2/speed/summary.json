@@ -1,0 +1,128 @@
+{
+  "cascade400": {
+    "config": "cascade400",
+    "n_runs": 3,
+    "p50_s": {
+      "mean": 16.182666666666666,
+      "sd": 3.477628118895598,
+      "min": 12.454,
+      "max": 19.338,
+      "n": 3
+    },
+    "p95_pooled_s": 38.386900000000004,
+    "p95_pooled_n": 87,
+    "throughput_per_min": {
+      "mean": 2.9049532326915886,
+      "sd": 0.05484883642472996,
+      "min": 2.8555017641749405,
+      "max": 2.9639471599764935,
+      "n": 3
+    },
+    "error_rate_pct": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "n": 3
+    },
+    "escalation_fraction": {
+      "mean": 0.8620689655172413,
+      "sd": 0.0,
+      "min": 0.8620689655172413,
+      "max": 0.8620689655172413,
+      "n": 3
+    },
+    "escalation_pooled": 0.8620689655172413,
+    "totals": {
+      "sent": 87,
+      "completed": 87,
+      "errored": 0,
+      "unfinished": 0
+    },
+    "all_reconciled": true
+  },
+  "cascade500": {
+    "config": "cascade500",
+    "n_runs": 3,
+    "p50_s": {
+      "mean": 13.671333333333333,
+      "sd": 1.3424240512346808,
+      "min": 12.233,
+      "max": 14.891,
+      "n": 3
+    },
+    "p95_pooled_s": 36.015900000000016,
+    "p95_pooled_n": 87,
+    "throughput_per_min": {
+      "mean": 2.9133023820915698,
+      "sd": 0.06061428720020349,
+      "min": 2.868243761157715,
+      "max": 2.9822146886070833,
+      "n": 3
+    },
+    "error_rate_pct": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "n": 3
+    },
+    "escalation_fraction": {
+      "mean": 0.7586206896551724,
+      "sd": 0.0,
+      "min": 0.7586206896551724,
+      "max": 0.7586206896551724,
+      "n": 3
+    },
+    "escalation_pooled": 0.7586206896551724,
+    "totals": {
+      "sent": 87,
+      "completed": 87,
+      "errored": 0,
+      "unfinished": 0
+    },
+    "all_reconciled": true
+  },
+  "top7b": {
+    "config": "top7b",
+    "n_runs": 3,
+    "p50_s": {
+      "mean": 16.129,
+      "sd": 2.827396682462508,
+      "min": 12.867,
+      "max": 17.877,
+      "n": 3
+    },
+    "p95_pooled_s": 36.61400000000001,
+    "p95_pooled_n": 87,
+    "throughput_per_min": {
+      "mean": 2.9005949907151627,
+      "sd": 0.05468748426179463,
+      "min": 2.8632501838897744,
+      "max": 2.963366657015856,
+      "n": 3
+    },
+    "error_rate_pct": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "n": 3
+    },
+    "escalation_fraction": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "n": 3
+    },
+    "escalation_pooled": 0.0,
+    "totals": {
+      "sent": 87,
+      "completed": 87,
+      "errored": 0,
+      "unfinished": 0
+    },
+    "all_reconciled": true
+  }
+}
