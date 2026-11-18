@@ -1,0 +1,6 @@
+2026-11-18 23:20:25 +0800  === A2 Machine B: start, service at 100.121.29.125:8000 (e0675cf)
+2026-11-18 23:20:35 +0800  1/4 waiting for the service at http://100.121.29.125:8000 (Machine A may still be starting)
+2026-11-18 23:20:35 +0800  1/4 service reachable
+2026-11-18 23:20:37 +0800  1/4 software versions recorded in results/a2/runs/machineB_env.txt
+2026-11-18 23:20:37 +0800       Reminder: power plan 'never sleep', Windows Update paused, Ethernet, until this finishes.
+2026-11-18 23:20:37 +0800  2/4 S calibration: waiting for Machine A to be ready (after its single-model accuracy re-run, memory check and cascade accuracy test, ~4.5 h)

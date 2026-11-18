@@ -1,0 +1,27 @@
+waiting for Machine A (ready-a2_calib) ...
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"single","config":"single-qwen2.5:7b","run_id":"ready-a2_calib"}
+row 9091 (778 chars): Credit card  client 10.1 s
+row 9245 (778 chars): Credit card  client 10.1 s
+row 9505 (778 chars): Credit card  client 10.6 s
+wrote results/a2/calib/S.json
+{
+  "S_s": 10.11,
+  "timings_s": [
+    10.09,
+    10.11,
+    10.59
+  ],
+  "rows": [
+    "9091",
+    "9245",
+    "9505"
+  ],
+  "rate_per_min": 2.9672,
+  "interval_s": 20.22,
+  "duration_min": 10,
+  "timeout_s": 300,
+  "pause_s": 360,
+  "expected_arrivals": 29.7,
+  "schedule": "rate(2.9672/min) random_arrivals(10 min) pause(360 sec)"
+}
+Commit results/a2/calib/ before the first speed run.
