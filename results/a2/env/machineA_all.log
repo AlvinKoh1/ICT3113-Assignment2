@@ -18,3 +18,6 @@ pushed: A2 memory check (Machine A)
 2026-11-18 23:34:58 +0800  4/6 cascade400 on test: 64/87 = 73.6 %
 2026-11-18 23:34:58 +0800  4/6 accuracy test cascade500 (about 1 h)
 2026-11-18 23:49:45 +0800  4/6 cascade500 on test: 60/87 = 69.0 %
+pushed: A2 accuracy test: cascade T=400 and T=500 on the test set
+2026-11-18 23:49:48 +0800  5/6 S calibration: waiting for Machine B (jmeter/a2_machineB_all.sh) if it is not running yet
+2026-11-18 23:51:05 +0800  5/6 calibration done

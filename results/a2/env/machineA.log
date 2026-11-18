@@ -1,0 +1,11 @@
+2026-11-18 23:49:48 +0800  [a2_calib] service -> top7b (TRIAGE_MODE=single OLLAMA_MODEL=qwen2.5:7b)
+2026-11-18 23:49:49 +0800  [a2_calib] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-18 23:49:50 +0800  [a2_calib] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 11.0 s
+row 9002 (1227 chars): Debt collection  client 12.8 s
+row 9006 (1071 chars): Bank account or service  client 12.5 s
+2026-11-18 23:50:29 +0800  [a2_calib] ollama ps lists: qwen2.5:7b
+2026-11-18 23:50:32 +0800  [a2_calib] READY (/healthz run_id=ready-a2_calib)
+2026-11-18 23:50:32 +0800  [a2_calib] waiting for Machine B to finish the S calibration
+2026-11-18 23:51:05 +0800  [a2_calib] calibration done
+2026-11-18 23:51:05 +0800  ALL DONE: calib
