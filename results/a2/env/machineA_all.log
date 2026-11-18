@@ -21,3 +21,5 @@ pushed: A2 memory check (Machine A)
 pushed: A2 accuracy test: cascade T=400 and T=500 on the test set
 2026-11-18 23:49:48 +0800  5/6 S calibration: waiting for Machine B (jmeter/a2_machineB_all.sh) if it is not running yet
 2026-11-18 23:51:05 +0800  5/6 calibration done
+pushed: A2 calibration (Machine A side)
+2026-11-18 23:51:08 +0800  6/6 speed test: top7b cascade400 cascade500 (about 7 h; progress in results/a2/env/machineA.log)

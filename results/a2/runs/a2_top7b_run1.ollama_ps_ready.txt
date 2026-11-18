@@ -1,0 +1,2 @@
+NAME          ID              SIZE      PROCESSOR    UNTIL               
+qwen2.5:7b    845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    

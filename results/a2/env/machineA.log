@@ -9,3 +9,97 @@ row 9006 (1071 chars): Bank account or service  client 12.5 s
 2026-11-18 23:50:32 +0800  [a2_calib] waiting for Machine B to finish the S calibration
 2026-11-18 23:51:05 +0800  [a2_calib] calibration done
 2026-11-18 23:51:05 +0800  ALL DONE: calib
+2026-11-18 23:51:09 +0800  [top7b] preflight ok
+2026-11-18 23:51:09 +0800  [a2_top7b_run1] service -> top7b (TRIAGE_MODE=single OLLAMA_MODEL=qwen2.5:7b)
+2026-11-18 23:51:10 +0800  [a2_top7b_run1] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-18 23:51:10 +0800  [a2_top7b_run1] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 10.7 s
+row 9002 (1227 chars): Debt collection  client 12.9 s
+row 9006 (1071 chars): Bank account or service  client 12.3 s
+2026-11-18 23:51:52 +0800  [a2_top7b_run1] ollama ps lists: qwen2.5:7b
+2026-11-18 23:51:55 +0800  [a2_top7b_run1] READY (/healthz run_id=ready-a2_top7b_run1)
+2026-11-18 23:51:55 +0800  [a2_top7b_run1] waiting for Machine B (closing GET /stats tagged a2_top7b_run1:stats-after)
+2026-11-19 00:09:53 +0800  [a2_top7b_run1] DONE: 29 log lines tagged a2_top7b_run1
+2026-11-19 00:09:53 +0800  [a2_top7b_run2] service -> top7b (TRIAGE_MODE=single OLLAMA_MODEL=qwen2.5:7b)
+2026-11-19 00:09:53 +0800  [a2_top7b_run2] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 00:09:54 +0800  [a2_top7b_run2] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 12.0 s
+row 9002 (1227 chars): Debt collection  client 12.4 s
+row 9006 (1071 chars): Bank account or service  client 12.7 s
+2026-11-19 00:10:34 +0800  [a2_top7b_run2] ollama ps lists: qwen2.5:7b
+2026-11-19 00:10:40 +0800  [a2_top7b_run2] READY (/healthz run_id=ready-a2_top7b_run2)
+2026-11-19 00:10:40 +0800  [a2_top7b_run2] waiting for Machine B (closing GET /stats tagged a2_top7b_run2:stats-after)
+2026-11-19 00:27:47 +0800  [a2_top7b_run2] DONE: 29 log lines tagged a2_top7b_run2
+2026-11-19 00:27:47 +0800  [a2_top7b_run3] service -> top7b (TRIAGE_MODE=single OLLAMA_MODEL=qwen2.5:7b)
+2026-11-19 00:27:48 +0800  [a2_top7b_run3] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 00:27:49 +0800  [a2_top7b_run3] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 11.5 s
+row 9002 (1227 chars): Debt collection  client 12.8 s
+row 9006 (1071 chars): Bank account or service  client 12.3 s
+2026-11-19 00:28:28 +0800  [a2_top7b_run3] ollama ps lists: qwen2.5:7b
+2026-11-19 00:28:31 +0800  [a2_top7b_run3] READY (/healthz run_id=ready-a2_top7b_run3)
+2026-11-19 00:28:31 +0800  [a2_top7b_run3] waiting for Machine B (closing GET /stats tagged a2_top7b_run3:stats-after)
+2026-11-19 00:45:46 +0800  [a2_top7b_run3] DONE: 29 log lines tagged a2_top7b_run3
+2026-11-19 00:45:47 +0800  [cascade400] preflight ok
+2026-11-19 00:45:47 +0800  [a2_cascade400_run1] service -> cascade400 (TRIAGE_MODE=cascade OLLAMA_MODEL=qwen2.5:7b CASCADE_SMALL_MODEL=llama3.2:3b CASCADE_LARGE_MODEL=qwen2.5:7b CASCADE_MAX_CHARS=400)
+2026-11-19 00:45:48 +0800  [a2_cascade400_run1] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 00:45:48 +0800  [a2_cascade400_run1] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 6.3 s
+row 9002 (1227 chars): Debt collection  client 21.1 s
+row 9006 (1071 chars): Bank account or service  client 12.6 s
+2026-11-19 00:46:30 +0800  [a2_cascade400_run1] ollama ps lists: llama3.2:3b qwen2.5:7b
+2026-11-19 00:46:32 +0800  [a2_cascade400_run1] READY (/healthz run_id=ready-a2_cascade400_run1)
+2026-11-19 00:46:32 +0800  [a2_cascade400_run1] waiting for Machine B (closing GET /stats tagged a2_cascade400_run1:stats-after)
+2026-11-19 01:03:53 +0800  [a2_cascade400_run1] DONE: 29 log lines tagged a2_cascade400_run1
+2026-11-19 01:03:53 +0800  [a2_cascade400_run2] service -> cascade400 (TRIAGE_MODE=cascade OLLAMA_MODEL=qwen2.5:7b CASCADE_SMALL_MODEL=llama3.2:3b CASCADE_LARGE_MODEL=qwen2.5:7b CASCADE_MAX_CHARS=400)
+2026-11-19 01:03:54 +0800  [a2_cascade400_run2] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 01:03:55 +0800  [a2_cascade400_run2] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 5.8 s
+row 9002 (1227 chars): Debt collection  client 20.7 s
+row 9006 (1071 chars): Bank account or service  client 12.4 s
+2026-11-19 01:04:38 +0800  [a2_cascade400_run2] ollama ps lists: llama3.2:3b qwen2.5:7b
+2026-11-19 01:04:40 +0800  [a2_cascade400_run2] READY (/healthz run_id=ready-a2_cascade400_run2)
+2026-11-19 01:04:40 +0800  [a2_cascade400_run2] waiting for Machine B (closing GET /stats tagged a2_cascade400_run2:stats-after)
+2026-11-19 01:21:57 +0800  [a2_cascade400_run2] DONE: 29 log lines tagged a2_cascade400_run2
+2026-11-19 01:21:57 +0800  [a2_cascade400_run3] service -> cascade400 (TRIAGE_MODE=cascade OLLAMA_MODEL=qwen2.5:7b CASCADE_SMALL_MODEL=llama3.2:3b CASCADE_LARGE_MODEL=qwen2.5:7b CASCADE_MAX_CHARS=400)
+2026-11-19 01:21:58 +0800  [a2_cascade400_run3] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 01:21:59 +0800  [a2_cascade400_run3] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 6.2 s
+row 9002 (1227 chars): Debt collection  client 21.0 s
+row 9006 (1071 chars): Bank account or service  client 12.8 s
+2026-11-19 01:22:42 +0800  [a2_cascade400_run3] ollama ps lists: llama3.2:3b qwen2.5:7b
+2026-11-19 01:22:45 +0800  [a2_cascade400_run3] READY (/healthz run_id=ready-a2_cascade400_run3)
+2026-11-19 01:22:45 +0800  [a2_cascade400_run3] waiting for Machine B (closing GET /stats tagged a2_cascade400_run3:stats-after)
+2026-11-19 01:39:50 +0800  [a2_cascade400_run3] DONE: 29 log lines tagged a2_cascade400_run3
+2026-11-19 01:39:50 +0800  [cascade500] preflight ok
+2026-11-19 01:39:50 +0800  [a2_cascade500_run1] service -> cascade500 (TRIAGE_MODE=cascade OLLAMA_MODEL=qwen2.5:7b CASCADE_SMALL_MODEL=llama3.2:3b CASCADE_LARGE_MODEL=qwen2.5:7b CASCADE_MAX_CHARS=500)
+2026-11-19 01:39:51 +0800  [a2_cascade500_run1] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 01:39:52 +0800  [a2_cascade500_run1] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 6.3 s
+row 9002 (1227 chars): Debt collection  client 21.2 s
+row 9006 (1071 chars): Bank account or service  client 12.4 s
+2026-11-19 01:40:36 +0800  [a2_cascade500_run1] ollama ps lists: llama3.2:3b qwen2.5:7b
+2026-11-19 01:40:39 +0800  [a2_cascade500_run1] READY (/healthz run_id=ready-a2_cascade500_run1)
+2026-11-19 01:40:39 +0800  [a2_cascade500_run1] waiting for Machine B (closing GET /stats tagged a2_cascade500_run1:stats-after)
+2026-11-19 01:57:50 +0800  [a2_cascade500_run1] DONE: 29 log lines tagged a2_cascade500_run1
+2026-11-19 01:57:50 +0800  [a2_cascade500_run2] service -> cascade500 (TRIAGE_MODE=cascade OLLAMA_MODEL=qwen2.5:7b CASCADE_SMALL_MODEL=llama3.2:3b CASCADE_LARGE_MODEL=qwen2.5:7b CASCADE_MAX_CHARS=500)
+2026-11-19 01:57:51 +0800  [a2_cascade500_run2] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 01:57:52 +0800  [a2_cascade500_run2] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 6.2 s
+row 9002 (1227 chars): Debt collection  client 21.4 s
+row 9006 (1071 chars): Bank account or service  client 13.0 s
+2026-11-19 01:58:36 +0800  [a2_cascade500_run2] ollama ps lists: llama3.2:3b qwen2.5:7b
+2026-11-19 01:58:39 +0800  [a2_cascade500_run2] READY (/healthz run_id=ready-a2_cascade500_run2)
+2026-11-19 01:58:39 +0800  [a2_cascade500_run2] waiting for Machine B (closing GET /stats tagged a2_cascade500_run2:stats-after)
+2026-11-19 02:15:55 +0800  [a2_cascade500_run2] DONE: 29 log lines tagged a2_cascade500_run2
+2026-11-19 02:15:55 +0800  [a2_cascade500_run3] service -> cascade500 (TRIAGE_MODE=cascade OLLAMA_MODEL=qwen2.5:7b CASCADE_SMALL_MODEL=llama3.2:3b CASCADE_LARGE_MODEL=qwen2.5:7b CASCADE_MAX_CHARS=500)
+2026-11-19 02:15:55 +0800  [a2_cascade500_run3] restarting Ollama (clears prompt cache; no model loaded)
+2026-11-19 02:15:56 +0800  [a2_cascade500_run3] warm-up (3 fixed tickets, timings discarded)
+row 9027 (274 chars): Credit reporting  client 6.1 s
+row 9002 (1227 chars): Debt collection  client 21.0 s
+row 9006 (1071 chars): Bank account or service  client 12.8 s
+2026-11-19 02:16:39 +0800  [a2_cascade500_run3] ollama ps lists: llama3.2:3b qwen2.5:7b
+2026-11-19 02:16:42 +0800  [a2_cascade500_run3] READY (/healthz run_id=ready-a2_cascade500_run3)
+2026-11-19 02:16:42 +0800  [a2_cascade500_run3] waiting for Machine B (closing GET /stats tagged a2_cascade500_run3:stats-after)
+2026-11-19 02:34:03 +0800  [a2_cascade500_run3] DONE: 29 log lines tagged a2_cascade500_run3
+2026-11-19 02:34:03 +0800  ALL DONE: top7b cascade400 cascade500

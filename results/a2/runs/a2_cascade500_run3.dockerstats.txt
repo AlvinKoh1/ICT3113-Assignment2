@@ -1,0 +1,93 @@
+== 2026-11-19 02:16:42 +0800
+triage-service cpu=0.10% mem=44.36MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.978GiB / 8GiB
+== 2026-11-19 02:17:17 +0800
+triage-service cpu=0.10% mem=47.75MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.991GiB / 8GiB
+== 2026-11-19 02:17:51 +0800
+triage-service cpu=0.12% mem=48.22MiB / 15.2GiB
+triage-ollama cpu=393.09% mem=7.998GiB / 8GiB
+== 2026-11-19 02:18:26 +0800
+triage-service cpu=0.48% mem=49.46MiB / 15.2GiB
+triage-ollama cpu=396.10% mem=8GiB / 8GiB
+== 2026-11-19 02:19:01 +0800
+triage-service cpu=0.10% mem=49.1MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.999GiB / 8GiB
+== 2026-11-19 02:19:36 +0800
+triage-service cpu=0.10% mem=49.06MiB / 15.2GiB
+triage-ollama cpu=213.02% mem=8GiB / 8GiB
+== 2026-11-19 02:20:11 +0800
+triage-service cpu=0.13% mem=48.86MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:20:43 +0800
+triage-service cpu=0.10% mem=48.65MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:21:18 +0800
+triage-service cpu=0.10% mem=51.11MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:21:53 +0800
+triage-service cpu=0.10% mem=52.25MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:22:28 +0800
+triage-service cpu=0.29% mem=54.65MiB / 15.2GiB
+triage-ollama cpu=397.59% mem=8GiB / 8GiB
+== 2026-11-19 02:23:03 +0800
+triage-service cpu=0.10% mem=54.71MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.999GiB / 8GiB
+== 2026-11-19 02:23:38 +0800
+triage-service cpu=0.12% mem=54.47MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:24:11 +0800
+triage-service cpu=0.12% mem=54.68MiB / 15.2GiB
+triage-ollama cpu=395.72% mem=8GiB / 8GiB
+== 2026-11-19 02:24:44 +0800
+triage-service cpu=0.09% mem=54.08MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:25:17 +0800
+triage-service cpu=0.12% mem=54.81MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.999GiB / 8GiB
+== 2026-11-19 02:25:52 +0800
+triage-service cpu=0.10% mem=56MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:26:27 +0800
+triage-service cpu=0.11% mem=57.99MiB / 15.2GiB
+triage-ollama cpu=396.97% mem=7.999GiB / 8GiB
+== 2026-11-19 02:27:00 +0800
+triage-service cpu=0.12% mem=58.18MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:27:32 +0800
+triage-service cpu=0.12% mem=58.17MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:28:07 +0800
+triage-service cpu=0.11% mem=57.93MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:28:41 +0800
+triage-service cpu=0.11% mem=57.93MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=8GiB / 8GiB
+== 2026-11-19 02:29:16 +0800
+triage-service cpu=0.09% mem=56.3MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.966GiB / 8GiB
+== 2026-11-19 02:29:51 +0800
+triage-service cpu=0.11% mem=56.05MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.964GiB / 8GiB
+== 2026-11-19 02:30:28 +0800
+triage-service cpu=0.10% mem=55.83MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.964GiB / 8GiB
+== 2026-11-19 02:31:03 +0800
+triage-service cpu=0.10% mem=55.83MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.964GiB / 8GiB
+== 2026-11-19 02:31:36 +0800
+triage-service cpu=0.10% mem=55.59MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.963GiB / 8GiB
+== 2026-11-19 02:32:09 +0800
+triage-service cpu=0.12% mem=55.59MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.963GiB / 8GiB
+== 2026-11-19 02:32:42 +0800
+triage-service cpu=0.13% mem=55.59MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.963GiB / 8GiB
+== 2026-11-19 02:33:15 +0800
+triage-service cpu=0.09% mem=55.59MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.962GiB / 8GiB
+== 2026-11-19 02:33:49 +0800
+triage-service cpu=0.09% mem=55.9MiB / 15.2GiB
+triage-ollama cpu=0.00% mem=7.962GiB / 8GiB
