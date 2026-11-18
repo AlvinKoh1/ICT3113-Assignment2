@@ -1,0 +1,43 @@
+# A2 preflight  2026-11-18 23:19:11 +0800  label=accuracy_cascade400  git=c9fc8fe
+## host
+Linux DESKTOP-IIT1G8D 6.18.58.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+16
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       8.8Gi       188Mi        49Mi       6.4Gi       6.4Gi
+## cpu
+CPU(s):                                  16
+Model name:                              AMD Ryzen 7 7700 8-Core Processor
+## docker
+Docker version 29.9.3, build 5457199
+Docker Compose version v5.7.0
+## ollama version
+ollama version is 0.5.7-0-ga420a45-dirty
+## ollama container env (inference settings, recorded once, held constant)
+OLLAMA_HOST=0.0.0.0
+OLLAMA_KEEP_ALIVE=30m
+OLLAMA_NUM_PARALLEL=4
+## ollama container limits
+NanoCpus=4000000000 Memory=8589934592 Image=ollama/ollama:0.5.7
+## runner flags last seen in the Ollama log (threads / parallel / ctx-size)
+      7 --ctx-size 8192
+      7 --parallel 4
+      7 --threads 8
+## triage service settings
+CASCADE_LARGE_MODEL=qwen2.5:7b
+CASCADE_MAX_CHARS=500
+CASCADE_SMALL_MODEL=llama3.2:3b
+LOG_PATH=/logs/a2_requests.jsonl
+OLLAMA_MODEL=qwen2.5:7b
+OLLAMA_SEED=42
+OLLAMA_TEMPERATURE=0
+OLLAMA_TIMEOUT_S=1200
+OLLAMA_URL=http://ollama:11434
+RUN_ID=memcheck-llama3.2_3b+qwen2.5_7b
+TRIAGE_MODE=cascade
+## model digests vs docs/model_pins.md
+ok    qwen2.5:0.5b a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67
+ok    llama3.2:1b baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878
+ok    llama3.2:3b a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72
+ok    qwen2.5:7b 845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e
+ok    machine: AMD Ryzen 7 7700, the A2 Machine A (docs/a2/machine_a2.json); single models are re-run here, not reused from A1
+## verdict: OK
