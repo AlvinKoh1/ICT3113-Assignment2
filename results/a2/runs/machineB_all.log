@@ -1,0 +1,32 @@
+2026-11-18 23:20:25 +0800  === A2 Machine B: start, service at 100.121.29.125:8000 (e0675cf)
+2026-11-18 23:20:35 +0800  1/4 waiting for the service at http://100.121.29.125:8000 (Machine A may still be starting)
+2026-11-18 23:20:35 +0800  1/4 service reachable
+2026-11-18 23:20:37 +0800  1/4 software versions recorded in results/a2/runs/machineB_env.txt
+2026-11-18 23:20:37 +0800       Reminder: power plan 'never sleep', Windows Update paused, Ethernet, until this finishes.
+2026-11-18 23:20:37 +0800  2/4 S calibration: waiting for Machine A to be ready (after its single-model accuracy re-run, memory check and cascade accuracy test, ~4.5 h)
+2026-11-18 23:51:05 +0800  2/4 S=10.11 s, rate 2.9672/min, 10 min per run
+warning: in the working copy of 'results/a2/runs/calibrate.out', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/a2/runs/linkcheck_machineB.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/a2/runs/machineB_all.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/a2/runs/machineB_env.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/a2/runs/machineB_all.log', LF will be replaced by CRLF the next time Git touches it
+To https://github.com/AlvinKoh1/ICT3113-Assignment2.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/AlvinKoh1/ICT3113-Assignment2.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+push attempt 1 failed; retrying in 30 s
+warning: in the working copy of 'results/a2/runs/linkcheck_machineB.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/a2/runs/machineB_all.log', LF will be replaced by CRLF the next time Git touches it
+pushed: A2 S calibration (Machine B)
+2026-11-18 23:51:48 +0800  3/4 speed test: 9 runs (about 7 h); progress in results/a2/runs/machineB.log
+2026-11-18 23:52:38 +0800  === A2 Machine B: start, service at 100.121.29.125:8000 (386da00)
+2026-11-18 23:52:42 +0800  1/4 waiting for the service at http://100.121.29.125:8000 (Machine A may still be starting)
+2026-11-18 23:52:42 +0800  1/4 service reachable
+2026-11-18 23:52:44 +0800  1/4 software versions recorded in results/a2/runs/machineB_env.txt
+2026-11-18 23:52:44 +0800       Reminder: power plan 'never sleep', Windows Update paused, Ethernet, until this finishes.
+2026-11-18 23:52:44 +0800  2/4 calibration already done: S=10.11 s, rate 2.9672/min
+2026-11-18 23:52:44 +0800  3/4 speed test: 9 runs (about 7 h); progress in results/a2/runs/machineB.log

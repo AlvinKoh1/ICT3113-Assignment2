@@ -1,0 +1,38 @@
+{
+  "run_id": "a2_calib",
+  "model_header": "qwen2.5:7b",
+  "base": "http://100.121.29.125:8000",
+  "tickets": [
+    {
+      "row": "9091",
+      "chars": 778,
+      "client_ms": 10091.9,
+      "category": "Credit card",
+      "request_id": "80d3a2a6-2736-4f23-ae25-f7a2674e6dde",
+      "server_ms": 9104.15,
+      "error": null,
+      "at": "2026-11-18T23:50:43+0800"
+    },
+    {
+      "row": "9245",
+      "chars": 778,
+      "client_ms": 10110.7,
+      "category": "Credit card",
+      "request_id": "83b794c9-75ed-4bcb-9bf4-1aa6ddc5a1f3",
+      "server_ms": 9180.88,
+      "error": null,
+      "at": "2026-11-18T23:50:54+0800"
+    },
+    {
+      "row": "9505",
+      "chars": 778,
+      "client_ms": 10585.3,
+      "category": "Credit card",
+      "request_id": "a256dd12-1b8b-4fe2-b01b-f361347c9138",
+      "server_ms": 9595.63,
+      "error": null,
+      "at": "2026-11-18T23:51:04+0800"
+    }
+  ],
+  "middle_ms": 10110.7
+}

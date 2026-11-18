@@ -1,0 +1,1 @@
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le400","run_id":"ready-a2_cascade400_run2"}

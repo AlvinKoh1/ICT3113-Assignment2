@@ -1,0 +1,20 @@
+{
+  "S_s": 10.11,
+  "timings_s": [
+    10.09,
+    10.11,
+    10.59
+  ],
+  "rows": [
+    "9091",
+    "9245",
+    "9505"
+  ],
+  "rate_per_min": 2.9672,
+  "interval_s": 20.22,
+  "duration_min": 10,
+  "timeout_s": 300,
+  "pause_s": 360,
+  "expected_arrivals": 29.7,
+  "schedule": "rate(2.9672/min) random_arrivals(10 min) pause(360 sec)"
+}

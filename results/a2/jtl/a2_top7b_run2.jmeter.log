@@ -1,0 +1,190 @@
+2026-11-19 00:10:41,686 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-11-19 00:10:41,704 INFO o.a.j.JMeter: Loading user properties from: C:\apache-jmeter-5.6.3\bin\user.properties
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Loading system properties from: C:\apache-jmeter-5.6.3\bin\system.properties
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: host=100.121.29.125
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: port=8000
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: ticketRatePerMin=2.9672
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: durationMin=10
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: pauseSec=360
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: timeoutMs=300000
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: seed=2
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: runId=a2_top7b_run2
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: dataFile=../data/a2_speed_tickets.tsv
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Setting JMeter property: jtl=../results/a2/jtl/a2_top7b_run2.jtl
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Version 5.6.3
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: java.version=21.0.5
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: os.name=Windows 11
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: os.arch=amd64
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: os.version=10.0
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: java.awt.headless=true
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-11-19 00:10:41,708 INFO o.a.j.JMeter: Available Processors =16
+2026-11-19 00:10:41,717 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-11-19 00:10:41,717 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-11-19 00:10:41,717 INFO o.a.j.JMeter: JMeterHome=C:\apache-jmeter-5.6.3
+2026-11-19 00:10:41,717 INFO o.a.j.JMeter: user.dir  =C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment2\jmeter
+2026-11-19 00:10:41,717 INFO o.a.j.JMeter: PWD       =C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment2\jmeter
+2026-11-19 00:10:41,723 INFO o.a.j.JMeter: IP: 100.104.219.73 Name: LAPTOP-48GRBIJT FullName: laptop-48grbijt.tailc73e25.ts.net.
+2026-11-19 00:10:41,727 INFO o.a.j.s.FileServer: Default base='C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment2\jmeter'
+2026-11-19 00:10:41,727 INFO o.a.j.s.FileServer: Set new base='C:\Users\ualqa\OneDrive\Desktop\SIT\Year 3\Trimester 1\Performance\Project\ICT3113-Assignment2\jmeter'
+2026-11-19 00:10:41,872 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-11-19 00:10:41,904 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-11-19 00:10:41,904 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-11-19 00:10:41,912 INFO o.a.j.s.SaveService: Loading file: a2_speed.jmx
+2026-11-19 00:10:41,977 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-19 00:10:41,977 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-19 00:10:41,977 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-19 00:10:41,977 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-19 00:10:41,977 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-11-19 00:10:41,977 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-11-19 00:10:42,004 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-11-19 00:10:42,009 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-11-19 00:10:42,019 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-11-19 00:10:42,019 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-11-19 00:10:42,021 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-11-19 00:10:42,021 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-11-19 00:10:42,238 INFO o.a.j.JMeter: Running test (1795018242236)
+2026-11-19 00:10:42,247 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : TG-Tickets (open model)
+2026-11-19 00:10:42,247 INFO o.a.j.e.StandardJMeterEngine: Starting 0 threads for group TG-Tickets (open model).
+2026-11-19 00:10:42,247 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-19 00:10:42,247 INFO o.a.j.t.o.OpenModelThreadGroup: Starting OpenModelThreadGroup#1 with schedule rate(2.9672/min) random_arrivals(10 min) pause(360 sec)
+2026-11-19 00:10:42,283 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-11-19 00:10:42,283 INFO o.a.j.t.o.OpenModelThreadGroup: Thread starting init
+2026-11-19 00:10:42,285 INFO o.a.j.t.o.PoissonArrivalsRamp: Generating 29 events, beginRate = 0.049453333333333335 / sec, endRate = 0.049453333333333335 / sec, duration = 600.0 sec
+2026-11-19 00:11:00,341 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-1
+2026-11-19 00:11:00,342 INFO o.a.j.s.FileServer: Stored: ../data/a2_speed_tickets.tsv
+2026-11-19 00:11:00,843 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9143 t=1795018260841
+2026-11-19 00:11:00,855 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = LAPTOP-48GRBIJT
+2026-11-19 00:11:00,860 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-11-19 00:11:00,861 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-11-19 00:11:00,861 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-11-19 00:11:00,861 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-11-19 00:11:00,861 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-11-19 00:11:07,260 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-1
+2026-11-19 00:11:07,260 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-1
+2026-11-19 00:11:11,671 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-2
+2026-11-19 00:11:11,672 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9879 t=1795018271672
+2026-11-19 00:11:16,071 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-3
+2026-11-19 00:11:16,072 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9982 t=1795018276072
+2026-11-19 00:11:23,024 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-2
+2026-11-19 00:11:23,024 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-2
+2026-11-19 00:11:26,899 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-4
+2026-11-19 00:11:26,899 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9372 t=1795018286899
+2026-11-19 00:11:44,767 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-3
+2026-11-19 00:11:44,767 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-3
+2026-11-19 00:11:54,386 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-4
+2026-11-19 00:11:54,386 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-4
+2026-11-19 00:12:13,934 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-5
+2026-11-19 00:12:13,935 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9949 t=1795018333935
+2026-11-19 00:12:21,948 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-5
+2026-11-19 00:12:21,948 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-5
+2026-11-19 00:12:58,917 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-6
+2026-11-19 00:12:58,918 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9439 t=1795018378918
+2026-11-19 00:12:59,226 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-7
+2026-11-19 00:12:59,227 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9430 t=1795018379227
+2026-11-19 00:13:01,597 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-8
+2026-11-19 00:13:01,598 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9874 t=1795018381598
+2026-11-19 00:13:06,760 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-6
+2026-11-19 00:13:06,760 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-6
+2026-11-19 00:13:10,593 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-9
+2026-11-19 00:13:10,594 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9657 t=1795018390594
+2026-11-19 00:13:42,430 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-7
+2026-11-19 00:13:42,431 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-7
+2026-11-19 00:13:42,442 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-8
+2026-11-19 00:13:42,442 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-8
+2026-11-19 00:13:58,806 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-9
+2026-11-19 00:13:58,806 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-9
+2026-11-19 00:14:13,456 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-10
+2026-11-19 00:14:13,457 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9168 t=1795018453457
+2026-11-19 00:14:37,243 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-10
+2026-11-19 00:14:37,243 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-10
+2026-11-19 00:14:46,992 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-11
+2026-11-19 00:14:46,993 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9246 t=1795018486993
+2026-11-19 00:14:56,120 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-11
+2026-11-19 00:14:56,120 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-11
+2026-11-19 00:15:27,613 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-12
+2026-11-19 00:15:27,614 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9610 t=1795018527614
+2026-11-19 00:15:32,188 INFO o.a.j.r.Summariser: summary +     12 in 00:04:50 =    0.0/s Avg: 21620 Min:  4572 Max: 48210 Err:     0 (0.00%) Active: 1 Started: 12 Finished: 11
+2026-11-19 00:15:32,189 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-12
+2026-11-19 00:15:32,189 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-12
+2026-11-19 00:15:40,117 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-13
+2026-11-19 00:15:40,118 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9702 t=1795018540118
+2026-11-19 00:15:45,513 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-13
+2026-11-19 00:15:45,513 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-13
+2026-11-19 00:16:19,189 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-14
+2026-11-19 00:16:19,190 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9541 t=1795018579190
+2026-11-19 00:16:31,385 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-15
+2026-11-19 00:16:31,386 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9088 t=1795018591386
+2026-11-19 00:16:33,695 INFO o.a.j.r.Summariser: summary +      2 in 00:01:02 =    0.0/s Avg:  9949 Min:  5394 Max: 14505 Err:     0 (0.00%) Active: 2 Started: 15 Finished: 13
+2026-11-19 00:16:33,695 INFO o.a.j.r.Summariser: summary =     14 in 00:05:51 =    0.0/s Avg: 19953 Min:  4572 Max: 48210 Err:     0 (0.00%)
+2026-11-19 00:16:33,696 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-14
+2026-11-19 00:16:33,696 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-14
+2026-11-19 00:16:37,317 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-15
+2026-11-19 00:16:37,318 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-15
+2026-11-19 00:16:47,359 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-16
+2026-11-19 00:16:47,360 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9687 t=1795018607360
+2026-11-19 00:16:52,007 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-17
+2026-11-19 00:16:52,008 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9572 t=1795018612008
+2026-11-19 00:16:56,641 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-16
+2026-11-19 00:16:56,641 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-16
+2026-11-19 00:17:09,652 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-17
+2026-11-19 00:17:09,652 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-17
+2026-11-19 00:17:37,015 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-18
+2026-11-19 00:17:37,016 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9735 t=1795018657016
+2026-11-19 00:17:48,412 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-18
+2026-11-19 00:17:48,413 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-18
+2026-11-19 00:18:00,710 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-19
+2026-11-19 00:18:00,711 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9127 t=1795018680711
+2026-11-19 00:18:07,916 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-20
+2026-11-19 00:18:07,916 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9426 t=1795018687916
+2026-11-19 00:18:22,673 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-19
+2026-11-19 00:18:22,673 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-19
+2026-11-19 00:18:45,595 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-20
+2026-11-19 00:18:45,595 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-20
+2026-11-19 00:19:12,778 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-21
+2026-11-19 00:19:12,779 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9392 t=1795018752779
+2026-11-19 00:19:13,036 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-22
+2026-11-19 00:19:13,037 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9596 t=1795018753037
+2026-11-19 00:19:16,296 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-23
+2026-11-19 00:19:16,297 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9188 t=1795018756297
+2026-11-19 00:19:19,664 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-21
+2026-11-19 00:19:19,664 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-21
+2026-11-19 00:19:42,891 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-24
+2026-11-19 00:19:42,892 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9925 t=1795018782892
+2026-11-19 00:19:46,760 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-22
+2026-11-19 00:19:46,761 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-22
+2026-11-19 00:19:46,775 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-23
+2026-11-19 00:19:46,776 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-23
+2026-11-19 00:19:54,855 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-24
+2026-11-19 00:19:54,856 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-24
+2026-11-19 00:20:11,771 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-25
+2026-11-19 00:20:11,772 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9235 t=1795018811772
+2026-11-19 00:20:20,374 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-26
+2026-11-19 00:20:20,375 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9563 t=1795018820375
+2026-11-19 00:20:24,095 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-25
+2026-11-19 00:20:24,095 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-25
+2026-11-19 00:20:33,548 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-27
+2026-11-19 00:20:33,549 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9293 t=1795018833549
+2026-11-19 00:20:34,474 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-28
+2026-11-19 00:20:34,475 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9524 t=1795018834475
+2026-11-19 00:20:38,232 INFO o.a.j.t.o.EvenArrivalsRamp: Generating 0 events, beginRate = 0.0 / sec, endRate = 0.0 / sec, duration = 360.0 sec
+2026-11-19 00:20:38,232 INFO o.a.j.t.o.OpenModelThreadGroup: There will be no more events, so will wait for 363 sec till the end of the schedule
+2026-11-19 00:20:38,233 INFO o.a.j.t.JMeterThread: Thread started: TG-Tickets (open model) 1-29
+2026-11-19 00:20:38,234 INFO o.a.j.m.J.Log send (A2SENT): A2SENT row=9655 t=1795018838234
+2026-11-19 00:20:40,867 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-26
+2026-11-19 00:20:40,868 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-26
+2026-11-19 00:21:06,075 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-27
+2026-11-19 00:21:06,075 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-27
+2026-11-19 00:21:06,086 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-29
+2026-11-19 00:21:06,086 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-29
+2026-11-19 00:21:06,109 INFO o.a.j.t.JMeterThread: Thread is done: TG-Tickets (open model) 1-28
+2026-11-19 00:21:06,109 INFO o.a.j.t.JMeterThread: Thread finished: TG-Tickets (open model) 1-28
+2026-11-19 00:26:42,022 INFO o.a.j.t.o.OpenModelThreadGroup: There will be no more events, will shutdown the thread pool
+2026-11-19 00:26:42,022 INFO o.a.j.t.o.OpenModelThreadGroup: Thread starting done
+2026-11-19 00:26:42,022 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-11-19 00:26:42,022 INFO o.a.j.s.FileServer: Close: ../data/a2_speed_tickets.tsv
+2026-11-19 00:26:42,022 INFO o.a.j.r.Summariser: summary +     15 in 00:10:08 =    0.0/s Avg: 20783 Min:  5930 Max: 37676 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+2026-11-19 00:26:42,022 INFO o.a.j.r.Summariser: summary =     29 in 00:16:00 =    0.0/s Avg: 20382 Min:  4572 Max: 48210 Err:     0 (0.00%)

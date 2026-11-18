@@ -1,0 +1,224 @@
+plan: rate 2.9672/min, 10 min, timeout 300 s, pause 360 s, runs 3
+=== a2_top7b_run1: waiting for Machine A (ready-a2_top7b_run1) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"single","config":"single-qwen2.5:7b","run_id":"ready-a2_top7b_run1"}
+2026-11-18 23:52:46 +0800 start a2_top7b_run1
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 18 23:52:47 SGT (1795017167685)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     11 in 00:04:14 =    0.0/s Avg: 22697 Min:  6149 Max: 32938 Err:     0 (0.00%) Active: 3 Started: 13 Finished: 10
+summary +     18 in 00:11:46 =    0.0/s Avg: 17602 Min:  3590 Max: 38524 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 19535 Min:  3590 Max: 38524 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 00:08:47 SGT (1795018127701)
+... end of run
+2026-11-19 00:09:48 +0800 end   a2_top7b_run1  samples=29  sent=29
+=== a2_top7b_run2: waiting for Machine A (ready-a2_top7b_run2) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"single","config":"single-qwen2.5:7b","run_id":"ready-a2_top7b_run2"}
+2026-11-19 00:10:40 +0800 start a2_top7b_run2
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 00:10:42 SGT (1795018242009)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +     12 in 00:04:50 =    0.0/s Avg: 21620 Min:  4572 Max: 48210 Err:     0 (0.00%) Active: 1 Started: 12 Finished: 11
+summary +      2 in 00:01:02 =    0.0/s Avg:  9949 Min:  5394 Max: 14505 Err:     0 (0.00%) Active: 2 Started: 15 Finished: 13
+summary =     14 in 00:05:51 =    0.0/s Avg: 19953 Min:  4572 Max: 48210 Err:     0 (0.00%)
+summary +     15 in 00:10:08 =    0.0/s Avg: 20783 Min:  5930 Max: 37676 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 20382 Min:  4572 Max: 48210 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 00:26:42 SGT (1795019202022)
+... end of run
+2026-11-19 00:27:42 +0800 end   a2_top7b_run2  samples=29  sent=29
+=== a2_top7b_run3: waiting for Machine A (ready-a2_top7b_run3) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"single","config":"single-qwen2.5:7b","run_id":"ready-a2_top7b_run3"}
+2026-11-19 00:28:34 +0800 start a2_top7b_run3
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 00:28:35 SGT (1795019315868)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      1 in 00:00:25 =    0.0/s Avg:  6419 Min:  6419 Max:  6419 Err:     0 (0.00%) Active: 1 Started: 1 Finished: 0
+summary +      3 in 00:01:01 =    0.0/s Avg: 25477 Min: 12867 Max: 33669 Err:     0 (0.00%) Active: 1 Started: 4 Finished: 3
+summary =      4 in 00:01:26 =    0.0/s Avg: 20712 Min:  6419 Max: 33669 Err:     0 (0.00%)
+summary +      4 in 00:01:03 =    0.1/s Avg: 13995 Min:  8071 Max: 23084 Err:     0 (0.00%) Active: 1 Started: 8 Finished: 7
+summary =      8 in 00:02:28 =    0.1/s Avg: 17353 Min:  6419 Max: 33669 Err:     0 (0.00%)
+summary +      5 in 00:02:29 =    0.0/s Avg: 11313 Min:  4134 Max: 22652 Err:     0 (0.00%) Active: 1 Started: 13 Finished: 12
+summary =     13 in 00:04:57 =    0.0/s Avg: 15030 Min:  4134 Max: 33669 Err:     0 (0.00%)
+summary +      2 in 00:00:57 =    0.0/s Avg: 22413 Min: 14341 Max: 30486 Err:     0 (0.00%) Active: 3 Started: 17 Finished: 14
+summary =     15 in 00:05:54 =    0.0/s Avg: 16014 Min:  4134 Max: 33669 Err:     0 (0.00%)
+summary +     13 in 00:04:03 =    0.1/s Avg: 16810 Min:  6476 Max: 26526 Err:     0 (0.00%) Active: 1 Started: 28 Finished: 27
+summary =     28 in 00:09:57 =    0.0/s Avg: 16384 Min:  4134 Max: 33669 Err:     0 (0.00%)
+summary +      1 in 00:06:03 =    0.0/s Avg:  6169 Min:  6169 Max:  6169 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 16032 Min:  4134 Max: 33669 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 00:44:35 SGT (1795020275874)
+... end of run
+2026-11-19 00:45:36 +0800 end   a2_top7b_run3  samples=29  sent=29
+=== a2_cascade400_run1: waiting for Machine A (ready-a2_cascade400_run1) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le400","run_id":"ready-a2_cascade400_run1"}
+2026-11-19 00:46:38 +0800 start a2_cascade400_run1
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 00:46:39 SGT (1795020399974)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      2 in 00:00:21 =    0.1/s Avg: 11921 Min:  6259 Max: 17584 Err:     0 (0.00%) Active: 1 Started: 2 Finished: 1
+summary +      2 in 00:01:34 =    0.0/s Avg: 27270 Min: 23247 Max: 31294 Err:     0 (0.00%) Active: 3 Started: 6 Finished: 3
+summary =      4 in 00:01:55 =    0.0/s Avg: 19596 Min:  6259 Max: 31294 Err:     0 (0.00%)
+summary +      3 in 00:00:27 =    0.1/s Avg: 25339 Min: 17998 Max: 29952 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
+summary =      7 in 00:02:22 =    0.0/s Avg: 22057 Min:  6259 Max: 31294 Err:     0 (0.00%)
+summary +      6 in 00:01:58 =    0.1/s Avg: 19109 Min:  7387 Max: 34676 Err:     0 (0.00%) Active: 1 Started: 13 Finished: 12
+summary =     13 in 00:04:21 =    0.0/s Avg: 20696 Min:  6259 Max: 34676 Err:     0 (0.00%)
+summary +      3 in 00:01:03 =    0.0/s Avg:  8797 Min:  1606 Max: 14840 Err:     0 (0.00%) Active: 1 Started: 16 Finished: 15
+summary =     16 in 00:05:24 =    0.0/s Avg: 18465 Min:  1606 Max: 34676 Err:     0 (0.00%)
+summary +     13 in 00:10:36 =    0.0/s Avg: 18988 Min:  6929 Max: 42859 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 18700 Min:  1606 Max: 42859 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 01:02:39 SGT (1795021359990)
+... end of run
+2026-11-19 01:03:40 +0800 end   a2_cascade400_run1  samples=29  sent=29
+=== a2_cascade400_run2: waiting for Machine A (ready-a2_cascade400_run2) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le400","run_id":"ready-a2_cascade400_run2"}
+2026-11-19 01:04:42 +0800 start a2_cascade400_run2
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 01:04:44 SGT (1795021484111)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      9 in 00:03:17 =    0.0/s Avg: 25116 Min:  6643 Max: 48228 Err:     0 (0.00%) Active: 1 Started: 9 Finished: 8
+summary +      3 in 00:01:31 =    0.0/s Avg: 12122 Min:  2176 Max: 24433 Err:     0 (0.00%) Active: 1 Started: 12 Finished: 11
+summary =     12 in 00:04:48 =    0.0/s Avg: 21868 Min:  2176 Max: 48228 Err:     0 (0.00%)
+summary +     16 in 00:05:32 =    0.0/s Avg: 17900 Min:  2352 Max: 35631 Err:     0 (0.00%) Active: 2 Started: 29 Finished: 27
+summary =     28 in 00:10:20 =    0.0/s Avg: 19600 Min:  2176 Max: 48228 Err:     0 (0.00%)
+summary +      1 in 00:05:40 =    0.0/s Avg: 23624 Min: 23624 Max: 23624 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 19739 Min:  2176 Max: 48228 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 01:20:44 SGT (1795022444121)
+... end of run
+2026-11-19 01:21:44 +0800 end   a2_cascade400_run2  samples=29  sent=29
+=== a2_cascade400_run3: waiting for Machine A (ready-a2_cascade400_run3) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le400","run_id":"ready-a2_cascade400_run3"}
+2026-11-19 01:22:46 +0800 start a2_cascade400_run3
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 01:22:48 SGT (1795022568248)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      3 in 00:01:15 =    0.0/s Avg: 17118 Min:  6475 Max: 33075 Err:     0 (0.00%) Active: 2 Started: 4 Finished: 2
+summary +      3 in 00:00:32 =    0.1/s Avg: 16669 Min:  8325 Max: 29229 Err:     0 (0.00%) Active: 2 Started: 7 Finished: 5
+summary =      6 in 00:01:47 =    0.1/s Avg: 16893 Min:  6475 Max: 33075 Err:     0 (0.00%)
+summary +      4 in 00:01:28 =    0.0/s Avg: 18945 Min: 12566 Max: 23512 Err:     0 (0.00%) Active: 1 Started: 10 Finished: 9
+summary =     10 in 00:03:15 =    0.1/s Avg: 17714 Min:  6475 Max: 33075 Err:     0 (0.00%)
+summary +      1 in 00:01:02 =    0.0/s Avg:  9580 Min:  9580 Max:  9580 Err:     0 (0.00%) Active: 1 Started: 11 Finished: 10
+summary =     11 in 00:04:17 =    0.0/s Avg: 16974 Min:  6475 Max: 33075 Err:     0 (0.00%)
+summary +      8 in 00:02:58 =    0.0/s Avg: 15922 Min:  2149 Max: 38200 Err:     0 (0.00%) Active: 1 Started: 19 Finished: 18
+summary =     19 in 00:07:15 =    0.0/s Avg: 16531 Min:  2149 Max: 38200 Err:     0 (0.00%)
+summary +      7 in 00:02:27 =    0.0/s Avg: 13753 Min:  7134 Max: 25062 Err:     0 (0.00%) Active: 2 Started: 27 Finished: 25
+summary =     26 in 00:09:42 =    0.0/s Avg: 15783 Min:  2149 Max: 38200 Err:     0 (0.00%)
+summary +      3 in 00:06:18 =    0.0/s Avg: 13694 Min:  5410 Max: 29601 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 15567 Min:  2149 Max: 38200 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 01:38:48 SGT (1795023528263)
+... end of run
+2026-11-19 01:39:49 +0800 end   a2_cascade400_run3  samples=29  sent=29
+=== a2_cascade500_run1: waiting for Machine A (ready-a2_cascade500_run1) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le500","run_id":"ready-a2_cascade500_run1"}
+2026-11-19 01:40:40 +0800 start a2_cascade500_run1
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 01:40:42 SGT (1795023642197)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      7 in 00:02:22 =    0.0/s Avg: 23987 Min: 11757 Max: 32760 Err:     0 (0.00%) Active: 1 Started: 7 Finished: 6
+summary +      6 in 00:01:58 =    0.1/s Avg: 18566 Min:  6923 Max: 33239 Err:     0 (0.00%) Active: 1 Started: 13 Finished: 12
+summary =     13 in 00:04:20 =    0.1/s Avg: 21485 Min:  6923 Max: 33239 Err:     0 (0.00%)
+summary +      7 in 00:02:59 =    0.0/s Avg: 13930 Min:  1701 Max: 22557 Err:     0 (0.00%) Active: 2 Started: 21 Finished: 19
+summary =     20 in 00:07:19 =    0.0/s Avg: 18841 Min:  1701 Max: 33239 Err:     0 (0.00%)
+summary +      7 in 00:02:33 =    0.0/s Avg: 10383 Min:  4479 Max: 21045 Err:     0 (0.00%) Active: 3 Started: 29 Finished: 26
+summary =     27 in 00:09:52 =    0.0/s Avg: 16648 Min:  1701 Max: 33239 Err:     0 (0.00%)
+summary +      2 in 00:06:08 =    0.0/s Avg: 44145 Min: 41947 Max: 46343 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 18544 Min:  1701 Max: 46343 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 01:56:42 SGT (1795024602204)
+... end of run
+2026-11-19 01:57:42 +0800 end   a2_cascade500_run1  samples=29  sent=29
+=== a2_cascade500_run2: waiting for Machine A (ready-a2_cascade500_run2) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le500","run_id":"ready-a2_cascade500_run2"}
+2026-11-19 01:58:44 +0800 start a2_cascade500_run2
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 01:58:46 SGT (1795024726298)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      4 in 00:01:14 =    0.1/s Avg: 18724 Min:  3000 Max: 30617 Err:     0 (0.00%) Active: 1 Started: 4 Finished: 3
+summary +      4 in 00:02:03 =    0.0/s Avg: 24637 Min:  7739 Max: 57536 Err:     0 (0.00%) Active: 2 Started: 9 Finished: 7
+summary =      8 in 00:03:17 =    0.0/s Avg: 21680 Min:  3000 Max: 57536 Err:     0 (0.00%)
+summary +      3 in 00:00:57 =    0.1/s Avg: 26825 Min:  8926 Max: 48563 Err:     0 (0.00%) Active: 1 Started: 11 Finished: 10
+summary =     11 in 00:04:14 =    0.0/s Avg: 23083 Min:  3000 Max: 57536 Err:     0 (0.00%)
+summary +      1 in 00:00:34 =    0.0/s Avg:  1822 Min:  1822 Max:  1822 Err:     0 (0.00%) Active: 1 Started: 12 Finished: 11
+summary =     12 in 00:04:47 =    0.0/s Avg: 21312 Min:  1822 Max: 57536 Err:     0 (0.00%)
+summary +      4 in 00:01:28 =    0.0/s Avg:  8298 Min:  2195 Max: 16149 Err:     0 (0.00%) Active: 2 Started: 17 Finished: 15
+summary =     16 in 00:06:15 =    0.0/s Avg: 18058 Min:  1822 Max: 57536 Err:     0 (0.00%)
+summary +      6 in 00:02:30 =    0.0/s Avg: 19662 Min: 10887 Max: 37206 Err:     0 (0.00%) Active: 2 Started: 23 Finished: 21
+summary =     22 in 00:08:46 =    0.0/s Avg: 18495 Min:  1822 Max: 57536 Err:     0 (0.00%)
+summary +      2 in 00:00:29 =    0.1/s Avg: 23266 Min: 13890 Max: 32642 Err:     0 (0.00%) Active: 1 Started: 24 Finished: 23
+summary =     24 in 00:09:15 =    0.0/s Avg: 18893 Min:  1822 Max: 57536 Err:     0 (0.00%)
+summary +      5 in 00:06:45 =    0.0/s Avg: 18092 Min:  6234 Max: 30843 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 18755 Min:  1822 Max: 57536 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 02:14:46 SGT (1795025686300)
+... end of run
+2026-11-19 02:15:47 +0800 end   a2_cascade500_run2  samples=29  sent=29
+=== a2_cascade500_run3: waiting for Machine A (ready-a2_cascade500_run3) ===
+{"service":"ok","ollama":true,"model":"qwen2.5:7b","mode":"cascade","config":"cascade-llama3.2:3b-qwen2.5:7b-le500","run_id":"ready-a2_cascade500_run3"}
+2026-11-19 02:16:49 +0800 start a2_cascade500_run3
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using a2_speed.jmx
+Starting standalone test @ 2026 Nov 19 02:16:50 SGT (1795025810557)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +      5 in 00:01:40 =    0.1/s Avg: 16955 Min:  2826 Max: 32944 Err:     0 (0.00%) Active: 2 Started: 6 Finished: 4
+summary +      5 in 00:01:35 =    0.1/s Avg: 17308 Min: 12233 Max: 23352 Err:     0 (0.00%) Active: 1 Started: 10 Finished: 9
+summary =     10 in 00:03:14 =    0.1/s Avg: 17132 Min:  2826 Max: 32944 Err:     0 (0.00%)
+summary +      5 in 00:02:26 =    0.0/s Avg:  8081 Min:  2193 Max: 19012 Err:     0 (0.00%) Active: 2 Started: 16 Finished: 14
+summary =     15 in 00:05:40 =    0.0/s Avg: 14115 Min:  2193 Max: 32944 Err:     0 (0.00%)
+summary +      4 in 00:01:33 =    0.0/s Avg: 18287 Min: 11578 Max: 21343 Err:     0 (0.00%) Active: 1 Started: 19 Finished: 18
+summary =     19 in 00:07:14 =    0.0/s Avg: 14993 Min:  2193 Max: 32944 Err:     0 (0.00%)
+summary +      7 in 00:02:27 =    0.0/s Avg: 12248 Min:  3221 Max: 20845 Err:     0 (0.00%) Active: 2 Started: 27 Finished: 25
+summary =     26 in 00:09:41 =    0.0/s Avg: 14254 Min:  2193 Max: 32944 Err:     0 (0.00%)
+summary +      3 in 00:06:19 =    0.0/s Avg: 11429 Min:  2407 Max: 27175 Err:     0 (0.00%) Active: 0 Started: 29 Finished: 29
+summary =     29 in 00:16:00 =    0.0/s Avg: 13962 Min:  2193 Max: 32944 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 02:32:50 SGT (1795026770578)
+... end of run
+2026-11-19 02:33:51 +0800 end   a2_cascade500_run3  samples=29  sent=29
+Machine B done. Commit results/a2/jtl and results/a2/runs.
