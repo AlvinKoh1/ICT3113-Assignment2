@@ -13,3 +13,8 @@
 pushed: A2 single-model accuracy re-run on the A2 machine; limits from its 7b run
 2026-11-18 23:17:32 +0800  3/6 memory check: 3b + 7b
 2026-11-18 23:19:08 +0800  3/6 memory check: 3b + 7b FIT
+pushed: A2 memory check (Machine A)
+2026-11-18 23:19:11 +0800  4/6 accuracy test cascade400 (about 1 h)
+2026-11-18 23:34:58 +0800  4/6 cascade400 on test: 64/87 = 73.6 %
+2026-11-18 23:34:58 +0800  4/6 accuracy test cascade500 (about 1 h)
+2026-11-18 23:49:45 +0800  4/6 cascade500 on test: 60/87 = 69.0 %

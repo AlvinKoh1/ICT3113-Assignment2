@@ -1,0 +1,205 @@
+{
+  "correct": 64,
+  "n": 87,
+  "acc": 0.735632183908046,
+  "per_category": {
+    "Credit reporting": {
+      "correct": 14,
+      "n": 19,
+      "acc": 0.7368421052631579
+    },
+    "Debt collection": {
+      "correct": 8,
+      "n": 10,
+      "acc": 0.8
+    },
+    "Mortgage": {
+      "correct": 13,
+      "n": 13,
+      "acc": 1.0
+    },
+    "Credit card": {
+      "correct": 8,
+      "n": 12,
+      "acc": 0.6666666666666666
+    },
+    "Bank account or service": {
+      "correct": 7,
+      "n": 10,
+      "acc": 0.7
+    },
+    "Consumer loan": {
+      "correct": 8,
+      "n": 12,
+      "acc": 0.6666666666666666
+    },
+    "Money transfer or service": {
+      "correct": 6,
+      "n": 11,
+      "acc": 0.5454545454545454
+    }
+  },
+  "confusion": {
+    "Credit reporting": {
+      "Credit reporting": 14,
+      "Debt collection": 2,
+      "Mortgage": 0,
+      "Credit card": 1,
+      "Bank account or service": 1,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Debt collection": {
+      "Credit reporting": 0,
+      "Debt collection": 8,
+      "Mortgage": 1,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Mortgage": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 13,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Credit card": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 8,
+      "Bank account or service": 3,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Bank account or service": {
+      "Credit reporting": 1,
+      "Debt collection": 2,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 7,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Consumer loan": {
+      "Credit reporting": 0,
+      "Debt collection": 2,
+      "Mortgage": 2,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 8,
+      "Money transfer or service": 0,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Money transfer or service": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 1,
+      "Bank account or service": 4,
+      "Consumer loan": 0,
+      "Money transfer or service": 6,
+      "UNPARSED": 0,
+      "ERROR": 0
+    }
+  },
+  "unparsed": 0,
+  "errors": 0,
+  "config": "cascade400",
+  "set": "test",
+  "run_id": "a2acc_cascade400_test",
+  "service": {
+    "service": "ok",
+    "ollama": true,
+    "model": "qwen2.5:7b",
+    "mode": "cascade",
+    "config": "cascade-llama3.2:3b-qwen2.5:7b-le400",
+    "run_id": "acc-cascade400"
+  },
+  "limits": {
+    "overall_pass": true,
+    "category_pass": true,
+    "pass": true,
+    "categories": {
+      "Credit reporting": {
+        "acc_pct": 73.68421052631578,
+        "limit_pct": 69.21052631578947,
+        "pass": true,
+        "gap_pts": -10.526315789473685
+      },
+      "Debt collection": {
+        "acc_pct": 80.0,
+        "limit_pct": 75.0,
+        "pass": true,
+        "gap_pts": -10.0
+      },
+      "Mortgage": {
+        "acc_pct": 100.0,
+        "limit_pct": 85.0,
+        "pass": true,
+        "gap_pts": 0.0
+      },
+      "Credit card": {
+        "acc_pct": 66.66666666666666,
+        "limit_pct": 60.0,
+        "pass": true,
+        "gap_pts": -8.333333333333343
+      },
+      "Bank account or service": {
+        "acc_pct": 70.0,
+        "limit_pct": 55.0,
+        "pass": true,
+        "gap_pts": 0.0
+      },
+      "Consumer loan": {
+        "acc_pct": 66.66666666666666,
+        "limit_pct": 51.66666666666666,
+        "pass": true,
+        "gap_pts": 0.0
+      },
+      "Money transfer or service": {
+        "acc_pct": 54.54545454545454,
+        "limit_pct": 39.54545454545454,
+        "pass": true,
+        "gap_pts": 0.0
+      }
+    },
+    "failed_categories": []
+  },
+  "escalation": {
+    "escalated": {
+      "n": 72,
+      "correct": 56,
+      "acc": 0.7777777777777778
+    },
+    "not_escalated": {
+      "n": 15,
+      "correct": 8,
+      "acc": 0.5333333333333333
+    },
+    "fraction": 0.8275862068965517,
+    "routes": {
+      "long->large": 72,
+      "short->small:accepted": 15
+    },
+    "missing_from_log": 0
+  },
+  "client_ms_median": 9487.5,
+  "git_commit": "c9fc8fe47724bf2f3b96e2dc418fde158e962764",
+  "generated_at": "2026-11-18T23:34:58+0800"
+}

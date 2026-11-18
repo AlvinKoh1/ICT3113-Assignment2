@@ -1,0 +1,14 @@
+service: {'service': 'ok', 'ollama': True, 'model': 'qwen2.5:7b', 'mode': 'cascade', 'config': 'cascade-llama3.2:3b-qwen2.5:7b-le400', 'run_id': 'acc-cascade400'}
+  [10/87] 6/10 correct
+  [20/87] 14/20 correct
+  [30/87] 22/30 correct
+  [40/87] 29/40 correct
+  [50/87] 36/50 correct
+  [60/87] 45/60 correct
+  [70/87] 51/70 correct
+  [80/87] 57/80 correct
+  [87/87] 64/87 correct
+
+cascade400 on test: 64/87 = 73.6 %
+escalated 72/87 (83 %): escalated 56/72 correct, kept 8/15 correct; routes {'long->large': 72, 'short->small:accepted': 15}
+limits: PASS
