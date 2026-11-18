@@ -381,7 +381,7 @@ else:
 if plan:
     lines = [f"**S = {plan['S_s']:.1f} s**: middle of {', '.join(f'{t:.1f}' for t in plan['timings_s'])} s on rows "
              f"{', '.join(plan['rows'])} (3 different ~{workload['calib_chars'][0] if workload else ''}-char tickets, qwen2.5:7b, after restart + warm-up).",
-             f"**Rate** = one ticket per 2S = {plan['interval_s']:.0f} s → {plan['rate_per_min']:.3f}/min; top model idle ~half the time, so no queue builds.",
+             f"**Rate** = one ticket per 2S = {plan['interval_s']:.0f} s → {plan['rate_per_min']:.3f}/min; planned so 7b alone at S per call would be busy about half the time; under load calls take longer (slide 5).",
              f"**Run** = S minutes → {plan['duration_min']} min, ~{plan['expected_arrivals']:.0f} arrivals; 3 runs per configuration; same rate and length for all.",
              f"**JMeter:** {plan['schedule']}; response timeout {plan['timeout_s']} s (10×S, ≥ 5 min); pause > timeout + 60 s.",
              f"**vs client peak** (A1: 1.0/min): test rate is {'BELOW' if plan['rate_per_min'] < 1.0 else 'ABOVE'} peak (see slide 8)."]
@@ -505,7 +505,7 @@ if cm_cfgs:
     if pic.height > Inches(2.85):
         ratio = Inches(2.85) / pic.height
         pic.height, pic.width = Inches(2.85), int(pic.width * ratio)
-text(s, 0.3, 6.95 - 0.1, 6.1, 0.3, "* n ≤ 13: one ticket = 7.7–10 points, so these verdicts rest on 1–2 tickets. Confusion matrices for every configuration: docs/a2/accuracy_notes.md.", 9)
+text(s, 0.3, 6.6, 7.2, 0.3, "* n ≤ 13: one ticket = 7.7–10 points. All confusion matrices: docs/a2/accuracy_notes.md.", 9)
 footer(s, "results/a2/accuracy/*_test.json, *_predictions.csv (cascade; log results/logs/a2_requests.jsonl) · results/a2/accuracy/single_*_test.json ("
        + ("re-run: single-*_test_predictions.csv" if RERUN else "A1 records") + ")")
 
@@ -591,7 +591,7 @@ if pts and limits:
         ax.annotate(f"{CFG_LABEL[c]}\n{y:.1f}% · p50 {p['mean']:.1f} s", (p["mean"], y), textcoords="offset points",
                     xytext=(8, 6), fontsize=8)
     ax.axhline(limits["overall_limit_pct"], ls="--", color="#C0392B", lw=1.2)
-    ax.text(ax.get_xlim()[0], limits["overall_limit_pct"] + 0.4, f" overall limit {limits['overall_limit_pct']:.1f}%", color="#C0392B", fontsize=8)
+    ax.text(ax.get_xlim()[1], limits["overall_limit_pct"] - 1.2, f"overall limit {limits['overall_limit_pct']:.1f}% ", color="#C0392B", fontsize=8, ha="right")
     ax.set_xlabel("p50 latency under load, mean of 3 runs (s); bars = min–max of the 3 runs", fontsize=9)
     ax.set_ylabel("Test-set accuracy (%) — 87 tickets", fontsize=9)
     ax.set_ylim(min(limits["overall_limit_pct"] - 4, min(y for _, y, _ in pts) - 3), 100)
@@ -702,6 +702,8 @@ if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
         if pc is None:
             continue
         faster = pc < p50(recommended)["mean"]
+        rr, cr = p50(recommended), p50(c)
+        tie = not (cr["max"] < rr["min"] or cr["min"] > rr["max"])   # per-run p50 ranges overlap
         _, top_lg, _, _ = log_split_latency("top7b")
         why = ""
         if e is not None and smv and lgv and top_lg:
@@ -709,13 +711,15 @@ if recommended and ALL_SPEED_DONE and ALL_ACC_DONE:
             per_ticket = (1 - e) * smv + e * lgv
             why = (f"; model time per ticket ≈ (1−{e:.2f})×{smv:.1f} + {e:.2f}×{lgv:.1f} = {per_ticket:.1f} s vs {top_lg:.1f} s for 7b alone"
                    + ("" if per_ticket < top_lg else ": the 7b calls it still makes cost more under contention than the 3b saves"))
-        speed_txt = (f"p50 {pc:.1f} s ({'faster' if faster else 'slower'} than the recommendation); {e * 100:.0f}% escalated under load"
+        rel = ("same as the recommendation within run-to-run spread" if tie and abs(pc - rr["mean"]) < 0.5
+               else f"{'faster' if faster else 'slower'} than the recommendation" + (", within run-to-run spread" if tie else ""))
+        speed_txt = (f"p50 {pc:.1f} s vs {rr['mean']:.1f} s ({rel}); {e * 100:.0f}% escalated under load"
                      f"{why}") if e is not None else f"p50 {pc:.1f} s"
         if not passes(c):
             lines.append(f"{CFG_LABEL[c]}: NOT passing accuracy (fails " + (", ".join(acc[c]["limits"]["failed_categories"]) or "overall")
                          + f"); speed reported anyway: {speed_txt}.")
         else:
-            lines.append(f"{CFG_LABEL[c]}: within limits but slower: {speed_txt}.")
+            lines.append(f"{CFG_LABEL[c]}: within limits but not faster: {speed_txt}.")
     rng_overlap = recommended != "top7b" and not (p50(recommended)["max"] < p50("top7b")["min"])
     if rng_overlap:
         lines.append("Caveat: the per-run p50 ranges overlap; the gain holds in the mean of 3 runs but is not larger than run-to-run spread.")
@@ -729,6 +733,18 @@ footer(s, "docs/a2/prediction_record.md · docs/a2/prediction_inputs.json · res
 # =================================================================== 8 limitations, references, AI
 s = prs.slides.add_slide(BLANK)
 header(s, 8, "Limitations · References · AI Declaration")
+# On the tickets each cascade KEPT (not escalated): small model vs qwen2.5:7b alone on the same tickets (test set).
+KEPT_VS_7B = []
+_top_pp = A2 / "accuracy" / f"single-{safe(TOP_MODEL)}_test_predictions.csv"
+if _top_pp.exists():
+    import csv as _csv
+    _top = {r["row"]: r for r in _csv.DictReader(open(_top_pp, encoding="utf-8"))}
+    for _c, _T in (("cascade400", 400), ("cascade500", 500)):
+        _pp = A2 / "accuracy" / f"{_c}_test_predictions.csv"
+        if _pp.exists():
+            _kept = [r for r in _csv.DictReader(open(_pp, encoding="utf-8")) if r.get("escalated") == "False" and r["row"] in _top]
+            KEPT_VS_7B.append((_T, len(_kept), sum(r["predicted"] == r["gold"] for r in _kept),
+                               sum(_top[r["row"]]["predicted"] == _top[r["row"]]["gold"] for r in _kept)))
 lim = txt.get("limitations") or [
     "**Sample size:** 87 test tickets (one ticket = 1.1 points overall); six of seven categories have 10–13 tickets, so per-category verdicts rest on one or two tickets. "
     + (f"Wilson 95% CI for 7b's {limits['top_test_pct']:.1f}% is {wilson(limits['top_correct'], limits['test_n'])[0] * 100:.0f}–{wilson(limits['top_correct'], limits['test_n'])[1] * 100:.0f}%." if limits else ""),
@@ -737,10 +753,12 @@ lim = txt.get("limitations") or [
        "container. A2 figures compare configurations on this machine only; the rule and predictions were built from A1 timings and records."] if MOVED else []),
     "**One machine, one rate:** results hold for Machine A's 4-CPU / 8 GiB Ollama container at one arrival rate. "
     + (f"Our rate {plan['rate_per_min']:.2f}/min is below the client's A1 peak of 1.0/min, so this compares configurations but does not show the recommended one carries the peak." if plan and plan["rate_per_min"] < 1.0
-       else "Compare the test rate with the A1 peak (1.0/min) here."),
+       else (f"Our rate {plan['rate_per_min']:.2f}/min is {plan['rate_per_min']:.1f}× the client's A1 peak of 1.0/min (set from S on a faster PC), so every "
+             "configuration was tested well above peak; at the peak, waits would be shorter for all of them." if plan else "")),
     "**~30 requests per run:** p50 per run is noisy; p95 is pooled over ~90 requests (roughly the 5th-slowest); no p99.",
     "**Workload:** 40 fixed tickets from our rows; production narratives are not capped at 2,000 chars, so long tickets (→ 7b) would be more common and the cascade's gain smaller.",
-    "**Length signal is crude:** it does not look at the content; it works here only because short tickets are the ones the 3b gets as right as the 7b (tuning set).",
+    "**Length signal is crude:** it ignores content. On the tuning set the 3b was about as right as the 7b on short tickets; on the test set it was not"
+    + (": " + "; ".join(f"T={T}: 3b {k3}/{n} vs 7b alone {k7}/{n} on the short tickets it kept" for T, n, k3, k7 in KEPT_VS_7B) + "." if KEPT_VS_7B else "."),
 ]
 card(s, 0.35, 1.1, 6.4, 5.95, "What the results do not show", lim, RED, 11.5)
 refs = [

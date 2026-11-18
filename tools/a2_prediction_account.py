@@ -119,7 +119,7 @@ def main() -> int:
             continue
         p = pred["configs"][c]
         mv = (speed.get(c) or {}).get("p50_s", {}).get("mean")
-        why = ""
+        why, call_ratio = "", None
         if mv is not None and plan:
             calls = d["calls"].get(c, {})
             lg = st.mean(calls["large"]) if calls.get("large") else None
@@ -128,16 +128,25 @@ def main() -> int:
             if calls.get("large") or calls.get("small"):
                 per_ticket_mean = ((sum(calls.get("small", [])) + sum(calls.get("large", []))) / max(len(calls.get("chars", [])), 1))
                 rho = plan["rate_per_min"] / 60 * per_ticket_mean
-                why = (f"Measured model time per ticket under load {per_ticket_mean:.1f} s against {p['mean_service_s']:.1f} s predicted"
-                       + (f" (3b call {sm:.1f} s, 7b call {lg:.1f} s)" if sm else (f" (7b call {lg:.1f} s)" if lg else ""))
-                       + f", so utilisation was about {rho:.2f} rather than {p['utilisation']:.2f}; the processor-sharing model turns that into "
-                       + ("longer" if mv > p["p50_median"] else "shorter") + " waits.")
+                call_ratio = per_ticket_mean / p["mean_service_s"]
+                calls_txt = (f" (3b call {sm:.1f} s, 7b call {lg:.1f} s)" if sm else (f" (7b call {lg:.1f} s)" if lg else ""))
+                if mv < p["p50_median"]:
+                    # Faster calls dominate: the rate is set from S, so a faster machine also gets more traffic,
+                    # which raises utilisation, but the waits still scale with the (much shorter) call time.
+                    why = (f"Machine A was faster than the A1 timings behind the prediction (S {plan['S_s']:.1f} s vs {pred['S_pred_s']:.0f} s predicted), "
+                           f"so model time per ticket under load was {per_ticket_mean:.1f} s against {p['mean_service_s']:.1f} s predicted{calls_txt}. "
+                           f"The rate is set from S, so it rose too and utilisation was about {rho:.2f} rather than {p['utilisation']:.2f}; that lengthens "
+                           f"queues, but not enough to offset calls {1 / call_ratio:.1f}× shorter.")
+                else:
+                    why = (f"Model time per ticket under load {per_ticket_mean:.1f} s against {p['mean_service_s']:.1f} s predicted{calls_txt}; "
+                           f"utilisation about {rho:.2f} rather than {p['utilisation']:.2f}, so queues were longer than modelled.")
         add(f"p50 under load, {LABEL[c]}", f"{p['p50_median']:.0f} s", mv is not None and f"{mv:.1f} s" or None,
             mv is not None and abs(mv - p["p50_median"]) <= 0.15 * p["p50_median"], why, "results/a2/speed/summary.json, a2_requests.jsonl")
         p95 = (speed.get(c) or {}).get("p95_pooled_s")
         add(f"p95 pooled, {LABEL[c]}", f"{p['p95_pooled']:.0f} s", p95 is not None and f"{p95:.0f} s" or None,
             p95 is not None and abs(p95 - p["p95_pooled"]) <= 0.25 * p["p95_pooled"],
-            "The slowest few of ~90 requests decide p95; the prediction used the same queue model as p50, which over-weights rare long queues."
+            ((f"Same cause as p50: calls were {1 / call_ratio:.1f}× shorter on this machine, so the tail shrank with them. " if call_ratio and call_ratio < 1 else "")
+             + "The slowest few of ~90 requests decide p95, and the queue model over-weights rare long queues.")
             if p95 is not None and p95 < p["p95_pooled"] else "Long tickets overlapping in time stretched the tail beyond the queue model.",
             "results/a2/speed/summary.json")
 

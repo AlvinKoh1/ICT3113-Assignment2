@@ -57,7 +57,9 @@ def is_unfinished(r) -> bool:
 def analyse_run(tag: str, logs_by_run) -> dict:
     jtl = load_jtl(JTL_DIR / f"{tag}.jtl")
     jlog = JTL_DIR / f"{tag}.jmeter.log"
-    sent = len(re.findall(r"A2SENT", jlog.read_text(encoding="utf-8", errors="replace"))) if jlog.exists() else None
+    # One "A2SENT row=" per request. Count those, not the bare word: JMeter prefixes every line with the
+    # element name "Log send (A2SENT)", so the bare word appears twice per line (found on the real run).
+    sent = len(re.findall(r"A2SENT row=", jlog.read_text(encoding="utf-8", errors="replace"))) if jlog.exists() else None
     ok = [r for r in jtl if r["ok"]]
     # A request JMeter gave up on (response timeout) or cut off is "unfinished", not an
     # error from the service: the brief reports sent / completed / errored / unfinished.
