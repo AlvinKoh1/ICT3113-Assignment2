@@ -123,7 +123,8 @@
   "config": "single:llama3.2:3b",
   "model": "llama3.2:3b",
   "set": "test",
-  "source": "results/accuracy/predictions_llama3.2_3b.csv (Assignment 1, reused)",
+  "source": "results/a2/accuracy/single-llama3.2_3b_test_predictions.csv (re-run on the A2 machine)",
+  "source_kind": "a2_rerun",
   "limits": {
     "overall_pass": false,
     "category_pass": false,
@@ -179,5 +180,10 @@
       "Credit card",
       "Money transfer or service"
     ]
+  },
+  "a1_records_comparison": {
+    "a2_correct": 39,
+    "a1_records_correct": 39,
+    "answers_changed": 0
   }
 }

@@ -123,7 +123,8 @@
   "config": "single:llama3.2:1b",
   "model": "llama3.2:1b",
   "set": "test",
-  "source": "results/accuracy/predictions_llama3.2_1b.csv (Assignment 1, reused)",
+  "source": "results/a2/accuracy/single-llama3.2_1b_test_predictions.csv (re-run on the A2 machine)",
+  "source_kind": "a2_rerun",
   "limits": {
     "overall_pass": false,
     "category_pass": false,
@@ -180,5 +181,10 @@
       "Bank account or service",
       "Consumer loan"
     ]
+  },
+  "a1_records_comparison": {
+    "a2_correct": 19,
+    "a1_records_correct": 19,
+    "answers_changed": 0
   }
 }

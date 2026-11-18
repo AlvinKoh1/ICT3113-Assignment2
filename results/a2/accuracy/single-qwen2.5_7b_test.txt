@@ -1,0 +1,13 @@
+service: {'service': 'ok', 'ollama': True, 'model': 'qwen2.5:7b', 'mode': 'single', 'config': 'single-qwen2.5:7b', 'run_id': 'acc-single-qwen2.5:7b'}
+  [10/87] 6/10 correct
+  [20/87] 14/20 correct
+  [30/87] 22/30 correct
+  [40/87] 30/40 correct
+  [50/87] 38/50 correct
+  [60/87] 47/60 correct
+  [70/87] 54/70 correct
+  [80/87] 61/80 correct
+  [87/87] 68/87 correct
+
+single-qwen2.5:7b on test: 68/87 = 78.2 %
+escalated 0/87 (0 %): escalated 0/0 correct, kept 68/87 correct; routes {}

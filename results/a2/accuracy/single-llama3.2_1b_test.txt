@@ -1,0 +1,13 @@
+service: {'service': 'ok', 'ollama': True, 'model': 'llama3.2:1b', 'mode': 'single', 'config': 'single-llama3.2:1b', 'run_id': 'acc-single-llama3.2:1b'}
+  [10/87] 2/10 correct
+  [20/87] 6/20 correct
+  [30/87] 9/30 correct
+  [40/87] 13/40 correct
+  [50/87] 14/50 correct
+  [60/87] 16/60 correct
+  [70/87] 18/70 correct
+  [80/87] 18/80 correct
+  [87/87] 19/87 correct
+
+single-llama3.2:1b on test: 19/87 = 21.8 %
+escalated 0/87 (0 %): escalated 0/0 correct, kept 19/87 correct; routes {}

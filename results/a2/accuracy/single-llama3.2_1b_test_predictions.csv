@@ -1,0 +1,88 @@
+row,gold,predicted,request_id,client_ms,chars,error,final_model,escalated,route,small_category,large_category,server_ms,in_log
+9008,Credit card,Money transfer or service,c8626638-64a1-440d-9c1e-614a20bcd6d0,2500.7,1163,,llama3.2:1b,False,,,,2491.49,True
+9012,Consumer loan,Credit reporting,86e959af-cc35-401e-9001-a9867e680737,1495.3,585,,llama3.2:1b,False,,,,1486.21,True
+9032,Money transfer or service,Credit reporting,bcf20529-c29e-45c1-b9a7-c3579594758b,1684.8,673,,llama3.2:1b,False,,,,1676.24,True
+9045,Credit card,Credit reporting,880a1f04-d661-4264-b03c-752786cd02eb,831.2,317,,llama3.2:1b,False,,,,820.14,True
+9058,Credit reporting,Credit reporting,ef829e16-fd29-4fce-8a3a-1a4187916c7c,1297.2,600,,llama3.2:1b,False,,,,1283.71,True
+9084,Credit card,Money transfer or service,8d77f63d-0a68-45c5-8b93-0a87f405ae4e,2577.7,787,,llama3.2:1b,False,,,,2565.28,True
+9089,Consumer loan,Credit reporting,9b47695c-0cb8-42b4-aac8-488c2a3272fe,722.1,247,,llama3.2:1b,False,,,,712.32,True
+9092,Credit reporting,Credit reporting,e8b041f8-d62d-4196-b54d-711e9011946f,1670.1,741,,llama3.2:1b,False,,,,1661.51,True
+9101,Mortgage,Money transfer or service,5d81d30c-2e71-44fc-81a6-4e4e8cf489df,1910.4,736,,llama3.2:1b,False,,,,1900.44,True
+9131,Mortgage,Money transfer or service,9e720dd6-ebae-4087-8b36-ffbb0099a069,2596.1,1148,,llama3.2:1b,False,,,,2584.14,True
+9142,Consumer loan,Money transfer or service,2c2373d3-ce23-4cf4-8eec-aec2c1781430,2406.9,1126,,llama3.2:1b,False,,,,2391.93,True
+9151,Money transfer or service,Money transfer or service,02a0237a-35f1-46b0-a409-e34a08f43db6,1815.1,758,,llama3.2:1b,False,,,,1801.22,True
+9157,Consumer loan,Money transfer or service,4ae1e102-5d3b-428d-8625-519587f1eb77,3279.8,1613,,llama3.2:1b,False,,,,3270.8,True
+9172,Credit reporting,Money transfer or service,62a379f8-857c-462c-9f5c-a562356e448b,2013.0,925,,llama3.2:1b,False,,,,2002.0,True
+9194,Money transfer or service,Money transfer or service,61451406-a4b6-4fd6-8835-0325eb622345,1210.9,648,,llama3.2:1b,False,,,,1199.99,True
+9200,Mortgage,Money transfer or service,52cbbd1f-0a60-42d1-a605-9cc6f3413770,4196.4,1886,,llama3.2:1b,False,,,,4183.77,True
+9202,Money transfer or service,Money transfer or service,404c392d-0c8f-491e-bd1c-d31f7b68e7bf,2100.9,960,,llama3.2:1b,False,,,,2085.26,True
+9212,Mortgage,Money transfer or service,c2bb226c-8357-4b2f-927a-55fdd65964c4,2691.3,1339,,llama3.2:1b,False,,,,2681.33,True
+9237,Money transfer or service,Money transfer or service,900d4fa7-9643-414d-b27c-1a0176b50465,1793.0,674,,llama3.2:1b,False,,,,1784.84,True
+9253,Mortgage,Money transfer or service,11510e94-768e-4ea9-bcff-b3d2788af04c,1008.4,456,,llama3.2:1b,False,,,,1000.08,True
+9264,Credit reporting,Credit reporting,53338d0a-2202-4a47-877b-0a3aea9c3e9e,1208.1,524,,llama3.2:1b,False,,,,1198.27,True
+9276,Bank account or service,Money transfer or service,17356512-25d7-4aeb-b39d-74b1f9681418,1780.1,801,,llama3.2:1b,False,,,,1763.92,True
+9308,Money transfer or service,Money transfer or service,0ef2b608-be8e-4cac-9409-bc2a3c776a81,1494.4,652,,llama3.2:1b,False,,,,1481.82,True
+9319,Consumer loan,Credit reporting,437d49f9-f43d-4228-91c3-6d4ef79c43f8,1513.8,571,,llama3.2:1b,False,,,,1500.31,True
+9332,Credit reporting,Money transfer or service,150cb9de-d2cc-4c7c-91a1-5ff10b476d99,1292.5,493,,llama3.2:1b,False,,,,1282.52,True
+9344,Consumer loan,Money transfer or service,f8be45a9-0fb9-4f85-8a10-198461bff9eb,2478.7,1116,,llama3.2:1b,False,,,,2467.49,True
+9351,Consumer loan,Money transfer or service,6a62af50-fd8f-463c-8fe0-17530282d483,1340.7,498,,llama3.2:1b,False,,,,1331.62,True
+9385,Debt collection,Money transfer or service,fc59c47f-0d12-4ce1-8c3c-ac7640fff261,872.1,295,,llama3.2:1b,False,,,,860.78,True
+9398,Money transfer or service,Money transfer or service,1c2e2d79-8dbc-400d-b8fe-6b6d81ed5b13,1517.8,635,,llama3.2:1b,False,,,,1506.87,True
+9407,Credit reporting,Money transfer or service,7205cfa7-4153-4d23-a37b-76bea526030c,3393.7,1491,,llama3.2:1b,False,,,,3382.54,True
+9412,Credit reporting,Money transfer or service,0e0f09b3-c3bb-4af6-958e-9eb119173bed,1107.0,450,,llama3.2:1b,False,,,,1097.06,True
+9419,Mortgage,Money transfer or service,d8c0694a-cdb5-4ec6-90f0-9165f6cb0c28,1895.8,771,,llama3.2:1b,False,,,,1883.25,True
+9437,Credit reporting,Credit reporting,7572ef5b-c1fd-4f8d-b4c0-6a1346432833,606.6,261,,llama3.2:1b,False,,,,598.67,True
+9443,Mortgage,Money transfer or service,9ccb5e68-3dc6-4678-9573-2bf5d07754c9,2303.3,1078,,llama3.2:1b,False,,,,2286.37,True
+9459,Credit reporting,Credit reporting,ab318055-8f5b-4356-911f-5210187728e7,1192.8,442,,llama3.2:1b,False,,,,1183.54,True
+9468,Debt collection,Credit reporting,8cb71757-d744-4f9f-98d6-98ea21097e3d,999.1,385,,llama3.2:1b,False,,,,990.68,True
+9473,Credit card,Credit reporting,4acccf35-b900-4426-977d-db37cb3b8862,1279.6,504,,llama3.2:1b,False,,,,1271.09,True
+9495,Credit card,Money transfer or service,0b44979e-a62b-415a-b187-506903c75a63,1613.5,694,,llama3.2:1b,False,,,,1604.67,True
+9497,Money transfer or service,Money transfer or service,fdbd80e1-c48f-4dfd-b39a-ee7b24c58f3f,2093.5,729,,llama3.2:1b,False,,,,2083.1,True
+9504,Credit reporting,Credit reporting,0aeabd95-7e99-4e73-a5d5-cf7f681f0818,890.9,315,,llama3.2:1b,False,,,,877.23,True
+9518,Debt collection,Money transfer or service,54c931ee-fc26-4258-8462-8ebee4bf5d86,715.2,263,,llama3.2:1b,False,,,,705.11,True
+9526,Debt collection,Credit reporting,956f71dc-b8cb-453d-aa7b-efb171f8a087,981.3,380,,llama3.2:1b,False,,,,971.19,True
+9534,Bank account or service,Money transfer or service,2fccd18a-decc-4cb2-b4b3-dad545e87243,1616.7,662,,llama3.2:1b,False,,,,1601.1,True
+9552,Bank account or service,Money transfer or service,2da16712-f51e-4994-a852-9dd362f9858e,2996.9,1476,,llama3.2:1b,False,,,,2980.11,True
+9560,Credit reporting,Money transfer or service,83d0df33-cedf-464f-aa34-49cbf1a946cc,1583.9,775,,llama3.2:1b,False,,,,1570.87,True
+9579,Consumer loan,Money transfer or service,0715bc55-ef5d-4a50-a26b-c0c3d71ddf3e,2900.2,1169,,llama3.2:1b,False,,,,2891.88,True
+9589,Credit reporting,Credit reporting,c57ab419-7f59-476b-a33c-350fa66cf202,630.8,245,,llama3.2:1b,False,,,,620.31,True
+9598,Bank account or service,Money transfer or service,011b7adb-3094-4b45-bbc0-68cb5989705c,2190.8,1045,,llama3.2:1b,False,,,,2181.96,True
+9629,Credit card,Money transfer or service,e8a689de-d658-4cf3-9d85-6c4293dbe848,1978.0,934,,llama3.2:1b,False,,,,1965.03,True
+9684,Mortgage,Credit reporting,c7a7aa17-cc42-4e77-8715-f11be80d7d69,1107.0,503,,llama3.2:1b,False,,,,1096.61,True
+9688,Debt collection,Money transfer or service,05f0d728-68f5-4f20-8f18-d22228dfdcaa,2924.5,1289,,llama3.2:1b,False,,,,2906.53,True
+9692,Consumer loan,Money transfer or service,a644adbc-4d82-47d9-b374-9580c93a149b,2883.8,1337,,llama3.2:1b,False,,,,2871.74,True
+9713,Mortgage,Money transfer or service,7abb1e73-db78-48c7-a4ae-cb3a74067bb2,2414.5,1156,,llama3.2:1b,False,,,,2402.94,True
+9717,Debt collection,Credit reporting,df735a75-4645-4e98-afa1-e872752ab925,1296.2,408,,llama3.2:1b,False,,,,1280.98,True
+9720,Credit card,Money transfer or service,bb8cd295-a891-41d6-956e-493ef4ff69c3,1169.5,431,,llama3.2:1b,False,,,,1160.87,True
+9732,Credit reporting,Credit reporting,3f5d6bb6-60bb-44f7-b718-60ab165face7,1842.5,744,,llama3.2:1b,False,,,,1830.21,True
+9744,Money transfer or service,Money transfer or service,78165ef2-2311-433b-96b7-07a029c74172,1164.1,530,,llama3.2:1b,False,,,,1155.22,True
+9755,Debt collection,Credit reporting,594edab2-8bd6-4136-9072-888d07bac066,1007.3,346,,llama3.2:1b,False,,,,990.33,True
+9758,Credit reporting,Money transfer or service,08d260d7-af49-49cc-aea0-a48624650977,3202.0,1405,,llama3.2:1b,False,,,,3192.48,True
+9764,Credit card,Credit reporting,b38b2032-f3b0-47aa-adb7-0b961723f7b9,1692.1,750,,llama3.2:1b,False,,,,1683.98,True
+9771,Credit card,Money transfer or service,41d8fcb6-e509-40d4-aada-0f193f86f8ee,1712.3,853,,llama3.2:1b,False,,,,1702.83,True
+9773,Consumer loan,Credit reporting,49639ea5-e498-46ed-8446-f11d82aeee5c,504.8,205,,llama3.2:1b,False,,,,492.45,True
+9777,Debt collection,Money transfer or service,5ea368c5-42ff-4804-87e3-0a2acd6cd3f1,705.1,250,,llama3.2:1b,False,,,,696.95,True
+9782,Money transfer or service,Credit reporting,fc5bcb9a-87d4-4440-bd0e-aef37213ee5b,1307.0,472,,llama3.2:1b,False,,,,1295.01,True
+9794,Bank account or service,Money transfer or service,c25278da-829d-41aa-a6b6-3e85ded82aea,2597.8,1285,,llama3.2:1b,False,,,,2583.2,True
+9818,Mortgage,Credit reporting,50bd545c-e86a-48b6-ae36-d33c24ca4e42,1107.4,383,,llama3.2:1b,False,,,,1092.84,True
+9821,Bank account or service,Money transfer or service,f97c42bd-e9dd-4cab-94cf-ed3167ee63b0,1785.6,762,,llama3.2:1b,False,,,,1769.38,True
+9833,Money transfer or service,Money transfer or service,c4af26bd-7eed-45b6-80c5-81e9f1126bd5,2077.9,976,,llama3.2:1b,False,,,,2069.06,True
+9848,Credit reporting,Credit reporting,461a90dd-7332-41a3-9b8d-5281d00f1f9d,714.1,261,,llama3.2:1b,False,,,,699.31,True
+9853,Consumer loan,Money transfer or service,b540f7cb-158b-46eb-8b01-51b801f5544e,2405.3,1060,,llama3.2:1b,False,,,,2395.79,True
+9860,Credit card,Credit reporting,023349e0-66da-424d-b247-c58d2ab22460,1010.9,400,,llama3.2:1b,False,,,,1000.1,True
+9863,Mortgage,Money transfer or service,7325e96c-cf00-4829-992b-02af14f0908a,1299.1,617,,llama3.2:1b,False,,,,1285.87,True
+9870,Debt collection,Money transfer or service,68cc7866-e163-4db0-bc32-f170c15bfb29,1593.1,786,,llama3.2:1b,False,,,,1579.74,True
+9873,Credit card,Money transfer or service,358c0ce2-f65f-4c62-a2c4-6021154e9404,2311.7,1033,,llama3.2:1b,False,,,,2301.45,True
+9884,Bank account or service,Money transfer or service,b947c798-202c-4d85-9230-ed811ae4863a,1789.3,738,,llama3.2:1b,False,,,,1774.86,True
+9894,Bank account or service,Money transfer or service,b788311b-b2fc-49e2-b0c7-6c81d53076ed,1708.8,900,,llama3.2:1b,False,,,,1699.25,True
+9903,Credit reporting,Money transfer or service,50eb025c-ea9f-480f-a0ca-3a1027df8c66,2166.8,952,,llama3.2:1b,False,,,,2157.27,True
+9916,Bank account or service,Money transfer or service,6e68c52e-eae2-4e0e-8c18-08e7912cc426,2027.7,1028,,llama3.2:1b,False,,,,2016.4,True
+9924,Credit card,Money transfer or service,e2341f0e-1a45-4fa5-9025-959bf0eff86c,3569.5,1647,,llama3.2:1b,False,,,,3556.26,True
+9927,Mortgage,Money transfer or service,e823a91c-a5ea-4775-8325-b1c91c79697c,2211.1,821,,llama3.2:1b,False,,,,2201.17,True
+9941,Credit reporting,Money transfer or service,0c2059ed-a31d-4f38-95b3-a76f7256dd21,2500.5,1006,,llama3.2:1b,False,,,,2490.08,True
+9950,Credit reporting,Credit reporting,5e057ab2-9a8b-4613-bed8-17cce47240d2,1120.7,574,,llama3.2:1b,False,,,,1111.66,True
+9953,Bank account or service,Money transfer or service,1943c5df-2e38-4678-ae97-fd50b2b20df3,3568.9,1644,,llama3.2:1b,False,,,,3560.47,True
+9956,Credit reporting,Money transfer or service,657f343d-f276-419e-93d3-19cfdaccb27f,2220.1,1075,,llama3.2:1b,False,,,,2208.76,True
+9967,Debt collection,Money transfer or service,53b8a27b-1d09-41ef-bdb8-25998f8e2a22,2301.5,984,,llama3.2:1b,False,,,,2288.52,True
+9981,Consumer loan,Money transfer or service,b2f01ebc-80b8-469f-9d20-e52e223c4be9,1416.5,589,,llama3.2:1b,False,,,,1402.95,True
+9993,Mortgage,Money transfer or service,3efd35ca-3134-4f7b-a81c-c90ad37a341b,2575.9,1116,,llama3.2:1b,False,,,,2562.77,True

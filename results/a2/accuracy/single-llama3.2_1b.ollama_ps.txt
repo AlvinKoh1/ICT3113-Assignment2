@@ -1,0 +1,4 @@
+NAME           ID              SIZE      PROCESSOR    UNTIL               
+llama3.2:1b    baf6a787fdff    2.2 GB    100% CPU     29 minutes from now    
+NAME           ID              SIZE      PROCESSOR    UNTIL               
+llama3.2:1b    baf6a787fdff    2.2 GB    100% CPU     29 minutes from now    

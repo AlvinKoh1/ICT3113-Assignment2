@@ -1,0 +1,12 @@
+2026-11-18 22:49:04 +0800  === A2 Machine A: start (e0675cf)
+2026-11-18 22:49:05 +0800  1/6 rebuilding the service
+2026-11-18 22:49:14 +0800  1/6 preflight OK
+2026-11-18 22:49:14 +0800  2/6 accuracy test qwen2.5:7b alone on this machine
+2026-11-18 23:05:42 +0800  2/6 single-qwen2.5:7b on test: 68/87 = 78.2 %
+2026-11-18 23:05:42 +0800  2/6 accuracy test llama3.2:3b alone on this machine
+2026-11-18 23:12:56 +0800  2/6 single-llama3.2:3b on test: 39/87 = 44.8 %
+2026-11-18 23:12:56 +0800  2/6 accuracy test llama3.2:1b alone on this machine
+2026-11-18 23:15:59 +0800  2/6 single-llama3.2:1b on test: 19/87 = 21.8 %
+2026-11-18 23:15:59 +0800  2/6 accuracy test qwen2.5:0.5b alone on this machine
+2026-11-18 23:17:29 +0800  2/6 single-qwen2.5:0.5b on test: 12/87 = 13.8 %
+2026-11-18 23:17:29 +0800  2/6 Top model qwen2.5:7b on the test set: 68/87 = 78.2 % (Wilson 95 % CI 68.4-85.5 %) Overall limit: 68.2 %  (>= 60/87 correct) 

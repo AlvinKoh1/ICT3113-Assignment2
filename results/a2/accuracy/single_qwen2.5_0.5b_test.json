@@ -123,7 +123,8 @@
   "config": "single:qwen2.5:0.5b",
   "model": "qwen2.5:0.5b",
   "set": "test",
-  "source": "results/accuracy/predictions_qwen2.5_0.5b.csv (Assignment 1, reused)",
+  "source": "results/a2/accuracy/single-qwen2.5_0.5b_test_predictions.csv (re-run on the A2 machine)",
+  "source_kind": "a2_rerun",
   "limits": {
     "overall_pass": false,
     "category_pass": false,
@@ -180,5 +181,10 @@
       "Bank account or service",
       "Money transfer or service"
     ]
+  },
+  "a1_records_comparison": {
+    "a2_correct": 12,
+    "a1_records_correct": 12,
+    "answers_changed": 0
   }
 }

@@ -1,0 +1,153 @@
+{
+  "correct": 19,
+  "n": 87,
+  "acc": 0.21839080459770116,
+  "per_category": {
+    "Credit reporting": {
+      "correct": 10,
+      "n": 19,
+      "acc": 0.5263157894736842
+    },
+    "Debt collection": {
+      "correct": 0,
+      "n": 10,
+      "acc": 0.0
+    },
+    "Mortgage": {
+      "correct": 0,
+      "n": 13,
+      "acc": 0.0
+    },
+    "Credit card": {
+      "correct": 0,
+      "n": 12,
+      "acc": 0.0
+    },
+    "Bank account or service": {
+      "correct": 0,
+      "n": 10,
+      "acc": 0.0
+    },
+    "Consumer loan": {
+      "correct": 0,
+      "n": 12,
+      "acc": 0.0
+    },
+    "Money transfer or service": {
+      "correct": 9,
+      "n": 11,
+      "acc": 0.8181818181818182
+    }
+  },
+  "confusion": {
+    "Credit reporting": {
+      "Credit reporting": 10,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 9,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Debt collection": {
+      "Credit reporting": 4,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 6,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Mortgage": {
+      "Credit reporting": 2,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 11,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Credit card": {
+      "Credit reporting": 4,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 8,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Bank account or service": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 10,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Consumer loan": {
+      "Credit reporting": 4,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 8,
+      "UNPARSED": 0,
+      "ERROR": 0
+    },
+    "Money transfer or service": {
+      "Credit reporting": 2,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 9,
+      "UNPARSED": 0,
+      "ERROR": 0
+    }
+  },
+  "unparsed": 0,
+  "errors": 0,
+  "config": "single-llama3.2:1b",
+  "set": "test",
+  "run_id": "a2acc_single-llama3.2:1b_test",
+  "service": {
+    "service": "ok",
+    "ollama": true,
+    "model": "llama3.2:1b",
+    "mode": "single",
+    "config": "single-llama3.2:1b",
+    "run_id": "acc-single-llama3.2:1b"
+  },
+  "limits": null,
+  "escalation": {
+    "escalated": {
+      "n": 0,
+      "correct": 0,
+      "acc": null
+    },
+    "not_escalated": {
+      "n": 87,
+      "correct": 19,
+      "acc": 0.21839080459770116
+    },
+    "fraction": 0.0,
+    "routes": {},
+    "missing_from_log": 0
+  },
+  "client_ms_median": 1708.8,
+  "git_commit": "e0675cf7af296ff774a20c1a2c7dd27875a87928",
+  "generated_at": "2026-11-18T23:15:58+0800"
+}

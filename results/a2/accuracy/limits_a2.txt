@@ -1,0 +1,17 @@
+Source: single models re-run on the A2 machine
+Top model qwen2.5:7b on the test set: 68/87 = 78.2 % (Wilson 95 % CI 68.4-85.5 %)
+Overall limit: 68.2 %  (>= 60/87 correct)
+category                           top    limit   min ok  small?
+Credit reporting              16/19  84.2%    69.2%    14/19  
+Debt collection                9/10  90.0%    75.0%     8/10  yes
+Mortgage                      13/13 100.0%    85.0%    12/13  yes
+Credit card                    9/12  75.0%    60.0%     8/12  yes
+Bank account or service        7/10  70.0%    55.0%     6/10  yes
+Consumer loan                  8/12  66.7%    51.7%     7/12  yes
+Money transfer or service      6/11  54.5%    39.5%     5/11  yes
+
+Single-model accuracy test (A2 machine re-run, test rows only):
+  qwen2.5:0.5b    12/87 =  13.8 %   FAIL  (fails: Credit reporting, Debt collection, Mortgage, Credit card, Bank account or service, Money transfer or service)   (A1 records 12/87; 0 answers differ)
+  llama3.2:1b     19/87 =  21.8 %   FAIL  (fails: Credit reporting, Debt collection, Mortgage, Credit card, Bank account or service, Consumer loan)   (A1 records 19/87; 0 answers differ)
+  llama3.2:3b     39/87 =  44.8 %   FAIL  (fails: Credit reporting, Debt collection, Mortgage, Credit card, Money transfer or service)   (A1 records 39/87; 0 answers differ)
+  qwen2.5:7b      68/87 =  78.2 %   PASS   (A1 records 68/87; 0 answers differ)

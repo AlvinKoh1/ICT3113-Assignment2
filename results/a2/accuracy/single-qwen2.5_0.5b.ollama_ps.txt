@@ -1,0 +1,4 @@
+NAME            ID              SIZE      PROCESSOR    UNTIL               
+qwen2.5:0.5b    a8b0c5157701    820 MB    100% CPU     29 minutes from now    
+NAME            ID              SIZE      PROCESSOR    UNTIL               
+qwen2.5:0.5b    a8b0c5157701    820 MB    100% CPU     29 minutes from now    

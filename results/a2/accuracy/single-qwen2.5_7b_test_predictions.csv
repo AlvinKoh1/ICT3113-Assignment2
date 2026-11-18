@@ -1,0 +1,88 @@
+row,gold,predicted,request_id,client_ms,chars,error,final_model,escalated,route,small_category,large_category,server_ms,in_log
+9008,Credit card,Bank account or service,4fda2cf4-3aea-4ce9-8318-04e48326cec7,14414.5,1163,,qwen2.5:7b,False,,,,14400.07,True
+9012,Consumer loan,Consumer loan,4a79daaa-106d-42ec-b487-9cd87a6d01cd,7910.7,585,,qwen2.5:7b,False,,,,7898.87,True
+9032,Money transfer or service,Bank account or service,680f2f3b-8d0c-4c9d-b35a-f97d72462382,9682.7,673,,qwen2.5:7b,False,,,,9674.86,True
+9045,Credit card,Debt collection,be0cf5e6-570f-4392-8b2c-79e210948b6b,4724.5,317,,qwen2.5:7b,False,,,,4716.68,True
+9058,Credit reporting,Credit reporting,1a31e9d6-18a9-4709-bb49-badece6be2ba,6808.0,600,,qwen2.5:7b,False,,,,6799.82,True
+9084,Credit card,Credit card,26fe2c43-e6cb-4e85-9505-5ff819be78cc,13999.3,787,,qwen2.5:7b,False,,,,13988.89,True
+9089,Consumer loan,Credit reporting,8c118251-e8d8-4255-bf52-89c2b735398c,3888.5,247,,qwen2.5:7b,False,,,,3875.66,True
+9092,Credit reporting,Credit reporting,4cd6b225-efd1-4627-8697-b9bf3d522fca,9317.9,741,,qwen2.5:7b,False,,,,9307.21,True
+9101,Mortgage,Mortgage,4985263a-2703-4b53-b677-44d71040a706,11187.9,736,,qwen2.5:7b,False,,,,11174.38,True
+9131,Mortgage,Mortgage,fb788e48-53c2-4f55-8eec-27a4b062d24d,14285.5,1148,,qwen2.5:7b,False,,,,14266.16,True
+9142,Consumer loan,Consumer loan,67b52d83-9217-45fa-ab5a-90f929f8264c,13126.6,1126,,qwen2.5:7b,False,,,,13117.38,True
+9151,Money transfer or service,Bank account or service,e9f46812-931b-4c73-b780-0e69aec09bd2,9967.8,758,,qwen2.5:7b,False,,,,9953.18,True
+9157,Consumer loan,Consumer loan,affd14d7-80e8-4a50-8782-3e1ccc704c5e,19116.2,1613,,qwen2.5:7b,False,,,,19106.12,True
+9172,Credit reporting,Credit reporting,bcbf887a-b659-4f4c-abb2-2f54bde01821,11295.2,925,,qwen2.5:7b,False,,,,11287.48,True
+9194,Money transfer or service,Money transfer or service,f08eae7b-be55-404a-a98a-71ceea65f887,6407.4,648,,qwen2.5:7b,False,,,,6398.28,True
+9200,Mortgage,Mortgage,7b36357d-6a16-494a-92f0-948a1ea90a95,24303.6,1886,,qwen2.5:7b,False,,,,24286.78,True
+9202,Money transfer or service,Money transfer or service,cb4c745f-7479-483a-b117-b94d55d80a7c,11181.6,960,,qwen2.5:7b,False,,,,11172.02,True
+9212,Mortgage,Mortgage,7ccda935-2772-4e10-8dfe-4853a0e1838f,15211.1,1339,,qwen2.5:7b,False,,,,15199.7,True
+9237,Money transfer or service,Bank account or service,b1f707a2-e206-4b46-a751-2a2a61d3e15a,10409.6,674,,qwen2.5:7b,False,,,,10400.43,True
+9253,Mortgage,Mortgage,713dbe6e-08a5-4ab3-a0b9-fba9185f935a,5276.3,456,,qwen2.5:7b,False,,,,5260.41,True
+9264,Credit reporting,Credit reporting,eb3e14fe-a9b0-4859-a302-086b16e23bc6,6132.4,524,,qwen2.5:7b,False,,,,6118.39,True
+9276,Bank account or service,Bank account or service,3d0a4a9e-5030-46eb-84bc-b61577d92636,8979.7,801,,qwen2.5:7b,False,,,,8966.57,True
+9308,Money transfer or service,Money transfer or service,da976cef-45bb-48d6-90ab-aa6bd126f0f4,6480.8,652,,qwen2.5:7b,False,,,,6472.1,True
+9319,Consumer loan,Consumer loan,f1ba0bf9-bc21-4111-8858-df5f280d90e1,7641.4,571,,qwen2.5:7b,False,,,,7625.44,True
+9332,Credit reporting,Credit reporting,acf24167-6b73-4509-baff-1dfe92d6c95f,7292.6,493,,qwen2.5:7b,False,,,,7284.85,True
+9344,Consumer loan,Mortgage,6a3cdaff-d483-457e-abcd-4802b0edfe00,13609.2,1116,,qwen2.5:7b,False,,,,13593.71,True
+9351,Consumer loan,Consumer loan,405d77c5-5260-466d-b1aa-95f9d2f391f7,7175.6,498,,qwen2.5:7b,False,,,,7164.81,True
+9385,Debt collection,Debt collection,94c0b528-1310-429f-aae0-caf0b152ebc3,4481.4,295,,qwen2.5:7b,False,,,,4471.32,True
+9398,Money transfer or service,Money transfer or service,ca3214b9-39df-4abf-8c8d-bec5ab2090da,8309.7,635,,qwen2.5:7b,False,,,,8300.55,True
+9407,Credit reporting,Credit card,acfba845-b8d3-42c7-ac7e-8e9f30b74c2a,19332.6,1491,,qwen2.5:7b,False,,,,19316.46,True
+9412,Credit reporting,Credit reporting,b1a513f6-d023-430b-9f66-28925528924c,5491.7,450,,qwen2.5:7b,False,,,,5477.88,True
+9419,Mortgage,Mortgage,1d64caeb-2ba8-46fe-a307-ddd9b80acedf,9892.8,771,,qwen2.5:7b,False,,,,9882.8,True
+9437,Credit reporting,Credit reporting,a95fcdfb-a8cb-49dc-b1c9-730493391c09,3018.3,261,,qwen2.5:7b,False,,,,3007.74,True
+9443,Mortgage,Mortgage,b6a7226a-b8da-44bf-b0e3-0a7433d72a8d,13180.0,1078,,qwen2.5:7b,False,,,,13169.77,True
+9459,Credit reporting,Consumer loan,2514c917-dd63-4956-b218-a958a3eaf62f,6801.8,442,,qwen2.5:7b,False,,,,6783.53,True
+9468,Debt collection,Debt collection,357bfd3d-029e-4bdb-9a8d-21a6fb43b216,5404.5,385,,qwen2.5:7b,False,,,,5393.23,True
+9473,Credit card,Credit card,4f0fe724-d97f-4c40-9e4a-7ced2188c0ab,7179.2,504,,qwen2.5:7b,False,,,,7165.49,True
+9495,Credit card,Credit card,3264343a-b415-4628-b1b3-cae64e4395a1,8508.5,694,,qwen2.5:7b,False,,,,8491.88,True
+9497,Money transfer or service,Bank account or service,8e48e00f-fc3d-431d-a12f-c70a7ee158c0,11181.6,729,,qwen2.5:7b,False,,,,11171.15,True
+9504,Credit reporting,Credit reporting,a85cac41-c40e-47c5-bcdc-e0a5ae591f2f,4137.7,315,,qwen2.5:7b,False,,,,4124.64,True
+9518,Debt collection,Debt collection,7a2a7b44-cc60-4da2-9d89-92119dc3082b,3494.3,263,,qwen2.5:7b,False,,,,3481.17,True
+9526,Debt collection,Debt collection,76bc5691-ea7a-43de-b4f9-f0c02f7334b3,4280.7,380,,qwen2.5:7b,False,,,,4272.26,True
+9534,Bank account or service,Bank account or service,d01b4cab-b14a-49f8-95e8-6ae53bb59270,8385.7,662,,qwen2.5:7b,False,,,,8375.73,True
+9552,Bank account or service,Bank account or service,ef044095-cab8-41a1-b630-38040de07e35,17103.2,1476,,qwen2.5:7b,False,,,,17092.07,True
+9560,Credit reporting,Credit reporting,c559a18d-d718-4a63-808f-be0e4ff1ac41,8232.6,775,,qwen2.5:7b,False,,,,8223.11,True
+9579,Consumer loan,Mortgage,4026a3b5-c6f3-4bca-828b-1ce390196804,15786.7,1169,,qwen2.5:7b,False,,,,15775.63,True
+9589,Credit reporting,Debt collection,d6b47fca-64f3-4239-a9a9-e2751d0b7682,3303.7,245,,qwen2.5:7b,False,,,,3291.89,True
+9598,Bank account or service,Bank account or service,ff49053f-4ebe-4367-b6f9-d9f3a744660b,12073.3,1045,,qwen2.5:7b,False,,,,12063.65,True
+9629,Credit card,Credit card,f9387a3a-6b2c-4ea7-b923-41f8b40b3c4c,10523.3,934,,qwen2.5:7b,False,,,,10514.07,True
+9684,Mortgage,Mortgage,10ba9284-2d54-482e-bcd2-5c035179353e,5910.4,503,,qwen2.5:7b,False,,,,5901.57,True
+9688,Debt collection,Debt collection,f5a15418-af40-47f8-8383-19e67b9d3bb9,16172.2,1289,,qwen2.5:7b,False,,,,16160.43,True
+9692,Consumer loan,Consumer loan,8eaeacea-54e7-41d2-9484-c948922dad0e,15923.3,1337,,qwen2.5:7b,False,,,,15909.31,True
+9713,Mortgage,Mortgage,27fba7de-272c-476b-bd66-6fd7fc12dfcb,13876.5,1156,,qwen2.5:7b,False,,,,13860.93,True
+9717,Debt collection,Mortgage,8ba5ec90-c47b-4c9b-9538-3dee96e56931,6622.0,408,,qwen2.5:7b,False,,,,6613.48,True
+9720,Credit card,Credit card,9d2d92d7-076a-42e9-bf6a-eb9b2d1d3e42,6277.3,431,,qwen2.5:7b,False,,,,6269.22,True
+9732,Credit reporting,Credit reporting,8c523729-519e-469e-b25c-12fdebb6ab4a,9329.8,744,,qwen2.5:7b,False,,,,9320.3,True
+9744,Money transfer or service,Money transfer or service,0ff02060-2d85-4d2f-99d1-0231b36209a8,5886.7,530,,qwen2.5:7b,False,,,,5876.23,True
+9755,Debt collection,Debt collection,eee76a76-81fd-47a9-8bed-e59e6c484d01,5302.1,346,,qwen2.5:7b,False,,,,5286.09,True
+9758,Credit reporting,Credit reporting,4af06c2a-a272-41e9-ab87-170164cdabf6,18695.3,1405,,qwen2.5:7b,False,,,,18684.76,True
+9764,Credit card,Credit card,236ce5a5-b6c9-4f68-a629-2b0f52b293c8,9018.4,750,,qwen2.5:7b,False,,,,9009.02,True
+9771,Credit card,Credit card,5f15a7af-0dc0-4e32-bcd1-ca882bc0fe37,9904.2,853,,qwen2.5:7b,False,,,,9886.9,True
+9773,Consumer loan,Consumer loan,40851953-6d0c-42aa-87f5-b6bbf10eb45a,2481.7,205,,qwen2.5:7b,False,,,,2469.05,True
+9777,Debt collection,Debt collection,f62f1334-b584-4051-86d9-c4e99d636ca4,3610.4,250,,qwen2.5:7b,False,,,,3599.6,True
+9782,Money transfer or service,Credit card,b4f857ca-0f8b-466d-8e00-dbb283191786,7274.0,472,,qwen2.5:7b,False,,,,7265.74,True
+9794,Bank account or service,Bank account or service,91e97742-1301-4624-854c-5ac705cae11f,14515.4,1285,,qwen2.5:7b,False,,,,14506.7,True
+9818,Mortgage,Mortgage,2ae2ede0-447a-4eae-a027-e0559eaec980,6091.9,383,,qwen2.5:7b,False,,,,6079.24,True
+9821,Bank account or service,Debt collection,7381cd50-1feb-4f44-b869-bbf8cc555d4e,10307.0,762,,qwen2.5:7b,False,,,,10298.75,True
+9833,Money transfer or service,Money transfer or service,17fbc30e-d6c5-42b5-b5b8-715348994187,11197.5,976,,qwen2.5:7b,False,,,,11184.78,True
+9848,Credit reporting,Credit reporting,89ebd67b-4224-4e33-9958-d54b9ac77bf3,3697.9,261,,qwen2.5:7b,False,,,,3688.86,True
+9853,Consumer loan,Debt collection,23530380-c771-4ea1-af2f-d0150152118f,13980.2,1060,,qwen2.5:7b,False,,,,13971.69,True
+9860,Credit card,Credit card,d576a502-8a5f-42a0-b4c0-2c50b0a5cee0,5036.7,400,,qwen2.5:7b,False,,,,5023.24,True
+9863,Mortgage,Mortgage,ffe5b3f7-18f4-4eca-b7da-0bc701e80d5e,6798.3,617,,qwen2.5:7b,False,,,,6789.57,True
+9870,Debt collection,Debt collection,b390e2bb-0d7c-4bab-b869-f3941162d3da,8670.4,786,,qwen2.5:7b,False,,,,8654.88,True
+9873,Credit card,Credit card,bcfb0042-8e1f-4fde-9f31-12b156eb1f33,13121.7,1033,,qwen2.5:7b,False,,,,13112.24,True
+9884,Bank account or service,Bank account or service,79d8d2f9-918d-4f96-922b-22a12b0d5655,9894.4,738,,qwen2.5:7b,False,,,,9879.44,True
+9894,Bank account or service,Credit reporting,55aee622-918b-476f-9dfe-6c3ef794183b,9780.8,900,,qwen2.5:7b,False,,,,9769.88,True
+9903,Credit reporting,Credit reporting,5bd61f1f-b716-491f-9e05-a2fed0b825b9,11527.0,952,,qwen2.5:7b,False,,,,11517.12,True
+9916,Bank account or service,Debt collection,a267af05-ffb9-4c60-b2fe-8e6a21738722,11485.8,1028,,qwen2.5:7b,False,,,,11474.77,True
+9924,Credit card,Consumer loan,b100430f-1bb7-4941-aa65-d48b4c02116a,20515.0,1647,,qwen2.5:7b,False,,,,20499.39,True
+9927,Mortgage,Mortgage,90411999-e453-40d5-b3f2-7e0484f46d6a,12306.3,821,,qwen2.5:7b,False,,,,12296.24,True
+9941,Credit reporting,Credit reporting,ecab1426-8fc2-48c5-833a-811885756d62,13864.4,1006,,qwen2.5:7b,False,,,,13854.58,True
+9950,Credit reporting,Credit reporting,e26af5e8-3929-4a46-b461-6a617ebdb477,6140.8,574,,qwen2.5:7b,False,,,,6125.48,True
+9953,Bank account or service,Bank account or service,111361ed-14b1-4fa7-9533-923d977ceafa,20777.9,1644,,qwen2.5:7b,False,,,,20762.27,True
+9956,Credit reporting,Credit reporting,1014df2a-f6d5-47bd-a0df-91352dc62107,13122.3,1075,,qwen2.5:7b,False,,,,13111.92,True
+9967,Debt collection,Debt collection,446682b2-ba0f-422b-b359-1370d512c754,13075.4,984,,qwen2.5:7b,False,,,,13064.15,True
+9981,Consumer loan,Consumer loan,873c92f7-1b74-47cd-8e45-fbd9ef9f46f7,7823.4,589,,qwen2.5:7b,False,,,,7806.99,True
+9993,Mortgage,Mortgage,431496a6-5a93-496d-a5b6-1e1fcffc7e61,14981.5,1116,,qwen2.5:7b,False,,,,14972.74,True
