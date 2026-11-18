@@ -23,3 +23,5 @@ pushed: A2 accuracy test: cascade T=400 and T=500 on the test set
 2026-11-18 23:51:05 +0800  5/6 calibration done
 pushed: A2 calibration (Machine A side)
 2026-11-18 23:51:08 +0800  6/6 speed test: top7b cascade400 cascade500 (about 7 h; progress in results/a2/env/machineA.log)
+pushed: A2 speed test: service log + env (Machine A)
+2026-11-19 02:34:10 +0800  === ALL DONE on Machine A. Post 'Machine A done' in the group chat.
