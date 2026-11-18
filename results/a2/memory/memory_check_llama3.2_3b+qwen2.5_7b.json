@@ -1,0 +1,50 @@
+{
+  "pair": [
+    "llama3.2:3b",
+    "qwen2.5:7b"
+  ],
+  "verdict": "FIT",
+  "checks": {
+    "both_listed_after_each_ticket": true,
+    "no_reload": true,
+    "no_oom": true,
+    "no_slowdown": true,
+    "no_errors": true
+  },
+  "notes": [
+    "`ollama ps` listed both models after 9/9 tickets (from the 2nd on)",
+    "reloads after first load: none; models called: ['llama3.2:3b', 'qwen2.5:7b']",
+    "cgroup memory.events change: {'max': 9950}",
+    "prefill tok/s, memory check vs the same model alone: llama3.2:3b 108.3 vs 104.1 (A2 single-model run, this machine; 10 tickets of 151-190 prompt tokens), qwen2.5:7b 31.8 vs 28.6 (A2 single-model run, this machine; 56 tickets of 239-525 prompt tokens)"
+  ],
+  "prefill": {
+    "llama3.2:3b": {
+      "memcheck_tok_s": 108.34492239326076,
+      "ref_tok_s": 104.088492808005,
+      "ref_source": "A2 single-model run, this machine; 10 tickets of 151-190 prompt tokens",
+      "a1_tok_s": 18.335824613851518,
+      "prompt_tokens": [
+        151,
+        190
+      ],
+      "ratio": 1.0408924125081425,
+      "n": 4
+    },
+    "qwen2.5:7b": {
+      "memcheck_tok_s": 31.774834806239287,
+      "ref_tok_s": 28.550706212393415,
+      "ref_source": "A2 single-model run, this machine; 56 tickets of 239-525 prompt tokens",
+      "a1_tok_s": 8.505203662943941,
+      "prompt_tokens": [
+        239,
+        525
+      ],
+      "ratio": 1.1129264043369382,
+      "n": 4
+    }
+  },
+  "cgroup_memory_max": "8589934592",
+  "cgroup_memory_current_end": 8581603328,
+  "cgroup_memory_peak": 8589938688,
+  "tickets_logged": 10
+}

@@ -10,3 +10,6 @@
 2026-11-18 23:15:59 +0800  2/6 accuracy test qwen2.5:0.5b alone on this machine
 2026-11-18 23:17:29 +0800  2/6 single-qwen2.5:0.5b on test: 12/87 = 13.8 %
 2026-11-18 23:17:29 +0800  2/6 Top model qwen2.5:7b on the test set: 68/87 = 78.2 % (Wilson 95 % CI 68.4-85.5 %) Overall limit: 68.2 %  (>= 60/87 correct) 
+pushed: A2 single-model accuracy re-run on the A2 machine; limits from its 7b run
+2026-11-18 23:17:32 +0800  3/6 memory check: 3b + 7b
+2026-11-18 23:19:08 +0800  3/6 memory check: 3b + 7b FIT

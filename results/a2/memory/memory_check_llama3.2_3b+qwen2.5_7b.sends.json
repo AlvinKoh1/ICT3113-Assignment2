@@ -1,0 +1,118 @@
+{
+  "run_id": "memcheck-llama3.2_3b+qwen2.5_7b",
+  "model_header": null,
+  "base": "http://localhost:8000",
+  "tickets": [
+    {
+      "row": "9610",
+      "chars": 310,
+      "client_ms": 6190.5,
+      "category": "Debt collection",
+      "request_id": "570c0dd6-5ca0-46f3-9d4e-2fcce34ac15d",
+      "server_ms": 6171.64,
+      "error": null,
+      "at": "2026-11-18T23:17:40+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9879",
+      "chars": 875,
+      "client_ms": 21271.9,
+      "category": "Bank account or service",
+      "request_id": "319a674b-7862-47fd-a39a-37e92ae9064e",
+      "server_ms": 21259.22,
+      "error": null,
+      "at": "2026-11-18T23:18:04+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9702",
+      "chars": 366,
+      "client_ms": 4086.6,
+      "category": "Consumer loan",
+      "request_id": "d98e22a6-5545-4696-b047-6cf53c358a94",
+      "server_ms": 4077.01,
+      "error": null,
+      "at": "2026-11-18T23:18:08+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9982",
+      "chars": 1822,
+      "client_ms": 22534.9,
+      "category": "Credit card",
+      "request_id": "8746a401-ad30-4667-8290-d5d8bcae2d52",
+      "server_ms": 22520.05,
+      "error": null,
+      "at": "2026-11-18T23:18:34+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9088",
+      "chars": 258,
+      "client_ms": 1449.0,
+      "category": "Debt collection",
+      "request_id": "3672086b-6c7d-456d-847c-784282de0da2",
+      "server_ms": 1439.76,
+      "error": null,
+      "at": "2026-11-18T23:18:35+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9372",
+      "chars": 611,
+      "client_ms": 9115.8,
+      "category": "Credit reporting",
+      "request_id": "be99db8b-6384-4ff3-866c-6d77f54a6eb1",
+      "server_ms": 9100.25,
+      "error": null,
+      "at": "2026-11-18T23:18:44+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9524",
+      "chars": 219,
+      "client_ms": 1273.4,
+      "category": "Debt collection",
+      "request_id": "eb110e57-8095-41de-845f-5c93ba333071",
+      "server_ms": 1257.1,
+      "error": null,
+      "at": "2026-11-18T23:18:46+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9949",
+      "chars": 519,
+      "client_ms": 7825.3,
+      "category": "Bank account or service",
+      "request_id": "b66ab4cb-03ff-4d1f-b624-10f420cd6e3a",
+      "server_ms": 7815.83,
+      "error": null,
+      "at": "2026-11-18T23:18:56+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9507",
+      "chars": 338,
+      "client_ms": 2012.6,
+      "category": "Mortgage",
+      "request_id": "28611d41-a2d0-4947-9570-0ef06b96d68f",
+      "server_ms": 2003.28,
+      "error": null,
+      "at": "2026-11-18T23:18:58+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \n"
+    },
+    {
+      "row": "9439",
+      "chars": 737,
+      "client_ms": 7334.0,
+      "category": "Bank account or service",
+      "request_id": "93f6dfb4-ed98-40b3-9b5f-4e222948f9e3",
+      "server_ms": 7321.65,
+      "error": null,
+      "at": "2026-11-18T23:19:06+0800",
+      "ollama_ps": "NAME           ID              SIZE      PROCESSOR    UNTIL               \nqwen2.5:7b     845dbda0ea48    5.5 GB    100% CPU     29 minutes from now    \nllama3.2:3b    a80c4f17acd5    3.5 GB    100% CPU     29 minutes from now    \n"
+    }
+  ],
+  "middle_ms": null
+}
