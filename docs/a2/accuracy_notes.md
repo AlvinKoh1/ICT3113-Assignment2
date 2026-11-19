@@ -4,41 +4,41 @@ Re-derived from the per-ticket files and the golden set, independently of the su
 
 ## cascade400 (T = 400)
 
-Overall 64/87 by hand, 64/87 in the JSON; limit ≥ 60 → pass (+4 tickets).
+Overall 64/87 by hand, 64/87 in the JSON; limit ≥ 60 → overall pass (+4 tickets); every category limit also passes (table below).
 
 | Category | Cascade | 7b alone | Δ | Limit | Verdict |
 |---|---|---|---|---|---|
 | Credit reporting | 14/19 | 16/19 | -2 | ≥ 14 | pass (+0 tickets) |
 | Debt collection | 8/10 | 9/10 | -1 | ≥ 8 | pass (+0 tickets) |
-| Mortgage | 13/13 | 13/13 | +0 | ≥ 12 | pass (+1 tickets) |
+| Mortgage | 13/13 | 13/13 | +0 | ≥ 12 | pass (+1 ticket) |
 | Credit card | 8/12 | 9/12 | -1 | ≥ 8 | pass (+0 tickets) |
-| Bank account or service | 7/10 | 7/10 | +0 | ≥ 6 | pass (+1 tickets) |
-| Consumer loan | 8/12 | 8/12 | +0 | ≥ 7 | pass (+1 tickets) |
-| Money transfer or service | 6/11 | 6/11 | +0 | ≥ 5 | pass (+1 tickets) |
+| Bank account or service | 7/10 | 7/10 | +0 | ≥ 6 | pass (+1 ticket) |
+| Consumer loan | 8/12 | 8/12 | +0 | ≥ 7 | pass (+1 ticket) |
+| Money transfer or service | 6/11 | 6/11 | +0 | ≥ 5 | pass (+1 ticket) |
 
 Kept the small model's answer on 15 tickets; 7 of those were wrong, mostly answered as BankAcct ×3, DebtCol ×3, ConsLoan ×1.
 Categories that lost tickets against 7b alone: Credit reporting, Debt collection, Credit card.
 
-**Checks: all passed.**
+**Counts verified:** hand count = JSON, every ticket is in the service log, and every escalation follows the rule. Accuracy limits: all met.
 
 ## cascade500 (T = 500)
 
-Overall 60/87 by hand, 60/87 in the JSON; limit ≥ 60 → pass (+0 tickets).
+Overall 60/87 by hand, 60/87 in the JSON; limit ≥ 60 → overall passes with no margin (+0 tickets), but **two category limits FAIL** (Credit reporting and Credit card, see table), so this setting does not meet the accuracy limits.
 
 | Category | Cascade | 7b alone | Δ | Limit | Verdict |
 |---|---|---|---|---|---|
 | Credit reporting | 12/19 | 16/19 | -4 | ≥ 14 | **FAIL** (-2 tickets) |
 | Debt collection | 8/10 | 9/10 | -1 | ≥ 8 | pass (+0 tickets) |
 | Mortgage | 12/13 | 13/13 | -1 | ≥ 12 | pass (+0 tickets) |
-| Credit card | 7/12 | 9/12 | -2 | ≥ 8 | **FAIL** (-1 tickets) |
-| Bank account or service | 7/10 | 7/10 | +0 | ≥ 6 | pass (+1 tickets) |
-| Consumer loan | 8/12 | 8/12 | +0 | ≥ 7 | pass (+1 tickets) |
-| Money transfer or service | 6/11 | 6/11 | +0 | ≥ 5 | pass (+1 tickets) |
+| Credit card | 7/12 | 9/12 | -2 | ≥ 8 | **FAIL** (-1 ticket) |
+| Bank account or service | 7/10 | 7/10 | +0 | ≥ 6 | pass (+1 ticket) |
+| Consumer loan | 8/12 | 8/12 | +0 | ≥ 7 | pass (+1 ticket) |
+| Money transfer or service | 6/11 | 6/11 | +0 | ≥ 5 | pass (+1 ticket) |
 
 Kept the small model's answer on 23 tickets; 14 of those were wrong, mostly answered as BankAcct ×7, DebtCol ×4, ConsLoan ×3.
 Categories that lost tickets against 7b alone: Credit reporting, Debt collection, Mortgage, Credit card.
 
-**Checks: all passed.**
+**Counts verified:** hand count = JSON, every ticket is in the service log, and every escalation follows the rule. Accuracy limits: **NOT met** (Credit reporting, Credit card).
 
 ## Single models: A2 machine re-run vs Assignment 1 records (test set)
 
