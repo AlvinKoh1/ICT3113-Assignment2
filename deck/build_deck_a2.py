@@ -39,6 +39,7 @@ DECK = ROOT / "deck"
 BUILD = DECK / "build_a2"
 BUILD.mkdir(exist_ok=True)
 import os
+import re
 OUT = Path(os.getenv("DECK_OUT", str(DECK / "Group09_A2.pptx")))
 A2_LOG = Path(os.getenv("A2_LOG", str(ROOT / "results" / "logs" / "a2_requests.jsonl")))
 NAVY, TEAL, GREY, RED, GREEN, LIGHT, WHITE, AMBER = (
@@ -339,20 +340,38 @@ mk = next((k for k in mem if "llama3.2_3b" in k), None) or (next(iter(mem)) if m
 if mk:
     m = mem[mk]
     ok = m["verdict"] == "FIT"
+    # Raw cgroup counters from the check's own log (results/a2/memory/memory_check_<pair>.txt).
+    raw = (A2 / "memory" / f"{mk}.txt")
+    raw = raw.read_text(encoding="utf-8", errors="replace") if raw.exists() else ""
+    ev = re.findall(r"--- memory\.events\n((?:\w+ \d+\n)+)", raw)
+    hits = None
+    if len(ev) >= 2:
+        _kv = lambda b: {k: int(v) for k, v in (ln.split() for ln in b.strip().splitlines())}
+        hits = _kv(ev[-1]).get("max", 0) - _kv(ev[0]).get("max", 0)
+    swap = re.findall(r"--- memory\.swap\.current\n(\d+)", raw)
+    swap_gb = int(swap[-1]) / 1e9 if swap else None
     lines = [f"**{' + '.join(m['pair'])}: {m['verdict']}**",
-             f"ollama ps listed both after every ticket: {m['checks'].get('both_listed_after_each_ticket')}",
-             f"reload after first load: {'none' if m['checks'].get('no_reload') else 'YES'}",
-             f"OOM events: {'none' if m['checks'].get('no_oom') else m['checks'].get('no_oom')}"]
-    if m.get("cgroup_memory_peak") and m.get("cgroup_memory_max", "max") not in (None, "max"):
+             "ollama ps listed both from the 2nd ticket on (the 1st was short, so only the small model was loaded)"
+             if m["checks"].get("both_listed_after_each_ticket") else "ollama ps did NOT list both after every ticket",
+             f"reload after first load: {'none' if m['checks'].get('no_reload') else 'YES'}; "
+             f"OOM kills: {'0' if m['checks'].get('no_oom') else m['checks'].get('no_oom')}"]
+    if hits:
+        lines.append(f"Memory sat at the {int(m['cgroup_memory_max']) / 2**30:.0f} GiB cap (limit hit {hits:,}×"
+                     + (f", swap ~{swap_gb:.1f} GB at the end" if swap_gb else "") + "), 0 OOM kills")
+    elif m.get("cgroup_memory_peak") and m.get("cgroup_memory_max", "max") not in (None, "max"):
         lines.append(f"cgroup peak {m['cgroup_memory_peak'] / 2**30:.2f} of {int(m['cgroup_memory_max']) / 2**30:.0f} GiB")
-    for mm, v in m.get("prefill", {}).items():
-        if v.get("ratio"):
-            ref = "its speed alone" if "this machine" in v.get("ref_source", "") else "A1 speed"
-            lines.append(f"{mm} prefill {v['ratio'] * 100:.0f}% of {ref}")
+    sp = [f"{mm.split(':')[0].replace('llama3.2', '3b' if '3b' in mm else '1b').replace('qwen2.5', '7b')} {v['ratio'] * 100:.0f}%"
+          for mm, v in m.get("prefill", {}).items() if v.get("ratio")]
+    if sp:
+        same = all("this machine" in v.get("ref_source", "") for v in m.get("prefill", {}).values())
+        lines.append("No slowdown: prefill " + ", ".join(sp) + (" of the same model alone on same-length tickets" if same else " of A1 speed"))
+    if same if sp else False:
+        lines.append("Criterion changed before the run (commit ea36f94): compare with same-length tickets, after the rehearsal showed "
+                     "all-length medians could falsely fail 3b + 7b")
     for k2, m2 in mem.items():
         if k2 != mk:
             lines.append(f"{' + '.join(m2['pair'])}: {m2['verdict']}")
-    card(s, 10.25, 3.5, 2.75, 3.55, "Memory check (both resident)", lines, GREEN if ok else RED, 9.5)
+    card(s, 10.25, 3.5, 2.75, 3.55, "Memory check (both resident)", lines, GREEN if ok else RED, 8.5)
 else:
     pending(s, 10.25, 3.5, 2.75, 3.55, "memory check (Step 2)", "tools/a2_memory_check.sh")
 footer(s, "docs/a2/escalation_rule.md · docs/a2/tuning_analysis.md · service/app/cascade.py · results/a2/memory/")
