@@ -27,6 +27,7 @@ ROOT = HERE.parents[1]
 OUT = HERE / "supporting"
 CHROME = sys.argv[1] if len(sys.argv) > 1 else r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 HEAD = (ROOT / "docs" / "remaining_work.html").read_text(encoding="utf-8")
+HEAD = re.sub(r"<title>.*?</title>", "<title>ICT3113 Assignment 2 · Group P2-9</title>", HEAD, flags=re.S)
 HEAD = HEAD[: HEAD.index("<body>")].replace("</style>", """
 .doc > * + * { margin-top: 12px; }
 .doc h1 { margin-top: 6px; } .doc h2 { margin-top: 22px; } .doc ul, .doc ol { margin: 6px 0; padding-left: 1.3rem; }

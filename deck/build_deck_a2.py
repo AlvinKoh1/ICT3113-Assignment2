@@ -384,8 +384,8 @@ if MOVED:
     card(s, 0.35, 1.35, 4.15, 2.6, "Machines (Machine A changed; docs/a2/machine_change.md)", [
         f"**Machine A (SUT), new:** {mA['cpu']} {mA['cores_threads'].replace(' cores / ', 'C/').replace(' threads', 'T')}, {mA['ram']}; "
         f"{mA['docker'].replace('Docker Desktop, ', '')}; Ollama 0.5.7 container: 4-CPU quota, 8 GiB, CPU only (RTX 4070 not mapped). "
-        "A1 was an i9-10900K, 48 GB — no longer available to us.",
-        "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21 — a separate machine in another home.",
+        "A1 was an i9-10900K, 48 GB, no longer available to us.",
+        "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21; a separate machine in another home.",
         "**Link:** Tailscale between the two homes (direct or relayed: results/a2/env/).",
         "**Ollama settings, recorded once, held constant:** threads 8 (auto = physical cores; A1: 10), parallel 4, num_ctx 2048, keep-alive 30 m (results/a2/env/preflight_*.txt).",
     ], NAVY, 9.5)
@@ -393,7 +393,7 @@ else:
     header(s, 3, "Test Environment and Method", "Same machines, same container limits, same Ollama build and settings as Assignment 1; Assignment 2 arrival rate set from S.")
     card(s, 0.35, 1.35, 4.15, 2.6, "Machines (unchanged; A1 slide 7)", [
         "**Machine A (SUT):** i9-10900K 10C/20T, 48 GB; WSL 2 VM 12 GB; Docker 29.8.2; Ollama 0.5.7 container: 4-CPU quota, 8 GiB, CPU only (RTX 3090 not mapped).",
-        "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21 — a separate machine in another home.",
+        "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21; a separate machine in another home.",
         "**Link:** Tailscale direct peer-to-peer, RTT ~9 ms (A1).",
         "**Ollama settings, recorded once, held constant:** threads 10 (auto), parallel 4, num_ctx 2048, keep-alive 30 m (results/a2/env/preflight_*.txt).",
     ], NAVY, 9.5)
@@ -425,7 +425,7 @@ card(s, 6.8, 4.1, 6.2, 2.95, "Changes from Assignment 1", [
     "**POST /tickets** can run the cascade (TRIAGE_MODE=cascade); single-model path unchanged. Endpoints, prompt, models, golden set unchanged.",
     "**Speed test:** one POST /tickets stream at 1/(2S); no /search stream (A2 compares triage configurations); 3 runs; restart + warm-up before every run (A1: once per model).",
     "**Timeouts:** JMeter 10×S (A1: 600 s); pause outlasts it by ≥ 1 min. Service→Ollama timeout raised 300 → 1,200 s per call so JMeter, not the service, decides a request is too slow.",
-    "**OLLAMA_NUM_PARALLEL=4** set explicitly — the value Ollama chose automatically in A1 — so it cannot change when two models load.",
+    "**OLLAMA_NUM_PARALLEL=4** set explicitly (the value Ollama chose automatically in A1) so it cannot change when two models load.",
     "**Separate log** results/logs/a2_requests.jsonl with final_model / escalated / route per ticket.",
     ("**Machine A changed + single models re-run:** A1 records may only be reused on the same machine, so all four single models were re-run "
      "on the 87 test tickets on the new Machine A and the limits come from that 7b run (same digests, prompt, Ollama 0.5.7, container limits)."
@@ -592,7 +592,7 @@ for c in CASCADES:
     j, a = speed.get(c), acc.get(c)
     if j and a and j.get("escalation_pooled") is not None and a.get("escalation"):
         notes5.append(f"{CFG_LABEL[c]} escalation: {j['escalation_pooled'] * 100:.0f}% under load vs {a['escalation']['fraction'] * 100:.0f}% on the "
-                      "test set — different tickets (speed list vs golden test half).")
+                      "test set; different tickets (speed list vs golden test half).")
 if notes5:
     text(s, 0.3, 1.35 + 0.29 * (len(rows) + 1) + 0.15, 8.1, 1.4, notes5, 9.5)
 footer(s, "results/a2/jtl/a2_*_run*.jtl + .jmeter.log · results/a2/runs/*.stats_*.json · results/logs/a2_requests.jsonl · tools/a2_analyze_speed.py → results/a2/speed/")
@@ -612,7 +612,7 @@ if pts and limits:
     ax.axhline(limits["overall_limit_pct"], ls="--", color="#C0392B", lw=1.2)
     ax.text(ax.get_xlim()[1], limits["overall_limit_pct"] - 1.2, f"overall limit {limits['overall_limit_pct']:.1f}% ", color="#C0392B", fontsize=8, ha="right")
     ax.set_xlabel("p50 latency under load, mean of 3 runs (s); bars = min–max of the 3 runs", fontsize=9)
-    ax.set_ylabel("Test-set accuracy (%) — 87 tickets", fontsize=9)
+    ax.set_ylabel("Test-set accuracy (%), 87 tickets", fontsize=9)
     ax.set_ylim(min(limits["overall_limit_pct"] - 4, min(y for _, y, _ in pts) - 3), 100)
     ax.grid(alpha=.3)
     ax.text(0.99, 0.02, "filled = passes overall + per-category limits; hollow red = fails a limit", transform=ax.transAxes,
@@ -662,7 +662,7 @@ prow.append(["Fastest within limits", CFG_LABEL["cascade500"], CFG_LABEL.get(rec
 for c in ["top7b"] + CASCADES:
     if c in P:
         mv = p50(c).get("mean")
-        prow.append([f"p50 under load · {CFG_LABEL[c]}", f"{P[c]['p50_median']:.0f} s", f1(mv), verdict_num(P[c]["p50_median"], mv, 0.15)])
+        prow.append([f"p50 under load · {CFG_LABEL[c]}", f"{P[c]['p50_median']:.0f} s", f1(mv) + (" s" if mv is not None else ""), verdict_num(P[c]["p50_median"], mv, 0.15)])
 for c, pe in (("cascade400", 0.81), ("cascade500", 0.73)):
     a = acc.get(c)
     mv = a["escalation"]["fraction"] if a and a.get("escalation") else None
@@ -689,7 +689,7 @@ if INFEASIBLE:
     prow[0][2], prow[0][3] = "neither pair fits", "WRONG"
 table(s, 0.3, 1.35, 6.9, prow, ["Claim", "Predicted", "Measured", "Verdict"], size=9, col_w=[2.55, 1.45, 2.0, 0.9], row_h=0.25,
       color=lambda i, j, v: (GREEN if v == "RIGHT" else RED if v in ("WRONG", "PENDING") else None) if j == 3 else None)
-text(s, 0.3, 6.78, 6.9, 0.3, "Verdict tolerances: latency ±15%, escalation ±5 points, accuracy ±2 tickets, S ±15%.", 8.5)
+text(s, 0.3, 6.78, 6.9, 0.3, "13 of 20 claims shown; all 20 (11 wrong) in docs/a2/prediction_account.md. Tolerances: latency ±15%, escalation ±5 pts, accuracy ±2 tickets, S ±15%.", 8.5)
 why = txt.get("prediction_misses") or ["Where and why the predictions missed: write in deck/a2_text.json → \"prediction_misses\" "
                                        "after reading results (docs/a2/prediction_account.md)."]
 card(s, 7.4, 4.25, 5.6, 2.8, "Why they differed (full account: docs/a2/prediction_account.md)", why, AMBER, 9)
@@ -767,7 +767,7 @@ if _top_pp.exists():
 lim = txt.get("limitations") or [
     "**Sample size:** 87 test tickets (one ticket = 1.1 points overall); six of seven categories have 10–13 tickets, so per-category verdicts rest on one or two tickets. "
     + (f"Wilson 95% CI for 7b's {limits['top_test_pct']:.1f}% is {wilson(limits['top_correct'], limits['test_n'])[0] * 100:.0f}–{wilson(limits['top_correct'], limits['test_n'])[1] * 100:.0f}%." if limits else ""),
-    "**Seen tickets:** every model already ran on the whole golden set in A1; the test half is not new data — it only keeps the rule from being tuned on the tickets it is scored on.",
+    "**Seen tickets:** every model already ran on the whole golden set in A1; the test half is not new data. It only keeps the rule from being tuned on the tickets it is scored on.",
     *(["**Different machine from A1:** the A1 PC was unavailable, so Machine A is a " + MACHINE["machine_a"]["short"] + " (A1: i9-10900K) with the same 4-CPU / 8 GiB "
        "container. A2 figures compare configurations on this machine only; the rule and predictions were built from A1 timings and records."] if MOVED else []),
     "**One machine, one rate:** results hold for Machine A's 4-CPU / 8 GiB Ollama container at one arrival rate. "
@@ -791,7 +791,7 @@ refs = [
 ]
 card(s, 6.95, 1.1, 6.05, 3.2, "References and model licences", refs, NAVY, 9)
 ai = txt.get("ai_declaration") or [
-    "An AI assistant (Claude) proposed the length rule and its two settings from a tuning-set replay of our A1 records, drafted the prediction record, and wrote the cascade code, all test and analysis scripts, this deck generator and the first draft of the prediction account; after the machine change it also adapted the tooling (single-model re-run on the new Machine A, limits from that run).",
+    "An AI assistant (Claude) proposed the length rule and its two settings from a tuning-set replay of our A1 records, drafted the prediction record, and wrote the cascade code, all test and analysis scripts, this deck generator and the first draft of the prediction account; after the machine change it also adapted the tooling (single-model re-run on the new Machine A, limits from that run), and in the final review cross-checked slide figures against the result files and drafted the slide 7 \"why they differed\" wording.",
     "The team reviewed and signed off the rule and predictions before any measurement, ran every test on Machines A and B, checked figures against the raw .jtl and log files, and is responsible for the recommendation.",
 ]
 card(s, 6.95, 4.45, 6.05, 2.6, "AI declaration", ai, TEAL, 9.5)
@@ -803,8 +803,13 @@ if PENDING_ITEMS:
     b.fill.solid(); b.fill.fore_color.rgb = RED; b.line.fill.background()
     r = b.text_frame.paragraphs[0].add_run(); r.text = f"DRAFT — {len(PENDING_ITEMS)} item(s) pending measurement"
     r.font.size, r.font.bold, r.font.color.rgb = Pt(13), True, WHITE
-prs.core_properties.title = "ICT3113 Assignment 2 — Group P2-9"
+prs.core_properties.title = "ICT3113 Assignment 2 · Group P2-9"
 prs.core_properties.author = "Group P2-9"
+prs.core_properties.last_modified_by = "Group P2-9"
+prs.core_properties.comments = ""
+import datetime as _dt
+prs.core_properties.created = prs.core_properties.modified = _dt.datetime.now(_dt.timezone.utc).replace(tzinfo=None, microsecond=0)
+prs.core_properties.revision = 1
 prs.save(OUT)
 print(f"wrote {OUT}  ({len(prs.slides)} slides)")
 if PENDING_ITEMS:

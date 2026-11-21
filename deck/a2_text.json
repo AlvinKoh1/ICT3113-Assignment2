@@ -1,9 +1,8 @@
 {
   "prediction_misses": [
-    "**Fastest configuration within the limits:** cascade T=500 → qwen2.5:7b alone. cascade T=500 failed an accuracy limit, so it could not be recommended whatever its speed",
-    "**Passes both limits, cascade T=500:** yes → no. Fails Credit reporting, Credit card; these categories hold 10–13 test tickets, so one or two…",
-    "**Test accuracy, cascade T=400:** 67/87 → 64/87. Against 7b alone by category: CredRep -2, DebtCol -1, CCard -1",
-    "**Test accuracy, cascade T=500:** 67/87 → 60/87. Against 7b alone by category: CredRep -4, DebtCol -1, Mortg -1, CCard -2"
+    "**S and all six latency claims (7 of 11 misses):** predicted from A1 timings on the i9-10900K. Machine A moved to a Ryzen 7 7700 (same 4-CPU / 8 GiB container), so S was 10.1 s vs 35 s and 7b calls under load took 17.2 s vs 38.7 s predicted; p50 and pooled p95 fell with them.",
+    "**Test accuracy, T=400 and T=500 (2 misses):** 64/87 and 60/87 vs 67/87. On the tuning half the 3b matched the 7b on short tickets; on the test half it did not (T=500 kept 23 short tickets: 3b 9/23 vs 7b alone 17/23).",
+    "**T=500 passes both limits / fastest within limits (2 misses):** T=500 fails Credit reporting (12/19, need 14) and Credit card (7/12, need 8), so it cannot be recommended; the fastest configuration inside the limits is qwen2.5:7b alone."
   ],
   "recommendation_extra": [
     "**Defence:** the cascade was built, measured at both settings and speed-tested; it did not beat qwen2.5:7b alone inside the limits, so the reference stays."
