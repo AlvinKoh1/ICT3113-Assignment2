@@ -501,11 +501,15 @@ for c in CASCADES:
 if cards:
     card(s, 0.3 if ALL_ACC_DONE else 4.65, y0, 6.0 if ALL_ACC_DONE else 3.6, 2.8, "Escalated vs kept (from the service log, by request_id)", cards, TEAL, 9.5)
 # confusion matrices
-cm_cfgs = [c for c in ["top7b"] + CASCADES if c in acc]
+cm_cfgs = [c for c in [f"single-{m}" for m in MODELS if m != TOP_MODEL] + ["top7b"] + CASCADES if c in acc]
 if cm_cfgs:
-    fig, axes = plt.subplots(1, len(cm_cfgs), figsize=(2.25 * len(cm_cfgs), 2.45), dpi=200)
-    axes = axes if len(cm_cfgs) > 1 else [axes]
-    for ax, c in zip(axes, cm_cfgs):
+    ncol = 3 if len(cm_cfgs) > 3 else len(cm_cfgs)
+    nrow = (len(cm_cfgs) + ncol - 1) // ncol
+    fig, axes = plt.subplots(nrow, ncol, figsize=(2.25 * ncol, 1.95 * nrow), dpi=220, squeeze=False)
+    flat = [a for row in axes for a in row]
+    for ax in flat[len(cm_cfgs):]:
+        ax.axis("off")
+    for k, (ax, c) in enumerate(zip(flat, cm_cfgs)):
         cm = acc[c]["confusion"]
         cols = CATS + ["UNPARSED"]
         M = [[cm[g].get(p, 0) for p in cols] for g in CATS]
@@ -513,18 +517,20 @@ if cm_cfgs:
         for i2, rr in enumerate(M):
             for j2, v in enumerate(rr):
                 if v:
-                    ax.text(j2, i2, v, ha="center", va="center", fontsize=5.5, color="white" if v > 8 else "black")
-        ax.set_xticks(range(len(cols))); ax.set_xticklabels([SHORT.get(x, "UNP") for x in cols], rotation=60, fontsize=5)
-        ax.set_yticks(range(len(CATS))); ax.set_yticklabels([SHORT[x] for x in CATS], fontsize=5)
-        ax.set_title(f"{CFG_LABEL[c]} · {acc[c]['acc'] * 100:.1f}%", fontsize=6.5)
-        ax.set_xlabel("predicted", fontsize=5.5)
-    axes[0].set_ylabel("golden", fontsize=5.5)
-    plt.tight_layout(); fig.savefig(BUILD / "confusion.png"); plt.close(fig)
-    pic = s.shapes.add_picture(str(BUILD / "confusion.png"), Inches(6.45), Inches(4.2), width=Inches(6.6))
-    if pic.height > Inches(2.85):
-        ratio = Inches(2.85) / pic.height
-        pic.height, pic.width = Inches(2.85), int(pic.width * ratio)
-text(s, 0.3, 6.6, 7.2, 0.3, "* n ≤ 13: one ticket = 7.7–10 points. All confusion matrices: docs/a2/accuracy_notes.md.", 9)
+                    ax.text(j2, i2, v, ha="center", va="center", fontsize=5, color="white" if v > 8 else "black")
+        last_row = k // ncol == nrow - 1 or k + ncol >= len(cm_cfgs)
+        ax.set_xticks(range(len(cols))); ax.set_xticklabels([SHORT.get(x, "UNP") for x in cols] if last_row else [], rotation=60, fontsize=4.6)
+        ax.set_yticks(range(len(CATS))); ax.set_yticklabels([SHORT[x] for x in CATS] if k % ncol == 0 else [], fontsize=4.6)
+        ax.set_title(f"{CFG_LABEL[c]} · {acc[c]['correct']}/{acc[c]['n']}", fontsize=6)
+        ax.tick_params(length=1.5, pad=1)
+    fig.supxlabel("predicted", fontsize=5.5); fig.supylabel("golden", fontsize=5.5)
+    plt.tight_layout(pad=0.4, h_pad=0.6, w_pad=0.3); fig.savefig(BUILD / "confusion.png"); plt.close(fig)
+    pic = s.shapes.add_picture(str(BUILD / "confusion.png"), Inches(6.45), Inches(3.95), width=Inches(6.6))
+    if pic.height > Inches(3.1):
+        ratio = Inches(3.1) / pic.height
+        pic.height, pic.width = Inches(3.1), int(pic.width * ratio)
+        pic.left = Inches(6.45) + (Inches(6.6) - pic.width) // 2
+text(s, 0.3, 6.6, 7.2, 0.3, "* n ≤ 13: one ticket = 7.7–10 points. Confusion matrices for all six configurations (right); tables in docs/a2/accuracy_notes.md.", 9)
 footer(s, "results/a2/accuracy/*_test.json, *_predictions.csv (cascade; log results/logs/a2_requests.jsonl) · results/a2/accuracy/single_*_test.json ("
        + ("re-run: single-*_test_predictions.csv" if RERUN else "A1 records") + ")")
 
@@ -542,12 +548,12 @@ for c in speed_cfgs:
         continue
     for r in j["runs"]:
         rows.append([f"{CFG_LABEL.get(c, c)} · run {r['tag'].split('_run')[-1]}", r["sent"], r["completed"], r["errored"], r["unfinished"],
-                     f1(r["p50_s"]), f"{r['throughput_per_min']:.2f}" if r["throughput_per_min"] else "–",
+                     f1(r["p50_s"]), f"{r['throughput_per_min'] / 60:.3f}" if r["throughput_per_min"] else "–",
                      f1(r["error_rate_pct"]),
                      "–" if r["escalation_fraction"] is None or c == "top7b" else f"{r['escalated']}/{r['service_log_200']} {r['escalation_fraction'] * 100:.0f}%",
                      "yes" if all(v in (True, None) for k, v in r["reconcile"].items() if k != "reload_during_run")
                      and not r["reconcile"]["reload_during_run"] else "NO"])
-table(s, 0.3, 1.35, 8.1, rows, ["Configuration · run", "Sent", "Done", "Err", "Unfin.", "p50 s", "Thru /min", "Err %", "Escalated", "Recon."],
+table(s, 0.3, 1.35, 8.1, rows, ["Configuration · run", "Sent", "Done", "Err", "Unfin.", "p50 s", "Req/s", "Err %", "Escalated", "Recon."],
       size=9, col_w=[2.2, 0.55, 0.55, 0.5, 0.6, 0.7, 0.8, 0.6, 1.05, 0.55], row_h=0.27,
       color=lambda i, j, v: RED if v in ("PENDING", "NO") else None)
 if not ALL_SPEED_DONE:
@@ -561,11 +567,11 @@ for c in speed_cfgs:
     p = j["p50_s"]
     agg_rows.append([CFG_LABEL.get(c, c), f"{p['mean']:.1f} ± {p['sd']:.1f}", f"{p['min']:.1f}–{p['max']:.1f}",
                      f"{j['p95_pooled_s']:.1f} (n={j['p95_pooled_n']})",
-                     f"{j['throughput_per_min']['mean']:.1f}" if j.get("throughput_per_min") else "–",
+                     f"{j['throughput_per_min']['mean'] / 60:.3f}" if j.get("throughput_per_min") else "–",
                      f"{j['error_rate_pct']['mean']:.1f}" if j.get("error_rate_pct") else "–",
                      "–" if c == "top7b" or j.get("escalation_pooled") is None else f"{j['escalation_pooled'] * 100:.0f}%"])
 if agg_rows:
-    table(s, 8.6, 2.8 if not ALL_SPEED_DONE else 1.35, 4.45, agg_rows, ["Config", "p50 mean ± sd", "p50 range", "p95 pooled", "Thru", "Err%", "Esc"],
+    table(s, 8.6, 2.8 if not ALL_SPEED_DONE else 1.35, 4.45, agg_rows, ["Config", "p50 mean ± sd", "p50 range", "p95 pooled", "Req/s", "Err%", "Esc"],
           size=8.5, col_w=[1.05, 0.8, 0.65, 0.75, 0.4, 0.4, 0.4], row_h=0.3)
     # dot plot of per-run p50
     fig, ax = plt.subplots(figsize=(4.4, 2.1), dpi=200)
@@ -791,8 +797,8 @@ refs = [
 ]
 card(s, 6.95, 1.1, 6.05, 3.2, "References and model licences", refs, NAVY, 9)
 ai = txt.get("ai_declaration") or [
-    "An AI assistant (Claude) proposed the length rule and its two settings from a tuning-set replay of our A1 records, drafted the prediction record, and wrote the cascade code, all test and analysis scripts, this deck generator and the first draft of the prediction account; after the machine change it also adapted the tooling (single-model re-run on the new Machine A, limits from that run), and in the final review cross-checked slide figures against the result files and drafted the slide 7 \"why they differed\" wording.",
-    "The team reviewed and signed off the rule and predictions before any measurement, ran every test on Machines A and B, checked figures against the raw .jtl and log files, and is responsible for the recommendation.",
+    "**What the AI tool (Claude) produced:** the proposed length rule and its two settings, from a tuning-set replay of our A1 records; drafts of the prediction record and prediction account; the cascade code, test and analysis scripts and this deck generator; tooling changes after the machine change; the slide 7 wording in the final review.",
+    "**What the team did:** reviewed, approved and committed the rule, both settings and every prediction before any measurement, and takes responsibility for them; ran all tests on Machines A and B; checked each slide's figures against the raw .jtl and log files and corrected wording after review; is responsible for the recommendation.",
 ]
 card(s, 6.95, 4.45, 6.05, 2.6, "AI declaration", ai, TEAL, 9.5)
 footer(s, "docs/model_pins.md (licences) · docs/a2/")
