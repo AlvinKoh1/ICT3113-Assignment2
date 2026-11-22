@@ -797,8 +797,8 @@ refs = [
 ]
 card(s, 6.95, 1.1, 6.05, 3.2, "References and model licences", refs, NAVY, 9)
 ai = txt.get("ai_declaration") or [
-    "**What the AI tool (Claude) produced:** the proposed length rule and its two settings, from a tuning-set replay of our A1 records; drafts of the prediction record and prediction account; the cascade code, test and analysis scripts and this deck generator; tooling changes after the machine change; the slide 7 wording in the final review.",
-    "**What the team did:** reviewed, approved and committed the rule, both settings and every prediction before any measurement, and takes responsibility for them; ran all tests on Machines A and B; checked each slide's figures against the raw .jtl and log files and corrected wording after review; is responsible for the recommendation.",
+    "**Team:** reviewed and approved the escalation rule, its two settings and all 20 predictions, and committed them before any measurement; ran every test on Machines A and B; checked each slide's figures against the raw .jtl and log files and corrected wording after review; is responsible for the rule and the recommendation.",
+    "**AI tool (Claude):** wrote the cascade code, the test and analysis scripts and the deck generator, and adapted them after the machine change; proposed the length rule and its settings from a replay of our tuning-set records; drafted the prediction record, the prediction account and the slide 7 wording for the team to review.",
 ]
 card(s, 6.95, 4.45, 6.05, 2.6, "AI declaration", ai, TEAL, 9.5)
 footer(s, "docs/model_pins.md (licences) · docs/a2/")
