@@ -383,8 +383,8 @@ if MOVED:
     header(s, 3, "Test Environment and Method", "Machine A changed from A1 (the A1 PC was unavailable): same container limits, Ollama build, settings and digests; single models re-measured. Rate set from S.")
     card(s, 0.35, 1.35, 4.15, 2.6, "Machines (Machine A changed; docs/a2/machine_change.md)", [
         f"**Machine A (SUT), new:** {mA['cpu']} {mA['cores_threads'].replace(' cores / ', 'C/').replace(' threads', 'T')}, {mA['ram']}; "
-        f"{mA['docker'].replace('Docker Desktop, ', '')}; Ollama 0.5.7 container: 4-CPU quota, 8 GiB, CPU only (RTX 4070 not mapped). "
-        "A1 was an i9-10900K, 48 GB, no longer available to us.",
+        f"{mA['docker'].replace('Docker Desktop, ', '')}; WSL 2 VM ~15.2 GiB (A1: 12 GB); Ollama 0.5.7 container: 4-CPU quota, 8 GiB "
+        "as in A1, CPU only (RTX 4070 not mapped). A1 PC (i9-10900K, 48 GB) no longer available.",
         "**Machine B (load):** Ryzen 7 8845HS, 16 GB, JMeter 5.6.3, Java 21; a separate machine in another home.",
         "**Link:** Tailscale between the two homes (direct or relayed: results/a2/env/).",
         "**Ollama settings, recorded once, held constant:** threads 8 (auto = physical cores; A1: 10), parallel 4, num_ctx 2048, keep-alive 30 m (results/a2/env/preflight_*.txt).",
